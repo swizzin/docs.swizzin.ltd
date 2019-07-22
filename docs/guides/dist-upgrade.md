@@ -31,7 +31,7 @@ The steps provided below are meant only to provide you with an outline of the st
 - Package updates causing issues that prevent boot
 - Pacakge updates causing previously installed pacakges in swizzin to fail to start
 
-Distribution upgrades are ***NOT*** officially supported. If anything breaks, I am not liable for your server or any of the data contained wihtin it. Further, you are not guaranteed to receive any form of support or help to help get your server functional again. This information is provided for educational purposes only. If you choose to follow the steps, be prepared for the possibility that something could go wrong. If your data is important to you, make a backup.
+Distribution upgrades are ***NOT*** officially supported. If anything breaks, I am not liable for your server or any of the data contained within it. Further, you are not guaranteed to receive any form of support or help to help get your server functional again. This information is provided for educational purposes only. If you choose to follow the steps, be prepared for the possibility that something could go wrong. If your data is important to you, make a backup.
 
 Certain things are known to cause issues -- those issues will be gone over here and the workarounds to get the applications back online, but I cannot provide information for all circumstances and variables.
 
