@@ -47,13 +47,9 @@ class Footer extends React.Component {
           <div>
             <h5>Get in Touch</h5>
             <a href="https://discord.gg/2esbu2N" target="_blank">Discord</a>
+            <a href="https://github.com/liaralabs/swizzin">GitHub</a>
+            <a href="https://github.com/liaralabs/swizzin/issues">Open an Issue</a>
           </div>
-          <a href="https://github.com/liaralabs/swizzin">
-              GitHub
-            </a>
-          <a href="https://github.com/liaralabs/swizzin/issues">
-            Open an Issue
-          </a>
           <div>
             <h5>Meta</h5>
             <a href="https://swizzin.ltd" target="_blank">Home</a>
