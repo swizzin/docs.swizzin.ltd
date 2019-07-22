@@ -92,7 +92,6 @@ After this command finishes, we need to reboot the server to refresh everything 
 
 ```
 sudo reboot
-
 ```
 
 Pray to your lucky stars that nothing goes wrong and your server comes back up without any issues.
