@@ -3,7 +3,8 @@
     "Getting Started": [
       "installation",
       "getting-started/how-do-i-connect",
-      "getting-started/box-basics"
+      "getting-started/box-basics",
+      "getting-started/faqs"
     ],
     "Applications": [
       "applications/autodl",
