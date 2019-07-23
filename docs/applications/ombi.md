@@ -10,7 +10,7 @@ Ombi is a self-hosted web application that automatically gives your shared Plex 
 
 Installing Ombi is easy. Simply issue the following command from SSH:
 
-```plaintext main
+```bash main
 sudo box install ombi
 ```
 
@@ -43,23 +43,23 @@ The service file resides at:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
-```plaintext
+```bash
 sudo systemctl start ombi
 ```
 <!--Stop-->
-```plaintext
+```bash
 sudo systemctl stop ombi
 ```
 <!--Restart-->
-```plaintext
+```bash
 sudo systemctl restart ombi
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable ombi
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable ombi
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->

@@ -10,7 +10,7 @@ Radarr is an independent fork of Sonarr reworked for automatically downloading m
 
 Installing Radarr is easy. Simply issue the following command:
 
-```plaintext main
+```bash main
 sudo box install radarr
 ```
 
@@ -30,23 +30,23 @@ The Radarr service is managed by systemd and has been configured for single user
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
-```plaintext
+```bash
 sudo systemctl start radarr
 ```
 <!--Stop-->
-```plaintext
+```bash
 sudo systemctl stop radarr
 ```
 <!--Restart-->
-```plaintext
+```bash
 sudo systemctl restart radarr
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable radarr
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable radarr
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->

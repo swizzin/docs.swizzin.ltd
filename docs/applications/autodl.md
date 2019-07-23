@@ -10,7 +10,7 @@ autodl-irssi is a plugin for irssi that monitors IRC announce channels and downl
 
 Installing autodl is easy. Simply issue the following command from SSH:
 
-```plaintext main
+```bash main
 sudo box install autodl
 ```
 
@@ -30,7 +30,7 @@ To detach again, press: `control-a, control-d`
 ## Service Management
 
 The systemd script for irssi (the main client for the autodl plugin) can be found at
-```bash
+```bash main
 /etc/systemd/system/irssi@.service
 ```
 As a multiuser script, you must call it with the username to change the service status for.

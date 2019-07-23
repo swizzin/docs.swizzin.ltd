@@ -12,7 +12,7 @@ First you must connect to your slot via ssh. If you need help connecting to the 
 
 Installing rTorrent is easy. Simply issue the following command:
 
-```plaintext main
+```bash main
 sudo box install rtorrent
 ```
 This command will compile and configure rTorrent for use on your slot.

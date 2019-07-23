@@ -10,7 +10,7 @@ Lidarr is a music collection manager for Usenet and BitTorrent users. It can mon
 
 Installing Lidarr is easy. Simply issue the following command from SSH:
 
-```plaintext main
+```bash main
 sudo box install lidarr
 ```
 
@@ -27,23 +27,23 @@ Like all box configured applications, you can manage Lidarr via SSH with box wit
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
-```plaintext
+```bash
 sudo systemctl start lidarr
 ```
 <!--Stop-->
-```plaintext
+```bash
 sudo systemctl stop lidarr
 ```
 <!--Restart-->
-```plaintext
+```bash
 sudo systemctl restart lidarr
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable lidarr
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable lidarr
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->

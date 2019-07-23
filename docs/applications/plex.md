@@ -12,7 +12,7 @@ First you must connect to your slot via ssh. If you need help connecting to the 
 
 Installing Plex on your slot is easy. Simply issue the following command:
 
-```plaintext main
+```sh
 sudo box install plex
 ```
 
@@ -45,7 +45,7 @@ If you forgot your personalized port, you can always access Plex from the "Plex"
 
 An upgrade helper script has been included in the box scripts. You can call it with:
 
-```
+```bash
 sudo box upgrade plex
 ```
 
@@ -57,7 +57,7 @@ After running the `box upgrade plex` command, the `box upgrade plex` will no lon
 
 The systemd service installed by the plex package is the default one pushed by the maintainers of the Plex debian packages.
 
-```
+```plaintext
 /lib/systemd/system/plexmediaserver.service
 ```
 
@@ -65,23 +65,23 @@ If you intended to create your own service or modify this one, please create a s
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
-```plaintext
+```bash
 sudo systemctl start plexmediaserver
 ```
 <!--Stop-->
-```plaintext
+```bash
 sudo systemctl stop plexmediaserver
 ```
 <!--Restart-->
-```plaintext
+```bash
 sudo systemctl restart plexmediaserver
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable plexmediaserver
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable plexmediaserver
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->

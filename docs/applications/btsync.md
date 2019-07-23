@@ -10,7 +10,7 @@ Resilio Sync (formerly BitTorrent Sync) is a peer-to-peer file synchronization t
 
 Installing Resilio is easy. Simply issue the following command from SSH:
 
-```plaintext main
+```bash main
 sudo box install btsync
 ```
 

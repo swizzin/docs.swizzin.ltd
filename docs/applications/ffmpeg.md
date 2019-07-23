@@ -10,7 +10,7 @@ ffmpeg is a media conversion and management tool
 
 ffmpeg is quickly installed through the command:
 
-```
+```bash main
 sudo box install ffmpeg
 ```
 

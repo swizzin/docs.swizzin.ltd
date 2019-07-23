@@ -32,23 +32,23 @@ By default, bazarr can only be configured for use with a single user with swizzi
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
-```plaintext
+```bash
 sudo systemctl start bazarr
 ```
 <!--Stop-->
-```plaintext
+```bash
 sudo systemctl stop bazarr
 ```
 <!--Restart-->
-```plaintext
+```bash
 sudo systemctl restart bazarr
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable bazarr
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable bazarr
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->

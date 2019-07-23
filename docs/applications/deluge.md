@@ -10,7 +10,7 @@ Deluge is a fully-featured, high performance cross-platform ​BitTorrent client
 
 Installing Deluge is easy. Simply issue the following command from SSH:
 
-```plaintext main
+```bash main
 sudo box install deluge
 ```
 
@@ -46,7 +46,7 @@ Run the installer and follow the prompts.
 ::: panel
 Deluge is available from the distribution repositories. Simply open a terminal and issue the command:
 
-```plaintext
+```bash
 sudo apt update
 sudo apt install deluge
 ```
@@ -55,7 +55,7 @@ sudo apt install deluge
 ::: panel
 Deluge is available from the distribution repositories. Simply open a terminal and issue the command:
 
-```plaintext
+```bash
 sudo zypper install deluge
 ```
 :::
@@ -63,7 +63,7 @@ sudo zypper install deluge
 ::: panel
 Deluge is available from the distribution repositories. Simply open a terminal and issue the command:
 
-```plaintext
+```bash
 sudo dnf install deluge
 ```
 :::
@@ -71,7 +71,7 @@ sudo dnf install deluge
 ::: panel
 Deluge is available from the distribution repositories. Simply open a terminal and issue the command:
 
-```plaintext
+```bash
 sudo pacman -S deluge
 ```
 :::
@@ -184,11 +184,11 @@ sudo systemctl stop deluged@<username>
 sudo systemctl restart deluged@<username>
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable deluged@<username>
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable deluged@<username>
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -227,7 +227,7 @@ By default, the web interface of Deluge is bound to `127.0.0.1`. In other words,
 
 [SSH](../getting-started/how-do-i-connect.md) into your slot and issue the following commands:
 
-```plaintext main
+```bash main
 box stop deluge-web
 sed -i 's/127.0.0.1/0.0.0.0/g' ~/.config/deluge/web.conf
 box start deluge-web

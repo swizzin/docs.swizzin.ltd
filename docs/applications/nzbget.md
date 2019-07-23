@@ -10,7 +10,7 @@ NZBGet is a binary downloader, which downloads files from Usenet based on inform
 
 Installing nzbGet is easy. Simply issue the following command from SSH:
 
-```plaintext main
+```bash main
 sudo box install nzbget
 ```
 
@@ -32,23 +32,23 @@ The systemd service file resides at:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
-```plaintext
+```bash
 sudo systemctl start nzbget@<username>
 ```
 <!--Stop-->
-```plaintext
+```bash
 sudo systemctl stop nzbget@<username>
 ```
 <!--Restart-->
-```plaintext
+```bash
 sudo systemctl restart nzbget@<username>
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable nzbget@<username>
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable nzbget@<username>
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->

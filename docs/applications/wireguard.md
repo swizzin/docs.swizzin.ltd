@@ -10,13 +10,13 @@ WireGuard is an extremely simple yet fast and modern VPN that utilizes state-of-
 
 Installing wireguard is easy. Simply issue the following command from SSH:
 
-```plaintext main
+```bash main
 sudo box install wireguard
 ```
 
 This command will configure wireguard for your user. When install finished, the installer will output the configuration for your user. This is an example configuration:
 
-```plaintext main
+```bash main
 [Interface]
 Address = 10.100.0.2
 PrivateKey = {averysecretkey}
@@ -104,7 +104,7 @@ Service management for wireguard is a bit different from other services. Wiregua
 
 The default location for the wg-quick service is:
 
-```
+```bash
 /lib/systemd/system/wg-quick@.service
 ```
 
@@ -114,7 +114,7 @@ Regardless, you can easily find the id of your user with the command: `id -u <us
 
 The basic construction of the service name is:
 
-```
+```bash
 wg-quick@wg$(id -u <username>)
 ```
 
@@ -132,23 +132,23 @@ Calling `wg1000` means use the conf file `/etc/wireguard/wg1000.conf` when calli
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
-```plaintext
+```bash
 sudo systemctl start wg-quick@wg1000
 ```
 <!--Stop-->
-```plaintext
+```bash
 sudo systemctl stop wg-quick@wg1000
 ```
 <!--Restart-->
-```plaintext
+```bash
 sudo systemctl restart wg-quick@wg1000
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable wg-quick@wg1000
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable wg-quick@wg1000
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->

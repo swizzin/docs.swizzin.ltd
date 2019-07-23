@@ -10,7 +10,7 @@ Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS fee
 
 Installing Sonarr is easy. Simply issue the following command from SSH:
 
-```plaintext main
+```bash main
 sudo box install sonarr
 ```
 
@@ -31,23 +31,23 @@ Service status for sonarr is handled by systemd. Despite the service being enabl
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
-```plaintext
+```bash
 sudo systemctl start sonarr@<username>
 ```
 <!--Stop-->
-```plaintext
+```bash
 sudo systemctl stop sonarr@<username>
 ```
 <!--Restart-->
-```plaintext
+```bash
 sudo systemctl restart sonarr@<username>
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable sonarr@<username>
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable sonarr@<username>
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->

@@ -13,7 +13,7 @@ Or sit back and enjoy Emby from the living room. Emby apps are available for And
 
 Installing emby is easy. Simply issue the following command from SSH:
 
-```plaintext main
+```bash main
 sudo box install emby
 ```
 
@@ -29,23 +29,23 @@ The systemd service file for Emby is the default file. No modifications have bee
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
-```plaintext
+```bash
 sudo systemctl start emby-server
 ```
 <!--Stop-->
-```plaintext
+```bash
 sudo systemctl stop emby-server
 ```
 <!--Restart-->
-```plaintext
+```bash
 sudo systemctl restart emby-server
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable emby-server
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable emby-server
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->

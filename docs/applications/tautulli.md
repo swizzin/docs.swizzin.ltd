@@ -10,7 +10,7 @@ A Python based monitoring and tracking tool for Plex Media Server.
 
 Installing Tautulli is easy. Simply issue the following command from SSH:
 
-```plaintext main
+```bash main
 sudo box install tautulli
 ```
 
@@ -24,29 +24,29 @@ Once Tautulli has been installed, you can access it from your browser at `https:
 
 The service for Tautulli is managed by systemd. The service file for tautulli resides at:
 
-```
+```bash main
 /etc/systemd/system/tautulli.service
 ```
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
-```plaintext
+```bash
 sudo systemctl start tautulli
 ```
 <!--Stop-->
-```plaintext
+```bash
 sudo systemctl stop tautulli
 ```
 <!--Restart-->
-```plaintext
+```bash
 sudo systemctl restart tautulli
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable tautulli
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable tautulli
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->

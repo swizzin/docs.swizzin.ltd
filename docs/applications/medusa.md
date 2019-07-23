@@ -32,23 +32,23 @@ The systemd service file resides at:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
-```plaintext
+```bash
 sudo systemctl start medusa@<username>
 ```
 <!--Stop-->
-```plaintext
+```bash
 sudo systemctl stop medusa@<username>
 ```
 <!--Restart-->
-```plaintext
+```bash
 sudo systemctl restart medusa@<username>
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable medusa@<username>
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable medusa@<username>
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->

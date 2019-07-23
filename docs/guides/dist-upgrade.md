@@ -57,7 +57,7 @@ If you don't know the OS or version you're running, you can determine it here wi
 
 Let's take the scenario where your server was delivered with Debian 9 (stretch), but you'd like to upgrade to Debian 10 (buster). In this scenario, our upgrade path looks like this:
 
-```
+```bash main
 stretch > buster
 ```
 
@@ -65,7 +65,7 @@ Thus, we need to replace all mention of stretch with buster in the file `/etc/ap
 
 You can either `sudo nano /etc/apt/sources.list` and change all instances of `stretch` to `buster` or issue the following command:
 
-```
+```bash main
 sed -i 's/stretch/buster/g' /etc/apt/sources.list
 ```
 
@@ -73,7 +73,7 @@ This simple `sed` command simply states: find the word stretch, replace it with 
 
 Once our sources have been updated, it's time to grab new manifests and update:
 
-```
+```bash main
 sudo apt -y update
 sudo apt upgrade
 ```
@@ -82,7 +82,7 @@ This will take some time. Hundreds (if not 1000+) packages will be downloaded an
 
 Once this command finishes, we need to complete the upgrade with a `dist upgrade`:
 
-```
+```bash main
 sudo apt dist-upgrade
 ```
 
@@ -90,7 +90,7 @@ This should offer to upgrade more packages and will round out the full distribut
 
 After this command finishes, we need to reboot the server to refresh everything that was just upgraded. Use the command:
 
-```
+```bash main
 sudo reboot
 ```
 
@@ -108,7 +108,7 @@ Luckily the major breakers have scripts in place designed to help get you back u
 
 We need to upgrade nginx configs to use the correct php socket for applications like the panel and ruTorrent. The easiest way to reconfigure nginx for your current environment is to use the command:
 
-```
+```bash main
 sudo box upgrade nginx
 ```
 
@@ -120,7 +120,7 @@ This command is considered semi-destructive. In the case of custom nginx configu
 
 rTorrent likely failed to start on boot. If you try to start `rtorrent` from the command line, you'll likely receive some error about libraries. We just need to recompile rTorrent against the current system. This is simple:
 
-```
+```bash main
 sudo box upgrade rtorrent
 ```
 
@@ -130,7 +130,7 @@ rTorrent will recompile and should start without issues afterwards.
 
 Deluge shouldn't have any issues with the upgrade, but if Deluge fails to start, recompiling would be the first point of troubleshooting:
 
-```
+```bash main
 sudo box upgrade deluge
 ```
 

@@ -10,7 +10,7 @@ API support for your favourite torrent trackers.
 
 Installing Jackett is easy. Simply issue the following command from SSH:
 
-```plaintext main
+```bash main
 sudo box install jackett
 ```
 
@@ -31,23 +31,23 @@ The service for jackett resides at:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
-```plaintext
+```bash
 sudo systemctl start jackett@<username>
 ```
 <!--Stop-->
-```plaintext
+```bash
 sudo systemctl stop jackett@<username>
 ```
 <!--Restart-->
-```plaintext
+```bash
 sudo systemctl restart jackett@<username>
 ```
 <!--Enable-->
-```plaintext
+```bash
 sudo systemctl enable jackett@<username>
 ```
 <!--Disable-->
-```plaintext
+```bash
 sudo systemctl disable jackett@<username>
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
