@@ -71,7 +71,7 @@ Please do not touch the following settings:
 In order to connect Jackett with other trackers, you need to connect directly to the port. You must bypass the webserver because it has authentication headers which are not supported when accessing Jackett from other clients. If you need help in constructing your URL for a tracker, please refer to the example below.
 
 ::: tip
-Remember your port from installtion? If you have forgotten it, you can find it in your Jackett dashboard.
+The default Jackett port is `9117`
 :::
 
 Now, click `Copy Torznab Feed`. The link you'll receive will look something like this:
@@ -80,7 +80,7 @@ Now, click `Copy Torznab Feed`. The link you'll receive will look something like
 https://<yourhost>.ltd/jackett/api/v2.0/indexers/yourtracker/results/torznab/
 ```
 
-We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `12345`, your editted URL would look like this:
+We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `9117`, your editted URL would look like this:
 
 ```plaintext
 http://<yourhost>.ltdltd:9117/jackett/api/v2.0/indexers/yourtracker/results/torznab/
