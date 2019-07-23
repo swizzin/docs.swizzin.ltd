@@ -16,23 +16,6 @@ Installing Plex on your slot is easy. Simply issue the following command:
 sudo box install plex
 ```
 
-After you issue this command, you'll receive the following notice:
-
-```plaintext main wrap
-Please visit https://www.plex.tv/claim, login, copy your plex claim token to your clipboard and paste it here. This will automatically claim your server! Please note, you will be unable to tunnel to your slot later if you do not claim it now.
-```
-
-It's not necessary to claim your server now, but it **will** make your life a bit easier after installation, as you can avoid having to claim your server after it's setup.
-
-For convience sake, the link to grab a claim token is [here](https://www.plex.tv/claim). If you're not logged into Plex, the page will ask you to login. Once you're logged in, you'll be redirected to a page with a claim token on it. Copy this to your clipboard and paste it back in the terminal.
-
-::: tip Tip
-On Windows, under PuTTY, you can paste with a right-click.
-On Linux, you'll need to use Control-Shift-V.
-:::
-
-Installation will take a few moments. Once it's done, you'll receive a notice that the installation is complete and the installer will let you know where you can access the application. (e.g. `https://xl.swizzin.ltd:7777/web`). 
-
 ### Manual claiming
 
 After installation, you'll need to create an SSH Tunnel to your server to appear as if you're using the same network as your Plex instance.
