@@ -33,13 +33,41 @@ On Linux, you'll need to use Control-Shift-V.
 
 Installation will take a few moments. Once it's done, you'll receive a notice that the installation is complete and the installer will let you know where you can access the application. (e.g. `https://xl.swizzin.ltd:7777/web`). 
 
+### Manual claiming
+
+After installation, you'll need to create an SSH Tunnel to your server to appear as if you're using the same network as your Plex instance.
+
+If you've gotten this far, I'll assume you don't need any reminders on how to connect to the server via SSH ;) However, creating an SSH tunnel takes a bit more effort than simply creating an SSH Connection.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Linux / OS X-->
+::: panel 
+1. Open a command prompt or terminal
+2. Enter the command: `ssh <username>@<hostname.ltd> -L 8888:localhost:32400`
+3. Open your browser window and navigate to `http://localhost:8888/web`
+4. The browser will connect to your Plex server and let you know that there is an unclaimed server on your network.
+:::
+<!--Windows-->
+::: panel
+1. Open up your PuTTY client again.
+2. Under gateway, enter the hostname of your server, e.g.: `yourhostname.ltd`
+3. Configure the tunnel:
+    1. On the left hand side, navigate to `Connection > SSH > Tunnels`
+    2. Under source port, enter `8888`
+    3. Under destination, enter `localhost:32400` 
+    4. Click `Add`
+4. Connect to the server by clicking `Open`
+5. PuTTY will prompt you for your username and password like a regular SSH session.
+6. Once connected, open your browser and navitage to `http://localhost:8888/web`
+7. The browser will connect to your Plex server and let you know that there is an unclaimed server on your network.
+:::
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ## How to Access
 
-As above, the Plex installer will output your personal port access at the end of the installation. Since Plex doesn't have outstanding support for reverse proxies, access to Plex will be through the port it was setup on. For instance, `7777`. To access the application directly, you can use the link `https://serverhostname.ltd:port/web`, or, for example: `https://xl.swizzin.ltd:7777/web`
+Plex is hardcoded to use port 32400 on each and every installation.
 
-::: tip Tip
-If you forgot your personalized port, you can always access Plex from the "Plex" link on your dashboard, or you can re-discover your port programatically with the command `cat ~/.install/.plex.lock`. However, as long as your server has been claimed, it should always be viewable from your Plex Web dashboard at https://app.plex.tv/dashboard
-:::
+You can access your plex instance dircetly at `https://yourhostname.ltd:32400/web`
 
 ## How to keep Plex up-to-date
 
@@ -84,51 +112,6 @@ sudo systemctl enable plexmediaserver
 ```bash
 sudo systemctl disable plexmediaserver
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
-
-## Configuration
-
-::: caution
-You are welcome to change most of the settings under the server configuration; however, **you should never touch the Plex remote port, nor the manual port mapping mode under the "Remote Access" settings. Doing so will likely result in you losing access to your plex instance.**
-:::
-
-### Libraries
-
-During the setup of Plex, we automatically configure two media Libraries for you. These correspond to two directories in your home folder:
-
-- TV Shows > `~/media/TV Shows`
-- Movies > `~/media/Movies`
-
-Furthermore, if you are needing to create a custom folder to your Library (in the instance of rclone or plexdrive), you will find that your entire home directory has been mounted under the /data folder of your Plex instance.
-
-### Manual claiming
-
-If you skipped claiming of your Plex server during installation, you can still claim it manually, but you'll need to create an SSH Tunnel to your server to appear as if you're using the same network as your Plex instance.
-
-If you've gotten this far, I'll assume you don't need any reminders on how to connect to the server via SSH ;) However, creating an SSH tunnel takes a bit more effort than simply creating an SSH Connection.
-
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Linux / OS X-->
-::: panel 
-1. Open a command prompt or terminal
-2. Enter the command: `ssh <username>@<hostname.ltd> -L 8888:localhost:<plexport>`
-3. Open your browser window and navigate to `http://localhost:8888/web`
-4. The browser will connect to your Plex server and let you know that there is an unclaimed server on your network.
-:::
-<!--Windows-->
-::: panel
-1. Open up your PuTTY client again.
-2. Under gateway, enter the hostname of your server, e.g.: `yourhostname.ltd`
-3. Configure the tunnel:
-    1. On the left hand side, navigate to `Connection > SSH > Tunnels`
-    2. Under source port, enter `8888`
-    3. Under destination, enter `localhost:<plexport>` 
-    4. Click `Add`
-4. Connect to the server by clicking `Open`
-5. PuTTY will prompt you for your username and password like a regular SSH session.
-6. Once connected, open your browser and navitage to `http://localhost:8888/web`
-7. The browser will connect to your Plex server and let you know that there is an unclaimed server on your network.
-:::
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Connect to other clients
