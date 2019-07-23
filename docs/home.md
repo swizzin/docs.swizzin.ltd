@@ -42,7 +42,7 @@ Please note that if you are running Ubuntu and choose to run the initial setup t
 
 Example:
 
-```
+```bash
 sudo -H su -c 'bash <(wget -O- -q https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh)'
 ```
 
