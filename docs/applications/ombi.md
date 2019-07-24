@@ -80,7 +80,7 @@ If you have further questions about settings and configurations of Ombi, please 
 3. Use the following configuration:
 ```plaintext
 Enable: checked
-Hostname or IP: <subnet IP>
+Hostname or IP: 127.0.0.1
 Port: <Sonarr port>
 API Key: <API key from dashboard>
 Base URL: sonarr
@@ -96,7 +96,7 @@ Base URL: sonarr
 2. Use the following configuration:
 ```plaintext
 Enable: checked
-Hostname or IP: <subnet IP>
+Hostname or IP: 127.0.0.1
 Port: <your medusa port>
 API Key: <your medusa API key>
 Base URL: medusa
@@ -111,7 +111,7 @@ Base URL: medusa
 3. Use the following configuration:
 ```plaintext
 Enable: checked
-Hostname or IP: <subnet IP>
+Hostname or IP: 127.0.0.1
 Port: <Radarr port>
 API Key: <API key from dashboard>
 Base URL: radarr
@@ -123,6 +123,3 @@ Base URL: radarr
 :::
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-::: tip
-In order to connect Ombi to the clients above, you'll need your subnet IP. You can find this on your panel or with the command `cat ~/.install/subnet.lock`
-:::
