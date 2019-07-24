@@ -17,6 +17,8 @@ sudo box install rtorrent
 ```
 This command will compile and configure rTorrent for use on your slot.
 
+Before installation, you'll receive a prompt asking you which version of rTorrent you'd like to install. These version tags correspond with recent releases supported for your OS the the `feature-bind` branch. The `feature-bind` branch is considered the unstable head of development on GitHub. This branch is not guaranteed to compile properly and may fail. If it does, please consider reinstalling rTorrent with one of the released versions.
+
 After installation, there will be two 3 new packages installed: xmlrpc-c, libtorrent-rakshasa, and rtorrent. Due to potential packaging conflicts with your distribution's repository, the package `rtorrent` has been held by apt and will not be marked for upgrade. You may see apt issue a warning regarding the held `rtorrent` package. This is completely normal and it means the apt mark is working as expected.
 
 ## How to upgrade/downgrade
