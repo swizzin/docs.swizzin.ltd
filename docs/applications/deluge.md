@@ -214,7 +214,26 @@ Not all plugins have a web-ui component. You will likely need to install and man
 :::
 
 ## Connect to other clients
+
 The following variables can be used as a general guide to help you find information you'll need to know in order to connect other clients to Deluge.
+
+
+### Transdroid
+
+```bash
+IP or Hostname: <yourhostname.ltd>
+User name: <your username>
+Password: <your password>
+Deluge web password: <your password again>
+Advanced Settings:
+Port Number: 443
+Folder: /deluge
+Use SSL: On
+Accept all SSL certificates: yes (optional with a valid ssl certificate)
+```
+
+### Other Local Clients
+
 
 - Host: `127.0.0.1`
 - Daemon port: `cat ~/.config/deluge/core.conf | grep daemon_port`
