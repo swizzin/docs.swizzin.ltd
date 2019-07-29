@@ -220,6 +220,8 @@ The following variables can be used as a general guide to help you find informat
 
 ### Transdroid
 
+Use these settings when connecting your transdroid client to your Deluge instance:
+
 ```bash
 IP or Hostname: <yourhostname.ltd>
 User name: <your username>
@@ -234,6 +236,7 @@ Accept all SSL certificates: yes (optional with a valid ssl certificate)
 
 ### Other Local Clients
 
+Settings for connecting another local client (i.e. Sonarr), to your Deluge instance:
 
 - Host: `127.0.0.1`
 - Daemon port: `cat ~/.config/deluge/core.conf | grep daemon_port`
