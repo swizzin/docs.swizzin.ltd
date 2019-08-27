@@ -63,24 +63,9 @@ If you are unfamiliar with SickGear, please check out their [wiki](https://githu
 <!--rTorrent-->
 ```plaintext
 Send torrent files to: rTorrent
-rTorrent host/port: https://127.0.0.1/rutorrent/plugins/httprpc/action.php
-Http Authentication: Basic
-Verify certificate: off (shouldn't need to be turned on)
-rTorrent username: <your username>
-rTorrent password: <your password>
+rTorrent host/port: scgi:///run/<your username>/.rtorrent.sock
 Add label to torrent: TV (or anything else you desire)
 Downloaded files location: ~/torrents/rtorrent (or a custom directory)
-```
-
-<!--Deluge (via Daemon)-->
-```plaintext
-Send torrent files to: Deluge (via Daemon)
-Deluge: 127.0.0.1:<your daemon port>
-Verify certificate: off
-Deluge username: <your username>
-Deluge password: <your password>
-Add label to torrent: TV (or anything else you desire)
-* label plugin must be enabled in Deluge if you add a label
 ```
 
 <!--Deluge (via Web)-->
