@@ -36,7 +36,7 @@ When installing Deluge, depending on your operating system, you'll have a couple
 - **RC_1_1**: pulls the current head of the Libtorrent 1.1 branch, compiles it and packages it with `fpm` as a .deb file.
   - This branch is currently supported on all supported operating systems.
 - **RC_1_2**: pulls the current head of the Libtorrent 1.2 branch, compiles it and packages it with `fpm` as a .deb file.
-  - The branch is only an option if you are using `Deluge v2 as` it is completely incompatible with `Deluge 1.3.15`.
+  - The branch is only an option if you are using `Deluge v2` as it is completely incompatible with `Deluge 1.3.15`.
 
 
 ## Upgrading and Recompiling
