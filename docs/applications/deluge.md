@@ -23,19 +23,19 @@ After installation, if there will be two 2 new packages installed: libtorrent, a
 When installing Deluge, depending on your operating system, you'll have a couple choices available to you:
 
 #### Deluge Version
-- Repo: performs an `apt-get install deluged deluge-console deluge-web` and pulls whatever is available from your operating sytsem's repository. To check versions, you can use the [Debian Package Tracker](https://www.debian.org/distrib/packages) or the [Ubuntu Package Tracker](https://packages.ubuntu.com/).
-- Deluge 1.3.15: pulls the current head of the `1.3-stable` branch from Deluge and uses `fpm` to pacakge it as a .deb for easy installation and removal with `dpkg`.
-- Deluge 2: pulls the current head of the `master` branch from Deluge and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
+- **Repo**: performs an `apt-get install deluged deluge-console deluge-web` and pulls whatever is available from your operating sytsem's repository. To check versions, you can use the [Debian Package Tracker](https://www.debian.org/distrib/packages) or the [Ubuntu Package Tracker](https://packages.ubuntu.com/).
+- **Deluge 1.3.15**: pulls the current head of the `1.3-stable` branch from Deluge and uses `fpm` to pacakge it as a .deb for easy installation and removal with `dpkg`.
+- **Deluge 2**: pulls the current head of the `master` branch from Deluge and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
   - Deluge 2 is not supported on installations using Debian Jessie due to severely outdated Python3 dependencies.
 
 #### Libtorrent Version
-- Repo: performs an `apt-get install` of the `libtorrent-rasterbar*` and `python*-libtorrent` packages to supply both `libtorrent` and the python bindings required by Deluge.
+- **Repo**: performs an `apt-get install` of the `libtorrent-rasterbar*` and `python*-libtorrent` packages to supply both `libtorrent` and the python bindings required by Deluge.
   - Repo is not an option if you are using `Deluge v2` on `Ubuntu 16.04` because Libtorrent 1.1+ is required to install `Deluge v2`. Thus, you must compile a version of Libtorrent to meet this requirement.
-- RC_1_0: pulls the current head of the Libtorrent 1.0 branch, compiles it and packages it with `fpm` as a .deb file.
+- **RC_1_0**: pulls the current head of the Libtorrent 1.0 branch, compiles it and packages it with `fpm` as a .deb file.
   - This branch is only an option if you're using `Deluge 1.3.15` and if your version of `libboost` is `1.65` or earlier. (i.e. Buster is not supported)
-- RC_1_1: pulls the current head of the Libtorrent 1.1 branch, compiles it and packages it with `fpm` as a .deb file.
+- **RC_1_1**: pulls the current head of the Libtorrent 1.1 branch, compiles it and packages it with `fpm` as a .deb file.
   - This branch is currently supported on all supported operating systems.
-- RC_1_2: pulls the current head of the Libtorrent 1.2 branch, compiles it and packages it with `fpm` as a .deb file.
+- **RC_1_2**: pulls the current head of the Libtorrent 1.2 branch, compiles it and packages it with `fpm` as a .deb file.
   - The branch is only an option if you are using `Deluge v2 as` it is completely incompatible with `Deluge 1.3.15`.
 
 
