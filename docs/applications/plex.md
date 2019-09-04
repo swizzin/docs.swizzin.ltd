@@ -16,6 +16,33 @@ Installing Plex on your slot is easy. Simply issue the following command:
 sudo box install plex
 ```
 
+### Automatic claiming
+
+As of v1.6.0, swizzin now supports claiming your server during the installation. When you install Plex, you'll be greeted by the prompt:
+
+```wrap
+Please visit https://www.plex.tv/claim, login, copy your plex claim token to your clipboard and paste it here. This will automatically claim your server! Otherwise, you can leave this blank and to tunnel to the port instead.
+```
+
+Simply visit [the link](https://www.plex.tv/claim) to grab your claim code and paste it into the terminal. After Plex is installed, the script will use the claim code to grab a valid token for your user and apply it to your server.
+
+If for some reason you didn't claim during installation, you can still run the command manually from SSH.
+
+First we must source the Plex functions called during installation:
+
+```bash
+. /etc/swizzin/sources/functions/plex
+```
+
+Then we can call the function directly:
+
+```bash
+claim=<your plex.tv/claim code>
+claimPlex ${claim}
+```
+
+The function will run and if all goes well, you'll receive a `success` message stating that your server as been claimed under your account.
+
 ### Manual claiming
 
 After installation, you'll need to create an SSH Tunnel to your server to appear as if you're using the same network as your Plex instance.
