@@ -28,6 +28,10 @@ When installing Deluge, depending on your operating system, you'll have a couple
 - **Deluge 2**: pulls the current head of the `master` branch from Deluge and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
   - Deluge 2 is not supported on installations using Debian Jessie due to severely outdated Python3 dependencies.
 
+::: note
+If you intend to use the thin client with your installation, your local version of Deluge must be reasonably similar to your remote version of Deluge. For instance, you're unable to use the thin client for Deluge v2 if your local version is 1.3.15.
+:::
+
 #### Libtorrent Version
 - **Repo**: performs an `apt-get install` of the `libtorrent-rasterbar*` and `python*-libtorrent` packages to supply both `libtorrent` and the python bindings required by Deluge.
   - Repo is not an option if you are using `Deluge v2` on `Ubuntu 16.04` because Libtorrent 1.1+ is required to install `Deluge v2`. Thus, you must compile a version of Libtorrent to meet this requirement.
