@@ -34,3 +34,35 @@ You can find your disk quota here.
 
 ### Service Management
 You can see at a glance whether or not your services are currently running. You can also start and stop services directly from the panel, if you just need to quickly restart a service without SSHing into your slot.
+
+## Adding Custom Links to the Menu
+
+The custom menu file is located at: `/srv/panel/custom/custom.menu.php`
+
+We're going to use jellyfin as example. 
+
+1. Place logo of your application to `/srv/panel/img/brands`. Use the .png extension so the background is transparent. The recommended image size is 128x128 but bigger images will work aswell.
+
+2. Now open `/srv/panel/custom/custom.menu.php` in your favourite text editor:
+
+```
+sudo nano /srv/panel/custom/custom.menu.php
+```
+
+3. Go all the way to bottom of file without editing anything and add your custom php/html there. Make sure to replace `https://yourdomain.com/applicationname` with your custom URL and `yourlogo.png` with the filename of the png you added to `/srv/panel/img/brands` in Step 1:
+
+```
+<li><a class="grayscale" href="https://yourdomain.com/applicationname" target="_blank"><img src="img/brands/yourlogo.png" class="brand-ico"> <span>Application name</span></a></li>
+```
+
+So for our Jellyfin example:
+
+```
+<li><a class="grayscale" href="https://yoururl.com/jellyfin" target="_blank"><img src="img/brands/jellyfin.png" class="brand-ico"> <span>Jellyfin</span></a></li>
+```
+
+4. Once done, you may need to restart php-fpm to refresh the cache. The php-fpm version will depend on your current OS:
+
+```
+systemctl restart php7.3-fpm
+```
