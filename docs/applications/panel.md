@@ -45,24 +45,30 @@ We're going to use jellyfin as example.
 
 2. Now open `/srv/panel/custom/custom.menu.php` in your favourite text editor:
 
-```
+::: block
+``` bash
 sudo nano /srv/panel/custom/custom.menu.php
 ```
+:::
 
 3. Go all the way to bottom of file without editing anything and add your custom php/html there. Make sure to replace `https://yourdomain.com/applicationname` with your custom URL and `yourlogo.png` with the filename of the png you added to `/srv/panel/img/brands` in Step 1:
 
-```
+::: block
+``` html
 <li><a class="grayscale" href="https://yourdomain.com/applicationname" target="_blank"><img src="img/brands/yourlogo.png" class="brand-ico"> <span>Application name</span></a></li>
 ```
 
 So for our Jellyfin example:
 
-```
+``` html
 <li><a class="grayscale" href="https://yoururl.com/jellyfin" target="_blank"><img src="img/brands/jellyfin.png" class="brand-ico"> <span>Jellyfin</span></a></li>
 ```
+:::
 
 4. Once done, you may need to restart php-fpm to refresh the cache. The php-fpm version will depend on your current OS:
 
-```
+::: block
+``` bash
 systemctl restart php7.3-fpm
 ```
+:::
