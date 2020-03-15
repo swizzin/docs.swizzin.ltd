@@ -63,3 +63,12 @@ sudo systemctl disable irssi@<username>
 Configuration options for the GUI client can be found [here](https://code.google.com/archive/p/rutorrent/wikis/PluginAutodlirssi.wiki#Usage). The options will be found under the header "Usage".
 
 If you don't want to use the ruTorrent plugin and would prefer to configure the configuration files by hand, you can read the [autodl-irssi documentation](https://autodl-community.github.io/autodl-irssi/configuration/overview/) for an in-depth review of the available options.
+
+## Patch for 'Could not read: SSL: Unknown error code: 5'
+
+Some users may run into this error with AutoDL-Irssi, as documented [here] (https://github.com/autodl-community/autodl-irssi/issues/168). This may be patched with the following:
+
+```bash
+cd ~/.irssi/scripts/AutodlIrssi/
+wget https://raw.github.com/mnechita/autodl-irssi/master/AutodlIrssi/SslSocket.pm -O SslSocket.pm
+```
