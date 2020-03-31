@@ -60,18 +60,23 @@ sudo systemctl disable panel
 ## Features
 
 ### Application Links
+
 On the left side of the dashboard, you'll find quick links to the currently installed applications on your slot. No need to remember the endpoints and ports yourself!
 
 ### Server Statistics
+
 The dashboard provides metrics for server load, CPU usage, and the current network metrics for upload and download speeds.
 
 ### Statistic Graphs
+
 If you have the `netdata` package installed, you'll see an additional tab in the navbar for Stats.
 
 ### Personal Usage Statistics
+
 You can find your disk quota here.
 
 ### Service Management
+
 You can see at a glance whether or not your services are currently running. You can also start and stop services directly from the panel, if you just need to quickly restart a service without SSHing into your slot.
 
 ## Customizing Application Settings
@@ -79,16 +84,25 @@ You can see at a glance whether or not your services are currently running. You 
 Application profiles can be adjusted to your needs by editing the file `/opt/swizzin/swizzin/core/custom/profiles.py`. While this file is largely just variable definitions, it is Python, so be aware that indenation is extremely important. Please note, it is imperative that you do not touch the `import` definition at the top of this file.
 
 ### Application Definitions
+
 Most of the application options are self-explanatory, nevertheless, things can get confusing. Here's a list of options you can currently define and their meaning/usage.
 
 `name` - The name of the application
+
 `pretty_name` - A pretty version of the name, meant for printing in html templates
+
 `process` - The name of the process to search for when running `app_status` (default: `name`)
+
 `runas` - The user of the process to search for when running `app_status` (default: `user`)
+
 `scheme` - Use to force HTTP if reverse proxy is disabled (default: current http scheme, usually https)
+
 `baseurl` - The base URL and/or port of the application. If undefined, no sidebar link will be created.
+
 `urloverride` - A complete override of the URL. If true, will supercede a baseurl/scheme definition. Example: `https://plex.example.com` (default: `False`)
+
 `systemd` - The name of the systemd service (default: `name`)
+
 `check_theD` - If `True`, the panel will use `systemctl is-active` rather than searching `ps` when running `app_status` (default: `False`)
 
 ::: note
