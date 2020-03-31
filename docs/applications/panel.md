@@ -26,6 +26,24 @@ If nginx is not installed, you can find the panel at
 
 `http://<hostname.ltd>:8333`
 
+## Configuration options
+
+There should not be much need to alter config options, but a few currently exist. These options should be defined directly in `/opt/swizzin/swizzin/swizzin.cfg`. Please note, all config variables are uppercase:
+
+`ADMIN_USER` - Previously referred to as the "master" user. (Default: User with UID 1000)
+
+`FLASK_HTPASSWD_PATH` - The location of the htpasswd file to protect the panel with. (Default: `/etc/htpasswd`)
+
+`FLASK_SECRET` - Text displayed during auth pop up
+
+`HOST` - IP address to bind to. (Default: `0.0.0.0`)
+
+`PORT` = Bind port. (Default: `8333`)
+
+`SHAREDSERVER` = Defines if this server is a swizzin enterprise server, you will probably never need to set this (Default: `False`)
+
+`DEBUG` - Turn off production mode and turn on the debugger. Prints response times and displays Python errors in the browser instead of causing internal server errors (Default: `False`)
+
 ## Service Management
 
 Despite using a multi-user service name, multi-user for medusa is not enabled by default.
