@@ -14,12 +14,48 @@ By default, the panel is not installed on swizzin installations, you must select
 sudo box install panel
 ```
 
-You must have nginx installed in order to use the panel.
-
 ## How to Access
-The dashboard is available at the web root for the server you've been assigned to:
+
+If nginx is currently installed, the dashboard is available at the web root for your IP/DNS:
 
 `https://<hostname.ltd>`
+
+If nginx is not installed, you can find the panel at
+
+`http://<hostname.ltd>:8333`
+
+## Service Management
+
+Despite using a multi-user service name, multi-user for medusa is not enabled by default.
+
+The systemd service file resides at:
+
+```bash main
+/etc/systemd/system/panel.service
+```
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Start-->
+```bash
+sudo systemctl start panel
+```
+<!--Stop-->
+```bash
+sudo systemctl stop panel
+```
+<!--Restart-->
+```bash
+sudo systemctl restart panel
+```
+<!--Enable-->
+```bash
+sudo systemctl enable panel
+```
+<!--Disable-->
+```bash
+sudo systemctl disable panel
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Features
 
@@ -29,46 +65,100 @@ On the left side of the dashboard, you'll find quick links to the currently inst
 ### Server Statistics
 The dashboard provides metrics for server load, CPU usage, and the current network metrics for upload and download speeds.
 
+### Statistic Graphs
+If you have the `netdata` package installed, you'll see an additional tab in the navbar for Stats.
+
 ### Personal Usage Statistics
 You can find your disk quota here.
 
 ### Service Management
 You can see at a glance whether or not your services are currently running. You can also start and stop services directly from the panel, if you just need to quickly restart a service without SSHing into your slot.
 
-## Adding Custom Links to the Menu
+## Customizing Application Settings
 
-The custom menu file is located at: `/srv/panel/custom/custom.menu.php`
+Application profiles can be adjusted to your needs by editing the file `/opt/swizzin/swizzin/core/custom/profiles.py`. While this file is largely just variable definitions, it is Python, so be aware that indenation is extremely important. Please note, it is imperative that you do not touch the `import` definition at the top of this file.
 
-We're going to use jellyfin as example. 
+### Application Definitions
+Most of the application options are self-explanatory, nevertheless, things can get confusing. Here's a list of options you can currently define and their meaning/usage.
 
-1. Place logo of your application to `/srv/panel/img/brands`. Use the .png extension so the background is transparent. The recommended image size is 128x128 but bigger images will work aswell.
+`name` - The name of the application
+`pretty_name` - A pretty version of the name, meant for printing in html templates
+`process` - The name of the process to search for when running `app_status` (default: `name`)
+`runas` - The user of the process to search for when running `app_status` (default: `user`)
+`scheme` - Use to force HTTP if reverse proxy is disabled (default: current http scheme, usually https)
+`baseurl` - The base URL and/or port of the application. If undefined, no sidebar link will be created.
+`urloverride` - A complete override of the URL. If true, will supercede a baseurl/scheme definition. Example: `https://plex.example.com` (default: `False`)
+`systemd` - The name of the systemd service (default: `name`)
+`check_theD` - If `True`, the panel will use `systemctl is-active` rather than searching `ps` when running `app_status` (default: `False`)
 
-2. Now open `/srv/panel/custom/custom.menu.php` in your favourite text editor:
-
-::: block
-``` bash
-sudo nano /srv/panel/custom/custom.menu.php
+::: note
+There is a very large performance penalty when enabling a service with `check_theD`. The follow response times speak for themselves.
 ```
+#check_theD enabled for 14 services
+"GET /apps/status HTTP/1.1" 200 1163 0.226762
+#check_theD enabled for a single service
+"GET /apps/status HTTP/1.1" 200 1164 0.043281
+#check_theD enabled for no services
+"GET /apps/status HTTP/1.1" 200 1164 0.026525
+```
+Given the results, it is important to remember to use `check_theD` sparingly. As such, it is not enabled by default in any default swizzin profiles.
 :::
 
-3. Go all the way to bottom of file without editing anything and add your custom php/html there. Make sure to replace `https://yourdomain.com/applicationname` with your custom URL and `yourlogo.png` with the filename of the png you added to `/srv/panel/img/brands` in Step 1:
+### Application Definitions with a User
 
-::: block
-``` html
-<li><a class="grayscale" href="https://yourdomain.com/applicationname" target="_blank"><img src="img/brands/yourlogo.png" class="brand-ico"> <span>Application name</span></a></li>
+If for some reason your application requires extra information specific to the user's context, the application's meta profile can be called with the user context.
+
+### Editing an existing application
+
+If you want to edit the variables of already profiled applications, you simply need to make a new class definition while calling the same class as the template.
+
+Let's take an application that many users request to make changes to: Plex. Say my Plex instance isn't at port 32400 for some reason (perhaps I have a custom docker container running). If I wanted my dashboard link to instead use port 31400, I can easily make this change by adding two lines of code to `core/custom/profiles.py`:
+
+```python
+class plex_meta(plex_meta):
+    baseurl = ":31400/web"
 ```
 
-So for our Jellyfin example:
+It's not necessary to add any other already-defined variables unless you wish to change them. This layout will only override the definitions which have been altered by us in the custom profile and use the defaults for everything else. But why stop there? We can also do things like change the "Pretty Name" of Plex displayed on the panel.
 
-``` html
-<li><a class="grayscale" href="https://yoururl.com/jellyfin" target="_blank"><img src="img/brands/jellyfin.png" class="brand-ico"> <span>Jellyfin</span></a></li>
+```python
+class plex_meta(plex_meta):
+    baseurl = ":31400/web"
+    pretty_name = "PLEX MEDIA SERVER"
 ```
-:::
 
-4. Once done, you may need to restart php-fpm to refresh the cache. The php-fpm version will depend on your current OS:
+Now, instead of "Plex" the sidebar link and service status name will be displayed as "PLEX MEDIA SERVER". Why am I yelling? I have no idea.
 
-::: block
-``` bash
-systemctl restart php7.3-fpm
+### Adding a new definition
+
+Another commonly requested task is adding link and service status for applications not managed by swizzin. For instance, some users may have a second instance of Radarr running which they use to manage their 4k libraries. Let's add a new definition -- it won't be based on anything else, so we'll start fresh and define everything we need to make the service show up.
+
+```python
+class radarr4k_meta:
+    name = radarr4k
+    pretty_name = "4K Radarr"
+    baseurl = "/radarr4k"
+    systemd = "radarr4k@"
+    check_theD = True
 ```
-:::
+
+Since we enabled the checking of systemd services for this unit, we should enable it for the regularr Radarr unit as well; otherwise, we won't be able to tell which Radarr is actually running when checking if it is active.
+
+```python
+class radarr_meta(radarr_meta):
+    check_theD = True
+```
+
+In order to tell the panel to check for the new application, simply create a lock file using SSH with the rest of your swizzin applications:
+
+```
+sudo touch /install/.radarr4k.lock
+```
+
+Finally, if you want to add an application icon to the sidebar, simply add a similarly named .png to the `static/img/brands` folder. i.e. `static/img/brands/radarr4k.png`.
+
+Once you're happy with your edits, don't forget to restart the panel:
+
+```
+systemctl restart panel
+```
