@@ -46,8 +46,6 @@ There should not be much need to alter config options, but a few currently exist
 
 ## Service Management
 
-Despite using a multi-user service name, multi-user for medusa is not enabled by default.
-
 The systemd service file resides at:
 
 ```bash main
