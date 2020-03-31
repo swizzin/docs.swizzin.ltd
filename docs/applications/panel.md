@@ -14,6 +14,8 @@ By default, the panel is not installed on swizzin installations, you must select
 sudo box install panel
 ```
 
+Setup will create a virtual python environment (`/opt/swizzin/venv`) and then clone the github repository (`/opt/swizzin/swizzin`)
+
 ## How to Access
 
 If nginx is currently installed, the dashboard is available at the web root for your IP/DNS:
@@ -81,7 +83,7 @@ You can see at a glance whether or not your services are currently running. You 
 
 ## Customizing Application Settings
 
-Application profiles can be adjusted to your needs by editing the file `/opt/swizzin/swizzin/core/custom/profiles.py`. While this file is largely just variable definitions, it is Python, so be aware that indenation is extremely important. Please note, it is imperative that you do not touch the `import` definition at the top of this file.
+Application profiles can be adjusted to your needs by editing the file `/opt/swizzin/swizzin/core/custom/profiles.py`. While this file is largely just variable definitions, it is Python, so be aware that indentation is extremely important. Please note, it is imperative that you do not touch the `import` definition at the top of this file.
 
 ### Application Definitions
 
