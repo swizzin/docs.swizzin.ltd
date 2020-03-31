@@ -36,11 +36,11 @@ There should not be much need to alter config options, but a few currently exist
 
 `FLASK_SECRET` - Text displayed during auth pop up
 
-`HOST` - IP address to bind to. (Default: `0.0.0.0`)
+`HOST` - IP address to bind to (Default: `0.0.0.0`)
 
-`PORT` = Bind port. (Default: `8333`)
+`PORT` - Bind port (Default: `8333`)
 
-`SHAREDSERVER` = Defines if this server is a swizzin enterprise server, you will probably never need to set this (Default: `False`)
+`SHAREDSERVER` - Defines if this server is a swizzin enterprise server, you will probably never need to set this (Default: `False`)
 
 `DEBUG` - Turn off production mode and turn on the debugger. Prints response times and displays Python errors in the browser instead of causing internal server errors (Default: `False`)
 
