@@ -8,7 +8,10 @@ Transmission is a cross-platform Torrent client.
 
 ## Initial Setup
 
-Simply run `box install transmission`
+Simply run this command
+```bash main
+box install transmission
+```
 
 If you are on Ubuntu, you will be offered to use the PPA sources to take updates straight from the transmission team.
 
@@ -24,7 +27,11 @@ The names of the variables correlate to the similar equivalent variables availab
 
 If you'd like to use one of these, run `export option=value` **before** running the install command.
 
-e.g. `export download_dir='torrents/downloads`
+The following is an example of how this would look
+
+```bash main
+export download_dir='torrents/downloads'
+```
 
 For the directory options, the installer will create these automatically (e.g. `mkdir -p /home/${user}/${download_dir}`, etc.)
 
@@ -46,6 +53,33 @@ Please do note that in the event you have nginx installed, some of these setting
   - Default: Next unused port after 51314
 - `rpc_password`
   - Default: User's system password
+
+## Service management
+
+Transmission has a process for each user, and this is how you can manage it
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Start-->
+```bash
+sudo systemctl start transmission@<user>
+```
+<!--Stop-->
+```bash
+sudo systemctl stop transmission@<user>
+```
+<!--Restart-->
+```bash
+sudo systemctl restart transmission@<user>
+```
+<!--Enable-->
+```bash
+sudo systemctl enable transmission@<user>
+```
+<!--Disable-->
+```bash
+sudo systemctl disable transmission@<user>
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## How to use the remote
 Transmission has a desktop remote application available, as well as a couple mobile remote clients for both Android and iOS
