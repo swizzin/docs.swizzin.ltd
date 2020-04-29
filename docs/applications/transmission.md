@@ -14,7 +14,11 @@ If you are on Ubuntu, you will be offered to use the PPA sources to take updates
 
 ### Install options
 
-There are a couple options you can set **before** installing transmission through export.
+None of these are required for you to define if you want an easy install. If you would like to do something custom, then here are some options for you.
+
+**Please note that it is difficult for us to support these options as this is outside of the scope of what swizzin can manage**
+
+There are a couple options you can set **before** installing transmission through export. 
 
 The names of the variables correlate to the similar equivalent variables available here on the Transmission configuration docs page https://github.com/transmission/transmission/wiki/Editing-Configuration-Files
 
