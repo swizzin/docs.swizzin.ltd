@@ -104,6 +104,18 @@ nzbget Password: <your password>
 Add label to torrent: Series (or anything else you desire)
 * label must exist under "Categories" in nzbGet
 ```
+
+<!--Transmission-->
+To retrieve your port, please run `grep rpc-port ~/.config/transmission-daemon/settings.json` when logged in as the user you want to use transmission of (i.e. not root).
+```plaintext
+Host: 127.0.0.1
+Port: <See above, e.g. 9091>
+URL Base: /transmission/ (Should be default)
+Username: <your username>
+Password: <your password>
+Category: <optional, e.g. Sonarr or TV>
+Connect using HTTPS: OFF
+```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Add an indexer with Jackett
