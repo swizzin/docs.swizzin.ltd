@@ -107,7 +107,8 @@ Add label to torrent: Series (or anything else you desire)
 
 <!--Transmission-->
 ```plaintext
-To retrieve your port, please run `grep rpc-port ~/.config/transmission-daemon/settings.json` when logged in as the user you want to use transmission of (i.e. not root).
+To retrieve your port, please run `grep rpc-port ~/.config/transmission-daemon/settings.json`,
+when logged in as the user you want to use transmission of (i.e. not root).
 ----------
 Host: 127.0.0.1
 Port: <See above, e.g. 9091>
