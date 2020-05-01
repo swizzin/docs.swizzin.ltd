@@ -87,7 +87,10 @@ sudo systemctl disable transmission@<user>
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-## How to use the remote
+## Connecting to Transmission Remote
+
+<img src="https://camo.githubusercontent.com/262dda501114cb91dceee1a738b6e3679cf37160/687474703a2f2f692e696d6775722e636f6d2f584262463456682e706e67" alt="Transmission Remote" width="500"/>
+
 Transmission [has a desktop remote application available](https://github.com/transmission-remote-gui/transgui/releases), as well as a couple mobile remote clients for both Android [(1)](https://play.google.com/store/apps/details?id=net.yupol.transmissionremote.app&hl=en) [(2)](https://play.google.com/store/apps/details?id=com.neogb.rtac&hl=en) and [iOS](https://github.com/alcheck/transshift)
 
 To connect to your session, use the following parameters:
