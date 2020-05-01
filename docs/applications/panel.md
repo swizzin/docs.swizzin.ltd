@@ -167,7 +167,7 @@ Another commonly requested task is adding link and service status for applicatio
 
 ```python
 class radarr4k_meta:
-    name = radarr4k
+    name = "radarr4k"
     pretty_name = "4K Radarr"
     baseurl = "/radarr4k"
     systemd = "radarr4k@"
