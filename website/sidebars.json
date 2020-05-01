@@ -46,6 +46,7 @@
       "applications/subsonic",
       "applications/syncthing",
       "applications/tautulli",
+      "applications/transmission"
       "applications/vsftpd",
       "applications/wireguard",
       "applications/x2go",
