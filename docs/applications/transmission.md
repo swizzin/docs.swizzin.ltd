@@ -97,4 +97,5 @@ To connect to your session, use the following parameters:
 - Username: _`your normal username`_
 - Password: _`your normal password`_
 - SSL: **Yes**
-- Validate SSL: **No**
+- Validate SSL: **??**
+  - _(Depends if you have LetsEncrypt or an other non-self-signed SSL solution)_
