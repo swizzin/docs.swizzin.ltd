@@ -16,7 +16,7 @@ First, you must have your own domain or a subdomain already pointed at the IP ad
 
 If you need a domain name, there are plenty of registrars, here are two that I personally use [Namecheap](https://namecheap.com); however, if you already own your domain, you can consider transferring it to [CloudFlare](https://www.cloudflare.com/products/registrar/) to potentially save money.
 
-If you are using the CloudFlare DNS option, you can use the DNS Verification method rather than the webroot verification method -- this method is a bit more resiliant and less prone to future issues than the webroot error as domain verification doesn't take place on your server. If you have a CloudFlare proxy in front of your server (for instance), there can sometimes be issues with renewal which will cause it to fail. The DNS Verification should not fail where the webroot does.
+If you are using the CloudFlare DNS option, you can use the DNS Verification method rather than the web-root verification method -- this method is a bit more resilient and less prone to future issues than the web-root error as domain verification doesn't take place on your server. If you have a CloudFlare proxy in front of your server (for instance), there can sometimes be issues with renewal which will cause it to fail. The DNS Verification should not fail where the web-root does.
 
 If you'd like to use DNS verification for your CloudFlare domain, make sure you grab your API Key from your CloudFlare Profile (`Profile > API Tokens > View Global API Key`).
 
@@ -41,7 +41,7 @@ docs.swizzin.ltd
 
 And press enter. You'll be asked if you want to use this domain for your default site. If you say yes, the `server_name` variable in the default nginx configuration will be updated with the provided domain. If you say no, the script will issue a certificate, but not apply it.
 
-You'll be asked if you want to use CloudFlare. If you choose "No", the installer will continue with the webroot (.well-known) domain verification. If you choose "Yes", you'll be asked for your CloudFlare email and API Key (don't worry, this will never leave your server -- the key is stored in `/root/.acme.sh/account.conf` for future renewals). After entering these details, the issuing will continue.
+You'll be asked if you want to use CloudFlare. If you choose "No", the installer will continue with the web-root (.well-known) domain verification. If you choose "Yes", you'll be asked for your CloudFlare email and API Key (don't worry, this will never leave your server -- the key is stored in `/root/.acme.sh/account.conf` for future renewals). After entering these details, the issuing will continue.
 
 If everything goes well, acme.sh should declare success. If you reload your site, you should now be greeted by a valid SSL certificate, rather than a warning about invalid SSL.
 

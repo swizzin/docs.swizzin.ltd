@@ -4,7 +4,7 @@ title: Jackett
 sidebar_label: Jackett
 ---
 
-API support for your favourite torrent trackers.
+API support for your favorite torrent trackers.
 
 ## Initial Setup
 
@@ -17,11 +17,11 @@ sudo box install jackett
 This command will configure jackett for your user.
 ## How to Access
 
-After installation, you can access the web client at `https://<hostname.ltd>/jackett/`. When prompted for an admin password, simply enter your slot password. This double authentication layer is necessary because your jackett port has been exposed externally -- if you disabled the password authentication, your configuration and tracker information would be publically accessible.
+After installation, you can access the web client at `https://<hostname.ltd>/jackett/`. When prompted for an admin password, simply enter your slot password. This double authentication layer is necessary because your jackett port has been exposed externally -- if you disabled the password authentication, your configuration and tracker information would be publicly accessible.
 
 ## Service Management
 
-Despite using the multiuser format, jackett multi-user is not enabled by default.
+Despite using the multi-user format, jackett multi-user is not enabled by default.
 
 The service for jackett resides at:
 
@@ -80,7 +80,7 @@ Now, click `Copy Torznab Feed`. The link you'll receive will look something like
 https://<yourhost>.ltd/jackett/api/v2.0/indexers/yourtracker/results/torznab/
 ```
 
-We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `9117`, your editted URL would look like this:
+We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `9117`, your edited URL would look like this:
 
 ```plaintext
 http://<yourhost>.ltdltd:9117/jackett/api/v2.0/indexers/yourtracker/results/torznab/

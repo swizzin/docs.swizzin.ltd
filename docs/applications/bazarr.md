@@ -90,7 +90,7 @@ API Key: <radarr API>
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ::: tip Tip
-Forgot your API key or port? No worries, here are oneliners you can submit from SSH:
+Forgot your API key or port? No worries, here are one-liners you can submit from SSH:
 
 Sonarr:
 ```bash

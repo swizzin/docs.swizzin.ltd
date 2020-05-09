@@ -14,7 +14,7 @@ Installing nzbGet is easy. Simply issue the following command from SSH:
 sudo box install nzbget
 ```
 
-This command will configure nzbgGet for your user.
+This command will configure nzbGet for your user.
 
 ## How to Access
 

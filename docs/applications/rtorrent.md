@@ -57,7 +57,7 @@ The systemd script for rTorrent can be found at
 ```bash
 /etc/systemd/system/rtorrent@.service
 ```
-As a multiuser script, you must call it with the username to change the service status for.
+As a multi-user script, you must call it with the username to change the service status for.
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
 ```bash
@@ -104,7 +104,7 @@ This socket lives at:
 
 `/run/<username>/.rtorrent.sock`
 
-If you were inputting this to a program, you need to prepend the unix:// protocol designation, thus your final socket may look something like:
+If you were inputting this to a program, you need to pre-pend the unix:// protocol designation, thus your final socket may look something like:
 
 `unix:///run/liara/.rtorrent.sock`
 
@@ -121,7 +121,7 @@ Password: <your password>
 RPC Mount: /<username> OR /rutorrent/plugins/httprpc/action.php
 ```
 
-Both of the RPC mounts behave exactly the same, though if you're on a mobile connection (i.e. for Transdrone), it may be preferrable to use the ruTorrent plugin version of the mount as it will probably be a bit more friendly to your data usage. The nginx mount point was simply created to provide an easy to remember way to provide access to your rTorrent slot.
+Both of the RPC mounts behave exactly the same, though if you're on a mobile connection (i.e. for Transdrone), it may be preferable to use the ruTorrent plugin version of the mount as it will probably be a bit more friendly to your data usage. The nginx mount point was simply created to provide an easy to remember way to provide access to your rTorrent slot.
 
 ### Transdroid/Transdrone
 

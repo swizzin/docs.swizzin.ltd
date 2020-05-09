@@ -68,16 +68,16 @@ If you've gotten this far, I'll assume you don't need any reminders on how to co
     4. Click `Add`
 4. Connect to the server by clicking `Open`
 5. PuTTY will prompt you for your username and password like a regular SSH session.
-6. Once connected, open your browser and navitage to `http://localhost:8888/web`
+6. Once connected, open your browser and navigate to `http://localhost:8888/web`
 7. The browser will connect to your Plex server and let you know that there is an unclaimed server on your network.
 :::
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ## How to Access
 
-Plex is hardcoded to use port 32400 on each and every installation.
+Plex is hard-coded to use port 32400 on each and every installation.
 
-You can access your plex instance dircetly at `https://yourhostname.ltd:32400/web`
+You can access your plex instance directly at `https://yourhostname.ltd:32400/web`
 
 ## How to keep Plex up-to-date
 

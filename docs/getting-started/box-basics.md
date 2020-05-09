@@ -42,7 +42,7 @@ box help
 ```
 
 ## install
-The function used to install applications from the server. If you need help with specific commands, they are available on the application sub-pages here. You can specifiy as many applications is you like here.
+The function used to install applications from the server. If you need help with specific commands, they are available on the application sub-pages here. You can specify as many applications is you like here.
 
 Syntax:
 ```bash
@@ -50,7 +50,7 @@ box install rtorrent deluge
 ```
 
 ## remove
-The function used to remove applications from the server. If you need help with specific commands, they are available on the application sub-pages here. You can specifiy as many applications is you like here.
+The function used to remove applications from the server. If you need help with specific commands, they are available on the application sub-pages here. You can specify as many applications is you like here.
 
 Syntax:
 ```bash
