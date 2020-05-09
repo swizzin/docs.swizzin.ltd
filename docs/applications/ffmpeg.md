@@ -16,7 +16,7 @@ sudo box install ffmpeg
 
 ## Accessing
 
-ffmpeg is a command line application and can either be called directly from the commandline with `ffmpeg` or can be used with other applications, such as the `Screenshot` plugin for ruTorrent.
+ffmpeg is a command line application and can either be called directly from the command line with `ffmpeg` or can be used with other applications, such as the `Screenshot` plugin for ruTorrent.
 
 ## More information
 

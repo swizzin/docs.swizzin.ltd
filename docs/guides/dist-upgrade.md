@@ -26,10 +26,10 @@ If there was an update to the `linux-image` package, this is the kernel. The onl
 ## Distribution Upgrades
 
 ::: warning DISCLAIMER AND LIMITATION OF LIABILITY
-The steps provided below are meant only to provide you with an outline of the steps required to make a major version change to your operating system (i.e. Debian 9 -> 10). While the steps outlined below will absolutely upgrade your operating sytsem, there are risks involved, for example (but not limited to):
+The steps provided below are meant only to provide you with an outline of the steps required to make a major version change to your operating system (i.e. Debian 9 -> 10). While the steps outlined below will absolutely upgrade your operating system, there are risks involved, for example (but not limited to):
 
 - Package updates causing issues that prevent boot
-- Pacakge updates causing previously installed pacakges in swizzin to fail to start
+- Package updates causing previously installed packages in swizzin to fail to start
 
 Distribution upgrades are ***NOT*** officially supported. If anything breaks, I am not liable for your server or any of the data contained within it. Further, you are not guaranteed to receive any form of support or help to help get your server functional again. This information is provided for educational purposes only. If you choose to follow the steps, be prepared for the possibility that something could go wrong. If your data is important to you, make a backup.
 
@@ -38,20 +38,20 @@ Certain things are known to cause issues -- those issues will be gone over here 
 You have been warned.
 :::
 
-That's a large scary warning, yes. Please think twice about performing the following steps. That said, performing a distrubution upgrade is only slightly more involved than a regular update. The biggest difference is that we need to change our `sources` file to reference the newer version of the OS we'd like to upgrade to.
+That's a large scary warning, yes. Please think twice about performing the following steps. That said, performing a distribution upgrade is only slightly more involved than a regular update. The biggest difference is that we need to change our `sources` file to reference the newer version of the OS we'd like to upgrade to.
 
 The absolute best time to perform an upgrade is **before you install swizzin**; however, it's still possible to do a distribution upgrade after installation, but it may be more tricky. The reason it's easier is that nothing has been installed or configured yet. When everything gets installed for the first time, it'll be installed correctly for the OS and won't need to be (potentially tweaked).
 
 swizzin currently supports 5 distributions:
 
 Debian:
-- Jessie (oldoldstable)
 - Stretch (oldstable)
 - Buster (stable)
 
 Ubuntu:
-- Xenial
-- Bionic
+- Xenial (16.04 LTS)
+- Bionic (18.04 LTS)
+- Focal (20.04 LTS)
 
 If you don't know the OS or version you're running, you can determine it here with the command `lsb_release -a`. Your `codename` will hopefully correspond to a value above. The codename is the release that's in your current apt sources list (`/etc/apt/sources.list`). We will be changing this to the version you'd like to upgrade to.
 
@@ -100,7 +100,7 @@ If you haven't installed swizzin yet, feel free to start the installer now. If y
 
 ### Updating packages after an upgrade
 
-A few things are known to be broken after a `dist-upgrade` and will need to be fixed. Major breakers typically include things like php version upgades and library upgrades (like openssl), which packages (such as rtorrent) are compiled against.
+A few things are known to be broken after a `dist-upgrade` and will need to be fixed. Major breakers typically include things like php version upgrades and library upgrades (like openSSL), which packages (such as rtorrent) are compiled against.
 
 Luckily the major breakers have scripts in place designed to help get you back up and running.
 
@@ -136,6 +136,6 @@ sudo box upgrade deluge
 
 #### Other packages
 
-Distribution upgades haven't been tested rigorously. It's entirely possible other packages may have broken during the upgrade. You'll need to start doing your own troubleshooting here if anything else is broken. You can find out if any of your systemd services are failing to start with `systemctl list-units --failed`. If there are failed units there, you can start debugging with `systemctl status <failed unit>`. However, you're on your own form here.
+Distribution upgrades haven't been tested rigorously. It's entirely possible other packages may have broken during the upgrade. You'll need to start doing your own troubleshooting here if anything else is broken. You can find out if any of your systemd services are failing to start with `systemctl list-units --failed`. If there are failed units there, you can start debugging with `systemctl status <failed unit>`. However, you're on your own form here.
 
 

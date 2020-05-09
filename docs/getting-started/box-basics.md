@@ -42,7 +42,7 @@ box help
 ```
 
 ## install
-The function used to install applications from the server. If you need help with specific commands, they are available on the application sub-pages here. You can specifiy as many applications is you like here.
+The function used to install applications from the server. If you need help with specific commands, they are available on the application sub-pages here. You can specify as many applications is you like here.
 
 Syntax:
 ```bash
@@ -50,7 +50,7 @@ box install rtorrent deluge
 ```
 
 ## remove
-The function used to remove applications from the server. If you need help with specific commands, they are available on the application sub-pages here. You can specifiy as many applications is you like here.
+The function used to remove applications from the server. If you need help with specific commands, they are available on the application sub-pages here. You can specify as many applications is you like here.
 
 Syntax:
 ```bash
@@ -78,7 +78,7 @@ The function used to add a secondary user to your server. Please note, only the 
 
 Syntax:
 ```bash
-box adduser faithfulfriend
+box adduser faithfulFriend
 ```
 
 ## deluser
@@ -86,7 +86,7 @@ The function used to remove a user from your server. All of the user's data will
 
 Syntax:
 ```bash
-box deluser exgirlfriend
+box deluser exGirlfriend
 ```
 
 ## chpasswd
@@ -94,7 +94,7 @@ Use this command when you'd like to change your password. `chpasswd` will change
 
 Syntax:
 ```bash
-box chpasswd forgetfulfriend
+box chpasswd forgetfulFriend
 ```
 
 ## panel fix-disk

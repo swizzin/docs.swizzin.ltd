@@ -16,15 +16,15 @@ sudo box install deluge
 
 This command will configure Deluge and the associated web interface "Deluge-Web" for use with your user.
 
-After installation, if there will be two 2 new packages installed: libtorrent, and deluge-common. Due to potential packaging conflicts with your distribution's repository, the package `deluge-common` has been held by apt and will not be marked for upgrade. You may see apt issue a warning regarding the held `deluge-common` package. This is completely normal and it means the apt mark is working as expected. The package name for `libtorrent` does not intefere with any apt packages and should not issue any upgrade warnings.
+After installation, if there will be two 2 new packages installed: libtorrent, and deluge-common. Due to potential packaging conflicts with your distribution's repository, the package `deluge-common` has been held by apt and will not be marked for upgrade. You may see apt issue a warning regarding the held `deluge-common` package. This is completely normal and it means the apt mark is working as expected. The package name for `libtorrent` does not interfere with any apt packages and should not issue any upgrade warnings.
 
 ### Install Options
 
 When installing Deluge, depending on your operating system, you'll have a couple choices available to you:
 
 #### Deluge Version
-- **Repo**: performs an `apt-get install deluged deluge-console deluge-web` and pulls whatever is available from your operating sytsem's repository. To check versions, you can use the [Debian Package Tracker](https://www.debian.org/distrib/packages) or the [Ubuntu Package Tracker](https://packages.ubuntu.com/).
-- **Deluge 1.3.15**: pulls the current head of the `1.3-stable` branch from Deluge and uses `fpm` to pacakge it as a .deb for easy installation and removal with `dpkg`.
+- **Repo**: performs an `apt-get install deluged deluge-console deluge-web` and pulls whatever is available from your operating system's repository. To check versions, you can use the [Debian Package Tracker](https://www.debian.org/distrib/packages) or the [Ubuntu Package Tracker](https://packages.ubuntu.com/).
+- **Deluge 1.3.15**: pulls the current head of the `1.3-stable` branch from Deluge and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
 - **Deluge 2**: pulls the current head of the `master` branch from Deluge and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
   - Deluge 2 is not supported on installations using Debian Jessie due to severely outdated Python3 dependencies.
 
@@ -104,7 +104,7 @@ sudo pacman -S deluge
 
 Now that Deluge is installed on your machine, you need to configure it to connect to your slot.
 
-First, we must prevent Deluge from starting in "Classic" mode. To do this, open Deluge. In the menu, go to `Preferences > Interface` and untick the box which states "Classic Mode".
+First, we must prevent Deluge from starting in "Classic" mode. To do this, open Deluge. In the menu, go to `Preferences > Interface` and un-tick the box which states "Classic Mode".
 
 Deluge will prompt you to restart. Click "Ok" and re-open Deluge.
 
@@ -133,7 +133,7 @@ The web UI is significantly easier to access, which is why many prefer it. You c
 If you are not currently logged in, you will first receive a basic authentication dialog from the webserver. Once authenticated, you'll receive a dialog box from Deluge-Web. This password is the same as the one you just entered.
 
 ::: note
-This second password authetication layer cannot be fully removed due to restrictions in Deluge. However, you can increase the length of time that the cookie is stored locally by your browser to one year (from one hour):
+This second password authentication layer cannot be fully removed due to restrictions in Deluge. However, you can increase the length of time that the cookie is stored locally by your browser to one year (from one hour):
 ```bash
 sudo systemctl stop deluge-web@<username>
 sed -i 's/"session_timeout": 3600,/"session_timeout": 31536000,/g' ~/.config/deluge/web.conf
