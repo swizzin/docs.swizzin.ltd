@@ -78,7 +78,7 @@ The function used to add a secondary user to your server. Please note, only the 
 
 Syntax:
 ```bash
-box adduser faithfulFriend
+box adduser faithfulfriend
 ```
 
 ## deluser
@@ -86,7 +86,7 @@ The function used to remove a user from your server. All of the user's data will
 
 Syntax:
 ```bash
-box deluser exGirlfriend
+box deluser exgirlfriend
 ```
 
 ## chpasswd
@@ -94,7 +94,7 @@ Use this command when you'd like to change your password. `chpasswd` will change
 
 Syntax:
 ```bash
-box chpasswd forgetfulFriend
+box chpasswd forgetfulfriend
 ```
 
 ## panel fix-disk
