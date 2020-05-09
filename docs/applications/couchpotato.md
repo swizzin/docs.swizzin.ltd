@@ -34,7 +34,7 @@ The systemd service for couchpotato resides here:
 /etc/systemd/system/couchpotato@.service
 ```
 
-As the service utilizes the mutli-user format, you must specify a username along with the command.
+As the service utilizes the multi-user format, you must specify a username along with the command.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->

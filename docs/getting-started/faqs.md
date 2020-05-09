@@ -6,7 +6,7 @@ sidebar_label: Frequently Asked Questions
 
 ## I just installed swizzin and the dashboard shows that it's using all my RAM. WTF?!
 
-The panel reports three statisitics related to memory consumption: `real`, `cache` and `physical`.
+The panel reports three statistics related to memory consumption: `real`, `cache` and `physical`.
 
 `real` memory usage is considered RAM that cannot be used by other processes, as it has been reserved by the current process.
 
@@ -18,11 +18,11 @@ It's likely that your freshly installed machine simply has a high `cache` usage 
 
 ## I literally just installed my machine and the dashboard says swizzin is using XXXGB. WHY?! That's simply absurd.
 
-swizzin hasn't used the space, don't worry. By deault, when using the ext4 partition format, the disk reserves 5% of the space in the partition for the potential scenario whereby the disk runs out of space. If this happens, and your whole server is formatted under a root partition scheme (i.e. no separate /home directory), your server will still have some space reserved to perform essential tasks such as (but not limited to): system updates, logging and various other things, such as bash auto(tab)-completion (crazy, right?).
+swizzin hasn't used the space, don't worry. By default, when using the ext4 partition format, the disk reserves 5% of the space in the partition for the potential scenario whereby the disk runs out of space. If this happens, and your whole server is formatted under a root partition scheme (i.e. no separate /home directory), your server will still have some space reserved to perform essential tasks such as (but not limited to): system updates, logging and various other things, such as bash auto(tab)-completion (crazy, right?).
 
 Since the reservation is percentage based, the larger your partition, the higher the reserved space.
 
-You can remove the reserved space on the partiont `sda3` with the following command:
+You can remove the reserved space on the partition `sda3` with the following command:
 
 ```bash
 sudo tune2fs -m 0 /dev/sda3

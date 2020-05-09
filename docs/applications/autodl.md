@@ -33,7 +33,7 @@ The systemd script for irssi (the main client for the autodl plugin) can be foun
 ```bash main
 /etc/systemd/system/irssi@.service
 ```
-As a multiuser script, you must call it with the username to change the service status for.
+As a multi-user script, you must call it with the username to change the service status for.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->

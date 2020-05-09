@@ -29,7 +29,7 @@ sudo apt -y upgrade
 
 ## How to Access
 
-After installation, Ombi will be availabe at the following web address: `https://<hostname.ltd>/ombi`
+After installation, Ombi will be available at the following web address: `https://<hostname.ltd>/ombi`
 
 ## Service Management
 
