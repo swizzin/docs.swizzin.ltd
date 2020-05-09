@@ -55,6 +55,9 @@
     ],
     "Guides": [
       "guides/dist-upgrade"
+    ],
+    "Helper Scripts":[
+      "scripts/setquota",
     ]
   }
 }
