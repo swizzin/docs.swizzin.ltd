@@ -144,10 +144,10 @@ Please consult the manpage or `--help` page of the application you are about to 
 Issues in this area usually stem from not setting up port-forwarding correctly on your router, or not setting a static IP right.
 
 ### Resources for setting static IP on Debian/Ubuntu
-- https://www.cyberciti.biz/faq/linux-configure-a-static-ip-address-tutorial/
+- [Configuring static addresses on Debian/Ubuntu](https://www.cyberciti.biz/faq/linux-configure-a-static-ip-address-tutorial/)
 
 ### Resources for setting a static IP on your router
-- https://www.howtogeek.com/184310/ask-htg-should-i-be-setting-static-ip-addresses-on-my-router/
+- [Ensuring your router will hand out he right IP to your system](https://www.howtogeek.com/184310/ask-htg-should-i-be-setting-static-ip-addresses-on-my-router/)
 
 ### Resources for port-forwarding on router's
 - [Guides for forwarding ports on multiple routers](https://portforward.com/router.htm)
