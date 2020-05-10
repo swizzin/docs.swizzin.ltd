@@ -10,8 +10,8 @@ For each specific application, it is always a good idea to first refer to the re
 
 If you ran all the relevant steps mentioned below and still cannot identify your issue, feel free to visit our [Discord](https://discord.gg/2esbu2N) and ask for help there! We're always happy to help with anything we are able to.
 
-## Something failed during the installation
-Swizzin stores its logs into the `/root/logs` directories. The installer installs into `install.log`, and any other command you run with `box` will end up in `swizzin.log`. You can access the logs by running the following command:
+## Accessing swizzin/`box` logs
+Swizzin stores its logs into the `/root/logs` directories. The installer installs into `install.log`, and any other command you run with `box` will end up in `swizzin.log`. You can access the logs by running the following commands.
 
 ```bash
 # To check the logs of the Swizzin installer
@@ -30,7 +30,7 @@ First ensure that your machine is accessible and connecting correctly by running
 ping <domain/IP>
 ```
 
-You can check if your domain is resolving correctly by checking the output of the following command
+You can check if your domain is resolving correctly by checking the output of the following command.
 
 ```bash
 dig <domain>
@@ -49,7 +49,7 @@ _Pro-tip: You can quickly kill an unresponsive SSH session by hitting `ENTER ~ .
 
 ## Sharing logs
 
-You can always share large logs using termbin straight from your terminal. Below is an example for sharing the content of your syslog
+You can always share large logs using termbin straight from your terminal. Below is an example for sharing the content of your syslog.
 
 ```bash
 cat /var/log/syslog | nc <an instance of fiche> 9999
@@ -83,13 +83,13 @@ sudo journalctl -xe
 ```
 You can use your arrow keys o navigate up down left and right. Please consult the manpage of `less` for more handy features like search and others.
 
-You can also open the last `syslog` file which often has useful information. You can do that by running 
+You can also open the last `syslog` file which often has useful information. You can do that by running the following command.
 ```bash
 sudo less +G /var/log/syslog
 ```
+You can always filter the output of the `less` command by typing `&`, followed by your filter pattern.
 
 There are many other log files available under the `/var/log` directory which are often a very large trove of information. Please see if any of the other log files might have any relevant information 
-
 
 ## Checking NGINX configuration
 
@@ -119,7 +119,6 @@ You can quickly upload your nginx configuration to a pastebin by running the fol
 nginx -T | nc <an instance of fiche> 9999
 ```
 
-
 ## Troubleshooting applications which services' won't start
 
 You can always attempt to run an application in the foreground of the terminal instead of in the background as a service.
@@ -131,8 +130,7 @@ A good start to do that would be to inspect the output of the following command,
 ```bash
 sudo systemctl cat <application>
 ```
-
-In the example of transmission, you can see the following output.
+The command above will produce output like the one under. This is an example output of `sudo systemctl cat transmission@`.
 
 ```systemd
 # /etc/systemd/system/transmission@.service
@@ -181,7 +179,7 @@ You might additionally forward/open the ports for your torrent clients, FTP or o
 Consider using a Dynamic DNS (DDNS) provider for your home IP to gain a free domain that can be used for something such as letsencrypt.
 
 ## Staring from scratch
-We generally advise against this scenario as you lose the opportunity to learn from the mistakes that happened somewhere along the line. This knowledge can help you save time and restore the functionality of the system in case it goes ver awry. Please attempt the steps above first before nuking the system
+We generally advise against this scenario as you lose the opportunity to learn from the mistakes that happened somewhere along the line. This knowledge can help you save time and restore the functionality of the system in case it goes ver awry. Please attempt the steps above first before nuking the system.
 
 There is currently no convenient way to uninstall the entire swizzin suite and return all files and settings to their byte-for-byte original state.
 
@@ -201,3 +199,5 @@ You can also attempt to remove swizzin by removing every app you have installed,
 - Any file under `/root/` which ends in `.info`
 
 If you would truly prefer to like to star from scratch, it is best to completely reformat and re-install your OS this will allow you to determine whether the issues you were facing were inside or outside the operating system much faster.
+
+If you are re-installing your OS, we recommend to use the latest LTS version of the distribution of your choice.
