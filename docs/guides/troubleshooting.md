@@ -10,6 +10,18 @@ For each specific application, it is always a good idea to refer to the relevant
 
 If you ran all the relevant steps mentioned below and still cannot identify your issue, feel free to visit our [Discord](https://discord.gg/2esbu2N) and ask for help there! We're always happy to help with any 
 
+## Something failed during the installation
+Swizzin stores its logs into the `/root/logs` directories. The installer installs into `install.log`, and any other command you run with `box` will end up in `swizzin.log`. You can access the logs by running the following command
+
+```bash
+# To check the logs of the Swizzin installer
+sudo less +G /root/logs/install.log
+# To check the logs of any application manipulation through box
+sudo less +G /root/logs/swizzin.log
+```
+
+Please consult these logs for any errors or other bad-sounding messages before continuing.
+
 ## Server is not responding
 
 First ensure that your machine is accessible and connecting correctly by running the following command.
@@ -34,6 +46,15 @@ sudo systemctl status <application>
 ```
 
 Please refer to your application's docs page to see if there are any deviations to this, such as per-user configuration.
+
+## Identifying failed services
+You can quickly get an overview of which services have had a problem and are currently nor running by executing the following command.
+
+```bash
+sudo systemctl list-units --failed
+```
+
+You can then use the other chapters in this document to further find what has gone wrong.
 
 ## Checking the system logs
 
