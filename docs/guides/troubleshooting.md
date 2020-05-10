@@ -193,6 +193,8 @@ You can also attempt to remove swizzin by removing every app you have installed,
 - `/usr/local/bin/swizzin`
 - `/install/`
 - `/root/logs/`
+- `/etc/htpasswd`
+- `/etc/htpasswd.d`
 - Any file under `/root/` which ends in `.info`
 
 Remember to also remove any additional users you created.
