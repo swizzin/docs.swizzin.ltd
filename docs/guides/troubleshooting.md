@@ -176,7 +176,7 @@ Issues in this area usually stem from not setting up port-forwarding correctly o
 - 80 (HTTP)
 - 443 (HTTPS)
 
-You might additionally forward your ports for your torrent client, FTP or other applications. The steps are he same.
+You might additionally forward/open the ports for your torrent clients, FTP or other applications. The steps are the same.
 
 Consider using a Dynamic DNS (DDNS) provider for your home IP to gain a free domain that can be used for something such as letsencrypt.
 
