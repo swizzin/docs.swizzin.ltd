@@ -187,6 +187,8 @@ There is currently no convenient way to uninstall the entire swizzin suite and r
 
 If you are having problems with a specific application, we advise to re-install that application first, and if necessary the underlying dependencies (these could be `nginx`, `rtorrent`, or others depending on the application).
 
+Remember to also remove any additional users you created.
+
 You can also attempt to remove swizzin by removing every app you have installed, and then removing the following files and directories recursively.
 
 - `/etc/swizzin`
@@ -197,7 +199,5 @@ You can also attempt to remove swizzin by removing every app you have installed,
 - `/etc/htpasswd.d`
 - `/etc/sudoers.d`
 - Any file under `/root/` which ends in `.info`
-
-Remember to also remove any additional users you created.
 
 If you would truly prefer to like to star from scratch, it is best to completely reformat and re-install your OS this will allow you to determine whether the issues you were facing were inside or outside the operating system much faster.
