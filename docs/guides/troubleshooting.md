@@ -1,0 +1,132 @@
+---
+id: troubleshooting
+title: Troubleshooting 101
+sidebar_label: Troubleshooting
+---
+
+This page servers as a starting point for self-assessing common problems that you might encounter.
+
+For each specific application, it is always a good idea to refer to the relevant documentation.
+
+If you ran all the relevant steps mentioned below and still cannot identify your issue, feel free to visit our [Discord](https://discord.gg/2esbu2N) and ask for help there! We're always happy to help with any 
+
+## Server is not responding
+
+First ensure that your machine is accessible and connecting correctly by running the following command.
+
+```bash
+ping <domain/IP>
+```
+
+You can check if your domain is resolving correctly by checking the output of the following command
+
+```bash
+dig <domain>
+```
+
+## Checking if an application is running
+
+Most applications installed through swizzin have a `systemd` unit available. This allows you to control the applications as services through the `systemctl` interface.
+
+You can always check the current status of an app by running the command under. This will return the whether the application is Active or not, and some of the latest log messages coming from it. It is always a good idea to read those.
+```bash
+sudo systemctl status <application>
+```
+
+Please refer to your application's docs page to see if there are any deviations to this, such as per-user configuration.
+
+## Checking the system logs
+
+You can always check the logs of the system as a whole by running the following command.
+```bash
+sudo journalctl -xe
+```
+You can use your arrow keys o navigate up down left and right. Please consult the manpage of `less` for more handy features like search and others.
+
+You can also open the last `syslog` file which often has useful information. You can do that by running 
+```bash
+sudo less +G /var/log/syslog
+```
+
+There are many other log files available under the `/var/log` directory which are often a very large trove of information. Please see if any of the other log files might have any relevant information 
+
+
+## Checking NGINX configuration
+
+NGinx is the application which connects your browser to the right swizzin application.
+
+If you cannot connect to a single application, please consider running the following commands to gather where your issues are stemming from
+
+```bash
+# To check if the syntax of your config is valid
+sudo nginx -t
+# To print the entire config for sharing
+sudo nginx -T
+```
+
+If any changes have been done recently, you can always trigger a reload of the nginx configuration by running the following command
+```bash
+sudo nginx -s reload
+# or alternatively
+sudo systemctl reload nginx
+```
+
+## Troubleshooting applications which services' won't start
+
+You can always attempt to run an application in the foreground of the terminal instead of in the background as a service.
+
+To do that, you need to figure out which environment to run it from, and which command to execute.
+
+A good start to do that would be to inspect the output of the following command, which can give you an idea of what the service attempts to do.
+
+```bash
+sudo systemctl cat <application>
+```
+
+In the example of transmission, you can see the following output.
+
+```systemd
+# /etc/systemd/system/transmission@.service
+[Unit]
+Description=Transmission BitTorrent Daemon
+After=network.target
+
+[Service]
+User=%i
+Group=%i
+Type=simple
+ExecStart=/usr/bin/transmission-daemon -f --log-error
+ExecReload=/bin/kill -s HUP 
+
+[Install]
+WantedBy=multi-user.target
+```
+
+This means that the service logs in as user `%i` (which means "the string passed after the `@` in `transmission@user`", therefore the user) and then executes the command `/usr/bin/transmission-daemon -f --log-error` on start.
+
+You can therefore switch your user (by running `sudo su <user>`) and execute the same command. This will print the log of the application into your terminal, allowing you to better see when and how a service fails.
+
+Please consult the manpage or `--help` page of the application you are about to run before you do it, to understand what some of the options might mean.
+
+## Accessing a home-hosted swizzin installation externally
+Issues in this area usually stem from not setting up port-forwarding correctly on your router, or not setting a static IP right.
+
+### Resources for setting static IP on Debian/Ubuntu
+- https://www.cyberciti.biz/faq/linux-configure-a-static-ip-address-tutorial/
+
+### Resources for setting a static IP on your router
+- https://www.howtogeek.com/184310/ask-htg-should-i-be-setting-static-ip-addresses-on-my-router/
+
+### Resources for port-forwarding on router's
+- [Guides for forwarding ports on multiple routers](https://portforward.com/router.htm)
+- [Generic port forwarding guide](https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/)
+- [Tool to check if ports are open](http://www.portchecktool.com/)
+
+**Please ensure to forward the following ports:**
+- 22 (Or your custom SSH/SFTP port)
+- 80 (HTTP)
+- 443 (HTTPS)
+
+You might additionally forward your ports for your torrent client, FTP or other applications. The steps are he same.
+
+Consider using a Dynamic DNS (DDNS) provider for your home IP to gain a free domain that can be used for something such as letsencrypt.

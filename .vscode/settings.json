@@ -20,6 +20,7 @@
         "httprpc",
         "irssi",
         "jackett",
+        "journalctl",
         "letsencrypt",
         "liara",
         "libboost",
@@ -58,6 +59,7 @@
         "stak",
         "swizzin",
         "syncthing",
+        "syslog",
         "systemctl",
         "systemd",
         "tautulli",
@@ -77,6 +79,7 @@
         "zypper"
     ],
     "cSpell.ignoreWords": [
+        "ddns",
         "exgirlfriend",
         "faithfulfriend",
         "forgetfulfriend",
