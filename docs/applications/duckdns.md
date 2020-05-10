@@ -4,12 +4,12 @@ title: Duck DNS
 sidebar_label: Duck DNS
 ---
 
-A simple setup for your own free Dynamic DNS domain, ideal for (but not limited to) setups hosted at home.
+A simple setup for your own _free_ Dynamic DNS domain, ideal for (but not limited to) setups hosted at home.
 
-This will allow you to access your server remotely without having to remember the possibly ever-changing IP, and use a domain name instead.
+This will allow you to access your server remotely through a domain, rather than having to remember the dynamically changing IP
 
 ## Registering at Duck DNS
-It is required to register with Duck DNS first in order to be able to use their service. The registration is free, and is done through GitHub, Reddit, Google or other SSO providers.
+It is required to register with [Duck DNS](https://duckdns.org) first in order to be able to use their service. 
 
 After logging in, please create your first Duck DNS domain. There is a limit of 5 domains per account.
 
@@ -23,9 +23,14 @@ sudo box install duckdns
 
 During the installation you will be asked for your **Duck DNS domain**, and your **Duck DNS token**. You can find both of these on your profile page after logging in.
 
+<img src="https://i.imgur.com/lXN6o5I.png" alt="Duck DNS Token and domain registration" width="600"/>
+
 Your full domain is the "`domain`" in the image below, plus "`.duckdns.org`". Therefore, in the example below, the full domain would mean `test003.duckdns.org`
 
-<img src="https://i.imgur.com/lXN6o5I.png" alt="Duck DNS Token and domain registration" width="600"/>
+## Further steps
+Assuming you are using a home setup, we suggest you to set up static IPs on both your machine and your router, and then setting up the port forwarding. A great resource for this is https://portforward.com
+
+If you intend to use any applications facilitated by [nginx](/applications/nginx) (You probably do...), we **highly** suggest you to install [letsencrypt](/applications/letsencrypt) through box. This will give you a valid SSL certificate as well as set your nginx configuration to use the new domain name.
 
 ## Environment variables
 
@@ -53,4 +58,4 @@ Please remove duckdns with box and install it again. This will double-check that
 sudo box remove duckdns
 ```
 
-However we won't stop you from editing the full script in `/opt/duckdns/duck.sh` and changing the values there.
+However, we won't stop you from editing the full script in `/opt/duckdns/duck.sh` and changing the values there, just make sure to get a new letsencrypt cert if you had one before.
