@@ -47,6 +47,14 @@ You can add the amount of `v`s to increase the level of verbosity.
 
 _Pro-tip: You can quickly kill an unresponsive SSH session by hitting `ENTER ~ .` in that order._
 
+## Sharing logs
+
+You can always share large logs using termbin straight from your terminal. Below is an example for sharing the content of your syslog
+
+```bash
+cat /var/log/syslog | nc <an instance of fiche> 9999
+``` 
+
 ## Checking if an application is running
 
 Most applications installed through swizzin have a `systemd` unit available. This allows you to control the applications as services through the `systemctl` interface.
@@ -102,6 +110,15 @@ sudo nginx -s reload
 # or alternatively
 sudo systemctl reload nginx
 ```
+
+### Sharing your nginx configuration
+
+You can quickly upload your nginx configuration to a pastebin by running the following command as root
+
+```bash
+nginx -T | nc <an instance of fiche> 9999
+```
+
 
 ## Troubleshooting applications which services' won't start
 
