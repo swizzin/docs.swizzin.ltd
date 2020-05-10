@@ -164,10 +164,20 @@ You might additionally forward your ports for your torrent client, FTP or other 
 Consider using a Dynamic DNS (DDNS) provider for your home IP to gain a free domain that can be used for something such as letsencrypt.
 
 ## Staring from scratch
-We generally advise against this scenario as you lose the opportunity to learn from the mistakes that happened somewhere along the line, which will ultimately help you become a better human being.
+We generally advise against this scenario as you lose the opportunity to learn from the mistakes that happened somewhere along the line. This knowledge can help you save time and restore the functionality of the system in case it goes ver awry. Please attempt the steps above first before nuking the system
 
-Please attempt the steps above first.
+There is currently no convenient way to uninstall the entire swizzin suite and return all files and settings to their byte-for-byte original state.
 
 If you are having problems with a specific application, we advise to re-install that application first, and if necessary the underlying dependencies (these could be `nginx`, `rtorrent`, or others depending on the application).
 
-If you would truly prefer to like to star from scratch, it is best to completely reformat and re-install your OS, as this will allow you o determine whether the issues you were facing were inside or outside the operating system much faster. There is also currently no convenient way to uninstall the entire swizzin suite and return all files and settings to their byte-for-byte original state.
+You can also attempt to remove swizzin by removing every app you have installed, and then removing the following files and directories recursively.
+
+- `/etc/swizzin`
+- `/usr/local/bin/swizzin`
+- `/install/`
+- `/root/logs/`
+- Any file under `/root/` which ends in `.info`
+
+Remember to also remove any additional users you created.
+
+If you would truly prefer to like to star from scratch, it is best to completely reformat and re-install your OS this will allow you to determine whether the issues you were facing were inside or outside the operating system much faster.
