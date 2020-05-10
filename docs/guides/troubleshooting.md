@@ -6,12 +6,12 @@ sidebar_label: Troubleshooting
 
 This page servers as a starting point for self-assessing common problems that you might encounter.
 
-For each specific application, it is always a good idea to refer to the relevant documentation.
+For each specific application, it is always a good idea to first refer to the relevant documentation.
 
-If you ran all the relevant steps mentioned below and still cannot identify your issue, feel free to visit our [Discord](https://discord.gg/2esbu2N) and ask for help there! We're always happy to help with any 
+If you ran all the relevant steps mentioned below and still cannot identify your issue, feel free to visit our [Discord](https://discord.gg/2esbu2N) and ask for help there! We're always happy to help with anything we are able to.
 
 ## Something failed during the installation
-Swizzin stores its logs into the `/root/logs` directories. The installer installs into `install.log`, and any other command you run with `box` will end up in `swizzin.log`. You can access the logs by running the following command
+Swizzin stores its logs into the `/root/logs` directories. The installer installs into `install.log`, and any other command you run with `box` will end up in `swizzin.log`. You can access the logs by running the following command:
 
 ```bash
 # To check the logs of the Swizzin installer
@@ -35,6 +35,17 @@ You can check if your domain is resolving correctly by checking the output of th
 ```bash
 dig <domain>
 ```
+
+If your machine is not accessible, see if it is online, and the networking is set up correctly.
+
+## Troubleshooting failed SSH
+You can always determine what is causing your SSH connectivity issues by running the following command.
+```bash
+ssh -v <destination>
+```
+You can add the amount of `v`s to increase the level of verbosity.
+
+_Pro-tip: You can quickly kill an unresponsive SSH session by hitting `ENTER ~ .` in that order._
 
 ## Checking if an application is running
 
@@ -151,3 +162,12 @@ Issues in this area usually stem from not setting up port-forwarding correctly o
 You might additionally forward your ports for your torrent client, FTP or other applications. The steps are he same.
 
 Consider using a Dynamic DNS (DDNS) provider for your home IP to gain a free domain that can be used for something such as letsencrypt.
+
+## Staring from scratch
+We generally advise against this scenario as you lose the opportunity to learn from the mistakes that happened somewhere along the line, which will ultimately help you become a better human being.
+
+Please attempt the steps above first.
+
+If you are having problems with a specific application, we advise to re-install that application first, and if necessary the underlying dependencies (these could be `nginx`, `rtorrent`, or others depending on the application).
+
+If you would truly prefer to like to star from scratch, it is best to completely reformat and re-install your OS, as this will allow you o determine whether the issues you were facing were inside or outside the operating system much faster. There is also currently no convenient way to uninstall the entire swizzin suite and return all files and settings to their byte-for-byte original state.
