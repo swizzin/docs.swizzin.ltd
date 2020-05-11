@@ -160,3 +160,9 @@ You might want to look into troubleshooting your NGINX+PHP setup in this case.
 
 Please consult the [Troubleshooting guide](/guides/troubleshooting) further.
 
+### My disk is full?
+Are you seeing this error?
+
+![Rutorrent disk full error](https://i.imgur.com/NABrtlz.png)
+
+Please fix your [`quota` installation](/applications/quota).
