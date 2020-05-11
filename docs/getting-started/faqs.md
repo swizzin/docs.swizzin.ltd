@@ -48,3 +48,10 @@ If you just installed every package just because and you don't actually need quo
 
 Please see the chapter above.
 
+## ... Docker?
+
+No.
+
+You cannot run Swizzin in a docker. The way docker works does not mix well with the amount of different resources swizzin relies on that are present in a standard Debian/Ubuntu Installation.
+
+Swizzin installs all applications in their non-containerized, bare-metal form. This for performance and maintainability reasons. 
