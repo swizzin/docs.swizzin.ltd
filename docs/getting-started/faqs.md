@@ -45,5 +45,13 @@ Did you install the `quota` package? You need to use the command `setquota` to d
 If you just installed every package just because and you don't actually need quotas, feel free to remove the package with `box remove quota`
 
 
-## Application XYZ is not running! What do I do?
+## Application XYZ is not running! Everything is broken! What do I do?
 Please consult the [Troubleshooting](/guides/troubleshooting) guide for more information.
+
+## ... Docker?
+
+No.
+
+You cannot run Swizzin in a docker. The way docker works does not mix well with the amount of different resources swizzin relies on that are present in a standard Debian/Ubuntu Installation.
+
+Swizzin installs all applications in their non-containerized, bare-metal form. This for performance and maintainability reasons. 
