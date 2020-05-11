@@ -158,5 +158,5 @@ Half the time time, the issue stems from either an invalid configuration in the 
 
 You might want to look into troubleshooting your NGINX+PHP setup in this case.
 
-Please consult the [Troubleshooting guide](/guides/troubleshooing) further.
+Please consult the [Troubleshooting guide](/guides/troubleshooting) further.
 
