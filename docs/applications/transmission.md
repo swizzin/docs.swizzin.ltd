@@ -102,3 +102,11 @@ To connect to your session, use the following parameters:
 - SSL: **Yes**
 - Validate SSL: **??**
   - _(Depends if you have LetsEncrypt or an other non-self-signed SSL solution)_
+
+## Troubleshooting
+
+### My speeds to private trackers are slow
+Please ensure that your peer ports are open. If you're not sure, change it to a different port and restart Transmission.
+
+### It won't start
+Please try running `transmission-daemon` in your terminal with the correct flags to keep it in the foreground, and watch what the output says. 

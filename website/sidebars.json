@@ -54,7 +54,8 @@
             "applications/znc"
         ],
         "Guides": [
-            "guides/dist-upgrade"
+            "guides/dist-upgrade",
+            "guides/troubleshooting"
         ],
         "Helper Scripts": [
             "scripts/setquota"

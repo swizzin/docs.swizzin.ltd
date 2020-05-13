@@ -48,6 +48,9 @@ If you just installed every package just because and you don't actually need quo
 
 Please see the chapter above.
 
+## Application XYZ is not running! Everything is broken! What do I do?
+Please consult the [Troubleshooting](/guides/troubleshooting) guide for more information.
+
 ## ... Docker?
 
 No.
