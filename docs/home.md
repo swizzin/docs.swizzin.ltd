@@ -62,4 +62,6 @@ When you have finished running through the prompts, installation will start. The
 
 ## Additional Help
 
-If you're having troubles with any of the items in the documentation you can either join us in [Discord](https://discord.gg/2esbu2N). If you have found a bug or are having an issue, please open an issue on GitHub.
+If you're having troubles with any of the items in the documentation, please first consult the [Troubleshooting](/guides/troubleshooting) guide. If that is not enough for you, join us in [Discord](https://discord.gg/2esbu2N) and we will attempt to help you to our best ability.
+
+If you have found a bug or are having an issue, please open an [issue on GitHub](https://github.com/liaralabs/swizzin/issues/new/choose).
