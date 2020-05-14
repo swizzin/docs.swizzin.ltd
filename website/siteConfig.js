@@ -23,7 +23,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'swizzin-ce', // Title for your website.
+  title: 'swizzin community edition docs', // Title for your website.
   tagline: 'Documentation for the swizzin github project',
   url: 'https://docs.swizzin.ltd', // Your website URL
   baseUrl: '/', // Base URL for your project */
