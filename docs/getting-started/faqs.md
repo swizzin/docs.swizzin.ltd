@@ -36,11 +36,25 @@ sudo tune2fs -m 1 /dev/sda3
 
 Will reserve 1% instead.
 
-It's unlikely that the partiton on *your* server is sda3, so you'll need to use the command `lsblk` to determine which partition exactly to modify.
+It's unlikely that the partition on *your* server is sda3, so you'll need to use the command `lsblk` to determine which partition exactly to modify.
 
 ## The dashboard states I have 0 out of 0 remaining disk space. What's going on?
 
-Did you install the `quota` package? You need to use the command `setquota` to define the limits per user. The default is undefined.
+Did you install the `quota` package? You need to use the [`setquota`](setquota) script to define the limits per user. The default quota is undefined, which is the source of this error.
 
 If you just installed every package just because and you don't actually need quotas, feel free to remove the package with `box remove quota`
 
+## RuTorrent says I have no space left on my disk
+
+Please see the chapter above.
+
+## Application XYZ is not running! Everything is broken! What do I do?
+Please consult the [Troubleshooting](/guides/troubleshooting) guide for more information.
+
+## ... Docker?
+
+No.
+
+You cannot run Swizzin in a docker. The way docker works does not mix well with the amount of different resources swizzin relies on that are present in a standard Debian/Ubuntu Installation.
+
+Swizzin installs all applications in their non-containerized, bare-metal form. This for performance and maintainability reasons. 

@@ -136,6 +136,6 @@ sudo box upgrade deluge
 
 #### Other packages
 
-Distribution upgrades haven't been tested rigorously. It's entirely possible other packages may have broken during the upgrade. You'll need to start doing your own troubleshooting here if anything else is broken. You can find out if any of your systemd services are failing to start with `systemctl list-units --failed`. If there are failed units there, you can start debugging with `systemctl status <failed unit>`. However, you're on your own form here.
+Distribution upgrades haven't been tested rigorously. It's entirely possible other packages may have broken during the upgrade. You'll need to start doing your own troubleshooting here if anything else is broken. You can consult [the Troubleshooting guide](/guides/troubleshooting) for a quick start. You can find out if any of your systemd services are failing to start with `systemctl list-units --failed`. If there are failed units there, you can start debugging with `systemctl status <failed unit>`. However, you're on your own form here.
 
 
