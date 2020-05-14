@@ -4,7 +4,7 @@ title: Panel
 sidebar_label: Panel
 ---
 
-The dashboard is a graphical user interface which provides a central location for you to keep an eye on server statisics, personal usage information and your services.
+The dashboard is a graphical user interface which provides a central location for you to keep an eye on server statistics, personal usage information and your services.
 
 ## How to Install
 
@@ -95,7 +95,7 @@ You can find your disk quota here.
 
 ### Service Management
 
-You can see at a glance whether or not your services are currently running. You can also start and stop services directly from the panel, if you just need to quickly restart a service without SSHing into your slot.
+You can see at a glance whether or not your services are currently running. You can also start and stop services directly from the panel, if you just need to quickly restart a service without SSH-ing into your slot.
 
 ## Customizing Application Settings
 
@@ -117,7 +117,7 @@ Most of the application options are self-explanatory, nevertheless, things can g
 
 `baseurl` - The base URL and/or port of the application. If undefined, no sidebar link will be created.
 
-`urloverride` - A complete override of the URL. If true, will supercede a baseurl/scheme definition. Example: `https://plex.example.com` (default: `False`)
+`urloverride` - A complete override of the URL. If true, will supersede a baseurl/scheme definition. Example: `https://plex.example.com` (default: `False`)
 
 `systemd` - The name of the systemd service (default: `name`)
 
@@ -174,7 +174,7 @@ class radarr4k_meta:
     check_theD = True
 ```
 
-Since we enabled the checking of systemd services for this unit, we should enable it for the regularr Radarr unit as well; otherwise, we won't be able to tell which Radarr is actually running when checking if it is active.
+Since we enabled the checking of systemd services for this unit, we should enable it for the regular Radarr unit as well; otherwise, we won't be able to tell which Radarr is actually running when checking if it is active.
 
 ```python
 class radarr_meta(radarr_meta):

@@ -55,7 +55,7 @@ Out of the box, Lidarr comes with very little configuration. Following are some 
 ### Add a new artist (and your first root directory)
 
 1. At the left, click `Add New` under `Artist`.
-2. Search for an arist and then click on them.
+2. Search for an artist and then click on them.
 3. Under `Root Folder`, click `Add new path`.
 4. Type or click on the directory to use. Click `Ok`.
 5. Click `Add <Artist Name>`
@@ -98,19 +98,33 @@ nzbget Password: <your password>
 Add label to torrent: Music (or anything else you desire)
 * label must exist under "Categories" in nzbGet
 ```
+
+<!--Transmission-->
+```plaintext
+To retrieve your port, please run `grep rpc-port ~/.config/transmission-daemon/settings.json`,
+when logged in as the user you want to use transmission of (i.e. not root).
+----------
+Host: 127.0.0.1
+Port: <See above, e.g. 9091>
+URL Base: /transmission/ (Should be default)
+Username: <your username>
+Password: <your password>
+Category: <optional, e.g. Sonarr or TV>
+Connect using HTTPS: OFF
+```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Add an indexer with Jackett
 Lidarr only supports a few trackers out of the box, but the indexers can be expanded by using the application [Jackett](jackett.md). To add an indexer with Jackett, use the following steps.
 
 ::: note
-By default, when receivng the torznab feed from Jackett, it will need to be modified to be connected with the application. The default link looks like:
+By default, when receiving the torznab feed from Jackett, it will need to be modified to be connected with the application. The default link looks like:
 
 ```plaintext
 https://xl.swizzin.ltd/jackett/api/v2.0/indexers/yourtracker/results/torznab/
 ```
 
-We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `12345`, your editted URL would look like this:
+We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `12345`, your edited URL would look like this:
 
 ```plaintext
 http://xl.swizzin.ltd:9177/jackett/api/v2.0/indexers/yourtracker/results/torznab/

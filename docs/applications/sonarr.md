@@ -61,7 +61,7 @@ Out of the box, Sonarr comes with very little configuration. Following are some 
 1. At the top, click series.
 2. Click the button `+ Add Series`
 3. Type the name of the show you want to add
-4. Under `Path`, choose `Add a new path`. Enter the path for the folder you wish to add your Sonarr shows to and click the green checkmark to add the directory.
+4. Under `Path`, choose `Add a new path`. Enter the path for the folder you wish to add your Sonarr shows to and click the green check-mark to add the directory.
   - e.g. `"/home/<username>/media/TV Shows"`
 5. Change the other settings to your own needs
 6. Click the green + to add the show.
@@ -104,19 +104,33 @@ nzbget Password: <your password>
 Add label to torrent: Series (or anything else you desire)
 * label must exist under "Categories" in nzbGet
 ```
+
+<!--Transmission-->
+```plaintext
+To retrieve your port, please run `grep rpc-port ~/.config/transmission-daemon/settings.json`,
+when logged in as the user you want to use transmission of (i.e. not root).
+----------
+Host: 127.0.0.1
+Port: <See above, e.g. 9091>
+URL Base: /transmission/ (Should be default)
+Username: <your username>
+Password: <your password>
+Category: <optional, e.g. Sonarr or TV>
+Connect using HTTPS: OFF
+```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Add an indexer with Jackett
 Sonarr only supports a few trackers out of the box, but the indexers can be expanded by using the application [Jackett](jackett.md). To add an indexer with Jackett, use the following steps.
 
 ::: note
-By default, when receivng the torznab feed from Jackett, it will need to be modified to be connected with the application. The default link looks like:
+By default, when receiving the torznab feed from Jackett, it will need to be modified to be connected with the application. The default link looks like:
 
 ```plaintext
 https://<yourhostname.ltd>/jackett/api/v2.0/indexers/yourtracker/results/torznab/
 ```
 
-We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `12345`, your editted URL would look like this:
+We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `12345`, your edited URL would look like this:
 
 ```plaintext
 http://<yourhostname.ltd>:12345/jackett/api/v2.0/indexers/yourtracker/results/torznab/

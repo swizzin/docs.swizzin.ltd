@@ -36,7 +36,7 @@ The menu asking which version you'd like to install will pop up. Pick one. After
 Once rTorrent has been installed, you can either choose to access and command rTorrent from either the web-gui (ruTorrent) or the curses gui. The curses gui is considered "advanced" and not many users will opt for this option.
 
 ### ruTorrent
-In order to access the ruTorrent GUI, you'll first need to install it with `box`. Once you have installed it,  the web-gui of rTorrent can be found at `https://<hostname.ltd>/rutorrent`.
+In order to access the ruTorrent GUI, you'll first need to install it with `box`. Once you have installed it, the web-gui of rTorrent can be found at `https://<hostname.ltd>/rutorrent`.
 
 ### Command Line
 
@@ -57,7 +57,7 @@ The systemd script for rTorrent can be found at
 ```bash
 /etc/systemd/system/rtorrent@.service
 ```
-As a multiuser script, you must call it with the username to change the service status for.
+As a multi-user script, you must call it with the username to change the service status for.
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
 ```bash
@@ -104,7 +104,7 @@ This socket lives at:
 
 `/run/<username>/.rtorrent.sock`
 
-If you were inputting this to a program, you need to prepend the unix:// protocol designation, thus your final socket may look something like:
+If you were inputting this to a program, you need to pre-pend the unix:// protocol designation, thus your final socket may look something like:
 
 `unix:///run/liara/.rtorrent.sock`
 
@@ -121,7 +121,7 @@ Password: <your password>
 RPC Mount: /<username> OR /rutorrent/plugins/httprpc/action.php
 ```
 
-Both of the RPC mounts behave exactly the same, though if you're on a mobile connection (i.e. for Transdrone), it may be preferrable to use the ruTorrent plugin version of the mount as it will probably be a bit more friendly to your data usage. The nginx mount point was simply created to provide an easy to remember way to provide access to your rTorrent slot.
+Both of the RPC mounts behave exactly the same, though if you're on a mobile connection (i.e. for Transdrone), it may be preferable to use the ruTorrent plugin version of the mount as it will probably be a bit more friendly to your data usage. The nginx mount point was simply created to provide an easy to remember way to provide access to your rTorrent slot.
 
 ### Transdroid/Transdrone
 
@@ -141,3 +141,28 @@ Advanced Settings:
 ::: note Note
 You may prefer to access the SCGI mount from the ruTorrent plugin over a mobile connection as the httprpc plugin has been configured to utilize compression and therefore, less data.
 :::
+
+## Troubleshooting
+
+Please remember: `rtorrent` and `r`**`u`**`torrent` are two _very_ different things.
+
+Rtorrent is the process doing the "work", and r**u**torrent is a WEB frontend which runs in the PHP environment, which talks to rtorrent. These two need to be troubleshot very differently, and if one is down it does not mean the other os malfunctioning.
+
+### rtorrent doesn't start up
+
+You might get a good look at what is causing the service to fail by simply running `rtorrent` while logged in as the user you're troubleshooting for.
+
+Half the time time, the issue stems from either an invalid configuration in the `.rtorrent.rc` file, or file/directory permissions of the resources rtorrent is attempting to access.
+
+### The Web UI is broken
+
+You might want to look into troubleshooting your NGINX+PHP setup in this case.
+
+Please consult the [Troubleshooting guide](/guides/troubleshooting) further.
+
+### My disk is full?
+Are you seeing this error?
+
+![Rutorrent disk full error](https://i.imgur.com/NABrtlz.png)
+
+Please fix your [`quota` installation](/applications/quota).
