@@ -22,22 +22,9 @@ If nginx is currently installed, Webmin is available on the address below.
 If nginx is not installed, you can find webmin at
 `https://<hostname.tld>:10000`
 
-### Authentication
+Webmin will authenticate any user who has administrative sudo permissions on the system using its own mechanism. Therefore you should be able to use your master credentials.
 
-Regardless whether or not you have nginx installed, Webmin's HTML-based authentication will allow through any UNIX user on the system with sudo permissions.
-
-## Configuration options
-
-These are all optional. If none are specified, he defaults will be used, and no other configuration is required. None of the options are sanity-checked on install so setting something wrong could break your installation.
-
-There are a couple options you can set **before** installing webmin through export. If you'd like to use one of these, run `export option=value` **before** running the install command. The following is an example of how this would look:
-
-```bash main
-export webmin_referers='mysuperlongdomain.co.za'
-```
-### Options:
-- `webmin_referers`
-  - Default: Undefined. Guessed from default nginx conf and checked with user interactively during install.
+This means that in case you have nginx installed, you will first be asked for the Nginx authentication through the browser UI and then to webmin through the Webmin page. This is a deliberate choice for your own security. If you are already authenticated to the Panel, you will only see the Webmin authentication.
 
 ## Service Management
 
