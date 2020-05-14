@@ -23,7 +23,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'docs', // Title for your website.
+  title: 'swizzin-ce', // Title for your website.
   tagline: 'Documentation for the swizzin github project',
   url: 'https://docs.swizzin.ltd', // Your website URL
   baseUrl: '/', // Base URL for your project */
@@ -46,13 +46,13 @@ const siteConfig = {
     {languages: true}
   ],
 
-  disableHeaderTitle: true,
+  disableHeaderTitle: false,
 
   // If you have users set above, you add it here:
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/swizzin.png',
+  headerIcon: 'img/favico.png',
   footerIcon: 'img/favico.png',
   favicon: 'img/favico.ico',
 
