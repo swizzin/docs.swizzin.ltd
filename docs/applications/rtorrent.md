@@ -161,9 +161,16 @@ Half the time time, the issue stems from either an invalid configuration in the 
 The other half of the times, it might be the case that your rtorrent has not stopped properly and has left behind the `rtorrent.lock` file. If this file is present, it will prevent any rtorrent process from starting.
 
 To troubleshoot the above issues, you can try our child-tested and mother approved rtorrent troubleshooting dance.
-::: warning Disclaimer
+
+::: important Disclaimer
 Please note that while this won't necessarily fix your setup straight away, it will help you expose the culprit of the issue. If you find something that is out of line, you'll have a lead.
 :::
+
+::: disclaimer dddddisclaimer
+blah
+:::
+
+::: note note
 
 ```bash
 # !!! This dance assumes you are logged into the console as the user who is having the issues. Otherwise use su, or replace the ~s and variables.
