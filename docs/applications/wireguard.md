@@ -14,23 +14,7 @@ Installing wireguard is easy. Simply issue the following command from SSH:
 sudo box install wireguard
 ```
 
-This command will configure wireguard for your user. When install finished, the installer will output the location of the config file for your user. This is an example content of the configuration:
-
-```ini 
-[Interface]
-Address = 10.100.0.2
-PrivateKey = {averysecretkey}
-ListenPort = 21841
-
-[Peer]
-PublicKey = {apublickey}
-Endpoint = {shared/dedicated IP}:{port}
-AllowedIPs = 0.0.0.0/0
-
-# This is for if you're behind a NAT and
-# want the connection to be kept alive.
-#PersistentKeepalive = 25
-```
+At the end of the installation, the location of the config file for your user will be printed (`/home/<user>/.wireguard/<user>.conf`)
 
 ## How to Access
 
