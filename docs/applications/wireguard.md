@@ -137,3 +137,10 @@ sudo systemctl disable wg-quick@wg1000
 
 ### WG doesn't work for any user except for the master
 The multi-user functionality has been patched in at a later stage. Please make sure to run `box update` and then remove and install wireguard again (`box remove wireguard && box install wireguard`). We have opted against patching this automatically as some administrators might not want to give their users WG access without knowing first.
+
+### My connection is not being kept alive
+Add the following line to your config into the `[Peer]` section
+
+```plaintext
+PersistentKeepalive = 25
+```
