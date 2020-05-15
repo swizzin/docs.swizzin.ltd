@@ -138,7 +138,7 @@ sudo systemctl disable wg-quick@wg1000
 The multi-user functionality has been patched in at a later stage. Please make sure to run `box update` and then remove and install wireguard again (`box remove wireguard && box install wireguard`). We have opted against patching this automatically as some administrators might not want to give their users WG access without knowing first.
 
 ### My connection is not being kept alive
-Add the following line to your config into the `[Peer]` section. This can happen when you are behind an NAT.
+This can happen when you are behind an NAT. Uncomment the following line at the end of your config. 
 
 ```plaintext
 PersistentKeepalive = 25
