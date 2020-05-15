@@ -39,6 +39,7 @@
         "plexmediaserver",
         "plexupdate",
         "pyload",
+        "qrencode",
         "quassel",
         "radarr",
         "rakshasa",
@@ -84,10 +85,13 @@
         "zypper"
     ],
     "cSpell.ignoreWords": [
+        "apublickey",
+        "averysecretkey",
         "ddns",
         "exgirlfriend",
         "faithfulfriend",
         "forgetfulfriend",
+        "keepalive",
         "oldstable",
         "pasv",
         "promiscuous"
