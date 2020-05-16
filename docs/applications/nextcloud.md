@@ -23,9 +23,9 @@ The installation will automatically create the Nextcloud administrator user usin
 
 ## User management
 
-Nextcloud users are being handled separately to 
+Nextcloud manages its users in its own database. `box` will create, delete and change passwords in it for you when you make those changes. This only works in the box -> nextcloud direction, which means changing a password in nextcloud will not have an impact on the rest of the system.
 
-At the time of writing, `box` **will not** create Nextcloud accounts for your other users. Please create those manually through the administrator interface.
+You can however make Nextcloud users for non-`box`-based users as well through the administration portal. 
 
 ## Service control
 
