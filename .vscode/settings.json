@@ -16,6 +16,7 @@
         "dpkg",
         "emby",
         "ffmpeg",
+        "fqdn",
         "htpasswd",
         "httprpc",
         "irssi",
