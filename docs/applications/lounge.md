@@ -53,6 +53,5 @@ A new system user is created for The Lounge. The configuration file is stored in
 The Lounge also offers a CLI utility. You can access the help file by issuing the following commands:
 
 ```bash
-sudo su lounge
 thelounge --help
 ```
