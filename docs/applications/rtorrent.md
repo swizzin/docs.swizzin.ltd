@@ -145,7 +145,7 @@ You may prefer to access the SCGI mount from the ruTorrent plugin over a mobile 
 ## Troubleshooting
 
 ::: tip 
-You can always also try the [general troubleshooting tips written in our guide](/guides/troubleshooting). They might or might not apply, but asking these questions can often make you understand what is under the hood better.
+You can always also try the [general troubleshooting tips written in our guide](/guides/troubleshooting). They might or might not apply, but asking these questions can often make you understand what is under the hood better and help you find what needs to be fixed. It's always worth a shot!
 :::
 
 Please remember: `rtorrent` and `r`**`u`**`torrent` are two _very_ different things.
