@@ -166,12 +166,6 @@ To troubleshoot the above issues, you can try our child-tested and mother approv
 Please note that while this won't necessarily fix your setup straight away, it will help you expose the culprit of the issue. If you find something that is out of line, you'll have a lead.
 :::
 
-::: disclaimer dddddisclaimer
-blah
-:::
-
-::: note note
-
 ```bash
 # !!! This dance assumes you are logged into the console as the user who is having the issues. Otherwise use su, or replace the ~s and variables.
 
