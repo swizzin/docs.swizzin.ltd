@@ -167,7 +167,8 @@ Please note that while this won't necessarily fix your setup straight away, it w
 :::
 
 ```bash
-# !!! This dance assumes you are logged into the console as the user who is having the issues. Otherwise use su, or replace the ~s and variables.
+# !!! This dance assumes you are logged into the console as the user who is having the issues.
+# If necessary, use the su or sudo su commands to switch he user.
 
 # Stop rtorrent if it is currently running in some odd state.
 sudo systemctl stop rtorrent@$USER
