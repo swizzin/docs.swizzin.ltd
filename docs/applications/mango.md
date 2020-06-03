@@ -24,4 +24,4 @@ As the library for mango is shared, it is located under `/opt/mango/library`. Th
 
 ### User management
 
-Mango's user management is **completely disjoint from swizzin's users** _at the time of writing_. Please create all account in the application manually.
+Mango manages its users in a separate database to `box`. However, `box` will automatically add, remove and update users and their passwords from box when you use the user commands. You can still manage users through thee Mango admin interface.
