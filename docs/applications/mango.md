@@ -24,4 +24,4 @@ As the library for mango is shared, it is located under `/opt/mango/library`. Th
 
 ### User management
 
-Mango manages its users in a separate database to `box`. However, `box` will automatically add, remove and update users and their passwords from box when you use the user commands. You can still manage users through thee Mango admin interface.
+Mango manages its users in a separate database to `box`. However, `box` will automatically add, remove and update users and their passwords into Mango when you use the `box` user commands (such as `adduser`, `deluser`, and `chpasswd`). You can still manage users through thee Mango admin interface.
