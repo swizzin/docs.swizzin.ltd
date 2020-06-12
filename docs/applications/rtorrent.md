@@ -193,6 +193,14 @@ screen -r rtorrent
 # !!! DETACH from the screen
 # <Press CTRL+a (release) d>
 ```
+Below are some steps to resolve common issues that arise in the above
+#### `error while loading shared libraries: libtorrent.so.19` or some other number at the end
+
+This usually means you are missing the right version of `libtorrent` for the version of `rtorrent` you are trying to run.
+
+Please check `apt policy libtorrent19` (or `libtorrent21` or whatever other number you got above) to confirm whether you have the right library installed.
+
+If not, run `box upgrade rtorrent` and choose whichever version you desire. This should fix your issues. If you still have problems, please check the swizzin logs (see big [troubleshooting guide](guides/troubleshooting.md)).
 
 ### The Web UI is broken
 
