@@ -152,6 +152,16 @@ Please remember: `rtorrent` and `r`**`u`**`torrent` are two _very_ different thi
 
 Rtorrent is the process doing the "work", and r**u**torrent is a WEB frontend which runs in the PHP environment, which talks to rtorrent. These two need to be troubleshot very differently, and if one is down it does not mean the other os malfunctioning.
 
+### XYZ Plugin will not work
+
+If you get a message like `XYZ: Plugin will not work. rTorrent user can't access external program (<ABC>)`, you should be able to run the following
+
+```bash
+box install <ABC>
+```
+
+If it is not available, please google the message above and see what you need to install.
+
 ### rtorrent doesn't start up
 
 You might get a good look at what is causing the service to fail by simply running `rtorrent` while logged in as the user you're troubleshooting for. You can also check `systemctl status rtorrent@<user>`
