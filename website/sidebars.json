@@ -60,7 +60,7 @@
       "guides/troubleshooting"
     ],
     "Helper Scripts": [
-      "scripts/setquota"
+      "scripts/setdisk"
     ]
   }
 }
