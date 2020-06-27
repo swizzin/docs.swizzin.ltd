@@ -18,6 +18,7 @@
       "applications/flood",
       "applications/headphones",
       "applications/jackett",
+      "applications/jellyfin",
       "applications/letsencrypt",
       "applications/lidarr",
       "applications/lounge",
