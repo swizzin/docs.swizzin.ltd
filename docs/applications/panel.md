@@ -194,3 +194,8 @@ Once you're happy with your edits, don't forget to restart the panel:
 ```
 systemctl restart panel
 ```
+
+## Troubleshooting
+
+### Logs
+You can retrieve the logs of panel by running `sudo journalctl -u panel`. The logs contain the output of the python application.

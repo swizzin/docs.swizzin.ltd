@@ -152,6 +152,16 @@ Please remember: `rtorrent` and `r`**`u`**`torrent` are two _very_ different thi
 
 Rtorrent is the process doing the "work", and r**u**torrent is a WEB frontend which runs in the PHP environment, which talks to rtorrent. These two need to be troubleshot very differently, and if one is down it does not mean the other os malfunctioning.
 
+### XYZ Plugin will not work
+
+If you get a message like `XYZ: Plugin will not work. rTorrent user can't access external program (<ABC>)`, you should be able to run the following
+
+```bash
+box install <ABC>
+```
+
+If it is not available, please google the message above and see what you need to install.
+
 ### rtorrent doesn't start up
 
 You might get a good look at what is causing the service to fail by simply running `rtorrent` while logged in as the user you're troubleshooting for. You can also check `systemctl status rtorrent@<user>`
@@ -193,6 +203,14 @@ screen -r rtorrent
 # !!! DETACH from the screen
 # <Press CTRL+a (release) d>
 ```
+Below are some steps to resolve common issues that arise in the above
+#### `error while loading shared libraries: libtorrent.so.19` or some other number at the end
+
+This usually means you are missing the right version of `libtorrent` for the version of `rtorrent` you are trying to run.
+
+Please check `apt policy libtorrent19` (or `libtorrent21` or whatever other number you got above) to confirm whether you have the right library installed.
+
+If not, run `box upgrade rtorrent` and choose whichever version you desire. This should fix your issues. If you still have problems, please check the swizzin logs (see big [troubleshooting guide](guides/troubleshooting.md)).
 
 ### The Web UI is broken
 
