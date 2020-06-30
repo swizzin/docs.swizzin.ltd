@@ -1,7 +1,7 @@
 ---
-id: sonarr
-title: Sonarr
-sidebar_label: Sonarr (v2 aka "Stable")
+id: sonarrv3
+title: Sonarr v3
+sidebar_label: Sonarr v3
 ---
 
 Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
@@ -11,7 +11,7 @@ Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS fee
 Installing Sonarr is easy. Simply issue the following command from SSH:
 
 ```bash main
-sudo box install sonarr
+sudo box install sonarrv3
 ```
 
 This command will configure sonarr for your user. Sonarr is installed via an apt repository, thus the easiest way to keep it up to date is by issuing the command `apt update && apt upgrade`. The sonarr base files will be located in `/opt/nzbdrone`
@@ -20,6 +20,14 @@ This command will configure sonarr for your user. Sonarr is installed via an apt
 
 Once setup, sonarr will be available at the link `https://<hostname.ltd>/sonarr`
 
+## Migrating from v2
+The install script for Sonarr v3 includes functionality to migrate and remove a v2 (`sonarr`) installation. Please keep the v2 installed for optimal results. It is not possible to have both v2 and v3 installed at the same time.
+
+An additional backup of the v2 configuration is created in `/root/sonarrv2.bak/`, which includes an internal Sonarr backup file triggered via API right before the installation.
+
+In order to downgrade, remove `sonarrv3` and install `sonarr` again. The original configuration files will be untouched. Any changes in v3 will not be migrated, as the installation will only look at the old files.
+
+If the installation does not reproduce your original v2 content, please see the Migration and Backup steps on the Sonarr Github, and use `/root/sonarrv2.bak` as the "original" files.
 
 ## Service Management
 
@@ -32,23 +40,23 @@ Service status for sonarr is handled by systemd. Despite the service being enabl
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Start-->
 ```bash
-sudo systemctl start sonarr@<username>
+sudo systemctl start sonarr
 ```
 <!--Stop-->
 ```bash
-sudo systemctl stop sonarr@<username>
+sudo systemctl stop sonarr
 ```
 <!--Restart-->
 ```bash
-sudo systemctl restart sonarr@<username>
+sudo systemctl restart sonarr
 ```
 <!--Enable-->
 ```bash
-sudo systemctl enable sonarr@<username>
+sudo systemctl enable sonarr
 ```
 <!--Disable-->
 ```bash
-sudo systemctl disable sonarr@<username>
+sudo systemctl disable sonarr
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
