@@ -1,7 +1,7 @@
 ---
 id: sonarr
-title: Sonarr
-sidebar_label: Sonarr (v2 aka "Stable")
+title: Sonarr v2 aka "Stable"
+sidebar_label: Sonarr v2
 ---
 
 Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
