@@ -23,6 +23,6 @@ If you are unsure which partition to use, please refer to the help printed into 
 
 ## Management
 
-The quotas can be managed either using the (Webmin application)[webmin.md], or through the command line using the (setquota)[setquota.md] script.
+The quotas can be managed either using the (Webmin application)[/applications/webmin], or through the command line using the (setdisk)[/scripts/setdisk] script.
 
 All users can see their quota standing by running `quota -s`.

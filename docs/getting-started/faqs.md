@@ -40,7 +40,7 @@ It's unlikely that the partition on *your* server is sda3, so you'll need to use
 
 ## The dashboard states I have 0 out of 0 remaining disk space. What's going on?
 
-Did you install the `quota` package? You need to use the [`setquota`](setquota) script to define the limits per user. The default quota is undefined, which is the source of this error.
+Did you install the `quota` package? You need to use the [`setdisk`](/scripts/setdisk) script to define the limits per user. The default quota is undefined, which is the source of this error.
 
 If you just installed every package just because and you don't actually need quotas, feel free to remove the package with `box remove quota`
 
