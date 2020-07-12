@@ -117,6 +117,7 @@ sudo systemctl start wg-quick@wg1000
 <!--Stop-->
 ```bash
 sudo systemctl stop wg-quick@wg1000
+# You might also need to make sure 
 ```
 <!--Restart-->
 ```bash
@@ -130,6 +131,18 @@ sudo systemctl enable wg-quick@wg1000
 ```bash
 sudo systemctl disable wg-quick@wg1000
 ```
+<!--Mask-->
+This disables the service and prevents a non-master user from managing it.
+
+Make sure to first stop and disable the service with the other commands.
+```bash
+sudo systemctl mask wg-quick@wg1000
+```
+<!--Unmask-->
+This removes the mask and enables a non-master user to manage the service.
+```bash
+sudo systemctl unmask wg-quick@wg1000
+```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Troubleshooting
@@ -142,4 +155,11 @@ This can happen when you are behind an NAT. Uncomment the following line at the 
 
 ```plaintext
 PersistentKeepalive = 25
+```
+
+### wg-quick: `wg100x' already exists
+The service might have been shut down but the kernel process is probably still running. Verify using `htop` or some other process manager, and see if you can find any processes starting with `wg`, that match the id. You can then manually shut the service down using the following command.
+
+```bash
+wg-quick down wg100x
 ```
