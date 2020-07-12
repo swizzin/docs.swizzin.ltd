@@ -150,8 +150,12 @@ sudo systemctl unmask wg-quick@wg1000
 
 ## Troubleshooting
 
+::: tip 
+You can always also try the [general troubleshooting tips written in our guide](/guides/troubleshooting). They might or might not apply, but asking these questions can often make you understand what is under the hood better and help you find what needs to be fixed. It's always worth a shot!
+:::
+
 ### WG doesn't work for any user except for the master
-The multi-user functionality has been patched in at a later stage. Please make sure to run `box update` and then remove and install wireguard again (`box remove wireguard && box install wireguard`). We have opted against patching this automatically as some administrators might not want to give their users WG access without knowing first.
+The multi-user functionality has been patched in at a later stage, probably after you have installed it. Please make sure to run `box update` and then remove and install wireguard again (`box remove wireguard && box install wireguard`). We have opted against patching this automatically as some administrators might not want to give their users WG access without knowing first.
 
 ### My connection is not being kept alive
 This can happen when you are behind an NAT. Uncomment the following line at the end of your config. 
