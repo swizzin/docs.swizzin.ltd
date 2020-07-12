@@ -117,7 +117,6 @@ sudo systemctl start wg-quick@wg1000
 <!--Stop-->
 ```bash
 sudo systemctl stop wg-quick@wg1000
-# You might also need to make sure 
 ```
 <!--Restart-->
 ```bash
@@ -135,7 +134,7 @@ sudo systemctl disable wg-quick@wg1000
 :::panel
 This disables the service and prevents a non-master user from managing it.
 
-Make sure to first stop and disable the service with the other commands.
+Make sure to first stop and disable the service with the other commands before masking the service
 ```bash
 sudo systemctl mask wg-quick@wg1000
 ```
