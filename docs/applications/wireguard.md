@@ -132,17 +132,21 @@ sudo systemctl enable wg-quick@wg1000
 sudo systemctl disable wg-quick@wg1000
 ```
 <!--Mask-->
+:::panel
 This disables the service and prevents a non-master user from managing it.
 
 Make sure to first stop and disable the service with the other commands.
 ```bash
 sudo systemctl mask wg-quick@wg1000
 ```
+:::
 <!--Unmask-->
+:::panel
 This removes the mask and enables a non-master user to manage the service.
 ```bash
 sudo systemctl unmask wg-quick@wg1000
 ```
+:::
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Troubleshooting
