@@ -1,7 +1,7 @@
 ---
-id: setquota
-title: setquota
-sidebar_label: setquota
+id: setdisk
+title: setdisk
+sidebar_label: setdisk
 ---
 
 This script helps setting quotas to users in an easy manner.
@@ -24,11 +24,11 @@ You can specify the format in one of the following formats:
 
 ## Running interactively
 
-You can run `sudo setquota` and specify the user and size interactively on the command line. 
+You can run `sudo setdisk` and specify the user and size interactively on the command line. 
 
 ## Running with parameters
 
-`setquota` also runs non-interactively. You can set the user as the first argument, and the size as described above as an optional second argument.
+`setdisk` also runs non-interactively. You can set the user as the first argument, and the size as described above as an optional second argument.
 
 ```bash
 #Set size interactively
