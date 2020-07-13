@@ -3,6 +3,7 @@
         "Namecheap",
         "Xenial",
         "adduser",
+        "ansiutf",
         "autodl",
         "bazarr",
         "blackhole",
@@ -16,6 +17,7 @@
         "dpkg",
         "emby",
         "ffmpeg",
+        "htop",
         "foss",
         "htpasswd",
         "httprpc",
@@ -41,6 +43,7 @@
         "plexmediaserver",
         "plexupdate",
         "pyload",
+        "qrencode",
         "quassel",
         "radarr",
         "rakshasa",
@@ -87,10 +90,13 @@
         "zypper"
     ],
     "cSpell.ignoreWords": [
+        "apublickey",
+        "averysecretkey",
         "ddns",
         "exgirlfriend",
         "faithfulfriend",
         "forgetfulfriend",
+        "keepalive",
         "oldstable",
         "pasv",
         "promiscuous"
