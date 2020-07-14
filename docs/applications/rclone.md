@@ -14,7 +14,7 @@ sudo box install rclone
 ```
 
 ## Usage
-By default, a `~/cloud` directory is made in each user directory. Please refer to the 
+By default, a `~/cloud` directory is made in each user directory.
 
 You can run `rclone configure` to manage the instance 
 
