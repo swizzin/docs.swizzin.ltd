@@ -34,7 +34,9 @@ There should not be much need to alter config options, but a few currently exist
 
 `FLASK_HTPASSWD_PATH` - The location of the htpasswd file to protect the panel with. (Default: `/etc/htpasswd`)
 
-`FLASK_SECRET` - Text displayed during auth pop up
+`FLASK_AUTH_REALM` - Text displayed during auth pop up
+
+`FORMS_LOGIN` - Whether or not to use the newer forms based login. (Default: `True`)
 
 `HOST` - IP address to bind to (Default: `0.0.0.0`)
 
