@@ -56,11 +56,14 @@ If the installation does not reproduce your original v2 content, please see the 
 ### Modified v2 setups
 If you have toyed with the v2 Sonarr configuration and are not using the vanilla setup by swizzin (e.g. modified service files, overrides, etc.) You should do the migration manually.
 
+You should generally follow the following steps at your own risk. 
+
 1. Back up your sonarrv2 through the user interface.
-2. Make a copy of the entire Sonarr folder remotely
-3. Stop your sonarr service or processes
+2. Make a remote copy of the entire Sonarr folder just in case.
+3. Stop your sonarr service or process
 3. Remove Sonarrv2 through `box remove sonarrv2`
-4. Link/copy your old `.config/nzb` direcory to the sonarrv3 migration path
+   - verify you cleaned up all custom configs in random places
+4. Link/copy your old `.config/nzb` directory to the sonarrv3 migration path
    - e.g. `ln -s /home/"${sonarrv2owner}"/.config/NzbDrone /usr/lib/sonarr/nzbdrone-appdata`
 5. Install sonarr v3 with `box install sonarrv3`
 

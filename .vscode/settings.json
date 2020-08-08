@@ -3,6 +3,7 @@
         "Namecheap",
         "Xenial",
         "adduser",
+        "appdata",
         "autodl",
         "bazarr",
         "blackhole",
@@ -88,6 +89,7 @@
         "zypper"
     ],
     "cSpell.ignoreWords": [
+        "autodlbot",
         "ddns",
         "exgirlfriend",
         "faithfulfriend",
