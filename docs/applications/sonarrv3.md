@@ -16,18 +16,53 @@ sudo box install sonarrv3
 
 This command will configure sonarr for your user. Sonarr is installed via an apt repository, thus the easiest way to keep it up to date is by issuing the command `apt update && apt upgrade`. The sonarr base files will be located in `/opt/nzbdrone`
 
+### Optional parameters
+None of these are required for you to define if you want an easy install. If you would like to do something custom, then here are some options for you.
+
+::: warning Make sure you know what you're doing!
+**Please note that it is difficult for us to support these options as they are custom for each install**
+
+None of the options are sanity-checked on install so setting something wrong could break your installation.
+
+Again, you do not need to set these if you don't know what you're doing.
+:::
+
+If you'd like to use one of these, run `export option=value` **before** running the install command.
+
+The following is an example of how this would look
+
+```bash main
+export sonarrv3owner='autodlbot'
+```
+
+- `sonarrv2owner`
+  - Used to specify a non-master user which sonarr v2 might have ran under before.
+- `sonarrv3owner`
+  - Used to specify a non-master user which sonarr v3 will be ran under.
+
 ## How to Access
 
 Once setup, sonarr will be available at the link `https://<hostname.ltd>/sonarr`
 
 ## Migrating from v2
-The install script for Sonarr v3 includes functionality to migrate and remove a v2 (`sonarr`) installation. Please keep the v2 installed for optimal results. It is not possible to have both v2 and v3 installed at the same time.
+The install script for Sonarr v3 includes functionality to migrate and remove a v2 (`sonarr`) installation. Please keep the v2 installed for optimal results. **It is not possible to have both v2 and v3 installed at the same time.**
 
 An additional backup of the v2 configuration is created in `/root/sonarrv2.bak/`, which includes an internal Sonarr backup file triggered via API right before the installation.
 
 In order to downgrade, remove `sonarrv3` and install `sonarr` again. The original configuration files will be untouched. Any changes in v3 will not be migrated, as the installation will only look at the old files.
 
 If the installation does not reproduce your original v2 content, please see the Migration and Backup steps on the Sonarr Github, and use `/root/sonarrv2.bak` as the "original" files.
+
+### Modified v2 setups
+If you have toyed with the v2 Sonarr configuration and are not using the vanilla setup by swizzin (e.g. modified service files, overrides, etc.) You should do the migration manually.
+
+1. Back up your sonarrv2 through the user interface.
+2. Make a copy of the entire Sonarr folder remotely
+3. Stop your sonarr service or processes
+3. Remove Sonarrv2 through `box remove sonarrv2`
+4. Link/copy your old `.config/nzb` direcory to the sonarrv3 migration path
+   - e.g. `ln -s /home/"${sonarrv2owner}"/.config/NzbDrone /usr/lib/sonarr/nzbdrone-appdata`
+5. Install sonarr v3 with `box install sonarrv3`
 
 ## Service Management
 
