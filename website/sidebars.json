@@ -13,6 +13,7 @@
       "applications/couchpotato",
       "applications/csf",
       "applications/deluge",
+      "applications/duckdns",
       "applications/emby",
       "applications/ffmpeg",
       "applications/flood",
