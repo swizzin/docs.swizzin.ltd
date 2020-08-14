@@ -23,6 +23,7 @@
       "applications/letsencrypt",
       "applications/lidarr",
       "applications/lounge",
+      "applications/mango",
       "applications/medusa",
       "applications/netdata",
       "applications/nextcloud",
