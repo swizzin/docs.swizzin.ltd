@@ -16,6 +16,23 @@ sudo box install sonarrv3
 
 This command will configure sonarr for your user. Sonarr is installed via an apt repository, thus the easiest way to keep it up to date is by issuing the command `apt update && apt upgrade`. The sonarr base files will be located in `/opt/nzbdrone`
 
+### Sonarr and user homedir permissions
+One notable difference between our setup of Sonarr v2 and v3 is that Sonarrv3 now runs as a system user, rather than as the same user as the master user.
+
+Sonarr is given access to the master user's home folder on installation. You can add more home directories during the installation too.
+
+In order for Sonarr to be able to write into other directories, the `sonarr` user needs to be present in the `group` that owns the folder. Of course, the folder needs to have `rwx` permission for that group as well. To do this manually, you can do the following:
+```bash
+# This will quickly tell you just the "group" that owns your folder. It's almost always as the user who owns it but always double-check
+stat -c "%G" /path/to/dir
+# Add Sonarr to this group
+usermod -a -G ${group_from_above} sonarr
+# Ensure the dir has right permissions
+chmod g+rwx /path/to/dir
+```
+
+You should ensure that the permission for all the folders above the one you are changing permissions for _also_ allow for at least `r-x` permission for the group.
+
 ### Optional parameters
 None of these are required for you to define if you want an easy install. If you would like to do something custom, then here are some options for you.
 
@@ -36,9 +53,8 @@ export sonarrv3owner='autodlbot'
 ```
 
 - `sonarrv2owner`
-  - Used to specify a non-master user which sonarr v2 might have ran under before.
-- `sonarrv3owner`
-  - Used to specify a non-master user which sonarr v3 will be ran under.
+  - Used to specify a non-master user which sonarr v2 might have ran under before for the migration and user-group adding.
+
 
 ## How to Access
 
