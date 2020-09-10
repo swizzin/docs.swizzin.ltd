@@ -34,6 +34,7 @@
       "applications/panel",
       "applications/plex",
       "applications/pyload",
+      "applications/qbittorrent",
       "applications/quassel",
       "applications/quota",
       "applications/radarr",
