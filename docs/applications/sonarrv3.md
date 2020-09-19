@@ -1,7 +1,7 @@
 ---
 id: sonarrv3
-title: Sonarr v3
-sidebar_label: Sonarr v3 aka "Phantom"
+title: Sonarr v3 aka "Phantom"
+sidebar_label: Sonarr v3
 ---
 
 Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
@@ -17,21 +17,7 @@ sudo box install sonarrv3
 This command will configure sonarr for your user. Sonarr is installed via an apt repository, thus the easiest way to keep it up to date is by issuing the command `apt update && apt upgrade`. The sonarr base files will be located in `/opt/nzbdrone`
 
 ### Sonarr and user homedir permissions
-One notable difference between our setup of Sonarr v2 and v3 is that Sonarrv3 now runs as a system user, rather than as the same user as the master user.
-
-Sonarr is given access to the master user's home folder on installation. You can add more home directories during the installation too.
-
-In order for Sonarr to be able to write into other directories, the `sonarr` user needs to be present in the `group` that owns the folder. Of course, the folder needs to have `rwx` permission for that group as well. To do this manually, you can do the following:
-```bash
-# This will quickly tell you just the "group" that owns your folder. It's almost always as the user who owns it but always double-check
-stat -c "%G" /path/to/dir
-# Add Sonarr to this group
-usermod -a -G ${group_from_above} sonarr
-# Ensure the dir has right permissions
-chmod g+rwx /path/to/dir
-```
-
-You should ensure that the permission for all the folders above the one you are changing permissions for _also_ allow for at least `r-x` permission for the group.
+Sonarr is running as the master user (unless changed in install options using parameters), so that user needs to be able to see the directories you'd like sonarr to see. You can achieve this by adding the desired user to the group of whoever runs the sonarr process. e.g. `usermod -a -G <user with data> <sonarrv3owner>`
 
 ### Optional parameters
 None of these are required for you to define if you want an easy install. If you would like to do something custom, then here are some options for you.
@@ -54,7 +40,11 @@ export sonarrv3owner='autodlbot'
 
 - `sonarrv2owner`
   - Used to specify a non-master user which sonarr v2 might have ran under before for the migration and user-group adding.
-
+- `sonarrv3owner`
+  - Used to specify a non-master user which sonarr v3 will run as after the installation.
+- `sonarrv3grouplist`
+  - A *space separated string*  used to specify a list of users who will have their home directories opened to the sonarrv3 user, so that Sonarr can read and write into their directories.
+  - e.g. `export sonarrv3grouplist="user1 user2"`
 
 ## How to Access
 
