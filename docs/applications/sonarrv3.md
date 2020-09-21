@@ -8,13 +8,13 @@ Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS fee
 
 ## Initial Setup
 
-Installing Sonarr is easy. Simply issue the following command from SSH:
+Installing Sonarr is easy. Simply issue the following command
 
 ```bash main
 sudo box install sonarrv3
 ```
 
-This command will configure sonarr for your user. Sonarr is installed via an apt repository, thus the easiest way to keep it up to date is by issuing the command `apt update && apt upgrade`. The sonarr base files will be located in `/opt/nzbdrone`
+This command will configure sonarr for your user. Sonarr is installed via an apt repository, thus the easiest way to keep it up to date is by issuing the command `apt update && apt upgrade`. The sonarr base files will be located in `/usr/lib/sonarr`
 
 ### Sonarr and user homedir permissions
 Sonarr is running as the master user (unless changed in install options using parameters), so that user needs to be able to see the directories you'd like sonarr to see. You can achieve this by adding the desired user to the group of whoever runs the sonarr process. e.g. `usermod -a -G <user with data> <sonarrv3owner>`
@@ -59,12 +59,12 @@ In order to downgrade, remove `sonarrv3` and install `sonarr` again. The origina
 
 If the installation does not reproduce your original v2 content, please see the Migration and Backup steps on the Sonarr Github, and use `/root/sonarrv2.bak` as the "original" files.
 
-### Modified v2 setups
-If you have toyed with the v2 Sonarr configuration and are not using the vanilla setup by swizzin (e.g. modified service files, overrides, etc.) You should do the migration manually.
+### v2 setups that were modified
+If you have toyed with the v2 Sonarr configuration and are not using the vanilla setup by swizzin (e.g. modified service files, overrides, etc.), you should make sure to run some extra steps before.
 
 You should generally follow the following steps at your own risk. 
 
-1. Back up your sonarrv2 through the user interface.
+1. Back up your sonarrv2 through the web interface.
 2. Make a remote copy of the entire Sonarr folder just in case.
 3. Stop your sonarr service or process
 3. Remove Sonarrv2 through `box remove sonarrv2`
