@@ -133,3 +133,15 @@ Settings for connecting another local client (i.e. Sonarr), to your Deluge insta
 - Port: `Found in WebUI section of qBittorrent`
 - Username: `Your username`
 - Password: `Your password`
+
+## 3rd Party Utilities:
+
+API Handlers:
+- [qbittorrent-api](https://pypi.org/project/qbittorrent-api/) (pip installable)
+
+AutoDL helpers:
+- [qbit-race](https://github.com/ckcr4lyf/qbit-race) (with reannounce support)
+- [qbittorrent-cli](https://github.com/ludviglundgren/qbittorrent-cli)
+
+Torrent Handlers:
+- [autoremove-torrents](https://pypi.org/project/autoremove-torrents/) (Also works with Deluge and Transmission)
