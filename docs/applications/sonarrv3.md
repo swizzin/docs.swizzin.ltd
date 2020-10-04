@@ -16,9 +16,6 @@ sudo box install sonarrv3
 
 This command will configure sonarr for your user. Sonarr is installed via an apt repository, thus the easiest way to keep it up to date is by issuing the command `apt update && apt upgrade`. The sonarr base files will be located in `/usr/lib/sonarr`
 
-### Sonarr and user homedir permissions
-Sonarr is running as the master user (unless changed in install options using parameters), so that user needs to be able to see the directories you'd like sonarr to see. You can achieve this by adding the desired user to the group of whoever runs the sonarr process. e.g. `usermod -a -G <user with data> <sonarrv3owner>`
-
 ### Optional parameters
 None of these are required for you to define if you want an easy install. If you would like to do something custom, then here are some options for you.
 
@@ -42,9 +39,6 @@ export sonarrv3owner='autodlbot'
   - Used to specify a non-master user which sonarr v2 might have ran under before for the migration and user-group adding.
 - `sonarrv3owner`
   - Used to specify a non-master user which sonarr v3 will run as after the installation.
-- `sonarrv3grouplist`
-  - A *space separated string*  used to specify a list of users who will have their home directories opened to the sonarrv3 user, so that Sonarr can read and write into their directories.
-  - e.g. `export sonarrv3grouplist="user1 user2"`
 
 ## How to Access
 
@@ -106,7 +100,7 @@ sudo systemctl disable sonarr
 
 ## Configuration
 
-Out of the box, Sonarr comes with very little configuration. Following are some basic tasks to help get your client up and running:
+Out of the box, Sonarr comes with very little pre-set configuration. Following are some basic tasks to help get your client up and running.
 
 ### Add a new show (and your first root directory)
 
@@ -199,6 +193,17 @@ API: <copy and paste from jackett UI>
 ```
 4. Click `Test`. If all is good, click `Save`.
 
+### Sonarr and user homedir permissions
+Sonarr is running as the master user (unless changed in install options using parameters), so that user needs to be able to see the directories you'd like sonarr to see as well. You can achieve this by adding the desired user to the group of whoever runs the sonarr process. e.g. `usermod -a -G <user with data> <master/sonarrv3owner>`
+
 ### Other tasks
 
 You may wish to further alter your setup by setting quality profiles or setting up post-processing so that media is automatically transferred to your Sonarr library when your torrents are completed. If you need further help, you can refer to the [Sonarr Wiki](https://github.com/Sonarr/Sonarr/wiki).
+
+## Troubleshooting
+
+::: tip 
+You can always also try the [general troubleshooting tips written in our guide](/guides/troubleshooting). They might or might not apply, but asking these questions can often make you understand what is under the hood better and help you find what needs to be fixed. It's always worth a shot!
+:::
+
+Please consult the [github issues](https://github.com/Sonarr/Sonarr/issues) or the [Sonarr Discord community](https://discord.gg/M6BvZn5) in case you are having problems with this application.
