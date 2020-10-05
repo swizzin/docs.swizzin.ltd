@@ -150,3 +150,7 @@ API: <copy and paste from jackett UI>
 ### Other tasks
 
 You may wish to further alter your setup by setting quality profiles or setting up post-processing so that media is automatically transferred to your Sonarr library when your torrents are completed. If you need further help, you can refer to the [Sonarr Wiki](https://github.com/Sonarr/Sonarr/wiki).
+
+## Upgrading to Sonarr v3
+
+You can upgrade to Sonarr v3 by running either `box install sonarrv3` or `box upgrade sonarr` (They do the exact same thing). Please check [the migration chapter](https://docs.swizzin.ltd/applications/sonarrv3#migrating-from-v2) for more information
