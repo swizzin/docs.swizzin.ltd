@@ -6,8 +6,6 @@ sidebar_label: Couchpotato
 
 Download movies automatically, easily and in the best quality as soon as they are released, via usenet or torrents.
 
-Resilio Sync (formerly BitTorrent Sync) is a peer-to-peer file synchronization tool available for Windows, Mac, Linux, Android, iOS, Windows Phone, Amazon Kindle Fire and BSD. It can sync files between devices on a local network, or between remote devices over the Internet via a modified version of the BitTorrent protocol. 
-
 ## Initial Setup
 
 Installing CouchPotato is easy. Simply issue the following command from SSH:

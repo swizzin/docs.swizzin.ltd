@@ -60,6 +60,14 @@ In text fields, you only need to enter your text and hit `return` to enter. To c
 
 When you have finished running through the prompts, installation will start. The time it takes will depend on the number of packages you have selected.
 
+#### Additional Setup Quirks
+
+A few items to be aware of as known issues. Most of these have had attempts at working around them, but it's good to be aware of things to avoid:
+
+- Installer appears frozen before any user input (usually on `Installing dependencies` or `Checking repos`): `control-c` out and `apt update && apt upgrade` before running the installer.
+- Capital letters in usernames: capital letters should never be used for usernames
+- Usernames which may conflict with a group that already exists: for example, certain images like AWS may have an `admin` group out of the box. If you try to name your user `admin` the install will fail in this case.
+
 ## Additional Help
 
 If you're having troubles with any of the items in the documentation, please first consult the [Troubleshooting](/guides/troubleshooting) guide. If that is not enough for you, join us in [Discord](https://discord.gg/2esbu2N) and we will attempt to help you to our best ability.

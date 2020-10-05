@@ -34,7 +34,9 @@ There should not be much need to alter config options, but a few currently exist
 
 `FLASK_HTPASSWD_PATH` - The location of the htpasswd file to protect the panel with. (Default: `/etc/htpasswd`)
 
-`FLASK_SECRET` - Text displayed during auth pop up
+`FLASK_AUTH_REALM` - Text displayed during auth pop up
+
+`FORMS_LOGIN` - Whether or not to use the newer forms based login. (Default: `True`)
 
 `HOST` - IP address to bind to (Default: `0.0.0.0`)
 
@@ -121,6 +123,8 @@ Most of the application options are self-explanatory, nevertheless, things can g
 
 `systemd` - The name of the systemd service (default: `name`)
 
+`img` - The name of your brand app icon. This directive can allow you to reuse already existing icons (i.e. for a 4k radarr instance). (default: `name`)
+
 `check_theD` - If `True`, the panel will use `systemctl is-active` rather than searching `ps` when running `app_status` (default: `False`)
 
 ::: note
@@ -172,6 +176,7 @@ class radarr4k_meta:
     baseurl = "/radarr4k"
     systemd = "radarr4k@"
     check_theD = True
+    img = "radarr"
 ```
 
 Since we enabled the checking of systemd services for this unit, we should enable it for the regular Radarr unit as well; otherwise, we won't be able to tell which Radarr is actually running when checking if it is active.
@@ -187,7 +192,7 @@ In order to tell the panel to check for the new application, simply create a loc
 sudo touch /install/.radarr4k.lock
 ```
 
-Finally, if you want to add an application icon to the sidebar, simply add a similarly named .png to the `static/img/brands` folder. i.e. `static/img/brands/radarr4k.png`.
+Finally, if you want to add an application icon to the sidebar, simply add a similarly named .png (or use the `img` variable) to the `static/img/brands` folder. i.e. `static/img/brands/radarr4k.png`.
 
 Once you're happy with your edits, don't forget to restart the panel:
 
