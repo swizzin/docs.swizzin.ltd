@@ -3,6 +3,7 @@
         "Namecheap",
         "Xenial",
         "adduser",
+        "appdata",
         "ansiutf",
         "autodl",
         "bazarr",
@@ -65,6 +66,7 @@
         "sickchill",
         "sickgear",
         "sonarr",
+        "sonarrv",
         "stak",
         "sudoers",
         "swizzin",
@@ -79,6 +81,7 @@
         "transdroid",
         "transdrone",
         "urloverride",
+        "usermod",
         "venv",
         "vsftpd",
         "webmin",
@@ -91,6 +94,7 @@
         "zypper"
     ],
     "cSpell.ignoreWords": [
+        "autodlbot",
         "apublickey",
         "averysecretkey",
         "ddns",
