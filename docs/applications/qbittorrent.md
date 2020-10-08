@@ -18,6 +18,30 @@ This command will configure qBittorrent and the associated web interface for use
 
 After installation, if there will be two 2 new packages installed: `libtorrent-rasterbar`, and `qbittorrent-nox` (aka qBittorrent no X). The package name for `libtorrent` does not interfere with any apt packages and should not issue any upgrade warnings when upgrading packages with `apt-get`.
 
+### Install Errata
+
+If you were an early adopter of qBittorrent (i.e. before October 8th 2020), then a few extra packages got installed which also started background services if you chose to compile qBittorent.
+
+qBittorrent will no longer install "recommended" packages, but out of respect for your system, these recommended packages/services will not be automatically removed as they may be required packages in certain circumstances. If you have the following packages on your system they should be safe to stop their services and/or remove them as well if you had them installed through the qBit build pipeline. ***PLEASE DOUBLE CHECK THESE YOURSELF AND IF IN DOUBT DISABLE SERVICES BEFORE REMOVING THEM!!!!***
+- avahi-daemon (Bonjour for linux, aka, LAN Device Discovery)
+- wpasupplicant (Used for configuring wifi access points)
+- modemmanager (Used for configuring modems)
+
+The services can be stopped with:
+```
+sudo systemctl stop wpa_supplicant ModemManager avahi-daemon
+```
+
+If you are satisfied they are not required, these packages can be purged or disabled:
+```
+sudo apt purge avahi-daemon wpasupplicant modemmanager
+sudo apt autoremove
+```
+OR
+```
+sudo systemctl disable --now wpa_supplicant ModemManager avahi-daemon
+```
+
 ### Install Options
 
 When installing qBittorrent, depending on your operating system, you'll have a couple choices available to you:
