@@ -60,6 +60,11 @@ When installing qBittorrent, depending on your operating system, you'll have a c
 - **RC_1_2**: pulls the current head of the Libtorrent 1.2 branch, compiles it and packages it with `fpm` as a .deb file.
   - The branch is only an option if you are using `Deluge v2` or `qBittorrent latest` as it is completely incompatible with `Deluge 1.3.15` and versions of `qBittorrent < 4.2`.
 
+#### Libtorrent Patching
+If you would like to patch the settings pack of libtorrent (or any other aspect for that matter), the libtorrent compile will check if `/root/libtorrent.patch` exists. If it does, then the installer will automatically patch the libtorrent source with this patch before libtorrent is compiled. This may be of note since the ltconfig plugin does not exist for qBittorent, thus if you are interested in changing certain settings pack settings for qBittorrent settings which are not currently exposed through the WebUI, then this is the only way to change those settings without manually compiling libtorrent.
+
+You must supply your own patch!
+
 
 ## Upgrading and Recompiling
 
