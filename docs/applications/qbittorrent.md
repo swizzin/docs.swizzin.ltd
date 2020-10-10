@@ -68,7 +68,7 @@ You must supply your own patch!
 
 ## Upgrading and Recompiling
 
-If you decide you'd like to change the version of qBittorrent/libtorrent you've installed, or you would like to rebuild your current versions against the most recent source, you can recompile and upgrade deluge at any time with the command:
+If you decide you'd like to change the version of qBittorrent/libtorrent you've installed, or you would like to rebuild your current versions against the most recent source, you can recompile and upgrade qBittorrent at any time with the command:
 
 ```bash main
 sudo box upgrade qbittorrent
@@ -80,7 +80,7 @@ This command will start the qBittorrent upgrade script. The installer will ask w
 
 ### Web UI
 
-The web UI is significantly easier to access, which is why many prefer it. You can access deluge-web from `https://yourhost.ltd/qbittorrent`.
+The web UI is significantly easier to access, which is why many prefer it. You can access qBittorrent from `https://yourhost.ltd/qbittorrent`.
 
 If you are not currently logged in, you will first receive a basic authentication dialog from the webserver. Once authenticated, you'll receive a secondary prompt from qBittorrent. This password is the same as the one you just entered.
 
@@ -128,7 +128,7 @@ Feel free to edit the majority of the settings here, but do not change the WebUI
 
 ### Default Download Location
 
-Files downloaded by qBittorrent will be placed in `~/torrents/qbittorrent` by default. You can change this behavior by change the preference: `Download to` in the Deluge download preferences.
+Files downloaded by qBittorrent will be placed in `~/torrents/qbittorrent` by default. You can change this behavior by change the preference: `Download to` in the qBittorrent download preferences.
 
 ### Web Download Location
 
@@ -136,7 +136,7 @@ Similarly, any files in the default download directory (`~/torrents/qbittorrent`
 
 ## Connect to other clients
 
-The following variables can be used as a general guide to help you find information you'll need to know in order to connect other clients to Deluge.
+The following variables can be used as a general guide to help you find information you'll need to know in order to connect other clients to qBittorrent.
 
 
 ### Transdroid
@@ -156,7 +156,7 @@ Accept all SSL certificates: yes (optional with a valid ssl certificate)
 
 ### Other Local Clients
 
-Settings for connecting another local client (i.e. Sonarr), to your Deluge instance:
+Settings for connecting another local client (i.e. Sonarr), to your qBittorrent instance:
 
 - Host: `127.0.0.1`
 - Port: `Found in WebUI section of qBittorrent`
