@@ -49,9 +49,7 @@ The install script for Sonarr v3 includes functionality to migrate and remove a 
 
 An additional backup of the v2 configuration is created in `/root/sonarrv2.bak/`, which includes an internal Sonarr backup file triggered via API right before the installation.
 
-In order to downgrade, remove `sonarrv3` and install `sonarr` again. The original configuration files will be untouched. Any changes in v3 will not be migrated, as the installation will only look at the old files.
-
-If the installation does not reproduce your original v2 content, please see the Migration and Backup steps on the Sonarr Github, and use `/root/sonarrv2.bak` as the "original" files.
+Please check the Downgrading chapter in troubleshooting if you want to go back.
 
 ### v2 setups that were modified
 If you have toyed with the v2 Sonarr configuration and are not using the vanilla setup by swizzin (e.g. modified service files, overrides, etc.), you should make sure to run some extra steps before.
@@ -196,7 +194,7 @@ API: <copy and paste from jackett UI>
 ### Sonarr and user homedir permissions
 Sonarr is running as the master user (unless changed in install options using parameters), so that user needs to be able to see the directories you'd like sonarr to see as well. You can achieve this by adding the desired user to the group of whoever runs the sonarr process. e.g. `usermod -a -G <user with data> <master/sonarrv3owner>`
 
-### Other tasks
+## Other tasks
 
 You may wish to further alter your setup by setting quality profiles or setting up post-processing so that media is automatically transferred to your Sonarr library when your torrents are completed. If you need further help, you can refer to the [Sonarr Wiki](https://github.com/Sonarr/Sonarr/wiki).
 
@@ -207,3 +205,23 @@ You can always also try the [general troubleshooting tips written in our guide](
 :::
 
 Please consult the [github issues](https://github.com/Sonarr/Sonarr/issues) or the [Sonarr Discord community](https://discord.gg/M6BvZn5) in case you are having problems with this application.
+
+### Downgrading
+
+In order to downgrade, remove `sonarrv3` and install `sonarr` again. The original configuration files will be untouched. Any changes in v3 will not be migrated, as the installation will only look at the old files.
+
+If the installation does not reproduce your original v2 content, please see the Migration and Backup steps on the Sonarr Github, and use the contents of `/root/swizzin/backups/sonarrv2.bak` as the "original" files.
+
+Please consult the [Sonarr's wiki for downgrading steps](https://github.com/Sonarr/Sonarr/wiki/Backup-and-Restore)
+
+Therefore, you could achieve a downgrade with the following (untested!) example steps
+
+```bash
+box remove sonarrv3
+box install sonarr
+systemctl stop sonarr
+cd /home/<master>/.config
+mv sonarr sonarrv3bak
+cp /root/swizzin/backups/sonarrv2.back./* NzbDrone/
+systemctl start sonarrv3
+```
