@@ -4,6 +4,11 @@ title: Setting up swizzin with advanced options
 sidebar_label: Advanced Setup
 ---
 
+Below are the many ways you can use the installer to get exactly toi where you need to be, fast.
+
+::: warning
+Please note that not all the code has been modified yet to be compatible with the unattended setup. If you find some application that is breaking the unattended setup or has no configuration flags, please raise a [GitHub issue](https://github.com/liaralabs/swizzin/issues/new/choose).
+:::
 ## Options
 * `--user username`
   * Specify the `username` of the master user for swizzin to create.
