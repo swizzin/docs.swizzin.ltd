@@ -42,7 +42,10 @@ export download_dir='torrents/downloads'
 For the directory options, the installer will create these automatically (e.g. `mkdir -p /home/${user}/${download_dir}`, etc.)
 
 Please do note that in the event you have nginx installed, some of these settings will be overridden and the application will pass through the `/transmission` endpoint on your domain/IP.
-
+- `arg_transmissionsource`:
+  - Default: **Interactive**
+  - Options: `Repo`/`PPA` (Ubuntu only)
+  - Setting this will skip the interactive source selection screen.
 - `download_dir`:
   - Default: `transmission/downloads`
 - `incomplete_dir_enabled`
