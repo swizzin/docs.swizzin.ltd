@@ -61,7 +61,8 @@
     ],
     "Guides": [
       "guides/dist-upgrade",
-      "guides/troubleshooting"
+      "guides/troubleshooting",
+      "guides/advanced-setup"
     ],
     "Helper Scripts": [
       "scripts/setdisk"
