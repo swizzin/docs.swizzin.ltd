@@ -14,20 +14,20 @@ Please note that not all the code has been modified yet to be compatible with th
 ::: warning
 Please note that none of the values that you set here are checked for validity or comaptibility. Setting wrong values here could break your system.
 :::
-## `--user`
+### `--user`
   * Takes the `username` of the master user for swizzin to create as positional argument (i.e. `--user masteruser`)
-## `--pass`
+### `--pass`
   * Takes the `password` of the master user for siwzzin to create as positional argument (i.e. `--pass "P@55w0rd"`)
-## `--domain`
+### `--domain`
   * Takes `domain` as positional argument (i.e. `--domain domain.tld`)
   * _In the event_ `letsencrypt` is being installed, this will quickly set the domain against which to verify, enable the certificate in the default `nginx` config, and skip cloudflare integration
     * Shorthand for `LE_hostname=domain.tld`, `LE_defaultconf=yes` and `LF_bool_cf=no` as described in the [Letsencrypt Installation Options](/applications/letsencrypt#install-options). If you need something else, check the [`--env`](#--env) option.
   * **Please note:** This does not imply that `nginx` or `letsencrypt` will be installed, you still have to pass those as packages to install
 
-## `--local`
+### `--local`
   * Instead of cloning the repository to `/etc/swizzin/`, it will link the folder where `setup.sh` is located to `/etc/swizzin`.
   * **Note:** If you (re)move the folder where `setup.sh` was sitting, the link will break, and so will your `box` commands etc.
-## `--env`
+### `--env`
   * Takes a path to file as positional argument (e.g. `--env /path/to/env/file.env`)
   * Ingests variables and settings from a file for use later through the installer.Please see the [Env File](#env-file) Chapter below
   * _Using this implies using [`--unattend`](#--unattend)_
@@ -35,19 +35,18 @@ Please note that none of the values that you set here are checked for validity o
     * if you do `bash setup.sh --env /path/to/file.env --user otheruser`, all of the env file contents will be ingested, and then the user will be overridden to `otheruser`
     * The only exception to this are the packages specified on the CLI. If they are specified after the `--env`, they will get added to the list.
 
-## `--unattend`
+### `--unattend`
   * Disables interactive queries within the `setup.sh` script, such as the greeting, user creation queries and the installation applications queries.
   * **Does not disable interactive queries in install packages, as those will need per-variable declaration.**
-## `[package(s)]`
+### `[package(s)]`
   * Any other arguments are treated as a name of a package for swizzin to install.
   * If any package is specified, the application installation picker will be skipped during the installation
   * If you want no packages to be installed, make sure to specify the `--unattend` flag
-## Using environment variables
+### Using environment variables
   * You can pass environment variables to the script either through...
     * `export` within your shell before running `bash setup.sh`
     * you can use something like `var1=value var2=value bash setup.sh`
   * Same options are available as are for the [env file](#env-file).
-
 
 ## Env file
 ::: warning
