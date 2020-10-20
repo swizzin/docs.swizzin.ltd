@@ -7,7 +7,9 @@ sidebar_label: Advanced Setup
 Below are the many ways you can use the installer to get exactly toi where you need to be, fast.
 
 ::: tip Note
-Please note that not all the code has been modified yet to be compatible with the unattended setup. If you find some application that is breaking the unattended setup or has no configuration flags, please raise a [GitHub issue](https://github.com/liaralabs/swizzin/issues/new/choose).
+Not all the code has been modified yet to be compatible with the unattended setup.
+
+If you find some application that is breaking the unattended setup or has no Install options, please raise a [GitHub issue](https://github.com/liaralabs/swizzin/issues/new/choose).
 :::
 
 ## Options

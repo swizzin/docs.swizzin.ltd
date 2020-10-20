@@ -60,6 +60,9 @@ In text fields, you only need to enter your text and hit `return` to enter. To c
 
 When you have finished running through the prompts, installation will start. The time it takes will depend on the number of packages you have selected.
 
+### Advanced setup
+There's a whole bunch of options for the setup.sh to achieve custom/unattended setups, which you can read all about [in this guide](/guides/advanced-setup).
+
 #### Additional Setup Quirks
 
 A few items to be aware of as known issues. Most of these have had attempts at working around them, but it's good to be aware of things to avoid:
