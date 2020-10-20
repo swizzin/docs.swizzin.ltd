@@ -6,37 +6,10 @@ sidebar_label: Advanced Setup
 
 Below are the many ways you can use the installer to get exactly toi where you need to be, fast.
 
-::: info
+::: tip Note
 Please note that not all the code has been modified yet to be compatible with the unattended setup. If you find some application that is breaking the unattended setup or has no configuration flags, please raise a [GitHub issue](https://github.com/liaralabs/swizzin/issues/new/choose).
 :::
 
-## Examples
-A fully automated install with everything in an env file, and user and password which override the env file
-```bash
-bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) --env /path/to/file.env --user tester --pass tester123
-```
-
-Quickly get a local environment with a user installed, using your local fork clone instead of upstream, and no apps installed
-```bash
-git clone <your fork>
-bash setup.sh --user tester --pass tester123 --local --unattend
-```
-
-Get a quick transmission installation
-```bash
-git clone <your fork>
-arg_transmissionsource="Repo" bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) --user tester --pass tester123 transmission
-```
-
-Get the Dan Martini(TM) (A username, password, domain, nginx and letsencrypt only. Shaken, not interrupted)
-```bash
-bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) --unattend --user tester --pass tester123 --domain testing.com nginx letsencrypt
-```
-
-The sausage multipass developer menu (this definitely me just saving my command recipe for later)
-```powershell
-multipass delete --all --purge; multipass launch -n swiz; multipass mount .\Git\Fun\swizzin\ swiz; multipass exec swiz -- sudo -H su -c 'bash /home/ubuntu/C:/Users/sausage/Git/Fun/swizzin/setup.sh --unattend --local --user test --pass tester123'
-```
 ## Options
 ::: warning
 Please note that none of the values that you set here are checked for validity or comaptibility. Setting wrong values here could break your system.
@@ -110,4 +83,31 @@ LE_defaultconf=yes
 LE_cf_api=aaapppiiiikkkeeeeeyyyyyyyy
 LE_cf_email="email@blach.lol"
 LE_cf_zone="some.zone.asdasdasdasd" # or LE_cf_zoneexists=yes if you don't need it created
+```
+
+## Examples
+A fully automated install with everything in an env file, and user and password which override the env file
+```bash
+bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) --env /path/to/file.env --user tester --pass tester123
+```
+
+Quickly get a local environment with a user installed, using your local fork clone instead of upstream, and no apps installed
+```bash
+git clone <your fork>
+bash setup.sh --user tester --pass tester123 --local --unattend
+```
+
+Get a quick transmission installation
+```bash
+arg_transmissionsource="Repo" bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) --user tester --pass tester123 transmission
+```
+
+Get the Dan Martini(TM) (A username, password, domain, nginx and letsencrypt only. Shaken, not interrupted)
+```bash
+bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) --unattend --user tester --pass tester123 --domain testing.com nginx letsencrypt
+```
+
+The sausage multipass developer menu (this definitely is not me just saving my command recipe for later)
+```powershell
+multipass delete --all --purge; multipass launch -n swiz; multipass mount .\Git\Fun\swizzin\ swiz; multipass exec swiz -- sudo -H su -c 'bash /home/ubuntu/C:/Users/sausage/Git/Fun/swizzin/setup.sh --unattend --local --user test --pass tester123'
 ```
