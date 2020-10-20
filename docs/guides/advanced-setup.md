@@ -18,29 +18,23 @@ Please note that none of the values that you set here are checked for validity o
   * Takes the `username` of the master user for swizzin to create as positional argument (i.e. `--user masteruser`)
 ## `--pass`
   * Takes the `password` of the master user for siwzzin to create as positional argument (i.e. `--pass "P@55w0rd"`)
-  * Specifying 
 ## `--domain`
   * Takes `domain` as positional argument (i.e. `--domain domain.tld`)
-  * _If_ `letsencrypt` is being installed, this will quickly set the domain against which to verify, enable the certificate in the default `nginx` config, and skip cloudflare integration
+  * _In the event_ `letsencrypt` is being installed, this will quickly set the domain against which to verify, enable the certificate in the default `nginx` config, and skip cloudflare integration
     * Shorthand for `LE_hostname=domain.tld`, `LE_defaultconf=yes` and `LF_bool_cf=no` as described in the [Letsencrypt Installation Options](/applications/letsencrypt#install-options). If you need something else, check the [`--env`](#--env) option.
   * **Please note:** This does not imply that `nginx` or `letsencrypt` will be installed, you still have to pass those as packages to install
 
 ## `--local`
   * Instead of cloning the repository to `/etc/swizzin/`, it will link the folder where `setup.sh` is located to `/etc/swizzin`.
-  * If you (re)move the folder where `setup.sh` was sitting, the link will break, and so will your `box` commands etc.
+  * **Note:** If you (re)move the folder where `setup.sh` was sitting, the link will break, and so will your `box` commands etc.
 ## `--env`
   * Takes a path to file as positional argument (e.g. `--env /path/to/env/file.env`)
- /path/to/env/file.env
   * Ingests variables and settings from a file for use later through the installer.Please see the [Env File](#env-file) Chapter below
   * _Using this implies using [`--unattend`](#--unattend)_
   * If `--env` is specified after other arguments, contents of env file will override the arguments. If arguments are specified after the `--env file`, they will override the content of the env file.
     * if you do `bash setup.sh --env /path/to/file.env --user otheruser`, all of the env file contents will be ingested, and then the user will be overridden to `otheruser`
     * The only exception to this are the packages specified on the CLI. If they are specified after the `--env`, they will get added to the list.
-## **Passing environment variables**
-  * Instead of using [the `--env` flag](#--env), you can pass environment variables either through...
-    * `export` within your shell before running `bash setup.sh`
-    * you can use something like `var1=value var2=value bash setup.sh`
-  * Same options are available as are for the env file.
+
 ## `--unattend`
   * Disables interactive queries within the `setup.sh` script, such as the greeting, user creation queries and the installation applications queries.
   * **Does not disable interactive queries in install packages, as those will need per-variable declaration.**
@@ -48,6 +42,11 @@ Please note that none of the values that you set here are checked for validity o
   * Any other arguments are treated as a name of a package for swizzin to install.
   * If any package is specified, the application installation picker will be skipped during the installation
   * If you want no packages to be installed, make sure to specify the `--unattend` flag
+## Using environment variables
+  * You can pass environment variables to the script either through...
+    * `export` within your shell before running `bash setup.sh`
+    * you can use something like `var1=value var2=value bash setup.sh`
+  * Same options are available as are for the [env file](#env-file).
 
 
 ## Env file
@@ -88,26 +87,31 @@ LE_cf_zone="some.zone.asdasdasdasd" # or LE_cf_zoneexists=yes if you don't need 
 ## Examples
 A fully automated install with everything in an env file, and user and password which override the env file
 ```bash
-bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) --env /path/to/file.env --user tester --pass tester123
+bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) \
+--env /path/to/file.env --user tester --pass tester123
 ```
 
 Quickly get a local environment with a user installed, using your local fork clone instead of upstream, and no apps installed
 ```bash
 git clone <your fork>
-bash setup.sh --user tester --pass tester123 --local --unattend
+bash swizzin/setup.sh --user tester --pass tester123 --local --unattend
 ```
 
 Get a quick transmission installation
 ```bash
-arg_transmissionsource="Repo" bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) --user tester --pass tester123 transmission
+arg_transmissionsource="Repo" bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) \
+--user tester --pass tester123 transmission
 ```
 
 Get the Dan Martini(TM) (A username, password, domain, nginx and letsencrypt only. Shaken, not interrupted)
 ```bash
-bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) --unattend --user tester --pass tester123 --domain testing.com nginx letsencrypt
+bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) \
+--unattend --user tester --pass tester123 --domain testing.com nginx letsencrypt
 ```
 
 The sausage multipass developer menu (this definitely is not me just saving my command recipe for later)
 ```powershell
-multipass delete --all --purge; multipass launch -n swiz; multipass mount .\Git\Fun\swizzin\ swiz; multipass exec swiz -- sudo -H su -c 'bash /home/ubuntu/C:/Users/sausage/Git/Fun/swizzin/setup.sh --unattend --local --user test --pass tester123'
+multipass delete --all --purge; multipass launch -n swiz; \
+multipass mount .\Git\Fun\swizzin\ swiz; \
+multipass exec swiz -- sudo -H su -c 'bash /home/ubuntu/C:/Users/sausage/Git/Fun/swizzin/setup.sh --unattend --local --user test --pass tester123'
 ```
