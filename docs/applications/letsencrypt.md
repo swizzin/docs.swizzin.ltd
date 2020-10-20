@@ -59,15 +59,15 @@ You can set these variables before running the script to skip the interactive qu
     - Default: **Interactive**
 - `LE_bool_cf`
     - Used to specify whether or not to enable the CloudFlare portion of the script
-    - **Note** setting other `cf` options implies this to `yes`. Set this to `no` if you want to skip the cloudflare questions.
+    - **Note** setting other `cf` options mentioned below sets this to `yes`. Set this to `no` if you want to skip the cloudflare questions.
     - Options: `yes` or `no`
     - Default: **Interactive**
 - `LE_cf_email`
     - Default: **Interactive**
 - `LE_cf_api`
     - Default: **Interactive**
-- `LE_cf_bool_zone`
-    - **Note** setting  `LE_cf_zone` option implies this to `yes`. Set this to `no` if you want to skip the CF zone question.
+- `LE_cf_zoneexists`
+    - **Note** setting  `LE_cf_zone` option implies this to `no`. Set this to `yes` if your zone already exists.
     - Options: `yes` or `no`
     - Default: **Interactive**
 - `LE_cf_zone`
