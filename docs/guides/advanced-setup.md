@@ -12,7 +12,7 @@ Please note that not all the code has been modified yet to be compatible with th
 
 ## Options
 ::: warning
-Please note that none of the values that you set here are checked for validity or comaptibility. Setting wrong values here could break your system.
+Please note that none of the values that you set here are checked for validity or comaptibility. Make sure you programatically check them before. Setting wrong values here could break your system.
 :::
 ### `--user`
   * Takes the `username` of the master user for swizzin to create as positional argument (i.e. `--user masteruser`)
@@ -20,10 +20,9 @@ Please note that none of the values that you set here are checked for validity o
   * Takes the `password` of the master user for siwzzin to create as positional argument (i.e. `--pass "P@55w0rd"`)
 ### `--domain`
   * Takes `domain` as positional argument (i.e. `--domain domain.tld`)
-  * _In the event_ `letsencrypt` is being installed, this will quickly set the domain against which to verify, enable the certificate in the default `nginx` config, and skip cloudflare integration
-    * Shorthand for `LE_hostname=domain.tld`, `LE_defaultconf=yes` and `LF_bool_cf=no` as described in the [Letsencrypt Installation Options](/applications/letsencrypt#install-options). If you need something else, check the [`--env`](#--env) option.
-  * **Please note:** This does not imply that `nginx` or `letsencrypt` will be installed, you still have to pass those as packages to install
-
+  * _In the event_ `letsencrypt` is being installed, this will set the domain against which to verify, enable the certificate in the default `nginx` config, and skip cloudflare integration
+    * Shorthand for `LE_hostname=domain.tld`, `LE_defaultconf=yes` and `LF_bool_cf=no` as described in the [Letsencrypt install options](/applications/letsencrypt#install-options). If you need something else, check the [`--env`](#--env) or [environment variables](#environment-variables) options.
+  * **Please note:** This does not imply that `nginx` and `letsencrypt` will be installed, you still have to pass those as packages to install in order for this to apply.
 ### `--local`
   * Instead of cloning the repository to `/etc/swizzin/`, it will link the folder where `setup.sh` is located to `/etc/swizzin`.
   * **Note:** If you (re)move the folder where `setup.sh` was sitting, the link will break, and so will your `box` commands etc.
@@ -34,15 +33,14 @@ Please note that none of the values that you set here are checked for validity o
   * If `--env` is specified after other arguments, contents of env file will override the arguments. If arguments are specified after the `--env file`, they will override the content of the env file.
     * if you do `bash setup.sh --env /path/to/file.env --user otheruser`, all of the env file contents will be ingested, and then the user will be overridden to `otheruser`
     * The only exception to this are the packages specified on the CLI. If they are specified after the `--env`, they will get added to the list.
-
 ### `--unattend`
-  * Disables interactive queries within the `setup.sh` script, such as the greeting, user creation queries and the installation applications queries.
-  * **Does not disable interactive queries in install packages, as those will need per-variable declaration.**
+  * Disables interactive queries within the `setup.sh` script such as the greeting, user creation queries and the installation applications queries.
+  * **Does not disable interactive queries in install packages**, as those are disabled based on whether environment variables are set.
 ### `[package(s)]`
   * Any other arguments are treated as a name of a package for swizzin to install.
   * If any package is specified, the application installation picker will be skipped during the installation
-  * If you want no packages to be installed, make sure to specify the `--unattend` flag
-### Using environment variables
+  * If you want no packages to be installed, make sure to specify [the `--unattend` flag](#--unattend)
+### Environment variables
   * You can pass environment variables to the script either through...
     * `export` within your shell before running `bash setup.sh`
     * you can use something like `var1=value var2=value bash setup.sh`
@@ -55,8 +53,7 @@ Please note that none of the values that you set here are checked for validity o
 
 You can use a file with recorded variables for `setup.sh` to use, instead of using the CLI arguments/variables. Please [see the `--env` option in the chapter above](#--env).
 
-An example file is included in the root of the git repo.
-
+An example file is included in the root of the swizzin git repo.
 
 If a package has an "Install Options" chapter, you can specify those values in this file. Please note that these options can change over time. An example of these can be found [here](/applications/letsencrypt#install-options), or in the source code. 
 
@@ -98,7 +95,8 @@ bash swizzin/setup.sh --user tester --pass tester123 --local --unattend
 
 Get a quick transmission installation
 ```bash
-arg_transmissionsource="Repo" bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) \
+arg_transmissionsource="Repo" \
+bash <(curl -s  https://raw.githubusercontent.com/liaralabs/swizzin/master/setup.sh) \
 --user tester --pass tester123 transmission
 ```
 
