@@ -18,9 +18,9 @@ This command will configure Deluge and the associated web interface "Deluge-Web"
 
 After installation, if there will be two 2 new packages installed: libtorrent, and deluge-common. Due to potential packaging conflicts with your distribution's repository, the package `deluge-common` has been held by apt and will not be marked for upgrade. You may see apt issue a warning regarding the held `deluge-common` package. This is completely normal and it means the apt mark is working as expected. The package name for `libtorrent` does not interfere with any apt packages and should not issue any upgrade warnings.
 
-### Install Options
+### Choosing versions
 
-When installing Deluge, depending on your operating system, you'll have a couple choices available to you:
+When installing Deluge, depending on your operating system, you'll have a couple choices available to you.
 
 #### Deluge Version
 - **Repo**: performs an `apt-get install deluged deluge-console deluge-web` and pulls whatever is available from your operating system's repository. To check versions, you can use the [Debian Package Tracker](https://www.debian.org/distrib/packages) or the [Ubuntu Package Tracker](https://packages.ubuntu.com/).
@@ -46,6 +46,15 @@ If you intend to use the thin client with your installation, your local version 
 If you would like to patch the settings pack of libtorrent (or any other aspect for that matter), the libtorrent compile will check if `/root/libtorrent.patch` exists. If it does, then the installer will automatically patch the libtorrent source with this patch before libtorrent is compiled. This may be of note since the ltconfig plugin does not exist for qBittorent, thus if you are interested in changing certain settings pack settings for qBittorrent settings which are not currently exposed through the WebUI, then this is the only way to change those settings without manually compiling libtorrent.
 
 You must supply your own patch!
+
+### Install Options
+
+- `DELUGE_v`
+  - Options: `repo`, `1.3-stable`, `master`
+  - Default: **Interactive**
+- `LIBTORRENT_v`
+  - Options: `repo`, `RC_1_0`, `RC_1_1`, `RC_1_2`, 
+  - Default: **Interactive**
 
 ## Upgrading and Recompiling
 

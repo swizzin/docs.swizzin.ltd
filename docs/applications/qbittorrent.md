@@ -42,7 +42,7 @@ OR
 sudo systemctl disable --now wpa_supplicant ModemManager avahi-daemon
 ```
 
-### Install Options
+### Choosing versions
 
 When installing qBittorrent, depending on your operating system, you'll have a couple choices available to you:
 
@@ -65,6 +65,14 @@ If you would like to patch the settings pack of libtorrent (or any other aspect 
 
 You must supply your own patch!
 
+### Install options
+
+- `QBITTORRENT_v`
+  - Options: `repo`, `1.3-stable`, `master`
+  - Default: **Interactive**
+- `LIBTORRENT_v`
+  - Options: `repo`, `RC_1_0`, `RC_1_1`, `RC_1_2`, 
+  - Default: **Interactive**
 
 ## Upgrading and Recompiling
 
