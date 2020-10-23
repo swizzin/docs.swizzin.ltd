@@ -7,11 +7,11 @@ export const testvar = "Service"
 <Tabs
   defaultValue="start"
   values={[
-    {label: 'Start', value: 'start', cmd: ''},
-    {label: 'Stop', value: 'stop', cmd: 'sudo systemctl stop {props.service}'},
-    {label: 'Restart', value: 'restart', cmd: 'sudo systemctl restart {props.service}'},
-    {label: 'Enable', value: 'enable', cmd: 'sudo systemctl enable {props.service}'},
-    {label: 'Disable', value: 'disable', cmd: 'sudo systemctl disable {props.service}'},
+    {label: 'Start', value: 'start'},
+    {label: 'Stop', value: 'stop'},
+    {label: 'Restart', value: 'restart'},
+    {label: 'Enable', value: 'enable'},
+    {label: 'Disable', value: 'disable'},
   ]}>
   <TabItem value="start"><CodeSnippet code={"sudo systemctl start " + props.service} lang="bash"></CodeSnippet></TabItem>
   <TabItem value="stop"><CodeSnippet code={"sudo systemctl stop " + props.service} lang="bash"></CodeSnippet></TabItem>
