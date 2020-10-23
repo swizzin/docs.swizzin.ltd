@@ -23,7 +23,6 @@ module.exports = {
             "applications/bazarr",
             "applications/btsync",
             "applications/couchpotato",
-            "applications/csf",
             "applications/deluge",
             "applications/duckdns",
             "applications/emby",
