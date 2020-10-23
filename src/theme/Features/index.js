@@ -67,7 +67,7 @@ function Features() {
           <div className="container">
             <Headline
               category="Features"
-              title="Manage your fleet of devices with ease"
+              title="Manage your box with ease and confidence"
               offset={1}
             />
 
