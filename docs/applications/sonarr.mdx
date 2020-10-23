@@ -34,21 +34,9 @@ Service status for sonarr is handled by systemd. Despite the service being enabl
 /etc/systemd/system/sonarr@.service
 ```
 
-<Tabs
-  defaultValue="start"
-  values={[
-    {label: 'Start', value: 'start'},
-    {label: 'Stop', value: 'stop'},
-    {label: 'Restart', value: 'restart'},
-    {label: 'Enable', value: 'enable'},
-    {label: 'Disable', value: 'disable'},
-  ]}>
-  <TabItem value="start"><CodeSnippet code="sudo systemctl start sonarr@<username>" lang="bash"></CodeSnippet></TabItem>
-  <TabItem value="stop"><CodeSnippet code="sudo systemctl stop sonarr@<username>" lang="bash"></CodeSnippet></TabItem>
-  <TabItem value="restart"><CodeSnippet code="sudo systemctl restart sonarr@<username>" lang="bash"></CodeSnippet></TabItem>
-  <TabItem value="enable"><CodeSnippet code="sudo systemctl enable sonarr@<username>" lang="bash"></CodeSnippet></TabItem>
-  <TabItem value="disable"><CodeSnippet code="sudo systemctl disable sonarr@<username>" lang="bash"></CodeSnippet></TabItem>
-</Tabs>
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="sonarr@<username>"/>
 
 
 ## Configuration
