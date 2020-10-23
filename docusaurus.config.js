@@ -42,7 +42,6 @@ module.exports = {
           label: "Docs",
           position: "left",
         },
-        { to: "blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/liaralabs/swizzin",
           position: "right",
@@ -63,16 +62,13 @@ module.exports = {
           items: [
             {
               label: "Getting Started",
-              to: "docs/installation",
+              to: "docs",
             },
             {
               label: "Box Basics",
-              to: "docs/applications/box-basics",
+              to: "docs/getting-started/box-basics",
             },
-            {
-              label: "Privacy Policy",
-              to: "docs/policies/privacy",
-            },
+
           ],
         },
         {
