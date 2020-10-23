@@ -102,3 +102,9 @@ html[data-theme='dark'] {
     font-size: 1.25rem;
   }
 }
+
+.navbar__title {
+    flex-shrink: 0;
+    max-width: 0;
+    visibility: hidden;
+}
