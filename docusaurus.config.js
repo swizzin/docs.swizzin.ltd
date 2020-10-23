@@ -3,7 +3,7 @@ module.exports = {
   tagline: "An all-in-one modular seedbox solution",
   url: "https://swizzin.github.io",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "liaralabs", // Usually your GitHub org/user name.
   projectName: "docs.swizzin.ltd", // Usually your repo name.
