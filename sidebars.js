@@ -65,10 +65,10 @@ module.exports = {
             "applications/tautulli",
             "applications/transmission",
             "applications/vsftpd",
-            "applications/wireguard",
             "applications/webmin",
+            "applications/wireguard",
             "applications/x2go",
-            "applications/xmr-stak",
+            "applications/xmrig",
             "applications/znc"
           ],
       },
