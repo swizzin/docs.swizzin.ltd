@@ -217,8 +217,8 @@ const data = [
 
 function Application({ title, url }) {
   return (
-    <div className={clsx("col col--2", styles.feature)}>
-      <a className="button button--link" href={url}>{title}</a>
+    <div className={clsx("col col--2", styles.feature, styles.applications)}>
+      <a href={url}>{title}</a>
     </div>
   );
 }

@@ -8,3 +8,13 @@
 .features {
   background-color: var(--ifm-background-surface-color);
 }
+
+.applications {
+    @media (max-width: 996px) {
+        --ifm-col-width: 50% !important;
+        flex-basis: var(--ifm-col-width);
+        margin-left: 0;
+
+        max-width: var(--ifm-col-width);
+    }
+}
