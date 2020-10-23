@@ -1,5 +1,7 @@
 import React from "react";
 import clsx from "clsx";
+import Link from "@docusaurus/Link";
+import { FiFlag } from "react-icons/fi";
 
 import Headline from "@theme/Headline";
 import styles from "./styles.module.scss";
@@ -239,6 +241,20 @@ function Applications() {
               {data.map((props, idx) => (
                 <Application key={idx} {...props} />
               ))}
+            </div>
+
+            <div className="row">
+              <div className="col col--5 col--offset-1">
+                <Link
+                  className={clsx(
+                    "button button--primary button--lg",
+                    styles.button
+                  )}
+                  href="https://feathub.com/liaralabs/swizzin"
+                >
+                  <FiFlag size={24} /> App and feature requests
+                </Link>
+              </div>
             </div>
           </div>
         </section>
