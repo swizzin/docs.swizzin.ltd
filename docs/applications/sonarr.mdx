@@ -3,6 +3,11 @@ id: sonarr
 title: Sonarr v2 aka "Stable"
 sidebar_label: Sonarr v2
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeSnippet from "@site/src/theme/CodeSnippet";
+
+
 
 Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
 
@@ -29,28 +34,22 @@ Service status for sonarr is handled by systemd. Despite the service being enabl
 /etc/systemd/system/sonarr@.service
 ```
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start sonarr@<username>
-```
-<!--Stop-->
-```bash
-sudo systemctl stop sonarr@<username>
-```
-<!--Restart-->
-```bash
-sudo systemctl restart sonarr@<username>
-```
-<!--Enable-->
-```bash
-sudo systemctl enable sonarr@<username>
-```
-<!--Disable-->
-```bash
-sudo systemctl disable sonarr@<username>
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+<Tabs
+  defaultValue="start"
+  values={[
+    {label: 'Start', value: 'start'},
+    {label: 'Stop', value: 'stop'},
+    {label: 'Restart', value: 'restart'},
+    {label: 'Enable', value: 'enable'},
+    {label: 'Disable', value: 'disable'},
+  ]}>
+  <TabItem value="start"><CodeSnippet code="sudo systemctl start sonarr@<username>" lang="bash"></CodeSnippet></TabItem>
+  <TabItem value="stop"><CodeSnippet code="sudo systemctl stop sonarr@<username>" lang="bash"></CodeSnippet></TabItem>
+  <TabItem value="restart"><CodeSnippet code="sudo systemctl restart sonarr@<username>" lang="bash"></CodeSnippet></TabItem>
+  <TabItem value="enable"><CodeSnippet code="sudo systemctl enable sonarr@<username>" lang="bash"></CodeSnippet></TabItem>
+  <TabItem value="disable"><CodeSnippet code="sudo systemctl disable sonarr@<username>" lang="bash"></CodeSnippet></TabItem>
+</Tabs>
+
 
 ## Configuration
 
