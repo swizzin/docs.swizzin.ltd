@@ -1,16 +1,28 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
+import Tabs from '@site/src/theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeSnippet from "@site/src/theme/CodeSnippet";
 import { FiGithub } from "react-icons/fi";
 import { DiDebian, DiUbuntu } from "react-icons/di";
 
 import Headline from "@theme/Headline";
 import styles from "./styles.module.scss";
 
+const installmethod = [
+    {
+        label: "curl",
+        cmd: `bash <(curl -sL https://git.io/swizzin-setup)`,
+    },
+    {
+        label: "wget",
+        cmd: `bash <(wget -O- -q https://git.io/swizzin-setup)`
+    }
+]
+
 function QuickStart() {
   const size = 36;
-  const wgetcmd = "bash <(wget -O- -q https://git.io/swizzin-setup)";
-  const curlcmd = "bash <(curl -sL https://git.io/swizzin-setup)";
 
 
   return (
@@ -39,21 +51,27 @@ function QuickStart() {
             >
               <FiGithub size={24} /> Changelog
             </Link>
+          </div>
 
-            <div className={styles.platforms}>
+          <div className="col col--5">
+          {installmethod && installmethod.length && (
+                <Tabs defaultValue={installmethod[0].label} values={installmethod.map((props, idx) => {
+                  return {label:props.label, value:props.label};
+                })}>
+                  {installmethod.map((props, idx) => (
+                    <TabItem value={props.label}>
+                      <CodeSnippet code={props.cmd} lang="bash"></CodeSnippet>
+                    </TabItem>
+                  ))}
+                </Tabs>
+          )}
+              <div className={styles.platforms}>
               <h3>Supported Platforms</h3>
               <div>
                 <DiDebian size={size} />
                 <DiUbuntu size={size} />
               </div>
             </div>
-          </div>
-
-          <div className="col col--5">
-              <h3>wget</h3>
-                <pre>{wgetcmd}</pre>
-              <h3>curl</h3>
-                <pre>{curlcmd}</pre>
           </div>
         </div>
       </div>

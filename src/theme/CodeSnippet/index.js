@@ -29,7 +29,7 @@ function CodeSnippet(props) {
   const darkModeTheme = prism.darkTheme || lightModeTheme;
   const prismTheme = isDarkTheme ? darkModeTheme : lightModeTheme;
 
-  const { language = "javascript", code } = props;
+  const { language = "bash", code } = props;
 
   return (
     <Highlight
