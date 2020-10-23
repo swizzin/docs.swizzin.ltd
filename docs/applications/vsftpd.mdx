@@ -67,25 +67,6 @@ The systemd service file resides at:
 /lib/systemd/system/vsftpd.service
 ```
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start vsftpd
-```
-<!--Stop-->
-```bash
-sudo systemctl stop vsftpd
-```
-<!--Restart-->
-```bash
-sudo systemctl restart vsftpd
-```
-<!--Enable-->
-```bash
-sudo systemctl enable vsftpd
-```
-<!--Disable-->
-```bash
-sudo systemctl disable vsftpd
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="vsftpd"/>

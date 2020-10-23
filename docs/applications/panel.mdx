@@ -54,28 +54,9 @@ The systemd service file resides at:
 /etc/systemd/system/panel.service
 ```
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start panel
-```
-<!--Stop-->
-```bash
-sudo systemctl stop panel
-```
-<!--Restart-->
-```bash
-sudo systemctl restart panel
-```
-<!--Enable-->
-```bash
-sudo systemctl enable panel
-```
-<!--Disable-->
-```bash
-sudo systemctl disable panel
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="panel"/>
 
 ## Features
 

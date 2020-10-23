@@ -28,28 +28,9 @@ The Mango service is managed by `systemd` and has been configured as a system ap
 /etc/systemd/system/mango.service
 ```
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start mango
-```
-<!--Stop-->
-```bash
-sudo systemctl stop mango
-```
-<!--Restart-->
-```bash
-sudo systemctl restart mango
-```
-<!--Enable-->
-```bash
-sudo systemctl enable mango
-```
-<!--Disable-->
-```bash
-sudo systemctl disable mango
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="mango"/>
 
 ## User management
 

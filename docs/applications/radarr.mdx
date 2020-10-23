@@ -28,28 +28,9 @@ The Radarr service is managed by systemd and has been configured for single user
 /etc/systemd/system/radarr.service
 ```
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start radarr
-```
-<!--Stop-->
-```bash
-sudo systemctl stop radarr
-```
-<!--Restart-->
-```bash
-sudo systemctl restart radarr
-```
-<!--Enable-->
-```bash
-sudo systemctl enable radarr
-```
-<!--Disable-->
-```bash
-sudo systemctl disable radarr
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="radarr"/>
 
 ## Configuration
 

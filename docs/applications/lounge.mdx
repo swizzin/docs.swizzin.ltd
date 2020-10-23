@@ -24,28 +24,9 @@ Users from box are accessible under The Lounge. Changing passwords and removing 
 ## Service management
 You can control The Lounge using the systemctl service file.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start lounge
-```
-<!--Stop-->
-```bash
-sudo systemctl stop lounge
-```
-<!--Restart-->
-```bash
-sudo systemctl restart lounge
-```
-<!--Enable-->
-```bash
-sudo systemctl enable lounge
-```
-<!--Disable-->
-```bash
-sudo systemctl disable lounge
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="lounge"/>
 
 ## Configuration
 A new system user is created for The Lounge. The configuration file is stored in this users directory, therefore `/home/lounge/.thelounge/config.js`

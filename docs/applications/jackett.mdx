@@ -29,28 +29,9 @@ The service for jackett resides at:
 /etc/systemd/system/jackett@.service
 ```
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start jackett@<username>
-```
-<!--Stop-->
-```bash
-sudo systemctl stop jackett@<username>
-```
-<!--Restart-->
-```bash
-sudo systemctl restart jackett@<username>
-```
-<!--Enable-->
-```bash
-sudo systemctl enable jackett@<username>
-```
-<!--Disable-->
-```bash
-sudo systemctl disable jackett@<username>
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="jackett@<username>"/>
 
 ## Configuration
 

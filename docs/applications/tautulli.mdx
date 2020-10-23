@@ -28,28 +28,9 @@ The service for Tautulli is managed by systemd. The service file for tautulli re
 /etc/systemd/system/tautulli.service
 ```
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start tautulli
-```
-<!--Stop-->
-```bash
-sudo systemctl stop tautulli
-```
-<!--Restart-->
-```bash
-sudo systemctl restart tautulli
-```
-<!--Enable-->
-```bash
-sudo systemctl enable tautulli
-```
-<!--Disable-->
-```bash
-sudo systemctl disable tautulli
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="tautulli"/>
 
 ## Configuration
 

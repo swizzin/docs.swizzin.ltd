@@ -35,28 +35,9 @@ The systemd script for irssi (the main client for the autodl plugin) can be foun
 ```
 As a multi-user script, you must call it with the username to change the service status for.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start irssi@<username>
-```
-<!--Stop-->
-```bash
-sudo systemctl stop irssi@<username>
-```
-<!--Restart-->
-```bash
-sudo systemctl restart irssi@<username>
-```
-<!--Enable-->
-```bash
-sudo systemctl enable irssi@<username>
-```
-<!--Disable-->
-```bash
-sudo systemctl disable irssi@<username>
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="irssi@<username>"/>
 
 ## Configuration
 

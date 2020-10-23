@@ -27,28 +27,9 @@ Emby can be accessed from your browser at `https://<hostname.ltd>/emby/`
 
 The systemd service file for Emby is the default file. No modifications have been made to change its arguments.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start emby-server
-```
-<!--Stop-->
-```bash
-sudo systemctl stop emby-server
-```
-<!--Restart-->
-```bash
-sudo systemctl restart emby-server
-```
-<!--Enable-->
-```bash
-sudo systemctl enable emby-server
-```
-<!--Disable-->
-```bash
-sudo systemctl disable emby-server
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="emby-server"/>
 
 ## Configuration
 

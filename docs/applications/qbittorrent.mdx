@@ -99,28 +99,9 @@ These systemd service can be found here:
 ```
 Multi-user is enabled, so in order to manipulate the service, you'll also need to specify a username.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start qbittorrent@<username>
-```
-<!--Stop-->
-```bash
-sudo systemctl stop qbittorrent@<username>
-```
-<!--Restart-->
-```bash
-sudo systemctl restart qbittorrent@<username>
-```
-<!--Enable-->
-```bash
-sudo systemctl enable qbittorrent@<username>
-```
-<!--Disable-->
-```bash
-sudo systemctl disable qbittorrent@<username>
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="qbittorrent@<username>"/>
 
 ## Configuration
 

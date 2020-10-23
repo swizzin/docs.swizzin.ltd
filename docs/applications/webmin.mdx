@@ -28,25 +28,6 @@ This means that in case you have nginx installed, you will first be asked for th
 
 ## Service Management
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start webmin
-```
-<!--Stop-->
-```bash
-sudo systemctl stop webmin
-```
-<!--Restart-->
-```bash
-sudo systemctl restart webmin
-```
-<!--Enable-->
-```bash
-sudo systemctl enable webmin
-```
-<!--Disable-->
-```bash
-sudo systemctl disable webmin
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="webmin"/>

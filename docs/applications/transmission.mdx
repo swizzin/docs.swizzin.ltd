@@ -54,28 +54,9 @@ Please do note that in the event you have nginx installed, some of these setting
 
 Transmission has a process for each user, and this is how you can manage it
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start transmission@<user>
-```
-<!--Stop-->
-```bash
-sudo systemctl stop transmission@<user>
-```
-<!--Restart-->
-```bash
-sudo systemctl restart transmission@<user>
-```
-<!--Enable-->
-```bash
-sudo systemctl enable transmission@<user>
-```
-<!--Disable-->
-```bash
-sudo systemctl disable transmission@<user>
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="transmission@<user>"/>
 
 ## Connecting to Transmission Remote
 

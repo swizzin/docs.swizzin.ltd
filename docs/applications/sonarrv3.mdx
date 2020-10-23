@@ -67,28 +67,9 @@ Service status for sonarr is handled by systemd. Despite the service being enabl
 /etc/systemd/system/sonarr@.service
 ```
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start sonarr
-```
-<!--Stop-->
-```bash
-sudo systemctl stop sonarr
-```
-<!--Restart-->
-```bash
-sudo systemctl restart sonarr
-```
-<!--Enable-->
-```bash
-sudo systemctl enable sonarr
-```
-<!--Disable-->
-```bash
-sudo systemctl disable sonarr
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="sonarr"/>
 
 ## Configuration
 

@@ -22,28 +22,9 @@ You can access jellyfin through `https://domain.tld/jellyfin` if you have nginx 
 Jellyfin manages its users in a separate database. **`box` does not add users to the database in any way**. You will need to manage the jellyfin users manually. Whether you choose to keep those in sync with box or not is up to you
 
 ## Service management
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-systemctl start jellyfin
-```
-<!--Stop-->
-```bash
-systemctl stop jellyfin
-```
-<!--Restart-->
-```bash
-systemctl restart jellyfin
-```
-<!--Enable-->
-```bash
-systemctl enable jellyfin
-```
-<!--Disable-->
-```bash
-systemctl disable jellyfin
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="jellyfin"/>
 
 ## Troubleshooting
 

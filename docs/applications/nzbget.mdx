@@ -30,28 +30,9 @@ The systemd service file resides at:
 /etc/systemd/system/nzbget@.service
 ```
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start nzbget@<username>
-```
-<!--Stop-->
-```bash
-sudo systemctl stop nzbget@<username>
-```
-<!--Restart-->
-```bash
-sudo systemctl restart nzbget@<username>
-```
-<!--Enable-->
-```bash
-sudo systemctl enable nzbget@<username>
-```
-<!--Disable-->
-```bash
-sudo systemctl disable nzbget@<username>
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="nzbget@<username>"/>
 
 ## Configuration
 

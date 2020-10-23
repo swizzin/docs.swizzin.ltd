@@ -58,28 +58,9 @@ The systemd script for rTorrent can be found at
 /etc/systemd/system/rtorrent@.service
 ```
 As a multi-user script, you must call it with the username to change the service status for.
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-systemctl start rtorrent@<username>
-```
-<!--Stop-->
-```bash
-systemctl stop rtorrent@<username>
-```
-<!--Restart-->
-```bash
-systemctl restart rtorrent@<username>
-```
-<!--Enable-->
-```bash
-systemctl enable rtorrent@<username>
-```
-<!--Disable-->
-```bash
-systemctl disable rtorrent@<username>
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="rtorrent@<username>"/>
 
 ## Configuration
 

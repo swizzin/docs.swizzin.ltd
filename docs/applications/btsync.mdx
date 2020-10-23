@@ -28,28 +28,9 @@ The systemd service for btsync is an override for the default one shipped with t
 /etc/systemd/system/resilio-sync.service
 ```
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Start-->
-```bash
-sudo systemctl start resilio-sync
-```
-<!--Stop-->
-```bash
-sudo systemctl stop resilio-sync
-```
-<!--Restart-->
-```bash
-sudo systemctl restart resilio-sync
-```
-<!--Enable-->
-```bash
-sudo systemctl enable resilio-sync
-```
-<!--Disable-->
-```bash
-sudo systemctl disable resilio-sync
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="resilio-sync"/>
 
 ## Configuration & Usage
 
