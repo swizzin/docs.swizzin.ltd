@@ -23,7 +23,7 @@ function Hero() {
 
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className={clsx("hero__subtitle", styles.subtitle)}>
-          Transform any Debian-based server into an all-in-one seedbox solution
+          All in one seedbox solution for Ubuntu and Debian
         </p>
 
         <div className={styles.buttons}>

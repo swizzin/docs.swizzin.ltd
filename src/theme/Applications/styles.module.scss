@@ -18,3 +18,9 @@
         max-width: var(--ifm-col-width);
     }
 }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  margin: 1rem 0 3rem;
+}

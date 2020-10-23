@@ -6,42 +6,42 @@ import styles from "./styles.module.scss";
 
 const data = [
   {
-    title: <>Activity Logs</>,
+    title: <>One command to rule them all</>,
     description: (
       <>Timestamped and uniquely identified output logs from job executions</>
     ),
   },
   {
-    title: <>Device Syncing</>,
-    description: <>View and execute jobs from any authorized devices</>,
+    title: <>All the apps you need</>,
+    description: <>From autodl to znc and everything in between, you won't need to look elsewhere*
+    </>,
   },
   {
-    title: <>Device Assignment</>,
+    title: <>Actively maintained</>,
     description: (
-      <>Define the set of devices in which each job will be executed</>
+      <>Quick response time to breaking changes with newly released app versions.</>
     ),
   },
   {
-    title: <>Job Arguments</>,
+    title: <>Great community</>,
     description: (
-      <>You can pass additional data to your jobs as regular method arguments</>
+      <>Need help setting up or making choices? Our community has your back any time</>
     ),
   },
   {
-    title: <>Scheduling</>,
+    title: <>Speed efficient</>,
     description: (
-      <>Schedule your jobs for execution on specific dates and times</>
+      <>Footprint as lightweight and minimal as your application choices are!</>
     ),
   },
-  {
-    title: <>Themes</>,
-    description: (
-      <>
-        A variety of themes available: Black, Dark Grey, Dracula, Navy, and
-        Slate
-      </>
-    ),
-  },
+  // {
+  //   title: <>We're fucking chill mate</>,
+  //   description: (
+  //     <>
+  //       We're a bunch of normal peeps come hang out m8
+  //     </>
+  //   ),
+  // },
 ];
 
 function Feature({ title, description }) {
@@ -67,7 +67,7 @@ function Features() {
           <div className="container">
             <Headline
               category="Features"
-              title="Manage your fleet of devices with ease"
+              title="Manage your box with ease and confidence"
               offset={1}
             />
 

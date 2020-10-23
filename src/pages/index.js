@@ -23,9 +23,10 @@ function Home() {
 
       <main className={styles.main}>
         <Features />
-        <About />
         <Applications />
         <QuickStart />
+        <About />
+
         <Resources />
       </main>
     </Layout>
