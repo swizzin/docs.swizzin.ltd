@@ -4,6 +4,8 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import About from "@theme/About";
 import Applications from "@theme/Applications";
+import Features from "@theme/Features";
+
 import Hero from "@theme/Hero";
 import Resources from "@theme/Resources";
 import QuickStart from "@theme/QuickStart";
@@ -20,6 +22,7 @@ function Home() {
       <Hero />
 
       <main className={styles.main}>
+        <Features />
         <About />
         <Applications />
         <QuickStart />
