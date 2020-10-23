@@ -11,7 +11,7 @@ You can install Jellyfin using the following command.
 ```bash
 sudo box install jellyfin
 ```
-::: warning Finish install in browser
+:::caution Finish install in browser
 Please make sure to finish the setup of the application through the web browser, and create your admin user.
 :::
 
@@ -47,7 +47,7 @@ systemctl disable jellyfin
 
 ## Troubleshooting
 
-::: tip 
+:::tip 
 You can always also try the [general troubleshooting tips written in our guide](/guides/troubleshooting). They might or might not apply, but asking these questions can often make you understand what is under the hood better and help you find what needs to be fixed. It's always worth a shot!
 :::
 

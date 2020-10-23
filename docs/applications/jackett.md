@@ -58,7 +58,7 @@ To add a new tracker to Jackett, click the `Add Indexer` button near the top of 
 
 Since every tracker is different in how they accept connections through their API, you should refer to your tracker if you need specific help in setting up an Indexer.
 
-::: caution
+:::caution
 Please do not touch the following settings:
 - Admin password (you can change, but do not remove)
 - Base URL
@@ -70,7 +70,7 @@ Please do not touch the following settings:
 
 In order to connect Jackett with other trackers, you need to connect directly to the port. You must bypass the webserver because it has authentication headers which are not supported when accessing Jackett from other clients. If you need help in constructing your URL for a tracker, please refer to the example below.
 
-::: tip
+:::tip
 The default Jackett port is `9117`
 :::
 

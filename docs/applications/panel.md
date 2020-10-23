@@ -127,7 +127,7 @@ Most of the application options are self-explanatory, nevertheless, things can g
 
 `check_theD` - If `True`, the panel will use `systemctl is-active` rather than searching `ps` when running `app_status` (default: `False`)
 
-::: note
+:::note
 There is a very large performance penalty when enabling a service with `check_theD`. The following response times speak for themselves.
 ```
 #check_theD enabled for 14 services

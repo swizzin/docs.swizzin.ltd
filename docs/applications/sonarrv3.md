@@ -19,7 +19,7 @@ This command will configure sonarr for your user. Sonarr is installed via an apt
 ### Optional parameters
 None of these are required for you to define if you want an easy install. If you would like to do something custom, then here are some options for you.
 
-::: warning Make sure you know what you're doing!
+:::danger Make sure you know what you're doing!
 **Please note that it is difficult for us to support these options as they are custom for each install**
 
 None of the options are sanity-checked on install so setting something wrong could break your installation.
@@ -169,7 +169,7 @@ Connect using HTTPS: OFF
 ### Add an indexer with Jackett
 Sonarr only supports a few trackers out of the box, but the indexers can be expanded by using the application [Jackett](jackett.md). To add an indexer with Jackett, use the following steps.
 
-::: note
+:::note
 By default, when receiving the torznab feed from Jackett, it will need to be modified to be connected with the application. The default link looks like:
 
 ```plaintext
@@ -202,7 +202,7 @@ You may wish to further alter your setup by setting quality profiles or setting 
 
 ## Troubleshooting
 
-::: tip 
+:::tip 
 You can always also try the [general troubleshooting tips written in our guide](/guides/troubleshooting). They might or might not apply, but asking these questions can often make you understand what is under the hood better and help you find what needs to be fixed. It's always worth a shot!
 :::
 

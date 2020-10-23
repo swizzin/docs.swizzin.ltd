@@ -123,7 +123,7 @@ Connect using HTTPS: OFF
 ### Add an indexer with Jackett
 Sonarr only supports a few trackers out of the box, but the indexers can be expanded by using the application [Jackett](jackett.md). To add an indexer with Jackett, use the following steps.
 
-::: note
+:::note
 By default, when receiving the torznab feed from Jackett, it will need to be modified to be connected with the application. The default link looks like:
 
 ```plaintext

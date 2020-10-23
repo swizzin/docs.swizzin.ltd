@@ -6,7 +6,7 @@ sidebar_label: Troubleshooting
 
 This page servers as a starting point for self-assessing common problems that you might encounter.
 
-::: tip Check App's pages first!
+:::tip Check App's pages first!
 For each specific application, it is always a good idea to first refer to the relevant documentation. You can find app-specific troubleshooting guides there.
 :::
 

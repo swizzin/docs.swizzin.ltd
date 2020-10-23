@@ -20,7 +20,7 @@ If you are using the CloudFlare DNS option, you can use the DNS Verification met
 
 If you'd like to use DNS verification for your CloudFlare domain, make sure you grab your API Key from your CloudFlare Profile (`Profile > API Tokens > View Global API Key`).
 
-::: warning Warning
+:::caution Warning
 Make sure you keep your API Key safe -- it's **as good as** your password in terms of modifying the settings on your account.
 :::
 

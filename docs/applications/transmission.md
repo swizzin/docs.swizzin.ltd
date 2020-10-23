@@ -19,7 +19,7 @@ If you are on Ubuntu, you will be offered to use the PPA sources to take updates
 
 None of these are required for you to define if you want an easy install. If you would like to do something custom, then here are some options for you.
 
-::: warning Make sure you know what you're doing!
+:::danger Make sure you know what you're doing!
 **Please note that it is difficult for us to support these options as they are custom for each install**
 
 None of the options are sanity-checked on install so setting something wrong could break your installation.

@@ -138,13 +138,13 @@ Advanced Settings:
     Use SSL: ON
 ```
 
-::: note Note
+:::note Note
 You may prefer to access the SCGI mount from the ruTorrent plugin over a mobile connection as the httprpc plugin has been configured to utilize compression and therefore, less data.
 :::
 
 ## Troubleshooting
 
-::: tip 
+:::tip 
 You can always also try the [general troubleshooting tips written in our guide](/guides/troubleshooting). They might or might not apply, but asking these questions can often make you understand what is under the hood better and help you find what needs to be fixed. It's always worth a shot!
 :::
 
@@ -172,7 +172,7 @@ The other half of the times, it might be the case that your rtorrent has not sto
 
 To troubleshoot the above issues, you can try our child-tested and mother approved rtorrent troubleshooting dance.
 
-::: important Disclaimer
+:::caution Disclaimer
 Please note that while this won't necessarily fix your setup straight away, it will help you expose the culprit of the issue. If you find something that is out of line, you'll have a lead.
 :::
 

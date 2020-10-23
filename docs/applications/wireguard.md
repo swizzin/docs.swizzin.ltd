@@ -21,7 +21,7 @@ At the end of the installation, the location of the config file for your user wi
 ### Client Install
 In order to use the Wireguard tunnel, you'll need to install the client on your local computer or mobile phone. In order to get started, please check the [Wireguard site](https://www.wireguard.com/install/) for help on installing Wireguard on the operating system of your choice.
 
-::: note
+:::note
 If you prefer, an alternate client called [TunSafe](https://tunsafe.com/download) exists and is already a bit more mature than the official Wireguard client for Windows. **While the client itself is open-source and developed by a community member with prior credibility, it bears mentioning that using this client completely, 100% at your own risk as it is not developed or maintained by the Wireguard team. You have been warned.**
 :::
 
@@ -76,7 +76,7 @@ qrencode -t ansiutf8 < ~/.wireguard/$u.conf
 :::
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-::: tip Check if it worked
+:::tip Check if it worked
 After configuring your Wireguard Client, [check your IP Address](https://duckduckgo.com/?q=ip+address&ia=answer).
 :::
 
@@ -150,7 +150,7 @@ sudo systemctl unmask wg-quick@wg1000
 
 ## Troubleshooting
 
-::: tip 
+:::tip 
 You can always also try the [general troubleshooting tips written in our guide](/guides/troubleshooting). They might or might not apply, but asking these questions can often make you understand what is under the hood better and help you find what needs to be fixed. It's always worth a shot!
 :::
 

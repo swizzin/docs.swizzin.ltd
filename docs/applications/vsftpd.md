@@ -53,7 +53,7 @@ chroot_local_user=YES
 allow_writeable_chroot=YES
 ```
 
-::: warning Warning
+:::danger Warning
 Please be aware that FTP and SFTP are separate protocols. If you enable chroot on your FTP server, your SFTP server will still not be using jails by default.
 :::
 

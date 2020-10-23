@@ -84,7 +84,7 @@ The web UI is significantly easier to access, which is why many prefer it. You c
 
 If you are not currently logged in, you will first receive a basic authentication dialog from the webserver. Once authenticated, you'll receive a secondary prompt from qBittorrent. This password is the same as the one you just entered.
 
-::: note
+:::note
 This second password authentication layer can be disabled in the qBittorrent WebUI settings (`Bypass auth for localhost`). However, security implications exist if you are sharing your server with other users. If you disable localhost auth for the web UI, other users on the server can access the qBittorrent port directly from CLI -- so please only turn this option on if you trust the users on your server!
 
 :::

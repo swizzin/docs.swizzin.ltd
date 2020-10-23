@@ -28,7 +28,7 @@ When installing Deluge, depending on your operating system, you'll have a couple
 - **Deluge 2**: pulls the current head of the `master` branch from Deluge and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
   - Deluge 2 is not supported on installations using Debian Jessie due to severely outdated Python3 dependencies.
 
-::: note
+:::note
 If you intend to use the thin client with your installation, your local version of Deluge must be reasonably similar to your remote version of Deluge. For instance, you're unable to use the thin client for Deluge v2 if your local version is 1.3.15.
 :::
 
@@ -121,7 +121,7 @@ Password: <your password>
 Port: <the daemon port of your instance>
 ```
 
-::: note
+:::note
 During the configuration of Deluge on your slot, the setup output both your Daemon and Web ports. If you've forgotten your daemon port, you can find it with the following command:
 ```bash
 cat ~/.config/deluge/core.conf | grep daemon_port
@@ -136,7 +136,7 @@ The web UI is significantly easier to access, which is why many prefer it. You c
 
 If you are not currently logged in, you will first receive a basic authentication dialog from the webserver. Once authenticated, you'll receive a dialog box from Deluge-Web. This password is the same as the one you just entered.
 
-::: note
+:::note
 This second password authentication layer cannot be fully removed due to restrictions in Deluge. However, you can increase the length of time that the cookie is stored locally by your browser to one year (from one hour):
 ```bash
 sudo systemctl stop deluge-web@<username>
@@ -238,7 +238,7 @@ Similarly, any files in the default download directory (`~/torrents/deluge`) wil
 
 There are a wide array of plugins available for Deluge. You can find a list of them in the Deluge wiki, [here](https://dev.deluge-torrent.org/wiki/Plugins).
 
-::: note
+:::note
 Not all plugins have a web-ui component. You will likely need to install and manage the options for most of the plugins on the prior page with the [thin client](#thin-client-recommended).
 :::
 

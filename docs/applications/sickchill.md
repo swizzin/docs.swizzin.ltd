@@ -105,6 +105,6 @@ Add label to torrent: Series (or anything else you desire)
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-::: note
+:::note
 SickChill does not currently handle special characters in your password very well. If you are having troubles connecting to your applications, make sure your password is alpha-numeric
 :::
