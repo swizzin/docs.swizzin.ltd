@@ -17,21 +17,11 @@ If you are on Ubuntu, you will be offered to use the PPA sources to take updates
 
 ### Install options
 
-None of these are required for you to define if you want an easy install. If you would like to do something custom, then here are some options for you.
+import InstallOptsWarning from '../snippets/installoptswarning.md';
 
-:::danger Make sure you know what you're doing!
-**Please note that it is difficult for us to support these options as they are custom for each install**
-
-None of the options are sanity-checked on install so setting something wrong could break your installation.
-
-Again, you do not need to set these if you don't know what you're doing.
-:::
-
-There are a couple options you can set **before** installing transmission through export. 
+<InstallOptsWarning />
 
 The names of the variables correlate to the similar equivalent variables available here on the Transmission configuration docs page https://github.com/transmission/transmission/wiki/Editing-Configuration-Files
-
-If you'd like to use one of these, run `export option=value` **before** running the install command.
 
 The following is an example of how this would look
 
@@ -104,6 +94,10 @@ To connect to your session, use the following parameters:
   - _(Depends if you have LetsEncrypt or an other non-self-signed SSL solution)_
 
 ## Troubleshooting
+
+import Troubleshooting from '../snippets/troubleshooting.md';
+
+<Troubleshooting />
 
 ### My speeds to private trackers are slow
 Please ensure that your peer ports are open. If you're not sure, change it to a different port and restart Transmission.

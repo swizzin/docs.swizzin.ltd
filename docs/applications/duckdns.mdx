@@ -36,9 +36,11 @@ Depending on your installed applications, you might need to forward different po
 If you intend to use any applications facilitated by [nginx](/applications/nginx) (You probably do...), we **highly** suggest you to install [letsencrypt](/applications/letsencrypt) through box. This will give you a valid SSL certificate as well as set your nginx configuration to use the new domain name.
 
 
-## Environment variables
-You can specify environment variables to skip the questions during the installation for automation.
+## Install options
 
+import InstallOptsWarning from '../snippets/installoptswarning.md';
+
+<InstallOptsWarning />
 The following variables are exposed:
 
 - `duck_subdomain`

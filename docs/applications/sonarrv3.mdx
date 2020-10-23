@@ -17,17 +17,9 @@ sudo box install sonarrv3
 This command will configure sonarr for your user. Sonarr is installed via an apt repository, thus the easiest way to keep it up to date is by issuing the command `apt update && apt upgrade`. The sonarr base files will be located in `/usr/lib/sonarr`
 
 ### Optional parameters
-None of these are required for you to define if you want an easy install. If you would like to do something custom, then here are some options for you.
+import InstallOptsWarning from '../snippets/installoptswarning.md';
 
-:::danger Make sure you know what you're doing!
-**Please note that it is difficult for us to support these options as they are custom for each install**
-
-None of the options are sanity-checked on install so setting something wrong could break your installation.
-
-Again, you do not need to set these if you don't know what you're doing.
-:::
-
-If you'd like to use one of these, run `export option=value` **before** running the install command.
+<InstallOptsWarning />
 
 The following is an example of how this would look
 
@@ -113,58 +105,9 @@ Out of the box, Sonarr comes with very little pre-set configuration. Following a
 6. Click the green + to add the show.
 
 ### Connect download clients
-To add a download client, go to `Settings > Download Client`. Make sure `Advanced Settings` are shown and click `Add Client`.
+import Conn4Arrs from '../snippets/conn4arr.mdx';
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--rTorrent-->
-```plaintext
-Name: rTorrent
-rTorrent host: 127.0.0.1
-URL Path: /rutorrent/plugins/httprpc/action.php
-Use SSL: ON
-Username: <your username>
-Password: <your password>
-Add label to torrent: TV (or anything else you desire)
-Optional - Downloaded files location: <custom directory>
-```
-
-<!--Deluge (via Web)-->
-```plaintext
-Name: Deluge
-Host: 127.0.0.1
-Post: <deluge web port>
-Deluge Password: <your password>
-Add label to torrent: TV (or anything else you desire)
-* label plugin must be enabled in Deluge if you add a label
-SSL: OFF
-```
-
-<!--nzbGet-->
-```plaintext
-NZBget host: 127.0.0.1
-port: 443
-URL Base: nzbget
-Connect using HTTPS: ON
-nzbget username: <your username>
-nzbget Password: <your password>
-Add label to torrent: Series (or anything else you desire)
-* label must exist under "Categories" in nzbGet
-```
-
-<!--Transmission-->
-```plaintext
-To retrieve your port, please run `grep rpc-port ~/.config/transmission-daemon/settings.json`,
-when logged in as the user you want to use transmission of (i.e. not root).
-----------
-Host: 127.0.0.1
-Port: <See above, e.g. 9091>
-URL Base: /transmission/ (Should be default)
-Username: <your username>
-Password: <your password>
-Category: <optional, e.g. Sonarr or TV>
-Connect using HTTPS: OFF
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+<Conn4Arrs />
 
 ### Add an indexer with Jackett
 Sonarr only supports a few trackers out of the box, but the indexers can be expanded by using the application [Jackett](jackett.md). To add an indexer with Jackett, use the following steps.
@@ -202,8 +145,8 @@ You may wish to further alter your setup by setting quality profiles or setting 
 
 ## Troubleshooting
 
-:::tip 
-You can always also try the [general troubleshooting tips written in our guide](/guides/troubleshooting). They might or might not apply, but asking these questions can often make you understand what is under the hood better and help you find what needs to be fixed. It's always worth a shot!
-:::
+import Troubleshooting from '../snippets/troubleshooting.md';
+
+<Troubleshooting />
 
 Please consult the [github issues](https://github.com/Sonarr/Sonarr/issues) or the [Sonarr Discord community](https://discord.gg/M6BvZn5) in case you are having problems with this application.
