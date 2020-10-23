@@ -2,6 +2,7 @@
 id: installation
 title: Getting Started
 sidebar_label: Installation
+slug: /
 ---
 
 swizzin was designed to be an easy to use, modular seedbox solution.

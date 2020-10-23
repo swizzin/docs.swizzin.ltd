@@ -1,0 +1,7 @@
+---
+id: nzbhydra
+title: Nzbhydra
+sidebar_label: Nzbhydra
+---
+
+NZBHydra is a meta search for NZB indexers. It provides easy access to a number of raw and newznab based indexers. You can search all your indexers from one place and use it as indexer source for tools like Sonarr or CouchPotato.

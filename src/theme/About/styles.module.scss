@@ -1,0 +1,11 @@
+.question {
+  margin-bottom: 3rem;
+
+  @media screen and (min-width: 997px) {
+    margin-right: 3rem;
+  }
+
+  .title {
+    color: var(--ifm-color-primary-light);
+  }
+}

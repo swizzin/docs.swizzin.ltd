@@ -1,0 +1,7 @@
+---
+id: netdata
+title: Netdata
+sidebar_label: Netdata
+---
+
+Netdata is a monitoring agent you install on all your systems. It is: a metrics collector - for system and application metrics (including web servers, databases, containers, etc)
