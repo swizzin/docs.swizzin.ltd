@@ -24,8 +24,8 @@ module.exports = {
       },
     },
     prism: {
-      theme: require("prism-react-renderer/themes/dracula"),
-      darkTheme: require("prism-react-renderer/themes/dracula"),
+      theme: require("prism-react-renderer/themes/nightOwl"),
+      darkTheme: require("prism-react-renderer/themes/nightOwlLight"),
     },
     image: "img/logo.png",
     navbar: {
