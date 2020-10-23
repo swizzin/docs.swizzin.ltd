@@ -39,7 +39,11 @@
   --ifm-card-background-color: var(--ifm-background-color);
   --ifm-hero-background-color: var(--ifm-background-color);
   --ifm-footer-background-color: var(--ifm-background-surface-color);
-  --ifm-color-info: var(--ifm-color-primary-light);
+  --ifm-color-info: #82aaff;
+  --ifm-color-success: #22da6e;
+  --ifm-color-warning: #addb67;
+  --ifm-color-danger: #ef5350;
+
 }
 
 html[data-theme='dark'] {
