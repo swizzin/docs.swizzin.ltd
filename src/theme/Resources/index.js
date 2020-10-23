@@ -15,7 +15,7 @@ const data = [
     description: <>Frequently Asked Questions</>,
   },
   {
-    href: "https://discord.gg/invite",
+    href: "https://discord.gg/sKjs9UM",
     icon: <FaDiscord size={size} />,
     description: <>Join our Discord to keep in touch</>,
   },

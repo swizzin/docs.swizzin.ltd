@@ -80,7 +80,7 @@ module.exports = {
             },
             {
               label: "Discord",
-              href: "https://discord.gg/2esbu2N",
+              href: "https://discord.gg/sKjs9UM",
             }
           ],
         },
