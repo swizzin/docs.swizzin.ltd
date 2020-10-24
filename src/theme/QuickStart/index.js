@@ -1,25 +1,12 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import Tabs from '@site/src/theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeSnippet from "@site/src/theme/CodeSnippet";
+import InstallCmd from '../../../docs/snippets/installcmd.js'
 import { FiGithub } from "react-icons/fi";
 import { DiDebian, DiUbuntu } from "react-icons/di";
 
 import Headline from "@theme/Headline";
 import styles from "./styles.module.scss";
-
-const installmethod = [
-    {
-        label: "curl",
-        cmd: `bash <(curl -sL https://git.io/swizzin-setup)`,
-    },
-    {
-        label: "wget",
-        cmd: `bash <(wget -O- -q https://git.io/swizzin-setup)`
-    }
-]
 
 function QuickStart() {
   const size = 36;
@@ -54,17 +41,7 @@ function QuickStart() {
           </div>
 
           <div className="col col--5">
-          {installmethod && installmethod.length && (
-                <Tabs defaultValue={installmethod[0].label} values={installmethod.map((props, idx) => {
-                  return {label:props.label, value:props.label};
-                })}>
-                  {installmethod.map((props, idx) => (
-                    <TabItem value={props.label}>
-                      <CodeSnippet code={props.cmd} lang="bash"></CodeSnippet>
-                    </TabItem>
-                  ))}
-                </Tabs>
-          )}
+              <InstallCmd />
               <div className={styles.platforms}>
               <h3>Supported Platforms</h3>
               <div>
