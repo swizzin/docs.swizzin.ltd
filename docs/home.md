@@ -71,6 +71,6 @@ A few items to be aware of as known issues. Most of these have had attempts at w
 
 ## Additional Help
 
-If you're having troubles with any of the items in the documentation, please first consult the [Troubleshooting](/guides/troubleshooting) guide. If that is not enough for you, join us in [Discord](https://discord.gg/2esbu2N) and we will attempt to help you to our best ability.
+If you're having troubles with any of the items in the documentation, please first consult the [Troubleshooting](/guides/troubleshooting) guide. If that is not enough for you, join us in [Discord](https://discord.gg/sKjs9UM) and we will attempt to help you to our best ability.
 
 If you have found a bug or are having an issue, please open an [issue on GitHub](https://github.com/liaralabs/swizzin/issues/new/choose).
