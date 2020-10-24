@@ -2,6 +2,7 @@ import React from 'react'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeSnippet from '@theme/CodeSnippet';
+import CodeBlock from '@theme/CodeBlock';
 
 const installmethod = [
     {
@@ -22,7 +23,9 @@ function InstallCmd() {
             })}>
             {installmethod.map((props, idx) => (
                 <TabItem value={props.label}>
-                <CodeSnippet code={props.cmd} lang="bash"></CodeSnippet>
+                <div className="code">
+                <CodeBlock children={props.cmd} className={`bash`}></CodeBlock>
+                </div>
                 </TabItem>
             ))}
             </Tabs>
