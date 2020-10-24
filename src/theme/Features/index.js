@@ -8,47 +8,58 @@ const data = [
   {
     title: <>One command to rule them all</>,
     description: (
-      <>Install, remove and update apps with ease. Timestamped and uniquely identified output logs from job executions</>
+      <>Install, remove and update apps with ease. Make new users and manage their accounts.</>
     ),
   },
   {
     title: <>All the apps you need</>,
     description: ( 
-      <>From autodl to znc and everything in between, you won't need to look elsewhere*</>
+      <>From autodl to ZNC and everything in between, you won't need to look elsewhere</>
     ),
   },
   {
     title: <>Actively maintained</>,
     description: (
-      <>Quick response time to breaking changes with newly released app versions.</>
+      <>Quick response time to breaking changes when new app versions release</>
     ),
   },
   {
-    title: <>Great community</>,
+    title: <>Helpful community</>,
     description: (
       <>Need help setting up or making choices? Our community has your back any time</>
     ),
   },
   {
-    title: <>Speed efficient</>,
+    title: <>Fast as fuck boiii</>,
     description: (
-      <>Footprint as lightweight and minimal as your application choices are!</>
+      <>Footprint is as light as the choice of your applications</>
     ),
   },
   {
     title: <>Trusted by the industry</>,
     description: (
-      <>swizzin is a popular option among various providers</>
+      <>A popular choice of paid hosting providers, as well as  hobbist self-hosters</>
     ),
   },
-  // {
-  //   title: <>We're fucking chill mate</>,
-  //   description: (
-  //     <>
-  //       We're a bunch of normal peeps come hang out m8
-  //     </>
-  //   ),
-  // },
+  {
+    title: <>Multi-user capable</>,
+    description: (
+      <>Share your server with others by making them their own server-wide accounts</>
+    ),
+  },
+  {
+    title: <>Little skills necessary</>,
+    description: (
+      <>As long as you can SSH into your server and you know how to read, sky is the limit. Thoroughly fool-proof</>
+    ),
+  },
+  {
+    title: <>Stability first</>,
+    description: (
+      <>Built to make those uptimes grow, but not to keep you on last decade's releases</>
+    ),
+  },
+
 ];
 
 function Feature({ title, description }) {
