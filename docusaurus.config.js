@@ -48,6 +48,14 @@ module.exports = {
           className: "header-github-link",
           "aria-label": "GitHub Repository",
         },
+        {
+          href: "https://swizzin.net",
+          position: "left",
+          // className: "header-github-link",
+          label: "Swizzin Hosted",
+          alt: "Managed seedboxes hosted by the swizzin developers"
+          // "aria-label": "GitHub Repository",
+        },
       ],
     },
     footer: {
