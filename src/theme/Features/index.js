@@ -62,6 +62,18 @@ const data = [
 
 ];
 
+function shuffleArray(array) {
+    let i = array.length - 1;
+    for (; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    const shuffled = array.splice(6, 3);
+    return array;
+  }
+
 function Feature({ title, description }) {
   return (
     <div className={clsx("col col--4", styles.feature)}>
@@ -78,9 +90,10 @@ function Feature({ title, description }) {
 }
 
 function Features() {
+  const feats = shuffleArray(data);
   return (
     <>
-      {data && data.length > 0 && (
+      {feats && feats.length > 0 && (
         <section id="features" className={styles.features}>
           <div className="container">
             <Headline
