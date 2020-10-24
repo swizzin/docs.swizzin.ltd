@@ -23,6 +23,10 @@
   line-height: initial;
   word-spacing: -0.25rem;
 
+  @media (max-width: 996px) {
+     word-spacing: 0rem;
+  }
+
   @media screen and (min-width: 576px) {
     font-size: 2.8rem;
   }

@@ -2,225 +2,228 @@ import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { FiFlag } from "react-icons/fi";
-
 import Headline from "@theme/Headline";
 import styles from "./styles.module.scss";
 
 const data = [
   {
     title: "AutoDL-irssi",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/autodl",
   },
   {
     title: "Bazarr",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/bazarr",
   },
   {
     title: "Couchpotato",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/couchpotato",
   },
   {
     title: "Deluge",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/deluge",
   },
   {
     title: "DuckDNS",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/duckdns",
   },
   {
     title: "Emby Server",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/emby",
   },
   {
     title: "ffmpeg",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/ffmpeg",
   },
   {
     title: "Filebrowser",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/filebrowser",
   },
   {
     title: "Flood",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/flood",
   },
   {
     title: "Headphones",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/headphones",
   },
   {
     title: "Jackett",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/jackett",
   },
   {
     title: "Jellyfin",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/jellyfin",
   },
   {
     title: "Let's Encrypt",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/letsencrypt",
   },
   {
     title: "Librespeed",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/librespeed",
   },
   {
     title: "Lidarr",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/lidarr",
   },
   {
     title: "The Lounge",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/lounge",
   },
   {
     title: "Mango",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/mango",
   },
   {
     title: "Medusa",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/medusa",
   },
   {
     title: "Netdata",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/netdata",
   },
   {
     title: "Nextcloud",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/nextcloud",
   },
   {
     title: "Nginx",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/nginx",
   },
   {
     title: "NZBGet",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/nzbget",
   },
   {
     title: "NZBHydra2",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/nzbhydra",
   },
   {
     title: "Ombi",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/ombi",
   },
   {
     title: "Organizr",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/organizr",
   },
   {
     title: "Plex",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/plex",
   },
   {
     title: "pyLoad",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/pyload",
   },
   {
     title: "qBittorrent",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/qbittorrent",
   },
   {
     title: "Quassel",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/quassel",
   },
   {
     title: "Quota",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/quota",
   },
   {
     title: "Radarr",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/radarr",
   },
   {
     title: "Rapidleech",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/rapidleech",
   },
   {
     title: "Rclone",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/rclone",
   },
   {
     title: "Resilio Sync",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/btsync",
   },
   {
     title: "rTorrent",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/rtorrent",
   },
   {
     title: "ruTorrent",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/rutorrent",
   },
   {
     title: "SABnzbd",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/sabnzbd",
   },
   {
     title: "Shellinabox",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/shellinabox",
   },
   {
     title: "SickChill",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/sickchill",
   },
   {
     title: "SickGear",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/sickgear",
   },
   {
-    title: "Sonarr v2/v3",
-    url: "https://github.com/autodl-community",
+    title: "Sonarr v2",
+    url: "docs/applications/sonarr",
+  },
+  {
+      title: "Sonarr v3",
+      url: "docs/applications/sonarrv3",
   },
   {
     title: "Subsonic",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/subsonic",
   },
   {
-    title: "Swizzin Dashboard",
-    url: "https://github.com/autodl-community",
+    title: "Swizzin Panel",
+    url: "docs/applications/panel",
   },
   {
     title: "Syncthing",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/syncthing",
   },
   {
     title: "Tautulli",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/tautulli",
   },
   {
     title: "Transmission",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/transmission",
   },
   {
     title: "Vsftpd",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/vsftpd",
   },
   {
     title: "Webmin",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/webmin",
   },
   {
     title: "Wireguard",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/wireguard",
   },
   {
     title: "X2go",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/x2go",
   },
   {
     title: "Xmrig",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/xmrig",
   },
   {
     title: "ZNC",
-    url: "https://github.com/autodl-community",
+    url: "docs/applications/znc",
   },
 ];
 
 function Application({ title, url }) {
   return (
     <div className={clsx("col col--2", styles.feature, styles.applications)}>
-      <a href={url}>{title}</a>
+      <Link href={url} >{title}</Link>
     </div>
   );
 }
