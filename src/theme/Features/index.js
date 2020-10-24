@@ -8,13 +8,14 @@ const data = [
   {
     title: <>One command to rule them all</>,
     description: (
-      <>Timestamped and uniquely identified output logs from job executions</>
+      <>Install, remove and update apps with ease. Timestamped and uniquely identified output logs from job executions</>
     ),
   },
   {
     title: <>All the apps you need</>,
-    description: <>From autodl to znc and everything in between, you won't need to look elsewhere*
-    </>,
+    description: ( 
+      <>From autodl to znc and everything in between, you won't need to look elsewhere*</>
+    ),
   },
   {
     title: <>Actively maintained</>,
@@ -32,6 +33,12 @@ const data = [
     title: <>Speed efficient</>,
     description: (
       <>Footprint as lightweight and minimal as your application choices are!</>
+    ),
+  },
+  {
+    title: <>Trusted by the industry</>,
+    description: (
+      <>swizzin is a popular option among various providers</>
     ),
   },
   // {
