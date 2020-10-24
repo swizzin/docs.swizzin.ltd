@@ -4,6 +4,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Image from "@theme/IdealImage";
+import Link from "@docusaurus/Link";
 
 import screenshot from "@site/static/img/pages/light/panel-screenshot.png";
 import styles from "./styles.module.scss";
@@ -23,7 +24,7 @@ function Hero() {
 
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className={clsx("hero__subtitle", styles.subtitle)}>
-          All in one seedbox solution for Ubuntu and Debian
+          An all-in-one seedbox solution for Ubuntu and Debian
         </p>
 
         <div className={styles.buttons}>
@@ -33,6 +34,12 @@ function Hero() {
           >
             Get Started
           </AnchorLink>
+          <Link
+            className={clsx("button button--danger button--lg", styles.button)}
+            href="docs"
+          >
+            Get Help
+          </Link>
         </div>
       </div>
 
