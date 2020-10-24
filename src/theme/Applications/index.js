@@ -179,7 +179,7 @@ const data = [
     url: "docs/applications/subsonic",
   },
   {
-    title: "Swizzin Dashboard",
+    title: "Swizzin Panel",
     url: "docs/applications/panel",
   },
   {
