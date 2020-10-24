@@ -18,17 +18,6 @@ const data = [
     ),
   },
   {
-    title: <>Why use swizzin?</>,
-    description: (
-      <>
-        swizzin provides an easy to use command-line interface which can interact
-        with your server to install applications. Furthermore, for applications
-        which do not have built-in updaters, swizzin will often have a scripted
-        update path which will help you stay up-to-date with your favourite applications.
-      </>
-    ),
-  },
-  {
     title: <>Is swizzin actively maintained?</>,
     description: (
       <>
@@ -94,7 +83,7 @@ function About() {
             {data[3] && <Question {...data[3]} />}
           </div>
           <div className="col col--6">
-            {data[4] && <Question {...data[4]} />}
+            {/* data[4] && <Question {...data[4]} /> */}
             {/* {data[5] && <Question {...data[5]} />} */}
           </div>
         </div>
