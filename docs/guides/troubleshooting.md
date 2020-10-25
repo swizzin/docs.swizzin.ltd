@@ -178,7 +178,7 @@ Issues in this area usually stem from not setting up port-forwarding correctly o
 
 You might additionally forward/open the ports for your torrent clients, FTP or other applications. The steps are the same.
 
-Consider using a Dynamic DNS (DDNS) provider like the swizzin-available [Duck DNS](/applications/duckdns) for your home IP to gain a free domain that can be used for something such as letsencrypt.
+Consider using a Dynamic DNS (DDNS) provider like the swizzin-available [Duck DNS](/docs/applications/duckdns) for your home IP to gain a free domain that can be used for something such as letsencrypt.
 
 ## Staring from scratch
 We generally advise against this scenario as you lose the opportunity to learn from the mistakes that happened somewhere along the line. This knowledge can help you save time and restore the functionality of the system in case it goes ver awry. Please attempt the steps above first before nuking the system.
