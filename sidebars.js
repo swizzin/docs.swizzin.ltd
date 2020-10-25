@@ -112,9 +112,12 @@ module.exports = {
                 items: [
                     "applications/duckdns",
                     "applications/ffmpeg",
+                    "applications/filebrowser",
+                    "applications/librespeed",
                     "applications/letsencrypt",
                     "applications/netdata",
                     "applications/nginx",
+                    "applications/organizr",
                     "applications/panel",
                     "applications/pyload",
                     "applications/quota",
