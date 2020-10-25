@@ -13,7 +13,7 @@ function QuickStart() {
 
 
   return (
-    <section id="quick-start" className={styles.download}>
+    <section id="quick-start" className={styles.quickstart}>
       <div className="container">
         <Headline
           category="Quick Start"
