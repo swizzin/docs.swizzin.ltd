@@ -8,215 +8,215 @@ import styles from "./styles.module.scss";
 const data = [
   {
     title: "AutoDL-irssi",
-    url: "docs/applications/autodl",
+    url: "applications/autodl",
   },
   {
     title: "Bazarr",
-    url: "docs/applications/bazarr",
+    url: "applications/bazarr",
   },
   {
     title: "Couchpotato",
-    url: "docs/applications/couchpotato",
+    url: "applications/couchpotato",
   },
   {
     title: "Deluge",
-    url: "docs/applications/deluge",
+    url: "applications/deluge",
   },
   {
     title: "DuckDNS",
-    url: "docs/applications/duckdns",
+    url: "applications/duckdns",
   },
   {
     title: "Emby Server",
-    url: "docs/applications/emby",
+    url: "applications/emby",
   },
   {
     title: "ffmpeg",
-    url: "docs/applications/ffmpeg",
+    url: "applications/ffmpeg",
   },
   {
     title: "Filebrowser",
-    url: "docs/applications/filebrowser",
+    url: "applications/filebrowser",
   },
   {
     title: "Flood",
-    url: "docs/applications/flood",
+    url: "applications/flood",
   },
   {
     title: "Headphones",
-    url: "docs/applications/headphones",
+    url: "applications/headphones",
   },
   {
     title: "Jackett",
-    url: "docs/applications/jackett",
+    url: "applications/jackett",
   },
   {
     title: "Jellyfin",
-    url: "docs/applications/jellyfin",
+    url: "applications/jellyfin",
   },
   {
     title: "Let's Encrypt",
-    url: "docs/applications/letsencrypt",
+    url: "applications/letsencrypt",
   },
   {
     title: "Librespeed",
-    url: "docs/applications/librespeed",
+    url: "applications/librespeed",
   },
   {
     title: "Lidarr",
-    url: "docs/applications/lidarr",
+    url: "applications/lidarr",
   },
   {
     title: "The Lounge",
-    url: "docs/applications/lounge",
+    url: "applications/lounge",
   },
   {
     title: "Mango",
-    url: "docs/applications/mango",
+    url: "applications/mango",
   },
   {
     title: "Medusa",
-    url: "docs/applications/medusa",
+    url: "applications/medusa",
   },
   {
     title: "Netdata",
-    url: "docs/applications/netdata",
+    url: "applications/netdata",
   },
   {
     title: "Nextcloud",
-    url: "docs/applications/nextcloud",
+    url: "applications/nextcloud",
   },
   {
     title: "Nginx",
-    url: "docs/applications/nginx",
+    url: "applications/nginx",
   },
   {
     title: "NZBGet",
-    url: "docs/applications/nzbget",
+    url: "applications/nzbget",
   },
   {
     title: "NZBHydra2",
-    url: "docs/applications/nzbhydra",
+    url: "applications/nzbhydra",
   },
   {
     title: "Ombi",
-    url: "docs/applications/ombi",
+    url: "applications/ombi",
   },
   {
     title: "Organizr",
-    url: "docs/applications/organizr",
+    url: "applications/organizr",
   },
   {
     title: "Plex",
-    url: "docs/applications/plex",
+    url: "applications/plex",
   },
   {
     title: "pyLoad",
-    url: "docs/applications/pyload",
+    url: "applications/pyload",
   },
   {
     title: "qBittorrent",
-    url: "docs/applications/qbittorrent",
+    url: "applications/qbittorrent",
   },
   {
     title: "Quassel",
-    url: "docs/applications/quassel",
+    url: "applications/quassel",
   },
   {
     title: "Quota",
-    url: "docs/applications/quota",
+    url: "applications/quota",
   },
   {
     title: "Radarr",
-    url: "docs/applications/radarr",
+    url: "applications/radarr",
   },
   {
     title: "Rapidleech",
-    url: "docs/applications/rapidleech",
+    url: "applications/rapidleech",
   },
   {
     title: "Rclone",
-    url: "docs/applications/rclone",
+    url: "applications/rclone",
   },
   {
     title: "Resilio Sync",
-    url: "docs/applications/btsync",
+    url: "applications/btsync",
   },
   {
     title: "rTorrent",
-    url: "docs/applications/rtorrent",
+    url: "applications/rtorrent",
   },
   {
     title: "ruTorrent",
-    url: "docs/applications/rutorrent",
+    url: "applications/rutorrent",
   },
   {
     title: "SABnzbd",
-    url: "docs/applications/sabnzbd",
+    url: "applications/sabnzbd",
   },
   {
     title: "Shellinabox",
-    url: "docs/applications/shellinabox",
+    url: "applications/shellinabox",
   },
   {
     title: "SickChill",
-    url: "docs/applications/sickchill",
+    url: "applications/sickchill",
   },
   {
     title: "SickGear",
-    url: "docs/applications/sickgear",
+    url: "applications/sickgear",
   },
   {
     title: "Sonarr v2",
-    url: "docs/applications/sonarr",
+    url: "applications/sonarr",
   },
   {
       title: "Sonarr v3",
-      url: "docs/applications/sonarrv3",
+      url: "applications/sonarrv3",
   },
   {
     title: "Subsonic",
-    url: "docs/applications/subsonic",
+    url: "applications/subsonic",
   },
   {
     title: "Swizzin Panel",
-    url: "docs/applications/panel",
+    url: "applications/panel",
   },
   {
     title: "Syncthing",
-    url: "docs/applications/syncthing",
+    url: "applications/syncthing",
   },
   {
     title: "Tautulli",
-    url: "docs/applications/tautulli",
+    url: "applications/tautulli",
   },
   {
     title: "Transmission",
-    url: "docs/applications/transmission",
+    url: "applications/transmission",
   },
   {
     title: "Vsftpd",
-    url: "docs/applications/vsftpd",
+    url: "applications/vsftpd",
   },
   {
     title: "Webmin",
-    url: "docs/applications/webmin",
+    url: "applications/webmin",
   },
   {
     title: "Wireguard",
-    url: "docs/applications/wireguard",
+    url: "applications/wireguard",
   },
   {
     title: "X2go",
-    url: "docs/applications/x2go",
+    url: "applications/x2go",
   },
   {
     title: "Xmrig",
-    url: "docs/applications/xmrig",
+    url: "applications/xmrig",
   },
   {
     title: "ZNC",
-    url: "docs/applications/znc",
+    url: "applications/znc",
   },
 ];
 
