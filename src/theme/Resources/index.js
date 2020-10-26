@@ -20,7 +20,7 @@ const data = [
     description: <>Join our Discord to keep in touch</>,
   },
   {
-    href: "docs",
+    href: "getting-started",
     icon: <FiBook size={size} />,
     title: <>Documentation</>,
     description: (
