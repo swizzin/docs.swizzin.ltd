@@ -37,7 +37,7 @@ module.exports = {
       },
       items: [
         {
-          to: "getting-started/installation",
+          to: "getting-started",
           label: "Docs",
           position: "left",
         },
@@ -79,7 +79,7 @@ module.exports = {
           items: [
             {
               label: "Getting Started",
-              to: "getting-started/installation",
+              to: "getting-started",
             },
             {
               label: "Box Basics",
