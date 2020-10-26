@@ -38,7 +38,7 @@ const data = [
   {
     title: <>Trusted by the industry</>,
     description: (
-      <>A popular choice of paid hosting providers, as well as  hobbist self-hosters</>
+      <>A popular choice of paid hosting providers, as well as  hobbyist self-hosters</>
     ),
   },
   {
