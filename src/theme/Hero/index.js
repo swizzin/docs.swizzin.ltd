@@ -36,7 +36,7 @@ function Hero() {
           </AnchorLink>
           <Link
             className={clsx("button button--info button--lg", styles.button)}
-            href="docs"
+            href="getting-started"
           >
             Get Help
           </Link>
