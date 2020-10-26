@@ -37,10 +37,19 @@ module.exports = {
       },
       items: [
         {
-          to: "docs",
-          activeBasePath: "docs",
+          to: "getting-started/installation",
           label: "Docs",
           position: "left",
+        },
+        {
+            to: "applications",
+            label: "Applications",
+            position: "left",
+        },
+        {
+            to: "getting-started/faqs",
+            label: "FAQs",
+            position: "left",
         },
         {
           href: "https://github.com/liaralabs/swizzin",
@@ -70,11 +79,11 @@ module.exports = {
           items: [
             {
               label: "Getting Started",
-              to: "docs",
+              to: "getting-started/installation",
             },
             {
               label: "Box Basics",
-              to: "docs/getting-started/box-basics",
+              to: "getting-started/box-basics",
             },
 
           ],
@@ -113,6 +122,7 @@ module.exports = {
           // It is recommended to set document id as docs home page (`docs/` path).
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/liaralabs/docs.swizzin.ltd/edit/main/",
+          routeBasePath: "/",
         },
         blog: {
           showReadingTime: true,
