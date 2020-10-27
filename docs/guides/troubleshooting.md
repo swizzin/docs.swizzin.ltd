@@ -6,11 +6,11 @@ sidebar_label: Troubleshooting
 
 This page servers as a starting point for self-assessing common problems that you might encounter.
 
-::: tip Check App's pages first!
+:::tip Check App's pages first!
 For each specific application, it is always a good idea to first refer to the relevant documentation. You can find app-specific troubleshooting guides there.
 :::
 
-If you ran all the relevant steps mentioned below and still cannot identify your issue, feel free to visit our [Discord](https://discord.gg/2esbu2N) and ask for help there! We're always happy to help with anything we are able to.
+If you ran all the relevant steps mentioned below and still cannot identify your issue, feel free to visit our [Discord](https://discord.gg/sKjs9UM) and ask for help there! We're always happy to help with anything we are able to.
 
 ## Accessing swizzin/`box` logs
 Swizzin stores its logs into the `/root/logs` directories. The installer installs into `install.log`, and any other command you run with `box` will end up in `swizzin.log`. You can access the logs by running the following commands.
