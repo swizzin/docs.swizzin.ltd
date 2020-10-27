@@ -30,7 +30,7 @@ const data = [
     ),
   },
   {
-    title: <>Fast as fuck boiii</>,
+    title: <>Fast and lean</>,
     description: (
       <>Footprint is as light as the choice of your applications</>
     ),

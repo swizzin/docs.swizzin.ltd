@@ -10,7 +10,7 @@ import styles from "./styles.module.scss";
 const size = 48;
 const data = [
   {
-    href: "/docs/getting-started/faqs",
+    href: "/getting-started/faqs",
     icon: <FaQuestion size={size} />,
     description: <>Frequently Asked Questions</>,
   },
@@ -20,7 +20,7 @@ const data = [
     description: <>Join our Discord to keep in touch</>,
   },
   {
-    href: "docs",
+    href: "getting-started",
     icon: <FiBook size={size} />,
     title: <>Documentation</>,
     description: (
