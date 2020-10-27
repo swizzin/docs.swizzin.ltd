@@ -25,7 +25,7 @@ If there was an update to the `linux-image` package, this is the kernel. The onl
 
 ## Distribution Upgrades
 
-::: warning DISCLAIMER AND LIMITATION OF LIABILITY
+:::danger DISCLAIMER AND LIMITATION OF LIABILITY
 The steps provided below are meant only to provide you with an outline of the steps required to make a major version change to your operating system (i.e. Debian 9 -> 10). While the steps outlined below will absolutely upgrade your operating system, there are risks involved, for example (but not limited to):
 
 - Package updates causing issues that prevent boot
@@ -112,7 +112,7 @@ We need to upgrade nginx configs to use the correct php socket for applications 
 sudo box upgrade nginx
 ```
 
-::: tip Tip
+:::tip Tip
 This command is considered semi-destructive. In the case of custom nginx configurations, it won't clear the `nginx/app` directory, but it will clear the `nginx/conf.d` directory. If you have any custom nginx configurations, it's recommended to back them up before running the above command
 :::
 
@@ -136,6 +136,6 @@ sudo box upgrade deluge
 
 #### Other packages
 
-Distribution upgrades haven't been tested rigorously. It's entirely possible other packages may have broken during the upgrade. You'll need to start doing your own troubleshooting here if anything else is broken. You can consult [the Troubleshooting guide](/guides/troubleshooting) for a quick start. You can find out if any of your systemd services are failing to start with `systemctl list-units --failed`. If there are failed units there, you can start debugging with `systemctl status <failed unit>`. However, you're on your own form here.
+Distribution upgrades haven't been tested rigorously. It's entirely possible other packages may have broken during the upgrade. You'll need to start doing your own troubleshooting here if anything else is broken. You can consult [the Troubleshooting guide](/docs/guides/troubleshooting) for a quick start. You can find out if any of your systemd services are failing to start with `systemctl list-units --failed`. If there are failed units there, you can start debugging with `systemctl status <failed unit>`. However, you're on your own form here.
 
 

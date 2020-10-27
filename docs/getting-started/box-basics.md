@@ -21,7 +21,7 @@ In order to use the installer and management functions on your slot, you'll need
 - panel fix-disk
 - list
 
-::: tip Tip
+:::tip Tip
 Since `box` is considered a complete box management script, its functions require root/sudo permissions to execute. The guide will assume that you're either a root user or prefixing the commands with `sudo`
 :::
 

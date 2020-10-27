@@ -1,0 +1,39 @@
+---
+id: sickchill
+title: Sickchill
+sidebar_label: Sickchill
+---
+
+Video File Manager for TV Shows, It watches for new episodes of your favorite shows and when they are posted it does its magic.
+
+## Initial Setup
+
+Installing SickChill is easy. Simply issue the following command from SSH:
+
+```plaintext main
+sudo box install sickchill
+```
+
+This command will install and configure SickChill for your user.
+
+## How to Access
+
+After installation, you can access SickChill at the url: `https://<yourhostname.ltd>/sickchill`
+
+## Service Management
+
+Despite using a multi-user service name, multi-user for SickChill is not enabled by default.
+
+The systemd service file resides at:
+
+```bash main
+/etc/systemd/system/sickchill@.service
+```
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="sickchill@<username>"/>
+
+:::note
+SickChill does not currently handle special characters in your password very well. If you are having troubles connecting to your applications, make sure your password is alpha-numeric
+:::

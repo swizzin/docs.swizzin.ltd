@@ -1,0 +1,47 @@
+---
+id: ombi
+title: Ombi
+sidebar_label: Ombi
+---
+
+Ombi is a self-hosted web application that automatically gives your shared Plex or Emby users the ability to request content by themselves! Ombi can be linked to multiple TV Show and Movie DVR tools to create a seamless end-to-end experience for your users. 
+
+## Initial Setup
+
+Installing Ombi is easy. Simply issue the following command from SSH:
+
+```bash main
+sudo box install ombi
+```
+
+This command will configure and install ombi for your user.
+
+After installation, the files are stored in `/opt/Ombi` and the configuration and database are stored in `/etc/Ombi`
+
+## Upgrading
+
+Ombi is installed and maintained by the unofficially provided repository. In order to keep ombi up-to-date, update your packages with:
+
+```
+sudo apt -y update
+sudo apt -y upgrade
+```
+
+## How to Access
+
+After installation, Ombi will be available at the following web address: `https://<hostname.ltd>/ombi`
+
+## Service Management
+
+The systemd service for Ombi is not enabled for use in a multi-user environment.
+
+The service file resides at:
+
+```bash main
+/etc/systemd/system/ombi.service
+```
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="ombi"/>
+
