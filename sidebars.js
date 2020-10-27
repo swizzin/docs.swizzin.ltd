@@ -1,14 +1,11 @@
 module.exports = {
     docs: [
       {
-        type: "doc",
-        id: "installation",
-      },
-      {
         type: "category",
         label: "Getting Started",
         collapsed: true,
         items: [
+            "getting-started/installation",
             "getting-started/how-do-i-connect",
             "getting-started/box-basics",
             "getting-started/faqs"
@@ -19,6 +16,7 @@ module.exports = {
         label: "Applications",
         collapsed: true,
         items: [
+            "applications/index",
             { 
                 type: "category",
                 label: "Automation",
