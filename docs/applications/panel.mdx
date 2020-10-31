@@ -42,6 +42,10 @@ There should not be much need to alter config options, but a few currently exist
 
 `PORT` - Bind port (Default: `8333`)
 
+`RATELIMIT_ENABLED` - Define whether or not rate limiting is active for non-logged-in users. (Default: `True`)
+
+`RATELIMIT_DEFAULT` - Customize the default rate limiting period. (Default: `"5 per minute"`)
+
 `SHAREDSERVER` - Defines if this server is a swizzin enterprise server, you will probably never need to set this (Default: `False`)
 
 `DEBUG` - Turn off production mode and turn on the debugger. Prints response times and displays Python errors in the browser instead of causing internal server errors (Default: `False`)
@@ -189,3 +193,6 @@ import Troubleshooting from '../snippets/troubleshooting.md';
 
 ### Logs
 You can retrieve the logs of panel by running `sudo journalctl -u panel`. The logs contain the output of the python application.
+
+### Why am I being rate-limited?
+As of October 31st, 2020, the swizzin panel now does rate limiting to reduce the ability of an unauthenticated attacker to brute force basic authentication passwords against the swizzin panel. This rate limiting should not be in effect for logged-in users. If you wish to disable this behavior, you can define `RATELIMIT_ENABLED = False` in `swizzin.cfg`.
