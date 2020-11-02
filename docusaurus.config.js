@@ -105,8 +105,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} swizzin. All rights reserved.`,
     },
     googleAnalytics: {
-      trackingID: "zz",
-      anonymizeIP: true, // Should IPs be anonymized?
+      trackingID: "UA-104631777-1"
     },
     algolia: {
       apiKey: "zz",
