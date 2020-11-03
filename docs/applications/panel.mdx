@@ -191,6 +191,9 @@ import Troubleshooting from '../snippets/troubleshooting.md';
 
 <Troubleshooting />
 
+### I cannot log in
+You're probablt running some browser plugins which are causing interference with the swizzin panel due to the way basic http auth is being handled. Please try disable the plugin, use a different browser or use a private session without plugins to confirm your login still works, and try isolate the issue before reaching out for help.
+
 ### Logs
 You can retrieve the logs of panel by running `sudo journalctl -u panel`. The logs contain the output of the python application.
 
