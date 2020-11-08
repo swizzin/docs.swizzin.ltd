@@ -16,6 +16,12 @@ sudo box install wireguard
 
 At the end of the installation, the location of the config file for your user will be printed (`/home/<user>/.wireguard/<user>.conf`)
 
+### Managing service
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="wg-quick@wg1000"/>
+
 ## How to Access
 
 ### Client Install
@@ -29,9 +35,14 @@ If you prefer, an alternate client called [TunSafe](https://tunsafe.com/download
 
 Wireguard is available on many platforms. Setting it up for use with your swizzin configuration should be fairly straight-forward, but in case you need a little help getting your client setup, here are some instructions for popular operating systems.
 
-import SystemdTabs from '../snippets/systemdtabs.mdx';
+`... missing ...`
 
-<SystemdTabs service="wg-quick@wg1000"/>
+### Generating QR Code for clients
+You can quickly set up WG on your client by using the scannable qr-code. You can run the folllowing command to generate a quick QR inside of your terminal session, which you can scan with your device's camera.
+
+```bash
+qrencode -t ansiutf8 < ~/.wireguard/*.conf
+```
 
 ## Troubleshooting
 
