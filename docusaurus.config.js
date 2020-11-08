@@ -120,12 +120,12 @@ module.exports = {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/liaralabs/docs.swizzin.ltd/edit/main/",
+          editUrl: "https://github.com/liaralabs/docs.swizzin.ltd/edit/master/",
           routeBasePath: "/",
         },
         blog: {
           showReadingTime: true,
-          editUrl: "https://github.com/liaralabs/docs.swizzin.ltd/edit/main/",
+          editUrl: "https://github.com/liaralabs/docs.swizzin.ltd/edit/master/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.scss"),
