@@ -17,9 +17,9 @@ Swizzin stores its logs into the `/root/logs` directories. The installer install
 
 ```bash
 # To check the logs of the Swizzin installer
-sudo less +G /root/logs/install.log
+sudo less -r +G /root/logs/install.log
 # To check the logs of any application manipulation through box
-sudo less +G /root/logs/swizzin.log
+sudo less -r +G /root/logs/swizzin.log
 ```
 
 Please consult these logs for any errors or other bad-sounding messages before continuing.
