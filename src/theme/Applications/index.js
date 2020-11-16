@@ -7,6 +7,10 @@ import styles from "./styles.module.scss";
 
 const data = [
   {
+    title: "Airsonic",
+    url: "applications/airsonic",
+  },
+  {
     title: "AutoDL-irssi",
     url: "applications/autodl",
   },
