@@ -1,0 +1,6 @@
+import CodeBlock from "@theme/CodeBlock";
+
+<p>{props.serviceName} runs as the user <command>{props.serviceUsr}</command>. This means, that this user needs to be able to read (and execute directories leading all the way up to) whatever you would like {props.serviceUsr} to play.</p>
+<p>During the installation, only the master user is present in this group.</p>
+<p>In order to access non-master-user files cleanly, please add the {props.serviceUsr} user to the group of users who can access the desired user's files, and ensure that this group has access to the media you would like to access.</p>
+<CodeBlock children={"usermod -a -G <aUser> " + props.serviceUsr + "\n" + "chmod g+rx -R /home/<aUser>"} className="bash"></CodeBlock>
