@@ -24,6 +24,15 @@ sudo less -r +G /root/logs/swizzin.log
 
 Please consult these logs for any errors or other bad-sounding messages before continuing.
 
+## "Verbose" `box` output
+If you would like to see "verbose" output of the box command, you can run the following command before any `box` function. This will print all the information stored into the log into your current terminal session as well.
+```bash
+# to start the verbose output
+tail -f /root/logs/swizzin.log &
+
+# to kill the verbose output
+kill %1 #Assuming that the tail is the only background job in the shell, otherwise cross-check by issuing `jobs`
+```
 ## Server is not responding
 
 First ensure that your machine is accessible and connecting correctly by running the following command.
