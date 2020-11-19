@@ -59,11 +59,13 @@ You should generally follow the following steps at your own risk.
 
 ## Service Management
 
-Service status for sonarr is handled by systemd. Despite the service being enabled for multi-user usage, Sonarr itself has not been configured for usage on more than one user account with swizzin. Regardless, as a multi-user service, you must append the username of the service you need to modify follow the `@` sign. The systemd service file resides at
+Service status for sonarr is handled by systemd and is owned by the `sonarr` package. The systemd service file resides at
 
 ```bash main
-/etc/systemd/system/sonarr@.service
+/lib/systemd/system/sonarr.service
 ```
+
+It is not recommended to make alterations directly to this file. Rather, use `systemctl edit sonarr` if you would like to make adjustments.
 
 import SystemdTabs from '../snippets/systemdtabs.mdx';
 
