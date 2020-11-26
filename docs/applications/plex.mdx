@@ -49,6 +49,59 @@ After installation, you'll need to create an SSH Tunnel to your server to appear
 
 If you've gotten this far, I'll assume you don't need any reminders on how to connect to the server via SSH ;) However, creating an SSH tunnel takes a bit more effort than simply creating an SSH Connection.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<div class="panel">
+
+<Tabs
+  defaultValue="linux"
+  values={[
+    {label: 'Linux & OSX', value: 'linux'},
+    {label: 'Windows', value: 'windows'},
+]}>
+<TabItem value="linux">
+
+:::note 
+1. Open a command prompt or terminal
+2. Enter the command: `ssh username@hostname.ltd -L 8888:localhost:plexport`
+3. Open your browser window and navigate to `http://localhost:8888/web`
+4. The browser will connect to your Plex server and let you know that there is an unclaimed server on your network.
+:::
+
+</TabItem>
+<TabItem value="windows">
+
+:::note 
+1. Open up your PuTTY client again.
+2. Under gateway, enter the hostname of your server, e.g.: `yourhostname.ltd`
+3. Configure the tunnel:
+    1. On the left hand side, navigate to `Connection > SSH > Tunnels`
+    2. Under source port, enter `8888`
+    3. Under destination, enter `localhost:plexport` 
+    4. Click `Add`
+4. Connect to the server by clicking `Open`
+5. PuTTY will prompt you for your username and password like a regular SSH session.
+6. Once connected, open your browser and navitage to `http://localhost:8888/web`
+
+The browser will connect to your Plex server and let you know that there is an unclaimed server on your network.
+:::
+
+  </TabItem>
+</Tabs>
+
+</div>
+
+## Service Management
+
+The systemd service file resides at:
+
+```bash main
+/lib/systemd/system/plexmediaserver.service
+```
+
+It is not recommended to make edits directly to this file. If you must, please use an override (i.e. `systemctl edit plexmediaserver`)
+
 import SystemdTabs from '../snippets/systemdtabs.mdx';
 
 <SystemdTabs service="plexmediaserver"/>
