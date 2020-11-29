@@ -86,6 +86,11 @@ Out of the box, Sonarr comes with very little pre-set configuration. Following a
 6. Click the green + to add the show.
 
 ### Connect download clients
+
+Please note the two current caveats:
+  - RuTorrent installs require a change to Sonarr's Security policy, which you can change by going to Settings -> General -> Security. Set the value to "Disable for local" [(See here)](https://i.imgur.com/m6mAocu.png)
+  - qBittorrent 4.3.x+ is not currently supported, and it is advised to switch back to 4.2.5 [(More info here)](https://github.com/Sonarr/Sonarr/wiki/Downloads-and-Importing#qbittorrent-43x)
+
 import Conn4Arrs from '../snippets/conn4arr.mdx';
 
 <Conn4Arrs />
