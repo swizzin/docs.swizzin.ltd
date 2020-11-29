@@ -6,6 +6,35 @@ sidebar_label: Nextcloud
 
 Nextcloud is an open source, self-hosted file sync and share and communication app platform. Access & sync your files, contacts, calendars & communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!
 
+## Installation
+
+As simple as running the following command
+
+```bash
+box install nextcloud
+```
+
+As Nextcloud is essentially a PHP "Script" running on top of the Nginx + PHP stack, there are no service files available tto allow you to control the applications state.
+
+## Troubleshooting & Customisation
+
+import Troubleshooting from '../snippets/troubleshooting.md';
+
+<Troubleshooting />
+
+Please refer to the [Nextcloud documentation](https://docs.nextcloud.com/server/stable/admin_manual/contents.html) in case the documentation does not cover your questions.
+
+If you are running into 50x or 40x pages, please consult the troubleshooting guide for `nginx` logs.
+
+### Can't access after changing domains?
+
+[Change the trusted domains array values using the `occ` command](https://docs.nextcloud.com/server/stable/admin_manual/configuration_server/occ_command.html?highlight=trusted#setting-an-array-configuration-value)
+
+### Want to access your local filesystem inside of nextcloud?
+
+[Set up an "External Mount" to local storage](https://docs.nextcloud.com/server/stable/admin_manual/configuration_files/external_storage/local.html)
+
+
 import MissingDocs from '../snippets/missingdocs.md';
 
 <MissingDocs />
