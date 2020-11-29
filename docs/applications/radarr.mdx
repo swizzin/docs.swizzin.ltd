@@ -81,3 +81,13 @@ API: <copy and paste from jackett UI>
 ### Other tasks
 
 You may wish to further alter your setup by setting quality profiles or setting up post-processing so that media is automatically transferred to your Radarr library when your torrents are completed. If you need further help, you can refer to the [Radarr Wiki](https://github.com/Radarr/Radarr/wiki).
+
+## Migrating to v3 on .Net Core 
+
+Please follow the steps below to make sure you are using the Radarr v3 on the .Net binary
+- Upgrade `mono`-based v0.2 to `mono`-based v3
+    1. Trigger a backup manually by going to System -> Backup and presds the "Backup" Button. Wait until the process has finished.
+    1. Change the Release branch by going to Settings -> General -> Updates (needs Advanced settings shown), set the `Branch` value to `master` and then press the Save button
+    1. Go to System -> Updates and install the latest update which should be version 3.x+
+- Migrate `mono`-based v3 to `.Net`-based v3
+    1. Run `sudo box update`, which should Print out "`Moving Radarr from mono to .Net`" When the migration to .net has begun
