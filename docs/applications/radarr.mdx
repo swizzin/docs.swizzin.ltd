@@ -90,4 +90,6 @@ Please follow the steps below to make sure you are using the Radarr v3 on the .N
     1. Change the Release branch by going to Settings -> General -> Updates (needs Advanced settings shown), set the `Branch` value to `master` and then press the Save button
     1. Go to System -> Updates and install the latest update which should be version 3.x+
 - Migrate `mono`-based v3 to `.Net`-based v3
-    1. Run `sudo box update`, which should Print out "`Moving Radarr from mono to .Net`" When the migration to .net has begun
+    1. Run `sudo box update`, which should Print out "`Moving Radarr from mono to .Net`" When the migration to .net has begun\
+    
+If you are not running Radarr as your master user, you can set the environment variable `radarrOwner=<yourUser>`before the update, and the migration will respect the choice.
