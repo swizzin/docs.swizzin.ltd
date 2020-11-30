@@ -150,9 +150,10 @@ Therefore, you could achieve a downgrade with the following (untested!) example 
 ```bash
 box remove sonarrv3
 box install sonarr
-systemctl stop sonarr
+systemctl stop sonarr@<master>
 cd /home/<master>/.config
 mv sonarr sonarrv3bak
 cp /root/swizzin/backups/sonarrv2.back./* NzbDrone/
-systemctl start sonarrv3
+chown -R <master>:<master> NzbDrone
+systemctl start sonarr@<master>
 ```
