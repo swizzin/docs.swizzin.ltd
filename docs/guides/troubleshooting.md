@@ -189,28 +189,28 @@ You might additionally forward/open the ports for your torrent clients, FTP or o
 
 Consider using a Dynamic DNS (DDNS) provider like the swizzin-available [Duck DNS](/applications/duckdns) for your home IP to gain a free domain that can be used for something such as letsencrypt.
 
-## Staring from scratch
-We generally advise against this scenario as you lose the opportunity to learn from the mistakes that happened somewhere along the line. This knowledge can help you save time and restore the functionality of the system in case it goes ver awry. Please attempt the steps above first before nuking the system.
+## Starting from scratch
+We generally advise against this scenario as you lose the opportunity to learn from the mistakes that happened somewhere along the line. This experience can help you save time in the future and restore the functionality of the system in case it goes very awry on your own. **Please attempt the steps above first before nuking the system. We will happily guide you through the process on Discord if you're up for it.**
 
-There is currently no convenient way to uninstall the entire swizzin suite and return all files and settings to their byte-for-byte original state.
+There is currently no convenient way to uninstall the entire swizzin suite and return all files and settings to their byte-for-byte original state. You can, however, attempt to remove all the treaces it can leave on your system in order to be able to re-staret without trying to lose everything.
 
-If you are having problems with a specific application, we advise to re-install that application first, and if necessary the underlying dependencies (these could be `nginx`, `rtorrent`, or others depending on the application).
-
+If you are having problems with a specific application, we advise to re-install that application first, and if necessary the underlying dependencies (these could be `nginx`, `rtorrent`, or others depending on the application). 
 Remember to also remove any additional users you created.
 
-You can also attempt to remove swizzin by removing every app you have installed, and then removing the following files and directories recursively.
+You can also attempt to remove swizzin by removing every app you have installed through it as well as any loose configuration files and directories that belong to it; and then removing the following files and directories recursively.
 
-**Please be careful to not remove anything else by accident, those mistakes are often irrecoverable.**
+**Please be careful to not remove anything else by accident, those mistakes could be irrecoverable.**
 
 - `/etc/swizzin`
 - `/usr/local/bin/swizzin`
 - `/install/`
 - `/root/logs/`
+- `/root/swizzin/`
 - `/etc/htpasswd`
 - `/etc/htpasswd.d`
 - `/etc/sudoers.d`
 - Any file under `/root/` which ends in `.info`
 
-If you would truly prefer to like to star from scratch, it is best to completely reformat and re-install your OS this will allow you to determine whether the issues you were facing were inside or outside the operating system much faster.
+If you would truly prefer to start from scratch, it is best to completely reformat and re-install your OS. This will allow you to determine whether the issues you were facing were inside or outside the operating system much faster.
 
 If you are re-installing your OS, we recommend to use the latest LTS version of the distribution of your choice.
