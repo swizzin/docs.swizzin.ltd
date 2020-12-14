@@ -31,9 +31,24 @@ import InstallOptsWarning from '../snippets/installoptswarning.md';
 ## Post-install
 1. Link to your instance of the Calibre Library folder
    - For example `/home/masteruser/Calibre Library`
+   - _Note:_ If you installed calibre through swizzin, this step will be done for you
+   - If you would like to add your existing library, you will need to give the `calibreweb` system user access to your library with these commands:
+      - ```bash
+      # Replace $theuser with the name of the user which has the library files
+      sudo usermod -a -G $theuser calibreweb
+      sudo chmod 750 -R /home/$theuser
+      sudo chmod 770 /home/$theuser/path/to/library
+      systemctl restart calibre-web
+      ```
 2. Change the username and password of the admin user
-   - Go to `http://domain/calibre/me` and change the details there
-
+   - Log in to calibre using `admin`:`admin123`
+   - Go to `http://<domain>/calibre/me` and change the details there
+3. Link or install necessary binaries
+   - Kepubify is installed in `/usr/local/bin/kepubify`
+   - If you have `unrar` installed (`apt install unrar`), it will be in `/usr/local/bin/kepubify`
+4. **Optional:** configure the direct Google Drive support
+   - Please check [this article](https://github.com/janeczku/calibre-web/wiki/Configuration#using-google-drive-integration) for the appropriate steps
+   - You only need to do this when you want to keep your entire library in google drive, not if you're using rclone etc.
 
 ## User management
 Calibre-web has its own internal user database **which swizzin does not manage in any way**. Please manage your users through the web interface.
