@@ -20,19 +20,11 @@ You will then be able to access it through either `http://domain.tld/calibre` or
 
 ### Options
 
-::: warning Make sure you know what you're doing!
-**Please note that it is difficult for us to support these options as they are custom for each install**
+import InstallOptsWarning from '../snippets/installoptswarning.md';
 
-None of the options are sanity-checked on install so setting something wrong could break your installation.
+<InstallOptsWarning />
 
-Again, you do not need to set these if you don't know what you're doing.
-:::
-
-```bash main
-export download_dir='torrents/downloads'
-```
-
-- `calibredbuser`:
+- `clbDbOwner`:
   - Default: The name of the master user
   - Use this to allow Calibre-web to access the Calibre Library of someone other than the master user.
 
