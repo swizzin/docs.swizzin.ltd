@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/3987d009.1e23158e.css">
 <link rel="stylesheet" href="/68f93a6f.1e23158e.css">
 <link rel="preload" href="/styles.386ee735.js" as="script">
-<link rel="preload" href="/runtime~main.3b6b03d3.js" as="script">
+<link rel="preload" href="/runtime~main.82777943.js" as="script">
 <link rel="preload" href="/main.0c0906ed.js" as="script">
 <link rel="preload" href="/2.5415646b.js" as="script">
 <link rel="preload" href="/3.71de962b.js" as="script">
@@ -25,8 +25,8 @@
 <link rel="preload" href="/79.bb645b9d.js" as="script">
 <link rel="preload" href="/ffe3bfcf.ea700cba.js" as="script">
 <link rel="preload" href="/04a641db.e30814ae.js" as="script">
-<link rel="preload" href="/8114e786.8f560936.js" as="script">
-<link rel="preload" href="/0dad42ae.c3db7d0b.js" as="script">
+<link rel="preload" href="/8114e786.623cba40.js" as="script">
+<link rel="preload" href="/0dad42ae.24d3fd3e.js" as="script">
 <link rel="preload" href="/149c058f.3df07583.js" as="script">
 <link rel="preload" href="/1a443afc.e04bb404.js" as="script">
 <link rel="preload" href="/1e44ea1d.63c6908b.js" as="script">
@@ -35,9 +35,9 @@
 <link rel="preload" href="/3356975c.d15130af.js" as="script">
 <link rel="preload" href="/37b68c3a.13ee118f.js" as="script">
 <link rel="preload" href="/37ed1083.67755336.js" as="script">
-<link rel="preload" href="/3987d009.67ce86e2.js" as="script">
+<link rel="preload" href="/3987d009.399ac7c1.js" as="script">
 <link rel="preload" href="/5916ce83.c2a27043.js" as="script">
-<link rel="preload" href="/68f93a6f.2aff4b86.js" as="script">
+<link rel="preload" href="/68f93a6f.065b61c2.js" as="script">
 <link rel="preload" href="/6b0cda71.4798efe5.js" as="script">
 <link rel="preload" href="/6fe2740a.5bf91a57.js" as="script">
 <link rel="preload" href="/7945880e.322d25e0.js" as="script">
@@ -58,7 +58,7 @@
 Once v4 becomes Stable, the default installation will no longer install v3.
 This method will persist for the convenience of upgrading from v3 to</p></div></div><p>You can install the v4 through the <em>other</em> unofficially provided repository by running the following command.</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockContent_1u-d"><button tabindex="0" type="button" aria-label="Copy code to clipboard" class="copyButton_10dd">Copy</button><div class="prism-code language-undefined codeBlock_3iAC"><div class="codeBlockLines_b7E3" style="color:#d6deeb;background-color:#011627"><div class="token-line" style="color:#d6deeb"><span class="token plain">box upgrade ombi</span></div></div></div></div></div><p>The upgrading procedure on v4 is the same as above, i.e. through the use of <code>apt</code></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="how-to-access"></a>How to Access<a aria-hidden="true" tabindex="-1" class="hash-link" href="#how-to-access" title="Direct link to heading">#</a></h2><p>After installation, Ombi will be available at the following web address: <code>https://&lt;hostname.ltd&gt;/ombi</code></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="service-management"></a>Service Management<a aria-hidden="true" tabindex="-1" class="hash-link" href="#service-management" title="Direct link to heading">#</a></h2><p>The systemd service for Ombi is not enabled for use in a multi-user environment.</p><p>The service file resides at:</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockContent_1u-d"><button tabindex="0" type="button" aria-label="Copy code to clipboard" class="copyButton_10dd">Copy</button><div class="prism-code language-bash codeBlock_3iAC"><div class="codeBlockLines_b7E3" style="color:#d6deeb;background-color:#011627"><div class="token-line" style="color:#d6deeb"><span class="token plain">/etc/systemd/system/ombi.service</span></div></div></div></div></div><div class="code"><div><ul role="tablist" aria-orientation="horizontal" class="tabs"><li role="tab" tabindex="0" aria-selected="true" class="tabs__item start tabItem_KCTH tabs__item--active" style="outline:none">Start</li><li role="tab" tabindex="0" aria-selected="false" class="tabs__item stop tabItem_KCTH" style="outline:none">Stop</li><li role="tab" tabindex="0" aria-selected="false" class="tabs__item restart tabItem_KCTH" style="outline:none">Restart</li><li role="tab" tabindex="0" aria-selected="false" class="tabs__item enable tabItem_KCTH" style="outline:none">Enable</li><li role="tab" tabindex="0" aria-selected="false" class="tabs__item disable tabItem_KCTH" style="outline:none">Disable</li></ul><div role="tabpanel" class="margin-vert--md"><div><div class="codeBlockContent_1u-d"><button tabindex="0" type="button" aria-label="Copy code to clipboard" class="copyButton_10dd">Copy</button><div class="prism-code language-bash codeBlock_3iAC"><div class="codeBlockLines_b7E3" style="color:#d6deeb;background-color:#011627"><div class="token-line" style="color:#d6deeb"><span class="token function" style="color:rgb(130, 170, 255)">sudo</span><span class="token plain"> systemctl start ombi</span></div></div></div></div></div></div></div></div></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/liaralabs/docs.swizzin.ltd/edit/master/docs/applications/ombi.mdx" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/applications/medusa"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« Medusa</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/applications/sickchill"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Sickchill »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#initial-setup" class="table-of-contents__link">Initial Setup</a></li><li><a href="#upgrading" class="table-of-contents__link">Upgrading</a><ul><li><a href="#upgrading-to-v4" class="table-of-contents__link">Upgrading to v4</a></li></ul></li><li><a href="#how-to-access" class="table-of-contents__link">How to Access</a></li><li><a href="#service-management" class="table-of-contents__link">Service Management</a></li></ul></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">swizzin</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/getting-started">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/getting-started/box-basics">Box Basics</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Social</h4><ul class="footer__items"><li class="footer__item"><a href="https://github.com/liaralabs/swizzin" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub</a></li><li class="footer__item"><a href="https://discord.gg/sKjs9UM" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord</a></li></ul></div></div><div class="text--center"><div class="margin-bottom--sm"><a href="https://swizzin.ltd" target="_blank" rel="noopener noreferrer" class="footerLogoLink_1zJy"><img class="footer__logo" alt="swizzin Logo" src="/img/logo-sm.png"></a></div><div>Copyright © 2020 swizzin. All rights reserved.</div></div></div></footer></div>
 <script src="/styles.386ee735.js"></script>
-<script src="/runtime~main.3b6b03d3.js"></script>
+<script src="/runtime~main.82777943.js"></script>
 <script src="/main.0c0906ed.js"></script>
 <script src="/2.5415646b.js"></script>
 <script src="/3.71de962b.js"></script>
@@ -69,8 +69,8 @@ This method will persist for the convenience of upgrading from v3 to</p></div></
 <script src="/79.bb645b9d.js"></script>
 <script src="/ffe3bfcf.ea700cba.js"></script>
 <script src="/04a641db.e30814ae.js"></script>
-<script src="/8114e786.8f560936.js"></script>
-<script src="/0dad42ae.c3db7d0b.js"></script>
+<script src="/8114e786.623cba40.js"></script>
+<script src="/0dad42ae.24d3fd3e.js"></script>
 <script src="/149c058f.3df07583.js"></script>
 <script src="/1a443afc.e04bb404.js"></script>
 <script src="/1e44ea1d.63c6908b.js"></script>
@@ -79,9 +79,9 @@ This method will persist for the convenience of upgrading from v3 to</p></div></
 <script src="/3356975c.d15130af.js"></script>
 <script src="/37b68c3a.13ee118f.js"></script>
 <script src="/37ed1083.67755336.js"></script>
-<script src="/3987d009.67ce86e2.js"></script>
+<script src="/3987d009.399ac7c1.js"></script>
 <script src="/5916ce83.c2a27043.js"></script>
-<script src="/68f93a6f.2aff4b86.js"></script>
+<script src="/68f93a6f.065b61c2.js"></script>
 <script src="/6b0cda71.4798efe5.js"></script>
 <script src="/6fe2740a.5bf91a57.js"></script>
 <script src="/7945880e.322d25e0.js"></script>
