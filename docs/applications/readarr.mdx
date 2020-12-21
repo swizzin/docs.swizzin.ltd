@@ -1,0 +1,103 @@
+---
+id: radarr
+title: Radarr
+sidebar_label: Radarr
+---
+
+Readarr is a ebook (and maybe eventually magazine/audiobook) collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new books from your favorite authors and will grab, sort and rename them.
+
+:::danger
+Readarr is in the early stages of development and is considered alpha. Install and use with caution.
+:::
+
+## Initial Setup
+
+Installing Readarr is easy. Simply issue the following command:
+
+```bash main
+sudo box install readarr
+```
+
+This command will configure readarr for your user.
+
+## How to Access
+
+After Readarr has been installed, it will be available for access at `https://<hostname.ltd>/readarr`.
+
+## Service Management
+
+The Readarr service is managed by systemd and has been configured for single user usage. You can find the service file here:
+
+```
+/etc/systemd/system/readarr.service
+```
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="readarr"/>
+
+## Configuration
+
+Out of the box, Readarr comes with very little configuration. Following are some basic tasks to help get your client up and running:
+
+### Add a new show (and your first root directory)
+
+1. At the top, click series.
+2. Click the button `+ Add Movie`
+3. Type the name of the show you want to add
+4. Under `Path`, choose `Add a new path`. Enter the path for the folder you wish to add your Readarr movies to and click the green check mark to add the directory.
+  - e.g. `/home/<username>/media/Movies`
+5. Change the other settings to your own needs
+6. Click the green + to add the show.
+
+### Connect download clients
+import Conn4Arrs from '../snippets/conn4arr.mdx';
+
+<Conn4Arrs />
+
+### Add an indexer with Jackett
+Readarr only supports a few trackers out of the box, but the indexers can be expanded by using the application [Jackett](jackett.mdx). To add an indexer with Jackett, use the following steps.
+
+:::note
+By default, when receiving the torznab feed from Jackett, it will need to be modified to be connected with the application. The default link looks like:
+
+```plaintext
+https://<yourhostname.ltd>/jackett/api/v2.0/indexers/yourtracker/results/torznab/
+```
+
+We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `12345`, your edited URL would look like this:
+
+```plaintext
+http://<yourhostname.ltd>:12345/jackett/api/v2.0/indexers/yourtracker/results/torznab/
+```
+:::
+
+1. Go to `Settings > Indexers` and click `+` to add a new indexer.
+2. Under `Torrent` choose `Torznab`
+3. Use the settings:
+```plaintext main
+Name: <tracker name>
+URL: <click copy torznab feed in jackett and modify as per above>
+API: <copy and paste from jackett UI>
+```
+4. Click `Test`. If all is good, click `Save`.
+
+### Other tasks
+
+You may wish to further alter your setup by setting quality profiles or setting up post-processing so that media is automatically transferred to your Readarr library when your torrents are completed. If you need further help, you can refer to the [Readarr Wiki](https://github.com/Readarr/Readarr/wiki).
+
+## Migrating to v3 on .Net Core 
+
+Please follow the steps below to make sure you are using the Readarr v3 on the .Net binary
+- Upgrade mono-based v0.2 to mono-based v3
+    1. Trigger a backup manually by going to System -> Backup and press the "Backup" Button. Wait until the process has finished.
+    1. Change the Release branch by going to Settings -> General -> Updates (ensure Advanced settings are shown), set the Branch value to `develop` and then press the Save button.
+    1. Go to System -> Updates and install the latest update which should be version 3.x+
+    1. Refresh your browser while emptying cache (CTRL+SHIFT+R on most browsers)
+    1. Confirm you're running on version 3.x+ In System
+    1. Change your branch back to `master`
+- Migrate mono-based v3 to .Net-based v3
+    1. Run `sudo box update`, which should Print out "`Moving Readarr from mono to .Net`" When the migration to .net has begun
+    1. Refresh your browser while emptying cache (CTRL+SHIFT+R on most browsers)
+    
+If you are not running Readarr as your master user, you can set the environment variable `readarrOwner=<yourUser>`before the update, and the migration will respect the choice.
