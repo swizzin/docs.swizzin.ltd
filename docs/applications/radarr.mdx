@@ -35,17 +35,22 @@ import SystemdTabs from '../snippets/systemdtabs.mdx';
 
 ## Configuration
 
-Out of the box, Radarr comes with very little configuration. Following are some basic tasks to help get your client up and running:
+In addition to the below Swizzin provided instructions, the Radarr Team built a detailed [Quick Start Guide] (https://wiki.servarr.com/Radarr_Quick_Start_Guide).
 
-### Add a new show (and your first root directory)
+[Radarr's FAQ](https://wiki.servarr.com/Radarr_FAQ) may be of additional use as well.
 
-1. At the top, click series.
-2. Click the button `+ Add Movie`
-3. Type the name of the show you want to add
-4. Under `Path`, choose `Add a new path`. Enter the path for the folder you wish to add your Radarr movies to and click the green check mark to add the directory.
+Out of the box, Radarr comes with no configuration. Following are some basic tasks to help get your client up and running:
+
+### Add a new movie (and your first root directory)
+
+1. At the top, click Movies.
+2. Click `Add New`
+3. Type the name of the movie you want to add
+4. Click the movie you want to add
+5. Under `Root Folder`, choose `Add a new path`. Enter the path for the folder you wish to add your Radarr movies to and click the green check mark to add the directory.
   - e.g. `/home/<username>/media/Movies`
 5. Change the other settings to your own needs
-6. Click the green + to add the show.
+6. Click the green `Add Movie` button to add the movie.
 
 ### Connect download clients
 import Conn4Arrs from '../snippets/conn4arr.mdx';
@@ -81,7 +86,7 @@ API: <copy and paste from jackett UI>
 
 ### Other tasks
 
-You may wish to further alter your setup by setting quality profiles or setting up post-processing so that media is automatically transferred to your Radarr library when your torrents are completed. If you need further help, you can refer to the [Radarr Wiki](https://github.com/Radarr/Radarr/wiki).
+You may wish to further alter your setup by setting quality profiles or setting up post-processing so that media is automatically transferred to your Radarr library when your torrents or usenet downloads are completed. If you need further help, you can refer to the [Radarr Wiki](https://wiki.servarr.com/Radarr).
 
 ## Migrating to v3 on .Net Core 
 
