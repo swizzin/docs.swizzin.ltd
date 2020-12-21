@@ -4,7 +4,8 @@ title: Radarr
 sidebar_label: Radarr
 ---
 
-Radarr is an independent fork of Sonarr reworked for automatically downloading movies via Usenet and BitTorrent.
+Radarr is a movie collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new movies and will interface with clients and indexers to grab, sort, and rename them. 
+It can also be configured to automatically upgrade the quality of existing files in the library when a better quality format becomes available.
 
 ## Initial Setup
 
@@ -41,7 +42,7 @@ Out of the box, Radarr comes with very little configuration. Following are some 
 1. At the top, click series.
 2. Click the button `+ Add Movie`
 3. Type the name of the show you want to add
-4. Under `Path`, choose `Add a new path`. Enter the path for the folder you wish to add your Sonarr shows to and click the green check mark to add the directory.
+4. Under `Path`, choose `Add a new path`. Enter the path for the folder you wish to add your Radarr movies to and click the green check mark to add the directory.
   - e.g. `/home/<username>/media/Movies`
 5. Change the other settings to your own needs
 6. Click the green + to add the show.
@@ -87,10 +88,11 @@ You may wish to further alter your setup by setting quality profiles or setting 
 Please follow the steps below to make sure you are using the Radarr v3 on the .Net binary
 - Upgrade mono-based v0.2 to mono-based v3
     1. Trigger a backup manually by going to System -> Backup and presds the "Backup" Button. Wait until the process has finished.
-    1. Change the Release branch by going to Settings -> General -> Updates (needs Advanced settings shown), set the Branch value to `develop` and then press the Save button. _Note: Some users had better luck leaving it on `develop`. Please let us know what you found to be correct._
+    1. Change the Release branch by going to Settings -> General -> Updates (needs Advanced settings shown), set the Branch value to `develop` and then press the Save button.
     1. Go to System -> Updates and install the latest update which should be version 3.x+
     1. Refresh your browser while emptying cache (CTRL+SHIFT+R on most browsers)
     1. Confirm you're running on version 3.x+ In System
+    1. Change your branch back to master
 - Migrate mono-based v3 to .Net-based v3
     1. Run `sudo box update`, which should Print out "`Moving Radarr from mono to .Net`" When the migration to .net has begun
     1. Refresh your browser while emptying cache (CTRL+SHIFT+R on most browsers)
