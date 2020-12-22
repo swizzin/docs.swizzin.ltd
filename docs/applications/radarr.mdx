@@ -34,59 +34,10 @@ import SystemdTabs from '../snippets/systemdtabs.mdx';
 <SystemdTabs service="radarr"/>
 
 ## Configuration
-
-In addition to the below Swizzin provided instructions, the Radarr Team built a detailed [Quick Start Guide] (https://wiki.servarr.com/Radarr_Quick_Start_Guide).
-
+The Radarr Team built a detailed [Quick Start Guide] (https://wiki.servarr.com/Radarr_Quick_Start_Guide).
 [Radarr's FAQ](https://wiki.servarr.com/Radarr_FAQ) may be of additional use as well.
 
-Out of the box, Radarr comes with no configuration. Following are some basic tasks to help get your client up and running:
-
-### Add a new movie (and your first root directory)
-
-1. At the top, click Movies.
-2. Click `Add New`
-3. Type the name of the movie you want to add
-4. Click the movie you want to add
-5. Under `Root Folder`, choose `Add a new path`. Enter the path for the folder you wish to add your Radarr movies to and click the green check mark to add the directory.
-  - e.g. `/home/<username>/media/Movies`
-5. Change the other settings to your own needs
-6. Click the green `Add Movie` button to add the movie.
-
-### Connect download clients
-import Conn4Arrs from '../snippets/conn4arr.mdx';
-
-<Conn4Arrs />
-
-### Add an indexer with Jackett
-Radarr only supports a few trackers out of the box, but the indexers can be expanded by using the application [Jackett](jackett.mdx). To add an indexer with Jackett, use the following steps.
-
-:::note
-By default, when receiving the torznab feed from Jackett, it will need to be modified to be connected with the application. The default link looks like:
-
-```plaintext
-https://<yourhostname.ltd>/jackett/api/v2.0/indexers/yourtracker/results/torznab/
-```
-
-We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `12345`, your edited URL would look like this:
-
-```plaintext
-http://<yourhostname.ltd>:12345/jackett/api/v2.0/indexers/yourtracker/results/torznab/
-```
-:::
-
-1. Go to `Settings > Indexers` and click `+` to add a new indexer.
-2. Under `Torrent` choose `Torznab`
-3. Use the settings:
-```plaintext main
-Name: <tracker name>
-URL: <click copy torznab feed in jackett and modify as per above>
-API: <copy and paste from jackett UI>
-```
-4. Click `Test`. If all is good, click `Save`.
-
-### Other tasks
-
-You may wish to further alter your setup by setting quality profiles or setting up post-processing so that media is automatically transferred to your Radarr library when your torrents or usenet downloads are completed. If you need further help, you can refer to the [Radarr Wiki](https://wiki.servarr.com/Radarr).
+Out of the box, Radarr comes with no configuration, so you'll need to set it up!
 
 ## Migrating to v3 on .Net Core 
 
