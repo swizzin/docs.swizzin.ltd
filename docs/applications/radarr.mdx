@@ -39,6 +39,39 @@ The Radarr Team built a detailed [Quick Start Guide](https://wiki.servarr.com/Ra
 
 Out of the box, Radarr comes with no configuration, so you'll need to set it up!
 
+Some important Swizzin specific information to note:
+### Connect download clients	
+import Conn4Arrs from '../snippets/conn4arr.mdx';	
+
+<Conn4Arrs />
+
+### Add an indexer with Jackett	
+Radarr only supports a few trackers out of the box, but the indexers can be expanded by using the application [Jackett](jackett.mdx). To add an indexer with Jackett, use the following steps.	
+
+:::note	
+By default, when receiving the torznab feed from Jackett, it will need to be modified to be connected with the application. The default link looks like:	
+
+```plaintext	
+https://<yourhostname.ltd>/jackett/api/v2.0/indexers/yourtracker/results/torznab/	
+```	
+
+We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `12345`, your edited URL would look like this:	
+
+```plaintext	
+http://<yourhostname.ltd>:12345/jackett/api/v2.0/indexers/yourtracker/results/torznab/	
+```	
+:::	
+
+1. Go to `Settings > Indexers` and click `+` to add a new indexer.	
+2. Under `Torrent` choose `Torznab`	
+3. Use the settings:	
+```plaintext main	
+Name: <tracker name>	
+URL: <click copy torznab feed in jackett and modify as per above>	
+API: <copy and paste from jackett UI>	
+```	
+4. Click `Test`. If all is good, click `Save`.
+
 ## Migrating to v3 on .Net Core 
 
 Please follow the steps below to make sure you are using the Radarr v3 on the .Net binary
