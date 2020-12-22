@@ -1,7 +1,7 @@
 ---
-id: radarr
-title: Radarr
-sidebar_label: Radarr
+id: readarr
+title: Readarr
+sidebar_label: Readarr
 ---
 
 Readarr is a ebook (and maybe eventually magazine/audiobook) collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new books from your favorite authors and will grab, sort and rename them.
@@ -38,17 +38,17 @@ import SystemdTabs from '../snippets/systemdtabs.mdx';
 
 ## Configuration
 
-Out of the box, Readarr comes with very little configuration. Following are some basic tasks to help get your client up and running:
+Out of the box, Readarr comes with no configuration. Following are some basic tasks to help get your client up and running:
 
-### Add a new show (and your first root directory)
+### Add a new book (and your first root directory)
 
-1. At the top, click series.
-2. Click the button `+ Add Movie`
-3. Type the name of the show you want to add
-4. Under `Path`, choose `Add a new path`. Enter the path for the folder you wish to add your Readarr movies to and click the green check mark to add the directory.
-  - e.g. `/home/<username>/media/Movies`
+1. At the top, click Library.
+2. Click `Add New`
+3. Type the name, ibsn, or asin of the book or author's name that you want to add
+4. In Root Folder choose `Add a new path`. Enter the path for the folder you wish to add your Readarr books to.
+  - e.g. `/home/<username>/media/books`
 5. Change the other settings to your own needs
-6. Click the green + to add the show.
+6. Click the green `Add {book/author}` to add the book/author.
 
 ### Connect download clients
 import Conn4Arrs from '../snippets/conn4arr.mdx';
@@ -84,20 +84,8 @@ API: <copy and paste from jackett UI>
 
 ### Other tasks
 
-You may wish to further alter your setup by setting quality profiles or setting up post-processing so that media is automatically transferred to your Readarr library when your torrents are completed. If you need further help, you can refer to the [Readarr Wiki](https://github.com/Readarr/Readarr/wiki).
+You may wish to further alter your setup by setting quality profiles or setting up post-processing so that media is automatically transferred to your Readarr library when your torrents or usenet are completed. 
+If you need further help, you can refer to the [Readarr Wiki](https://wiki.servarr.com/Readarr) and [Readarr FAQ](https://wiki.servarr.com/Readarr_FAQ)/
 
-## Migrating to v3 on .Net Core 
-
-Please follow the steps below to make sure you are using the Readarr v3 on the .Net binary
-- Upgrade mono-based v0.2 to mono-based v3
-    1. Trigger a backup manually by going to System -> Backup and press the "Backup" Button. Wait until the process has finished.
-    1. Change the Release branch by going to Settings -> General -> Updates (ensure Advanced settings are shown), set the Branch value to `develop` and then press the Save button.
-    1. Go to System -> Updates and install the latest update which should be version 3.x+
-    1. Refresh your browser while emptying cache (CTRL+SHIFT+R on most browsers)
-    1. Confirm you're running on version 3.x+ In System
-    1. Change your branch back to `master`
-- Migrate mono-based v3 to .Net-based v3
-    1. Run `sudo box update`, which should Print out "`Moving Readarr from mono to .Net`" When the migration to .net has begun
-    1. Refresh your browser while emptying cache (CTRL+SHIFT+R on most browsers)
-    
+   
 If you are not running Readarr as your master user, you can set the environment variable `readarrOwner=<yourUser>`before the update, and the migration will respect the choice.
