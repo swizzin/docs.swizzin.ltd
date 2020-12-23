@@ -49,7 +49,6 @@ Debian:
 - Buster (stable)
 
 Ubuntu:
-- Xenial (16.04 LTS)
 - Bionic (18.04 LTS)
 - Focal (20.04 LTS)
 

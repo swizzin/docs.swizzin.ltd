@@ -21,11 +21,10 @@ const data = [
     title: <>Is swizzin actively maintained?</>,
     description: (
       <>
-        Yes! swizzin currently supports Debian Stretch and Buster, as well as Ubuntu Xenial,
-        Bionic and Focal. Packages are kept in working order and reported, reproducible issues are
-        promptly patched. Support for operating systems is subject to change based on availability
-        of upstream support; however, new long-term support versions of Debian & Ubuntu will be added
-        accordingly.
+        Yes! swizzin currently supports Debian Stretch and Buster, as well as Ubuntu Bionic and Focal.
+        Packages are kept in working order and reported, reproducible issues are promptly patched.
+        Support for operating systems is subject to change based on availability of upstream support;
+        however, new long-term support versions of Debian & Ubuntu will be added accordingly.
       </>
     ),
   },
@@ -34,7 +33,7 @@ const data = [
     description: (
       <>
         swizzin only installs the applications you request and the dependencies required to support them.
-        In addition to this, there are a few other global dependencies installed during setup which are 
+        In addition to this, there are a few other global dependencies installed during setup which are
         generally required by a large portion of packages. As far as which packages to install, that's
         completely up to you!
       </>
