@@ -14,3 +14,7 @@ sidebar_label: Setup
 
 ## Apt functions
 
+## Python functions for `pyenv` and `venv`
+
+## Other functions in `utils`
+
