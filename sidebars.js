@@ -145,6 +145,16 @@ module.exports = {
         items: [
             "scripts/setdisk",
           ],
-      },
+      },{
+        type: "category",
+        label: "Development",
+        collapsed: true,
+        items: [
+            "dev/intro",
+            "dev/setup",
+            "dev/structure",
+            "dev/tools"
+            ]
+      }
     ],
   };
