@@ -34,6 +34,7 @@ module.exports = {
                     "applications/sonarr",
                     "applications/sonarrv3",
                     "applications/radarr",
+                    "applications/trackarr",
                 ],
             },
             { 
