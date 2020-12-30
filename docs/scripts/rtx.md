@@ -1,7 +1,7 @@
 ---
 id: rtx
-title: rtx
-sidebar_label: rtx (ruTorrent Extras Manager)
+title: rtx (ruTorrent Extras Manager)
+sidebar_label: rtx
 ---
 
 This script helps you manage themes and extensions for rutorrent.
