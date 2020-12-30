@@ -191,6 +191,10 @@ const data = [
     url: "applications/tautulli",
   },
   {
+    title: "Trackarr",
+    url: "applications/trackarr",
+  },
+  {
     title: "Transmission",
     url: "applications/transmission",
   },
