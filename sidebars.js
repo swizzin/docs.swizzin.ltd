@@ -144,6 +144,7 @@ module.exports = {
         collapsed: true,
         items: [
             "scripts/setdisk",
+            "scripts/rtx",
           ],
       },
     ],
