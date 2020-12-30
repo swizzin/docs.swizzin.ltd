@@ -1,0 +1,35 @@
+---
+id: trackarr
+title: Trackarr
+sidebar_label: Trackarr
+---
+
+Trackarr is an autodl alternative which tightly integrates directly into -arrs rather than a torrent client.
+
+## How to Install
+
+Installing Sonarr is easy. Simply issue the following command
+
+```bash main
+sudo box install trackarr
+```
+
+## How to Access
+
+If nginx is currently installed, trackarr is available on the address below. 
+`https://<hostname.tld>/trackarr`
+
+If nginx is not installed, you can find trackarr at 
+`https://<hostname.tld>:7337`
+
+Use your master credentials to log in.
+
+## Service Management
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="trackarr"/>
+
+## Configuration
+
+Please see the [Trackarr Wiki[(https://gitlab.com/cloudb0x/trackarr/-/wikis/home)] for Configuration
