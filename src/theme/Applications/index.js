@@ -107,6 +107,10 @@ const data = [
     url: "applications/organizr",
   },
   {
+    title: "Overseerr",
+    url: "applications/overseerr",
+  },
+  {
     title: "Plex",
     url: "applications/plex",
   },
