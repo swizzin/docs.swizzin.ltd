@@ -61,6 +61,14 @@ dig <domain>
 
 If your machine is not accessible, see if it is online, and the networking is set up correctly.
 
+## I'm getting a `502` when accessing the server
+The most likely scenario is that the application you're trying to access is not responding. `nginx` is running just fine but it just does not know who to talk to at the end, and so it comes back with empty hands and throws a `502`.
+
+You should [check the status of the app](#checking-if-an-application-is-running) which you're trying to access.
+
+Remember, if you're accessing the server's dashboard itself, you're trying to actually access the [panel](panel.mdx) application.
+
+
 ## Troubleshooting failed SSH
 You can always determine what is causing your SSH connectivity issues by running the following command.
 ```bash
