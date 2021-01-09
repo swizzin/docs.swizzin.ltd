@@ -12,6 +12,18 @@ For each specific application, it is always a good idea to first refer to the re
 
 If you ran all the relevant steps mentioned below and still cannot identify your issue, feel free to visit our [Discord](https://discord.gg/sKjs9UM) and ask for help there! We're always happy to help with anything we are able to.
 
+## Checking known issues
+
+:::warnging
+We get a lot of the same questions all the time. Please read this chapter first.
+:::
+
+Please check the [issues on the main repo](https://github.com/swizzin/swizzin/issues) or, if relevant to your problem, the [issues on the dashboard repo](https://github.com/liaralabs/swizzin_dashboard/issues).
+
+Very often, the problem you're having has already been solved, so please additionally check the closed issues too.
+
+If you do find your problem, you can subscribe to those issues to get updates when they're resolved, or you can help and give us more feedback/info on them. Thanks!
+
 ## Accessing swizzin/`box` logs
 Swizzin stores its logs into the `/root/logs` directories. The installer installs into `install.log`, and any other command you run with `box` will end up in `swizzin.log`. You can access the logs by running the following commands.
 
