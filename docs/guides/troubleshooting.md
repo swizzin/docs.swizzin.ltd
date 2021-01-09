@@ -66,7 +66,7 @@ The most likely scenario is that the application you're trying to access is not 
 
 You should [check the status of the app](#checking-if-an-application-is-running) which you're trying to access.
 
-Remember, if you're accessing the server's dashboard itself, you're trying to actually access the [panel](/docs/applications/panel.mdx) application.
+Remember, if you're accessing the server's dashboard itself, you're trying to actually access the [panel](/applications/panel.mdx) application.
 
 
 ## Troubleshooting failed SSH
