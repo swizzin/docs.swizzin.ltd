@@ -14,7 +14,7 @@ If you ran all the relevant steps mentioned below and still cannot identify your
 
 ## Checking known issues
 
-:::warnging
+:::warning
 We get a lot of the same questions all the time. Please read this chapter first.
 :::
 
