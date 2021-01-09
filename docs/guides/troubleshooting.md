@@ -24,7 +24,10 @@ Very often, the problem you're having has already been solved, so please additio
 
 If you do find your problem, you can subscribe to those issues to get updates when they're resolved, or you can help and give us more feedback/info on them. Thanks!
 
-## Accessing swizzin/`box` logs
+## Logs
+
+### Accessing swizzin/`box` logs 
+
 Swizzin stores its logs into the `/root/logs` directories. The installer installs into `install.log`, and any other command you run with `box` will end up in `swizzin.log`. You can access the logs by running the following commands.
 
 ```bash
@@ -36,77 +39,19 @@ sudo less -r +G /root/logs/swizzin.log
 
 Please consult these logs for any errors or other bad-sounding messages before continuing.
 
-## "Verbose" `box` output
+### "Verbose" `box` output
 If you would like to see "verbose" output of the box command, you can run the following command before any `box` function. This will print all the information stored into the log into your current terminal session as well.
 ```bash
 # to start the verbose output
 tail -f /root/logs/swizzin.log &
 
+box install ligma # do whatever you need to do here
+
 # to kill the verbose output
 kill %1 #Assuming that the tail is the only background job in the shell, otherwise cross-check by issuing `jobs`
 ```
-## Server is not responding
 
-First ensure that your machine is accessible and connecting correctly by running the following command.
-
-```bash
-ping <domain/IP>
-```
-
-You can check if your domain is resolving correctly by checking the output of the following command.
-
-```bash
-dig <domain>
-```
-
-If your machine is not accessible, see if it is online, and the networking is set up correctly.
-
-## I'm getting a `502` when accessing the server
-The most likely scenario is that the application you're trying to access is not responding. `nginx` is running just fine but it just does not know who to talk to at the end, and so it comes back with empty hands and throws a `502`.
-
-You should [check the status of the app](#checking-if-an-application-is-running) which you're trying to access.
-
-Remember, if you're accessing the server's dashboard itself, you're trying to actually access the [panel](/applications/panel.mdx) application.
-
-
-## Troubleshooting failed SSH
-You can always determine what is causing your SSH connectivity issues by running the following command.
-```bash
-ssh -v <destination>
-```
-You can add the amount of `v`s to increase the level of verbosity.
-
-_Pro-tip: You can quickly kill an unresponsive SSH session by hitting `ENTER ~ .` in that order._
-
-## Sharing logs
-
-You can always share large logs using termbin straight from your terminal. Below is an example for sharing the content of your syslog.
-
-```bash
-cat /var/log/syslog | nc <an instance of fiche> 9999
-``` 
-
-## Checking if an application is running
-
-Most applications installed through swizzin have a `systemd` unit available. This allows you to control the applications as services through the `systemctl` interface.
-
-You can always check the current status of an app by running the command under. This will return the whether the application is Active or not, and some of the latest log messages coming from it. It is always a good idea to read those.
-```bash
-sudo systemctl status <application>
-```
-
-Please refer to your application's docs page to see if there are any deviations to this, such as per-user configuration.
-
-## Identifying failed services
-You can quickly get an overview of which services have had a problem and are currently nor running by executing the following command.
-
-```bash
-sudo systemctl list-units --failed
-```
-
-You can then use the other chapters in this document to further find what has gone wrong.
-
-## Checking the system logs
+### Checking the system logs
 
 You can always check the logs of the system as a whole by running the following command.
 ```bash
@@ -122,11 +67,75 @@ You can always filter the output of the `less` command by typing `&`, followed b
 
 There are many other log files available under the `/var/log` directory which are often a very large trove of information. Please see if any of the other log files might have any relevant information 
 
-## Checking NGINX configuration
+<a class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" tabindex="-1" name="sharing"></a>
+
+## Sharing logs and output
+
+You can always share large logs using termbin straight from your terminal.
+
+Currently, we suggest using `termbin.com` for your `fiche` instance
+
+Want to show us your swizzin logs?
+
+```bash
+sudo cat /root/logs/swizzin.log | nc <fiche instance> 9999
+``` 
+
+Below is an example for sharing the content of your syslog.
+
+```bash
+cat /var/log/syslog | nc <fiche instance> 9999
+``` 
+
+Or if you want to share a unit's systemd logs
+
+```bash
+journalctl -u panel | nc <fiche instance> 9999
+``` 
+
+Nginx failing and you don't know why?
+
+```bash
+sudo nginx -T | nc <fiche instance> 9999
+``` 
+
+## Connectivity
+
+### Server is not responding
+
+First ensure that your machine is accessible and connecting correctly by running the following command.
+
+```bash
+ping <domain/IP>
+```
+
+You can check if your domain is resolving correctly by checking the output of the following command.
+
+```bash
+dig <domain>
+```
+
+If your machine is not accessible, see if it is online, and the networking is set up correctly.
+
+<a class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" tabindex="-1" name="502"></a>
+
+### <a name="502"></a> I'm getting a `502` when accessing the server
+The most likely scenario is that the application you're trying to access is not responding. `nginx` is running just fine but it just does not know who to talk to at the end, and so it comes back with empty hands and throws a `502`.
+
+You should [check the status of the app](#checking-if-an-application-is-running) which you're trying to access.
+
+Remember, if you're accessing the server's dashboard itself, you're trying to actually access the [panel](/applications/panel.mdx) application. Unless you have custom configurations you want to keep, an easy way to fix a lot of issues is to `box remove panel && box install panel`
+
+
+<a class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" tabindex="-1" name="nginx"></a>
+
+### Checking NGINX configuration
 
 NGinx is the application which connects your browser to the right swizzin application.
 
-If you cannot connect to a single application, please consider running the following commands to gather where your issues are stemming from
+If you cannot connect to a single application, please consider running the following commands to gather where your issues are stemming from the following commands.
+
+You can [send these to us easily through fiche](#sharing-logs-and-output)
 
 ```bash
 # To check if the syntax of your config is valid
@@ -142,15 +151,39 @@ sudo nginx -s reload
 sudo systemctl reload nginx
 ```
 
-### Sharing your nginx configuration
 
-You can quickly upload your nginx configuration to a pastebin by running the following command as root
-
+### Troubleshooting failed SSH
+You can always determine what is causing your SSH connectivity issues by running the following command.
 ```bash
-nginx -T | nc <an instance of fiche> 9999
+ssh -v <destination>
+```
+You can add the amount of `v`s to increase the level of verbosity.
+
+_Pro-tip: You can quickly kill an unresponsive SSH session by hitting `ENTER ~ .` in that order._
+
+## Application maintenance
+
+### Checking if an application is running
+
+Most applications installed through swizzin have a `systemd` unit available. This allows you to control the applications as services through the `systemctl` interface.
+
+You can always check the current status of an app by running the command under. This will return the whether the application is Active or not, and some of the latest log messages coming from it. It is always a good idea to read those.
+```bash
+sudo systemctl status <application>
 ```
 
-## Troubleshooting applications which services' won't start
+Please refer to your application's docs page to see if there are any deviations to this, such as per-user configuration.
+
+### Identifying failed services
+You can quickly get an overview of which services have had a problem and are currently nor running by executing the following command.
+
+```bash
+sudo systemctl list-units --failed
+```
+
+You can then use the other chapters in this document to further find what has gone wrong.
+
+### Troubleshooting applications which services' won't start
 
 You can always attempt to run an application in the foreground of the terminal instead of in the background as a service.
 
@@ -186,7 +219,7 @@ You can therefore switch your user (by running `sudo su <user>`) and execute the
 
 Please consult the manpage or `--help` page of the application you are about to run before you do it, to understand what some of the options might mean.
 
-## Accessing a home-hosted swizzin installation externally
+## Home-lab connectivity
 Issues in this area usually stem from not setting up port-forwarding correctly on your router, or not setting a static IP right.
 
 ### Resources for setting static IP on Debian/Ubuntu
