@@ -6,12 +6,14 @@ import CodeBlock from "@theme/CodeBlock";
 <Tabs
   defaultValue="start"
   values={[
+    {label: 'Status', value: 'status'},
     {label: 'Start', value: 'start'},
     {label: 'Stop', value: 'stop'},
     {label: 'Restart', value: 'restart'},
     {label: 'Enable', value: 'enable'},
     {label: 'Disable', value: 'disable'},
   ]}>
+  <TabItem value="status"><CodeBlock children={"sudo systemctl status " + props.service} className="bash"></CodeBlock></TabItem>
   <TabItem value="start"><CodeBlock children={"sudo systemctl start " + props.service} className="bash"></CodeBlock></TabItem>
   <TabItem value="stop"><CodeBlock children={"sudo systemctl stop " + props.service} className="bash"></CodeBlock></TabItem>
   <TabItem value="restart"><CodeBlock children={"sudo systemctl restart " + props.service} className="bash"></CodeBlock></TabItem>
