@@ -28,8 +28,9 @@ jobs:
   secrets:
     runs-on: ubuntu-latest
     steps:
+      - name: Secret Parser
       - uses: jwsi/secret-parser@v1
-      - with:
+        with:
           filename: docusaurus.config.json
           secret-name: ALGOLIA_API_KEY
           secret-value: ${{ secrets.ALGOLIA_API_KEY }}
