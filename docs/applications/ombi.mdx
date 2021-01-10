@@ -45,6 +45,7 @@ After installation, Ombi will be available at the following web address: `https:
 
 ## Connecting to other apps
 
+If you would like to connect ombi to other applications you installed with swizzin, please follow the guides below.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -53,14 +54,18 @@ import TabItem from '@theme/TabItem';
   defaultValue="plex"
   values={[
     {label: 'Plex', value: 'plex'},
+    {label: 'Emby/Jellyfin', value: 'embyfin'},
     {label: 'Sonarr', value: 'sonarr'},
     {label: 'Radarr', value: 'radarr'},
     {label: 'Lidarr', value: 'lidarr'},
+    {label: 'SickRage', value: 'sickrage'},
+    {label: 'CouchPotato', value: 'couchpotato'},
   ]}>
+  {/* FYI these need to have two newlines above and below for the text to render as markdown */}
   <TabItem value="plex">
 
 
-  Go to Settings -> Media Server -> Plex
+  Go to **Settings** -> **Media Server** -> **Plex**
   
   1. Click on "Add Server"
   2. Get your server using credentials
@@ -86,7 +91,7 @@ import TabItem from '@theme/TabItem';
   3. Press "Submit"
   4. Load and choose qualities
   5. Load and choose folder
-  6. (if on Sonarr v3 ) Load and choose languages
+  6. _(if on Sonarr v3)_ Load and choose languages
 
 
   </TabItem>
@@ -103,7 +108,6 @@ import TabItem from '@theme/TabItem';
   3. Press "Submit"
   4. Load and choose qualities
   5. Load and choose folder
-  6. (if on Radarr v3 ) Load and choose languages
 
 
   </TabItem>    
@@ -111,19 +115,46 @@ import TabItem from '@theme/TabItem';
   
 
   1. Fill in the following fields:
-     - lidarr Hostname/IP = `localhost`
+     - Lidarr Hostname/IP = `localhost`
      - Port: `8686`
-     - API Key: Retrieve from lidarr -> Settings -> General and copy the API Key value
+     - API Key: Retrieve from Lidarr -> Settings -> General and copy the API Key value
      - SSL: **`OFF`**
-     - lidarr base URL: `/lidarr/`
+     - Lidarr base URL: `/lidarr/`
   2. Test the connection
   3. Press "Submit"
   4. Load and choose qualities
   5. Load and choose folder
-  6. (if on lidarr v3 ) Load and choose languages
 
 
   </TabItem>
+  <TabItem value="sickrage">
+  
+
+  
+  **No instructions yet!** Please let us know if you set this up correctly so we can add the values, or PR these in. thanks!
+  
+
+
+  </TabItem>
+  <TabItem value="couchpotato">
+  
+
+  
+  **No instructions yet!** Please let us know if you set this up correctly so we can add the values, or PR these in. thanks!
+  
+
+
+  </TabItem>
+    <TabItem value="embyfin">
+  
+
+  
+  **No instructions yet!** Please let us know if you set this up correctly so we can add the values, or PR these in. thanks!
+  
+
+
+  </TabItem>
+
 </Tabs>
 
 
