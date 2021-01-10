@@ -108,7 +108,7 @@ module.exports = {
       trackingID: "UA-104631777-1"
     },
     algolia: {
-      apiKey: "zz",
+      apiKey: "${{ secrets.ALGOLIA_API_KEY }}",
       indexName: "swizzin",
     },
   },

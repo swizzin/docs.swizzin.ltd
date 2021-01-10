@@ -25,6 +25,14 @@ jobs:
           npm i
           fi
           npm run build
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jwsi/secret-parser@v1
+      - with:
+          filename: docusaurus.config.json
+          secret-name: ALGOLIA_API_KEY
+          secret-value: ${{ secrets.ALGOLIA_API_KEY }}
   gh-release:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
