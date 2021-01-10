@@ -178,6 +178,65 @@ cat ~/.config/deluge/core.conf | grep daemon_port
 
 Once you click okay, you'll be taken back to the connection dialog. Your new connection will be listed and if everything is okay, you'll see a green check box next to it. When you click connect, you'll be taken to your client.
 
+### Web UI
+
+The web UI is significantly easier to access, which is why many prefer it. You can access deluge-web from `https://yourhost.ltd/deluge`.
+
+If you are not currently logged in, you will first receive a basic authentication dialog from the webserver. Once authenticated, you'll receive a dialog box from Deluge-Web. This password is the same as the one you just entered.
+
+
+:::note
+This second password authentication layer cannot be fully removed due to restrictions in Deluge. However, you can increase the length of time that the cookie is stored locally by your browser to one year (from one hour):
+```bash
+sudo systemctl stop deluge-web@<username>
+sed -i 's/"session_timeout": 3600,/"session_timeout": 31536000,/g' ~/.config/deluge/web.conf
+sudo systemctl start deluge-web@<username>
+```
+:::
+
+### deluge-console
+
+#### Getting Started
+You can access the command line version of the deluge console by using the command:
+
+```bash main
+deluge-console
+```
+
+#### Connecting to Your Daemon
+Once loaded, you'll need to specify your daemon port to connect to:
+
+```bash main
+connect 127.0.0.1:<daemon port>
+```
+
+#### Available Commands
+Once you have successfully connected to the daemon, you can get started with the following commands:
+
+```plaintext main
+>>> help
+add - Add a torrent
+cache - Show information about the disk cache
+config - Show and set configuration values
+connect - Connect to a new deluge server.
+debug - Enable and disable debugging
+del - Remove a torrent
+exit - Exit from the client.
+halt - Shutdown the deluge server.
+help - displays help on other commands
+info - Show information about the torrents
+pause - Pause a torrent
+plugin - Manage plugins with this command
+quit - Exit from the client.
+reannounce - Update tracker for torrent(s)
+recheck - Forces a recheck of the torrent data
+resume - Resume a torrent
+rm - Remove a torrent
+update-tracker - Update tracker for torrent(s)
+For help on a specific command, use "<command> --help"
+```
+
+
 ## Configuration
 
 Most of the settings in the preferences should be left alone; however, you're welcome to alter settings such as `Download location`. That said, you should leave the majority of `Connection Settings` and `ltConfig` settings alone, as the settings have already been optimized for use on your slot.
