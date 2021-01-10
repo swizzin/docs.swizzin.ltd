@@ -68,10 +68,18 @@ import TabItem from '@theme/TabItem';
   Go to **Settings** -> **Media Server** -> **Plex**
   
   1. Click on "Add Server"
-  2. Get your server using credentials
-     - Fill in your password ans username
-     - Press "Load Servers"
-     - Select your Plex server
+  2. Connect your server through either one of the two
+     - Plex tokens (easier)
+       1. Fill in your password ans username
+       1. Press "Load Servers"
+       1. Select your Plex server
+     - Manually
+       - Hostname: `localhost`
+       - Port: `32400`
+       - SSL: **`OFF`**
+       - Plex auth token: [Use guide here](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/)
+       - Machine identifier: [Use guide here](https://forums.plex.tv/t/extract-machine-id-from-database-due-missing-preferences-xml/520080/3)
+       -  Press "Test connectivity" when all above are filled in
   3. Press "Submit"
   4. Load your libraries and select which ones to track
   3. Press "Submit"  
