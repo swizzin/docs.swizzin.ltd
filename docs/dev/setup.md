@@ -41,7 +41,9 @@ Our development setup is basically made for VSCode/Codium
 ### Plugins
 
 **TODO**
-Please see contributors.md in the main repo in the meantime
+:::caution
+Please see contributors.md in the main repo while this is under development
+:::
 
 ## Installation
 
@@ -57,7 +59,7 @@ dev=true bash /etc/swizzin/setup.sh
 ### Updating mechanism
 The updater will always reset `/etc/swizzin` to the lastest commit in `master`, which you don't necessarily always want.
 
-We have made a couple ways to make sure that you can skip that
+We have made a couple ways to make sure that you can skip that, so that you can then manipulate the content of the directory on your own.
 
 *  Running `box update --no-git`
 *  Making `/etc/swizzin` a symlink to some other directory on your FS
