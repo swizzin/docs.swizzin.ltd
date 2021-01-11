@@ -65,6 +65,8 @@ These scripts can contain non-application-specific maintenance changes as well.
 
 This directory contains a lot of helper scripts in general.
 
+You can read what each of these functions does in the [functions chapter](functions.md)
+
 ### `globals.sh`
 Contains everything that is taken for granted in all the scripts above.
 

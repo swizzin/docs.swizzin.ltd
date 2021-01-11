@@ -153,7 +153,7 @@ module.exports = {
             "dev/intro",
             "dev/setup",
             "dev/structure",
-            "dev/tools"
+            "dev/functions"
             ]
       }
     ],
