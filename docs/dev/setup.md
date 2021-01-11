@@ -69,6 +69,8 @@ We have made a couple ways to make sure that you can skip that, so that you can 
    *  You can do `touch /etc/swizzin/.dev.lock`
 
 ## Working across forks
-If you need a branch from someplace else, please use the github cli tool `gh`
+If you need a branch from someplace else, please use the GitHub CLI tool `gh`
+
+You can read how to install and use the tool on the [GitHub CLI website](https://cli.github.com/).
 
 You can then just run `gh pr checkout 401` to checkout PR #401
