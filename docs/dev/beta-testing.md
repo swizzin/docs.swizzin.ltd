@@ -4,7 +4,7 @@ title: So you want to run some pre-release software?
 sidebar_label: Beta testing
 ---
 
-We often need the community's help to test new applications. As the whole toolset is tracked in git, you can try new features quite easily.
+We often need the community's help to test new applications. As the whole tool set is tracked in git, you can try new features quite easily.
 
 :::warning Watch the fuck out!
 Please make sure you only do this if you know what you're doing. A poorly written installer could easily destroy your entire machine beyond any hope of repair. If you do not know how you would get out of a completely broken install, do not attempt these steps!
@@ -25,7 +25,7 @@ You can run the following quick set of commands
 ```bash
 cd /etc/swizzin
 sudo git fetch --all
-sudo git checkout <branchname>
+sudo git checkout <branch name>
 ```
 
 ### Branches from any fork

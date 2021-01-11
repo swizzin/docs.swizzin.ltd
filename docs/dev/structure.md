@@ -80,7 +80,7 @@ These scripts need to have all of their functions and variables `export`ed so th
 
 This directory contains all reusable helper functions.
 
-These can be organised by applications, or by specific purposes.
+These can be organized by applications, or by specific purposes.
 
 Please make sure to create adequate documentation about the parameters, outputs and return codes.
 

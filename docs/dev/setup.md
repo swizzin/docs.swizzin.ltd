@@ -5,12 +5,12 @@ sidebar_label: Setup
 ---
 
 ## VM
-We highly suggest you use a virtualised environment to test your swizzin set up. It is extremely convenient to have this isolated from the rest of your system, and be able to discard and initialise a system within minutes.
+We highly suggest you use a virtualized environment to test your swizzin set up. It is extremely convenient to have this isolated from the rest of your system, and be able to discard and initialize a system within minutes.
 
 ### Multipass
 :::tip Sausage's preferred development setup
 :::
-1. Enable virtualisation OS and BIOS side
+1. Enable virtualization OS and BIOS side
 1. [Install multipass](https://multipass.run)
 1. Run `multipass shell` to start a default primary VM and join the shell. 
 2. Get swizzin repo on your VM
@@ -47,7 +47,7 @@ Please see contributors.md in the main repo while this is under development
 
 ## Installation
 
-This will install swizzin and as part of the setup, symlink your folder to `/etc/swizzin/`. This is useful if your virtualisation auto-mounts from your host. 
+This will install swizzin and as part of the setup, symlink your folder to `/etc/swizzin/`. This is useful if your virtualization auto-mounts from your host. 
 ```bash
 dev=true bash /path/to/setup.sh
 ```
@@ -57,7 +57,7 @@ You can also already have the swizzin folder mounted/cloned in `/etc/`, this opt
 dev=true bash /etc/swizzin/setup.sh
 ```
 ### Updating mechanism
-The updater will always reset `/etc/swizzin` to the lastest commit in `master`, which you don't necessarily always want.
+The updater will always reset `/etc/swizzin` to the latest commit in `master`, which you don't necessarily always want.
 
 We have made a couple ways to make sure that you can skip that, so that you can then manipulate the content of the directory on your own.
 
