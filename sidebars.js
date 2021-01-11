@@ -153,7 +153,8 @@ module.exports = {
             "dev/intro",
             "dev/setup",
             "dev/structure",
-            "dev/functions"
+            "dev/functions",
+            "dev/beta-testing",
             ]
       }
     ],
