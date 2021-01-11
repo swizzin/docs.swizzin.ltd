@@ -47,6 +47,11 @@ module.exports = {
             position: "left",
         },
         {
+          to: "dev/intro",
+          label: "Development",
+          position: "left",
+      },
+        {
             to: "getting-started/faqs",
             label: "FAQs",
             position: "left",
