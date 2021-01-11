@@ -35,16 +35,40 @@ This means that all changes to an app's configuration which is require for the r
 ### Upgrade
 `scripts/upgrade/`
 
+This directory contains the script that will be executed when `box upgrade <app>` is executed, which will directly invoke `scripts/upgrade/<app>.sh`
+
+The aim of the scripts in here is to ensure that applications get upgraded across versions when one of the following scenarios is true
+- Application is **not** managed through the `apt` package manager
+  - e.g. `lounge` is installed via `npm`
+- There is not built in updater in the application
+  - e.g. `lounge` has no "update" button in the application itself
+  - however `radarr` has a built-in self-updater, so no `upgrade` script is necessary
+- A new major version needs to be opted-in by the user
+  - e.g. the Sonarr v2 to Sonarr v3 migration has to be made by user's choice, and the change requires a different apt package too
+
+Before any of the upgrade scripts are ran, the `box update` procedure is done.
+
 ### Update
 `scripts/update/`
+
+**All scripts in this directory will be executed in alphabetical order when `box update` is ran**. 
+
+These scripts are meant to ensure that older installations behave the exact same way that a fresh installation would. They do not upgrade packages themselves at all. They are purely maintenance scripts ran to update the installation.
+
+These scripts can contain non-application-specific maintenance changes as well.
 
 ### Logging
 `scripts/logging`
 
-## Sources and 
+## Sources
+`sources`
+
+This directory contains a lot of helper scripts in general.
 
 ### `globals.sh`
 Contains everything that is taken for granted in all the scripts above.
+
+This script gets ran as the first thing when `box` functions are triggered, and when running the `setup.sh`
 
 These scripts need to have all of their functions and variables `export`ed so that they are accessible everywhere without them needing to be `source`d in.
 
