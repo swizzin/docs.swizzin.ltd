@@ -1,0 +1,53 @@
+---
+id: overseerr
+title: Overseerr
+sidebar_label: Overseerr
+---
+
+overseerr is a self-hosted web application that automatically gives your shared Plex or Emby users the ability to request content by themselves! overseerr can be linked to multiple TV Show and Movie DVR tools to create a seamless end-to-end experience for your users. 
+
+## Initial Setup
+
+Installing overseerr is easy. Simply issue the following command from SSH:
+
+```bash main
+sudo box install overseerr
+```
+
+This command will configure and install overseerr for your user.
+
+After installation, the files are stored in `/opt/overseerr`
+
+## Upgrading
+
+You can upgrade Overseerr by running the following command
+
+```bash
+sudo box upgrade overseerr
+```
+
+## How to Access
+
+After installation, overseerr will be available at the following web address: `https://<hostname.ltd>/overseerr`.
+
+In case you're not using nginx, you will find overseerr
+
+## Service Management
+
+The service file resides at:
+
+```bash
+/etc/systemd/system/overseerr.service
+```
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="overseerr"/>
+
+## Troubleshooting
+
+import Troubleshooting from '../snippets/troubleshooting.md';
+
+<Troubleshooting />
+
+Please refer to Overseerr's github project, the docs and Discord for any application-sepcific issues.
