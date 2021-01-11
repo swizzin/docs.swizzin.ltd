@@ -1,13 +1,14 @@
 ---
 id: structure
-title: Understanding the project structure and 
+title: The project's structure 
 sidebar_label: Structure
 ---
 
-This sub-chapter goes over what each of the folders in swizzin contains, why the contents is structured the way it is, and what the general philosophy behind the mechanisms that use them is. 
+This sub-chapter goes over what each of the folders in swizzin contains, why the contents are structured the way they are, and what the general philosophy behind the mechanisms that use them is.
+
 
 ## Scripts
-
+These scripts are to be called directly, and offer no functions.
 
 ### Install
 `scripts/install/`
