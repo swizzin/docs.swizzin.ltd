@@ -146,6 +146,17 @@ module.exports = {
             "scripts/setdisk",
             "scripts/rtx",
           ],
-      },
+      },{
+        type: "category",
+        label: "Development",
+        collapsed: true,
+        items: [
+            "dev/intro",
+            "dev/setup",
+            "dev/structure",
+            "dev/functions",
+            "dev/beta-testing",
+            ]
+      }
     ],
   };
