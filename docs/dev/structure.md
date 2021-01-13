@@ -33,6 +33,14 @@ The script should generally do the following, if it applies.
 `scripts/remove/`
 This directory contains the script that will be executed when `box remove <app>` is executed, which will directly invoke `scripts/remove/<app>.sh`
 
+The script should generally do the following, if it applies.
+
+- Remove application from package managers
+- Stop and remove the service
+- Remove application files (e.g. from `/opt`)
+- **Removing the lock for the application**
+
+**Please note**: Removing the application's user data/config is something we are currently debating and assessing on a per-application basis. 
 
 ### Nginx
 `scripts/nginx/`
@@ -45,7 +53,7 @@ There are two times this can be triggered, so please take that into account when
 
 This means that all changes to an app's configuration which is require for the reverse proxy to function, needs to be in here, and not in the installer.
 
-**Handle the nginx reload outside of the scripts here**
+**Handle the nginx reload outside of these scripts**. If you add nginx reloads, this would mean that while the `nginx` installer is running, it will have to reload after every config is installed, which is a bit unnecessary.
 
 ### Upgrade
 `scripts/upgrade/`
@@ -72,8 +80,10 @@ These scripts are meant to ensure that older installations behave the exact same
 
 These scripts can contain non-application-specific maintenance changes as well.
 
+<!-- 
 ### Logging
 `scripts/logging`
+-->
 
 ## Sources
 `sources`
