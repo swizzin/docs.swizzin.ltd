@@ -7,13 +7,27 @@ sidebar_label: Structure
 This sub-chapter goes over what each of the folders in swizzin contains, why the contents are structured the way they are, and what the general philosophy behind the mechanisms that use them is.
 
 
+
 ## Scripts
-These scripts are to be called directly, and offer no functions.
+These scripts are to be called directly from their respective `box` calls. Each category is expected to follow the same general structure.
 
 ### Install
 `scripts/install/`
 
-This directory contains the script that will be executed when `box install <app>` is executed, which will directly invoke `scripts/install/<app>.sh`
+This directory contains the script that will be executed when `box install <app>` is executed, which will directly invoke `scripts/install/<app>.sh`.
+
+The script should generally do the following, if it applies.
+
+- Gathering information from the user required for installation
+- Checking incompatibilities
+  - Possibly migrate from previous major versions/forks of the same application, such as Sonarr v2 -> v3.
+- Installing dependencies
+- Installing the application (through `apt`, a binary or a script)
+- Handling user addition in case the app is Multi-user compatible.
+- Creating and starting the `systemd` service
+- Installing an nginx config for the application
+  - _Note: Please make sure to print the application's port to the user when nginx is not installed!_
+- **Creating the lock for the application**
 
 ### Remove
 `scripts/remove/`
