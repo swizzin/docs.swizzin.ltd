@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://liaralabs.github.io/blog</id>
+    <title>swizzin community edition Blog</title>
+    <updated>2015-10-25T23:29:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://liaralabs.github.io/blog"/>
+    <subtitle>swizzin community edition Blog</subtitle>
+    <icon>https://liaralabs.github.io/img/favicon.ico</icon>
+</feed>
