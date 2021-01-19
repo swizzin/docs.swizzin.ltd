@@ -38,7 +38,8 @@ import InstallOptsWarning from '../snippets/installoptswarning.md';
 
 
 ## Post-install
-1. Link to your instance of the Calibre Library folder
+1. _*_ Link to your instance of the Calibre Library folder
+   - _* Note: swizzin should do this for you during install in most cases. You should be told in the output if you need to do this_
    - For example `/home/masteruser/Calibre Library`
    - _Note:_ If you installed calibre through swizzin, this step will be done for you
    - If you would like to add your existing library, you will need to give the `calibreweb` system user access to your library with these commands:
@@ -49,12 +50,25 @@ import InstallOptsWarning from '../snippets/installoptswarning.md';
       sudo chmod 770 /home/$theuser/path/to/library
       systemctl restart calibre-web
       ```
-2. Change the username and password of the admin user
+2. _*_ Change the password of the admin user 
+   - _* Note: swizzin should do this for you during install in most cases. You should be told in the output if you need to do this_
    - Log in to calibre using `admin`:`admin123`
+   - Go to `http://<domain>/calibre/me` and change the password there.
+      - You might need to fill in an email address for this action to work
+4. Change the name of the admin user
+   - Log in to calibre using `admin`:`<your password>`
    - Go to `http://<domain>/calibre/me` and change the details there
+      - You might need to fill in an email address for this action to work
 3. Link or install necessary binaries
+   - Go to `https://<domain>/calibre-web/admin/config` and open the "External binaries" section at the bottom
+   - Calibre e-book converter should be in **either** of these paths
+      - `/usr/bin/ebook-convert` (if installed via apt)
+      - `/opt/calibre/ebook-convert` (if installed through calibre installer)
    - Kepubify is installed in `/usr/local/bin/kepubify`
    - If you have `unrar` installed (`apt install unrar`), it will be in `/usr/local/bin/kepubify`
+3. Set up SMTP
+   - Get an SMTP gate and credentials
+   - External guide goes here
 4. **Optional:** configure the direct Google Drive support
    - Please check [this article](https://github.com/janeczku/calibre-web/wiki/Configuration#using-google-drive-integration) for the appropriate steps
    - You only need to do this when you want to keep your entire library in google drive, not if you're using rclone etc.
@@ -65,7 +79,6 @@ Calibre-web has its own internal user database **which swizzin does not manage i
 ## Service management
 
 Calibre-web runs as its own single process with its own system user.
-
 
 The systemd service for calibre-web resides here:
 
