@@ -24,9 +24,18 @@ import InstallOptsWarning from '../snippets/installoptswarning.md';
 
 <InstallOptsWarning />
 
-- `clbDbOwner`:
+- `CALIBRE_LIBRARY_USER`:
   - Default: The name of the master user
-  - Use this to allow Calibre-web to access the Calibre Library of someone other than the master user.
+  - Adds the dedicated calibre-web user to the group of this user
+  - Used to infer possible calibre library path if not specified (see below)
+  - Calibre-web's admin password will be set to the value of this user's password
+
+- `CALIBRE_LIBRARY_PATH`:
+   - Default
+      - If exists, then: `/home/$CALIBRE_LIBRARY_USER/Calibre Library`
+      - Otherwise unset, which will skip the library setup and password change procedure
+   - Used to set up the calibre-web basic setup
+
 
 ## Post-install
 1. Link to your instance of the Calibre Library folder
