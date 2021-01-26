@@ -1,0 +1,58 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeSnippet from "@site/src/theme/CodeSnippet";
+
+To add a download client, go to `Settings > Download Client`. Make sure `Advanced Settings` are shown and click `Add Client`.
+
+
+<Tabs
+  defaultValue="rutorrent"
+  values={[
+    {label: 'ruTorrent', value: 'rutorrent'},
+    {label: 'Transmission', value: 'transmission'},
+    {label: 'Deluge', value: 'deluge'},
+    {label: 'nzbGet', value: 'nzbget'},
+    {label: 'qBittorrent', value: 'qbittorrent'},
+  ]}>
+  <TabItem value="rutorrent"><CodeSnippet code="Name: rTorrent
+rTorrent host: 127.0.0.1
+Port: 443
+URL Path: /rutorrent/plugins/httprpc/action.php
+Use SSL: ON
+Username: <your username>
+Password: <your password>
+Add label to torrent: TV (or anything else you desire)
+Optional - Downloaded files location: <custom directory>" lang="plaintext"></CodeSnippet></TabItem>
+  <TabItem value="transmission"><CodeSnippet code="To retrieve your port, please run `grep rpc-port ~/.config/transmission-daemon/settings.json`,
+when logged in as the user you want to use transmission of (i.e. not root).
+----------
+Host: 127.0.0.1
+Port: <See above, e.g. 9091>
+URL Base: /transmission/ (Should be default)
+Username: <your username>
+Password: <your password>
+Category: <optional, e.g. Sonarr or TV>
+Connect using HTTPS: OFF" lang="plaintext"></CodeSnippet></TabItem>
+  <TabItem value="deluge"><CodeSnippet code="Name: Deluge
+Host: 127.0.0.1
+Post: <deluge web port>
+Deluge Password: <your password>
+Add label to torrent: TV (or anything else you desire)
+* label plugin must be enabled in Deluge if you add a label
+SSL: OFF" lang="plaintext"></CodeSnippet></TabItem>
+  <TabItem value="nzbget"><CodeSnippet code="NZBget host: 127.0.0.1
+port: 443
+URL Base: nzbget
+Connect using HTTPS: ON
+nzbget username: <your username>
+nzbget Password: <your password>
+Add label to torrent: Series (or anything else you desire)
+* label must exist under Categories in nzbGet" lang="plaintext"></CodeSnippet></TabItem>
+  <TabItem value="qbittorrent"><CodeSnippet code="Name: qBittorrent
+Host: 127.0.0.1
+Post: <qbittorrent web port>
+Username: <your username>
+Password: <your password>
+Category: TV (or anything else you desire)
+SSL: OFF" lang="plaintext"></CodeSnippet></TabItem>
+</Tabs>

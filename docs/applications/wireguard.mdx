@@ -1,0 +1,136 @@
+---
+id: wireguard
+title: Wireguard
+sidebar_label: Wireguard
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+WireGuard is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography
+
+## Initial Setup
+
+Installing wireguard is easy. Simply issue the following command from SSH:
+
+```bash main
+sudo box install wireguard
+```
+
+At the end of the installation, the location of the config file for your user will be printed (`/home/<user>/.wireguard/<user>.conf`)
+
+### Managing service
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="wg-quick@wg1000"/>
+
+## How to Access
+
+### Client Install
+In order to use the Wireguard tunnel, you'll need to install the client on your local computer or mobile phone. In order to get started, please check the [Wireguard site](https://www.wireguard.com/install/) for help on installing Wireguard on the operating system of your choice.
+
+:::note
+If you prefer, an alternate client called [TunSafe](https://tunsafe.com/download) exists and is already a bit more mature than the official Wireguard client for Windows. **While the client itself is open-source and developed by a community member with prior credibility, it bears mentioning that using this client completely, 100% at your own risk as it is not developed or maintained by the Wireguard team. You have been warned.**
+:::
+
+### Client Setup
+
+Wireguard is available on many platforms. Setting it up for use with your swizzin configuration should be fairly straight-forward, but in case you need a little help getting your client setup, here are some instructions for popular operating systems.
+
+
+
+<Tabs
+  defaultValue="windows"
+  values={[
+    {label: 'Windows', value: 'windows'},
+    {label: 'Linux/macOS', value: 'nixlike'},
+    {label: 'iOS', value: 'ios'},
+    {label: 'Android', value: 'android'},
+  ]}>
+
+<TabItem value="nixlike">
+
+1. Simply copy-paste the content of the file outputted at the end of the server setup into a file in /etc/wireguard.
+```bash
+sudo nano /etc/wireguard/wg0.conf
+sudo chmod 600 /etc/wireguard/wg0.conf
+sudo wg-quick up wg0
+```
+2. Wireguard should now be up and tunnelling all you traffic through swizzin.
+3. On Linux systems, you can configure a systemd service to automatically run and enable this configuration on each boot:
+```bash
+sudo systemctl enable wg-quick@wg0
+```
+
+</TabItem>
+<TabItem value="windows">
+
+1. Copy-paste the contents of the file outputted at the end of configuration into a file onto your local desktop,eg: `swizzin.conf.d`
+2. Open TunSafe, click and drag the configuration file you just created to the TunSafe window. TunSafe will automatically import the client configuration and connect. Easy!
+
+</TabItem>
+<TabItem value="android">
+
+Configuration is easiest if you use utilize the QR Encode function.
+
+1. Connect to your server from a computer and issue the commands:
+```bash
+u=$(whoami)
+qrencode -t ansiutf8 < ~/.wireguard/$u.conf
+```
+2. In your client on your phone, add a new tunnel and chose the `QR Code` option. Scan the QR code which was generated in your terminal.
+3. Enable the tunnel by ticking the switch.
+
+</TabItem>
+<TabItem value="ios">
+
+Configuration is easiest if you use utilize the QR Encode function.
+
+1. Connect to your server from a computer and issue the commands:
+```bash
+u=$(whoami)
+qrencode -t ansiutf8 < ~/.wireguard/$u.conf
+```
+2. In your client on your phone, add a new tunnel and chose the `QR Code` option. Scan the QR code which was generated in your terminal.
+3. Enable the tunnel by ticking the switch.
+
+</TabItem>
+</Tabs>
+
+
+
+:::tip Check if it worked
+After configuring your Wireguard Client, [check your IP Address](https://duckduckgo.com/?q=ip+address&ia=answer).
+:::
+
+
+### Generating QR Code for clients
+You can quickly set up WG on your client by using the scannable qr-code. You can run the folllowing command to generate a quick QR inside of your terminal session, which you can scan with your device's camera.
+
+```bash
+qrencode -t ansiutf8 < ~/.wireguard/*.conf
+```
+
+## Troubleshooting
+
+import Troubleshooting from '../snippets/troubleshooting.md';
+
+<Troubleshooting />
+
+### WG doesn't work for any user except for the master
+The multi-user functionality has been patched in at a later stage, probably after you have installed it. Please make sure to run `box update` and then remove and install wireguard again (`box remove wireguard && box install wireguard`). We have opted against patching this automatically as some administrators might not want to give their users WG access without knowing first.
+
+### My connection is not being kept alive
+This can happen when you are behind an NAT. Uncomment the following line at the end of your config. 
+
+```plaintext
+PersistentKeepalive = 25
+```
+
+### wg-quick: `wg100x' already exists
+The service might have been shut down but the kernel process is probably still running. Verify using `htop` or some other process manager, and see if you can find any processes starting with `wg`, that match the id. You can then manually shut the service down using the following command.
+
+```bash
+wg-quick down wg100x
+```

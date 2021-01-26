@@ -1,0 +1,52 @@
+---
+id: bazarr
+title: Bazarr
+sidebar_label: Bazarr
+---
+
+Bazarr is a companion application to Sonarr and Radarr. It manages and downloads subtitles based on your requirements. You define your preferences by TV show or movie and Bazarr takes care of everything for you.
+
+## Initial Setup
+
+Installing Bazarr is easy. Simply issue the following command from SSH:
+
+```plaintext main
+sudo box install bazarr
+```
+
+This command will configure bazarr for the main user.
+
+## How to Access
+
+Once setup, bazarr will be available at the link `https://<hostname.ltd>/bazarr`
+
+
+## Service Management
+
+The systemd script for bazarr can be found at
+```bash
+/etc/systemd/system/bazarr.service
+```
+
+By default, bazarr can only be configured for use with a single user with swizzin.
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="bazarr"/>
+
+:::tip Tip
+Forgot your API key or port? No worries, here are one-liners you can submit from SSH:
+
+Sonarr:
+```bash
+cat ~/.config/NzbDrone/config.xml | grep -e \<Api -e \<Port
+```
+Radarr:
+```bash
+cat ~/.config/Radarr/config.xml | grep -e \<Api -e \<Port
+```
+:::
+
+### More info
+
+If you need further help, please refer to the [Bazarr Wiki](https://github.com/morpheus65535/bazarr/wiki).
