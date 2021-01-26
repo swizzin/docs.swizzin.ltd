@@ -42,7 +42,9 @@ Please note that none of the values that you set here are checked for validity o
     * if you do `bash setup.sh --env /path/to/file.env --user otheruser`, all of the env file contents will be ingested, and then the user will be overridden to `otheruser`
     * The only exception to this are the packages specified on the CLI. If they are specified after the `--env`, they will get added to the list.
 ### `[package(s)]`
-  * Any other arguments are treated as a name of a package for swizzin to install.
+  * Any other arguments are treated as a name of a swizzin package to install.
+  * **The order of packages matters**, if a package requires another as a dependency and its absence would make an installer fail, make sure to put the dependency first
+     * e.g. when installing `ruTorrent`, you need to ensure that both `nginx` and `rtorrent` come before `rutorrent`, as the installation of that package will fail.
   * If any package is specified, the application installation picker will be skipped during the installation
   * If you want no packages to be installed, make sure to specify [the `--unattend` flag](#--unattend)
 ### Environment variables
@@ -69,7 +71,8 @@ user=test
 pass=test123
 ## symlink local swizzin folder to /etc/swizzin/ instead of cloning from upstream
 local=true
-## packages to install separated by colons. 
+## packages to install separated by colons.
+## **The order of packages matters**, if a package requires another as a dependency and its absence would make an installer fail, make sure to put the dependency first
 packages=nginx:panel:transmission:letsencrypt
 # PACKAGE SPECIFIC OPTIONS
 ## transmission flags (https://docs.swizzin.ltd/applications/transmission#install-options)
