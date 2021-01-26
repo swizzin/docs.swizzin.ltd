@@ -75,10 +75,6 @@ local=true
 ## **The order of packages matters**, if a package requires another as a dependency and its absence would make an installer fail, make sure to put the dependency first
 packages=nginx:panel:transmission:letsencrypt
 # PACKAGE SPECIFIC OPTIONS
-## transmission flags (https://docs.swizzin.ltd/applications/transmission#install-options)
-arg_transmissionsource="Repo"
-download_dir="customdir/ddoowwnnllooaaddss"
-incomplete_dir="customdir/iinnccoommppllete"
 ## LetsEncrypt options ((https://docs.swizzin.ltd/applications/letsencrypt#install-options))
 LE_hostname="domain.tld"
 LE_defaultconf=yes
