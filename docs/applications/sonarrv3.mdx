@@ -118,6 +118,34 @@ API: <copy and paste from jackett UI>
 ```
 4. Click `Test`. If all is good, click `Save`.
 
+### Add an indexer with NZBHydra
+Sonarr only supports a few indexers out of the box, but the indexers can be expanded by using the application [NZBHydra](nzbhydra.mdx). To add an indexer with NZBHydra, use the following steps.
+
+:::note
+By default, when receiving the newznab feeds from NZBHydra, it will need to be modified to be connected with the application. The default link looks like:
+
+```plaintext
+https://<yourhostname.ltd>/nzbhydra/api
+```
+
+We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `5076`, your edited URL would look like this:
+
+```plaintext
+http://<yourhostname.ltd>:5076/nzbhydra/api
+```
+:::
+
+1. Go to `Settings > Indexers` and click `+` to add a new indexer.
+2. Under `Usenet` choose `Newznab`
+3. Use the settings:
+```plaintext main
+Name: NZBHydra2
+URL: <click copy torznab feed in jackett and modify as per above>
+API: <copy and paste from NZBHydra2 UI>
+```
+4. Click `Test`. If all is good, click `Save`.
+
+
 ### Sonarr and user homedir permissions
 Sonarr is running as the master user (unless changed in install options using parameters), so that user needs to be able to see the directories you'd like sonarr to see as well. You can achieve this by adding the desired user to the group of whoever runs the sonarr process. e.g. `usermod -a -G <user with data> <master/sonarrv3owner>`
 
