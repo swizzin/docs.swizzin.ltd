@@ -116,6 +116,6 @@ bash <(wget -qO - git.io/swizzin) \
 The sausage multipass developer menu (this definitely is not me just saving my command recipe for later)
 ```powershell
 multipass delete --all --purge; multipass launch -n swiz; \
-multipass mount .\Git\Fun\swizzin\ swiz; \
-multipass exec swiz -- sudo -H su -c 'bash /home/ubuntu/C:/Users/sausage/Git/Fun/swizzin/setup.sh --unattend --local --user test --pass tester123'
+multipass mount .\Git\Fun\swizzin\ swiz:/home/ubuntu/swizzin; \
+multipass exec swiz -- sudo -H su -c 'bash /home/ubuntu/swizzin/setup.sh --unattend --local --user test --pass tester123'
 ```
