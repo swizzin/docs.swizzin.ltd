@@ -125,10 +125,10 @@ Sonarr only supports a few indexers out of the box, but the indexers can be expa
 By default, when receiving the newznab feeds from NZBHydra, it will need to be modified to be connected with the application. The default link looks like:
 
 ```plaintext
-https://localhost/nzbhydra/api
+https://<yourhostname.ltd>/nzbhydra/api
 ```
 
-We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `5076`, your edited URL would look like this:
+We need to edit this link to **remove https**, **change your host to localhost** and **add the port number**. Thus, if your port number was `5076`, your edited URL would look like this:
 
 ```plaintext
 http://localhost:5076/nzbhydra/api
@@ -140,8 +140,8 @@ http://localhost:5076/nzbhydra/api
 3. Use the settings:
 ```plaintext main
 Name: NZBHydra2
-URL: use the api endpoint from above.
-API: <copy and paste from NZBHydra2 UI>
+URL: <click copy Newznab feed in NZBHydra and modify as per above>
+API: <copy and paste from NZBHydra UI>
 ```
 4. Click `Test`. If all is good, click `Save`.
 
