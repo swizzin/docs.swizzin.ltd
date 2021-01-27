@@ -24,8 +24,9 @@ Please note that none of the values that you set here are checked for validity o
   * Takes the `username` of the master user for swizzin to create as positional argument (i.e. `--user masteruser`)
   * _Setting this flag will disable the greeting popup during installation_
 ### `--pass`
-  * Takes the `password` of the master user for siwzzin to create as positional argument (i.e. `--pass "P@55w0rd"`)
+  * Takes the `password` of the master user for siwzzin to create as positional argument (i.e. `--pass 'P@55w0rd'`)
   * To generate a random password, use `--pass ""`
+  * Shell variables will expand when not in single quotes!
   * _Setting this flag will disable the greeting popup during installation_
   * Same as `--password`
 ### `--domain`
