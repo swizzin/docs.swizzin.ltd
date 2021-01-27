@@ -25,7 +25,9 @@ Please note that none of the values that you set here are checked for validity o
   * _Setting this flag will disable the greeting popup during installation_
 ### `--pass`
   * Takes the `password` of the master user for siwzzin to create as positional argument (i.e. `--pass "P@55w0rd"`)
+  * To generate a random password, use `--pass ""`
   * _Setting this flag will disable the greeting popup during installation_
+  * Same as `--password`
 ### `--domain`
   * Takes `domain` as positional argument (i.e. `--domain domain.tld`)
   * _In the event_ `letsencrypt` is being installed, this will set the domain against which to verify, enable the certificate in the default `nginx` config, and skip cloudflare integration
