@@ -135,7 +135,8 @@ module.exports = {
         collapsed: true,
         items: [
             "guides/dist-upgrade",
-            "guides/troubleshooting"
+            "guides/troubleshooting",
+            "guides/advanced-setup"
           ],
       },
       {

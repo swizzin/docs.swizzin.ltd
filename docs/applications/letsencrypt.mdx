@@ -24,6 +24,7 @@ If you'd like to use DNS verification for your CloudFlare domain, make sure you 
 Make sure you keep your API Key safe -- it's **as good as** your password in terms of modifying the settings on your account.
 :::
 
+
 ### Setting up Let's Encrypt
 
 In order to start issuing a certificate use the command:
@@ -44,6 +45,36 @@ And press enter. You'll be asked if you want to use this domain for your default
 You'll be asked if you want to use CloudFlare. If you choose "No", the installer will continue with the web-root (.well-known) domain verification. If you choose "Yes", you'll be asked for your CloudFlare email and API Key (don't worry, this will never leave your server -- the key is stored in `/root/.acme.sh/account.conf` for future renewals). After entering these details, the issuing will continue.
 
 If everything goes well, acme.sh should declare success. If you reload your site, you should now be greeted by a valid SSL certificate, rather than a warning about invalid SSL.
+
+### Install options
+
+You can set these variables before running the script to skip the interactive questions. You can also use this in the Advanced setup.
+
+**Please note that we did not have a chance to test these values extremely thoroughly, let us know if something is not functioning as expected hen using these**
+
+- `LE_hostname`
+    - e.g. `domain.tld`
+    - Default: **Interactive**
+- `LE_defaultconf`
+    - Whether or not to install the cert into nginx's `default.conf`
+    - Options: `yes` or `no`
+    - Default: **Interactive**
+- `LE_bool_cf`
+    - Used to specify whether or not to enable the CloudFlare portion of the script
+    - **Note** setting other `cf` options mentioned below sets this to `yes`. Set this to `no` if you want to skip the cloudflare questions.
+    - Options: `yes` or `no`
+    - Default: **Interactive**
+- `LE_cf_email`
+    - Default: **Interactive**
+- `LE_cf_api`
+    - Default: **Interactive**
+- `LE_cf_zoneexists`
+    - **Note** setting  `LE_cf_zone` option implies this to `no`. Set this to `yes` if your zone already exists.
+    - Options: `yes` or `no`
+    - Default: **Interactive**
+- `LE_cf_zone`
+    - Default: **Interactive**
+    
 
 ## Renewals
 
