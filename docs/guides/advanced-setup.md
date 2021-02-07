@@ -67,6 +67,13 @@ An example file is included in the root of the swizzin git repo.
 
 If a package has an "Install Options" chapter, you can specify those values in this file. Please note that these options can change over time. An example of these can be found [here](/applications/letsencrypt#install-options), or in the source code. 
 
+**Please take these precauttions into account**:
+* Some variables gett exported, some only sourced
+  * Variables starting with **caps** (`[A-Z]`) will get `export`ed
+  * Variables starting with **miniscules** (`[a-z]`) will get `source`d
+  * Please make sure to read the env file example in the repo, and the docs of the application you intend to configure
+* You cannot set the option to make a local install in an env file, you will need to append [`--local`](#--local) on the command line.
+
 ```bash
 # SETUP.SH OPTIONS
 ## master user setup
