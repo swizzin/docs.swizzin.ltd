@@ -4,6 +4,11 @@ title: Frequently Asked Questions
 sidebar_label: Frequently Asked Questions
 ---
 
+## SOMETHING is BrOkEnN!!! THis doesn't work and I don't know what to dooooo
+
+Please make sure to read our [general troubleshooting guide](guides/troubleshooting.md) before attacking our Discord support team or hammering the GitHub Issues.
+
+
 ## I just installed swizzin and the dashboard shows that it's using all my RAM. WTF?!
 
 The panel reports three statistics related to memory consumption: `real`, `cache` and `physical`.
