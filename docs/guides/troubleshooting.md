@@ -28,13 +28,13 @@ If you do find your problem, you can subscribe to those issues to get updates wh
 
 ### Accessing swizzin/`box` logs 
 
-Swizzin stores its logs into the `/root/logs` directories. The installer installs into `install.log`, and any other command you run with `box` will end up in `swizzin.log`. You can access the logs by running the following commands.
+Swizzin stores its logs into the `/var/log/swizzin` directories. The installer installs into `setup.log`, and any other command you run with `box` will end up in `box.log`. You can access the logs by running the following commands.
 
 ```bash
 # To check the logs of the Swizzin installer
-sudo less -r +G /root/logs/install.log
+sudo less -r +G /var/log/swizzin/setup.log
 # To check the logs of any application manipulation through box
-sudo less -r +G /root/logs/swizzin.log
+sudo less -r +G /var/log/swizzin/box.log
 ```
 
 Please consult these logs for any errors or other bad-sounding messages before continuing.
@@ -43,7 +43,7 @@ Please consult these logs for any errors or other bad-sounding messages before c
 If you would like to see "verbose" output of the box command, you can run the following command before any `box` function. This will print all the information stored into the log into your current terminal session as well.
 ```bash
 # to start the verbose output
-tail -f /root/logs/swizzin.log &
+tail -f /var/log/swizzin/box.log &
 
 box install ligma # do whatever you need to do here
 
@@ -78,7 +78,7 @@ Currently, we suggest using `termbin.com` for your `fiche` instance
 Want to show us your swizzin logs?
 
 ```bash
-sudo cat /root/logs/swizzin.log | nc <fiche instance> 9999
+sudo cat /var/log/swizzin/box.log | nc <fiche instance> 9999
 ``` 
 
 Below is an example for sharing the content of your syslog.
@@ -257,7 +257,7 @@ You can also attempt to remove swizzin by removing every app you have installed 
 - `/etc/swizzin`
 - `/usr/local/bin/swizzin`
 - `/install/`
-- `/root/logs/`
+- `/var/log/swizzin/`
 - `/root/swizzin/`
 - `/etc/htpasswd`
 - `/etc/htpasswd.d`
