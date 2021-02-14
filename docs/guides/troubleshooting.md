@@ -28,13 +28,13 @@ If you do find your problem, you can subscribe to those issues to get updates wh
 
 ### Accessing swizzin/`box` logs 
 
-Swizzin stores its logs into the `/var/log/swizzin` directories. The installer installs into `setup.log`, and any other command you run with `box` will end up in `box.log`. You can access the logs by running the following commands.
+Swizzin stores its logs into the `/var/log/swizzin` directories. The installer installs into `setup.log`, and any other command you run with `box` will end up in `box.log` (or some of the older rotations of it). You can access the logs by running the following commands.
 
 ```bash
 # To check the logs of the Swizzin installer
 sudo less -r +G /var/log/swizzin/setup.log
 # To check the logs of any application manipulation through box
-sudo less -r +G /var/log/swizzin/box.log
+sudo less -r +G /var/log/swizzin/box.log #or box.log.1 etc.
 ```
 
 Please consult these logs for any errors or other bad-sounding messages before continuing.
