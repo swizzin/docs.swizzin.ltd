@@ -58,6 +58,13 @@ When you have finished running through the prompts, installation will start. The
 ### Advanced setup
 There's a whole bunch of options for the setup.sh to achieve custom/unattended setups, which you can read all about [in this guide](/guides/advanced-setup).
 
+#### Migration
+If you've got an older install and just want to move it, follow standard install procedures. Install all apps, then stop the services and run the following command. 
+
+```bash
+rsync -a --progress -e'ssh' --exclude=.config/deluge/core.conf --exclude=.config/deluge/web.conf --exclude=.rtorrent.rc /home/<username> <username>@yourdomain.tld:/home/<username>/
+```
+
 #### Additional Setup Quirks
 
 A few items to be aware of as known issues. Most of these have had attempts at working around them, but it's good to be aware of things to avoid:
