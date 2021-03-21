@@ -4,8 +4,48 @@ title: Syncthing
 sidebar_label: Syncthing
 ---
 
-Open Source Continuous File Synchronization with BitTorrent
+Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers in real time, safely protected from prying eyes. Your data is your data alone and you deserve to choose where it is stored, whether it is shared with some third party, and how it's transmitted over the internet.
 
-import MissingDocs from '../snippets/missingdocs.md';
+## Initial Setup
 
-<MissingDocs />
+Installing Syncthing is easy. Simply issue the following command from SSH:
+
+```bash main
+sudo box install syncthing
+```
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="syncthing"/>
+
+## Configuration & Usage
+
+Syncthing needs to connect to another server running syncthing. We will do this by editing the settings. 
+
+### Setup Remote Device
+1. On your Remote Client, Click Actions and then Show ID.
+2. Copy the ID
+3. On your other server on the bottom right click +Add Remote Device
+4. Paste the Device ID and give it a name
+5. Press Save
+6. On the other client there should be a pop up asking you if you want to add the device; Press add device.
+7. Another pop will appear, press Save.
+
+### Adding a Folder to Synch with a Remote Server
+1. Click +Add Folder
+2. Give the Folder a Label
+3. Add the folder path of the directory that you want to sync to a remote server.
+4. Go to the Sharing Tab and put a check mark in the client you want to share it with remotely.
+5. Go to the Advanced Tab and choose the folder type you want.
+6. On your other client, another pop up will appear, choose add.
+7. Go through the settings and change what you want.
+
+## Misc.
+
+The Config files are located:
+
+```
+~/.config/syncthing
+```
+
+The Syncthing user guide can be found [here](https://docs.syncthing.net/intro/getting-started.html)
