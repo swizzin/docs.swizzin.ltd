@@ -22,7 +22,6 @@ After installation, if there will be two 2 new packages installed: libtorrent, a
 - **Repo**: performs an `apt-get install deluged deluge-console deluge-web` and pulls whatever is available from your operating system's repository. To check versions, you can use the [Debian Package Tracker](https://www.debian.org/distrib/packages) or the [Ubuntu Package Tracker](https://packages.ubuntu.com/).
 - **Deluge 1.3.15**: pulls the current head of the `1.3-stable` branch from Deluge and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
 - **Deluge 2**: pulls the current head of the `master` branch from Deluge and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
-  - Deluge 2 is not supported on installations using Debian Jessie due to severely outdated Python3 dependencies.
 
 :::note
 If you intend to use the thin client with your installation, your local version of Deluge must be reasonably similar to your remote version of Deluge. For instance, you're unable to use the thin client for Deluge v2 if your local version is 1.3.15.
@@ -38,6 +37,7 @@ When installing Deluge, you may specify the variable `DELUGE_VERSION` to bypass 
 If you would like to patch the settings pack of libtorrent (or any other aspect for that matter), the libtorrent compile will check if `/root/libtorrent-{RC_1_1,RC_1_2}.patch` exists. If it does, then the installer will automatically patch the libtorrent source with this patch before libtorrent is compiled. This may be of note since the ltconfig plugin does not exist for qBittorent, thus if you are interested in changing certain settings pack settings for qBittorrent settings which are not currently exposed through the WebUI, then this is the only way to change those settings without manually compiling libtorrent.
 
 `RC_1_1` is used when compiling libtorrent 1.1.* (e.g. Deluge 1.3.15 and qBittorrent 4.1.*)
+
 `RC_1_2` is used when compiling libtorrent 1.2.* (e.g. Deluge 2.0 and qBittorrent >= 4.2)
 
 You must supply your own patch!
