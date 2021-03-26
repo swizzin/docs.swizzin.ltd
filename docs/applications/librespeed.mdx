@@ -6,6 +6,36 @@ sidebar_label: Librespeed
 
 Librespeed is a very lightweight Speedtest implemented in Javascript, using XMLHttpRequest and Web Workers. No Flash, No Java, No Websocket, No Bullshit.
 
-import MissingDocs from '../snippets/missingdocs.md';
+## Initial Setup
 
-<MissingDocs />
+Installing Librespeed is easy. Simply issue the following command from SSH:
+
+```bash main
+sudo box install librespeed
+```
+
+This command will configure Librespeed.
+
+## How to Access
+
+Once setup, Librespeed will be available at the link `https://<hostname.ltd>/librespeed`
+
+## Service Management
+
+Like all box configured applications, you can manage Librespeed via SSH with box with start, stop, restart, enable and disable commands.
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="librespeed"/>
+
+## Configuration & Usage
+
+Out of the box, librespeed comes with everything you need. Just navigate to the page and press `Start`
+
+## Troubleshooting
+
+import Troubleshooting from '../snippets/troubleshooting.md';
+
+<Troubleshooting />
+
+Please refer to the [Librespeed project on Github](https://github.com/librespeed/speedtest).
