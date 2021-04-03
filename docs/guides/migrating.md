@@ -47,6 +47,10 @@ rsync -ahH --info=progress-2 -e'ssh' user@oldserver:/home/<oldusername>/ /home/<
 Check whether some of your apps require some configuration that is not covered with the data transfer rsync command above.
 
 Notable examples are:
+- letsencrypt
+  - Just reinstall it
+- Flood
+  - 
 - Plex
   - More in [this guide](https://support.plex.tv/articles/201370363-move-an-install-to-another-system/) and in [this guide specifically for Linux](https://forums.plex.tv/t/pms-migration-linux/678445/2)
 - mango
@@ -54,7 +58,14 @@ Notable examples are:
   - More [here](https://github.com/Ombi-app/Ombi/wiki/Backups) or [here](https://docs.ombi.app/info/backing-up/)
 - tautulli
   - More [here](https://github.com/Tautulli/Tautulli/wiki/Frequently-Asked-Questions#q-i-need-to-movereinstall-tautulli-can-i-keep-my-history-and-statistics)
+- thelounge
 - znc
   - More [here](https://wiki.znc.in/FAQ#How_do_I_migrate_ZNC_from_one_machine_to_another.3F)
-- _and probably a couple more_
+- nextcloud
+  - Loosely follow [this guide](https://docs.nextcloud.com/server/21/admin_manual/maintenance/migrating.html) but make sure to check in with us in the discord because I don't have time to write all the differences right now
+- organizr
+- quassel
+- rclone
+- rutorrent
+- _... and probably a couple more ..._
 
