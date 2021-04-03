@@ -9,13 +9,14 @@ This guide should be used as a generic reference for when you wanna get onto a n
 This is still a WIP guide, any experience or suggestions are welcome. If things go wrong, don't blame me. Make sure to always have a backup with a verification plan before doing something stoopet.
 :::
 
-# 1. Update everything on old server
-## Server itself
+
+## 1. Update everything on old server
+### Server itself
 Do a full `apt update && apt upgrade` run
-## Swizzin source code
+### Swizzin source code
 `sudo box update` before 
 
-## Any other applications
+### Any other applications
 `sudo box upgrade` any other application remaining
 
 ### (Optional) De-dupe your stuff
@@ -33,38 +34,38 @@ This obviously will not work if these directories mount over multiple disks, the
 fdupes -r ~/sonarr/ ~/radarr/ ~/transmission/ ~/torrents/rtorrent -n -L
 ```
 
-# 2. Prepare new server
+## 2. Prepare new server
 
-## OS & Disks
+### OS & Disks
 
 Install the latest version of your OS so that you don't have to do a dist upgrade later on.
 
 Ensure that your drives are set up just the way you want them _before_ doing _anything_. Swizzin relies on `/root` and `/home` a lot so just mount everything how you want to, and swizzin will just blindly follow that filesystem to wherever it leads to.
 
-## Swizzin
+### Swizzin
 Run the script, maybe check out the advanced options while you're at it so that you can set it and forget it.
 
-### Users
+#### Users
 Create all your users with the same usernames **and passwords**.
 
-### Apps
+#### Apps
 Install the same apps you got on your old system.
 
 Make sure to shut them down after you're done installing them so that the configs and everything will not get overwritten after you transfer your stuff.
 
-# 3. Spin down apps on old server
+## 3. Spin down apps on old server
 You **absolutely** need to stop everything that's happening on the old server. Otherwise you'll be transferring data that might be written into, which is no bueno.
 
 You might as well reboot your system into rescue, `mount` and `chroot` your old setup in, and start an SSH server.
 
-# 4. Transfer data
+## 4. Transfer data
 
 We highly recommend running this in `screen` so that you can disconnect from your SSH in case this takes a while.
 
 ```bash
 rsync -ahH --info=progress-2 -e'ssh' user@oldserver:/home/<oldusername>/ /home/<newusername> --usermap=<oldusername>:<newusername> --exclude=.config/deluge/core.conf --exclude=.config/deluge/web.conf --exclude=.rtorrent.rc
 ```
-# 5. Migrate all applications
+## 5. Migrate all applications
 
 Check whether some of your apps require some configuration that is not covered with the data transfer rsync command above.
 
