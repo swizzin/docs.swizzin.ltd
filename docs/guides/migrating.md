@@ -81,6 +81,9 @@ Notable examples are:
 - tautulli
   - More [here](https://github.com/Tautulli/Tautulli/wiki/Frequently-Asked-Questions#q-i-need-to-movereinstall-tautulli-can-i-keep-my-history-and-statistics)
 - thelounge
+  - Last time I asked, I was told this:\
+  `[19:51:21] xnaas: just move your entire thelounge folder over flying_sausages; that's it`\
+  So make sure to install lounge via `box`, stop teh service, and then transfer over the files from `/home/thelounge` to `/home/thelounge`
 - znc
   - More [here](https://wiki.znc.in/FAQ#How_do_I_migrate_ZNC_from_one_machine_to_another.3F)
 - nextcloud
