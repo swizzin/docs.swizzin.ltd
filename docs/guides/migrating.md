@@ -36,8 +36,11 @@ You **absolutely** need to stop everything that's happening on the old server. O
 You might as well reboot your system into rescue, `mount` and `chroot` your old setup in, and start an SSH server.
 
 # 4. Transfer data
+
+We highly recommend running this in `screen` so that you can disconnect from your SSH in case this takes a while.
+
 ```bash
-rsync -a --progress -e'ssh' --exclude=.config/deluge/core.conf --exclude=.config/deluge/web.conf --exclude=.rtorrent.rc /home/<username> <username>@yourdomain.tld:/home/<username>/
+rsync -ahH --info=progress-2 -e'ssh' user@oldserver:/home/<oldusername>/ /home/<newusername> --usermap=<oldusername>:<newusername> --exclude=.config/deluge/core.conf --exclude=.config/deluge/web.conf --exclude=.rtorrent.rc
 ```
 # 5. Migrate all applications
 
