@@ -17,6 +17,20 @@ sudo box install radarr
 
 This command will configure radarr for your user.
 
+### Optional parameters
+import InstallOptsWarning from '../snippets/installoptswarning.md';
+
+<InstallOptsWarning />
+
+The following is an example of how this would look
+
+```bash main
+export radarrOwner='autodlbot'
+```
+
+- `radarrOwner`
+  - Used to specify a non-master user which radarr will run as after the installation.
+
 ## How to Access
 
 After Radarr has been installed, it will be available for access at `https://<hostname.ltd>/radarr`.
