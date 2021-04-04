@@ -63,25 +63,29 @@ You might as well reboot your system into rescue, `mount` and `chroot` your old 
 We highly recommend running this in `screen` so that you can disconnect from your SSH in case this takes a while.
 
 ```bash
-rsync -ahH --info=progress-2 -e'ssh' user@oldserver:/home/<oldusername>/ /home/<newusername> --usermap=<oldusername>:<newusername> --exclude=.config/deluge/core.conf --exclude=.config/deluge/web.conf --exclude=.rtorrent.rc
+rsync -ahH --info=progress-2 -e'ssh -p $portNumber' user@oldserver:/home/<oldusername>/ /home/<newusername> --usermap=<oldusername>:<newusername>
 ```
 ## 5. Migrate all applications
 
 Check whether some of your apps require some configuration that is not covered with the data transfer rsync command above.
 
 Notable examples are:
-- letsencrypt
-  - Just reinstall it
-- Flood
-  - 
+- Transmission
+  - The files which bind a logged in user to the right session need to be migrated/re-created. You have two options for migrating this and making it functional:
+    1. First transfer all the data, and then remove and re-install transmission on the target. This will erase every user's `settings.conf` and re-create it alongside the binding for the webserver.
+    2. Overwrite the newly made files in `/etc/nginx/conf.d` with the ones present in that directory on the old server.
+- Deluge
+  - Generally same as transmission
+- R**u**Torrent
+  - Reinstall rutorrent after all data is moved
+  - Nothing specific should be necessary to do for rtorrent itself.
 - Plex
   - More in [this guide](https://support.plex.tv/articles/201370363-move-an-install-to-another-system/) and in [this guide specifically for Linux](https://forums.plex.tv/t/pms-migration-linux/678445/2)
-- mango
 - ombi
   - More [here](https://github.com/Ombi-app/Ombi/wiki/Backups) or [here](https://docs.ombi.app/info/backing-up/)
 - tautulli
   - More [here](https://github.com/Tautulli/Tautulli/wiki/Frequently-Asked-Questions#q-i-need-to-movereinstall-tautulli-can-i-keep-my-history-and-statistics)
-- thelounge
+- Lounge IRC
   - Last time I asked, I was told this:\
   `[19:51:21] xnaas: just move your entire thelounge folder over flying_sausages; that's it`\
   So make sure to install lounge via `box`, stop teh service, and then transfer over the files from `/home/thelounge` to `/home/thelounge`
@@ -89,9 +93,12 @@ Notable examples are:
   - More [here](https://wiki.znc.in/FAQ#How_do_I_migrate_ZNC_from_one_machine_to_another.3F)
 - nextcloud
   - Loosely follow [this guide](https://docs.nextcloud.com/server/21/admin_manual/maintenance/migrating.html) but make sure to check in with us in the discord because I don't have time to write all the differences right now
+- letsencrypt
+  - Install before and also after just for good measure
 - organizr
 - quassel
 - rclone
-- rutorrent
+- mango
+- Flood
 - _... and probably a couple more ..._
 
