@@ -73,7 +73,7 @@ Notable examples are:
 - Transmission
   - The files which bind a logged in user to the right session need to be migrated/re-created. You have two options for migrating this and making it functional:
     1. First transfer all the data, and then remove and re-install transmission on the target. This will erase every user's `settings.conf` and re-create it alongside the binding for the webserver.
-    2. Overwrite the newly made files in `/etc/nginx/conf.d` with the ones present in that directory on the old server.
+    2. Copy over all `<user>.transmission.conf` files from `/etc/nginx/conf.d/` after all users are created and transmission is installed.
 - Deluge
   - Generally same as transmission
 - R**u**Torrent
