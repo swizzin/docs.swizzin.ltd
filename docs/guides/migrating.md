@@ -46,7 +46,7 @@ Ensure that your drives are set up just the way you want them _before_ doing _an
 Run the script, maybe check out the advanced options while you're at it so that you can set it and forget it.
 
 #### Users
-Create all your users with the same usernames **and passwords**.
+Create all your users with **the same usernames and passwords**. If you want to change passwords for the users, you'll have to do that after the installation
 
 #### Apps
 Install the same apps you got on your old system.
@@ -60,11 +60,26 @@ You might as well reboot your system into rescue, `mount` and `chroot` your old 
 
 ## 4. Transfer data
 
+:::info
 We highly recommend running this in `screen` so that you can disconnect from your SSH in case this takes a while.
+:::
+
+The most sane way to do this would be to do this from the POV of `root` on the new machine, which will talk to the `root` on the old machine. Make yourself a new SSH key with `ssh-keygen` on the new machine, and paste the contents of `/root/.ssh/id_rsa.pub` at the bottom of `/root/.ssh/authorized_keys`. Ensure the old machine allows root SSH connections over SSH keys by checking that `PermitRootLogin prohibit-password` is set in the `/etc/ssh/sshd_config`.
+
+Check that the ssh connections works before running the command below.
 
 ```bash
-rsync -ahH --info=progress-2 -e'ssh -p $portNumber' user@oldserver:/home/<oldusername>/ /home/<newusername> --usermap=<oldusername>:<newusername>
+rsync -ahH --info=progress-2 -e'ssh -p $portNumber' root@oldserver:/home/<oldusername>/ /home/<newusername> --usermap=<oldusername>:<newusername>
 ```
+
+Breakdown of the parameters:
+- `-a`: quick way  of  saying  you  want  recursion  and  want  to preserve  almost  everything
+- `-h`: human readable output
+- `-H`: preserve hardlinks
+- `-e'ssh -p $port'`: optional, allows you to override the SSH port number
+- `--usermap=[...]`: ensures that permissions are allocated to the right user afterwards
+- `--info=progress-2`: Gives a nice single overview of the whole process
+
 ## 5. Migrate all applications
 
 Check whether some of your apps require some configuration that is not covered with the data transfer rsync command above.
