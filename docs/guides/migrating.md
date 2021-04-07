@@ -111,6 +111,8 @@ Notable examples are:
 - letsencrypt
   - Install before and also after just for good measure
 - organizr
+  - Shut down nginx on old server, then transfer the `config.php` and `users.db` files in `/srv/organizr` and its db folder
+- quota
 - quassel
 - rclone
 - mango
