@@ -44,6 +44,10 @@ Please note that none of the values that you set here are checked for validity o
   * If `--env` is specified after other arguments, contents of env file will override the arguments. If arguments are specified after the `--env file`, they will override the content of the env file.
     * if you do `bash setup.sh --env /path/to/file.env --user otheruser`, all of the env file contents will be ingested, and then the user will be overridden to `otheruser`
     * The only exception to this are the packages specified on the CLI. If they are specified after the `--env`, they will get added to the list.
+### `--post-command`
+  * Takes a string variable with commands to execute at the end of the installation script
+### `--run-checks`
+  * When set, checks defined in installers will be ran to confirm a succesful install. The output will be printed into stdout.
 ### `[package(s)]`
   * Any other arguments are treated as a name of a swizzin package to install.
   * **The order of packages matters**, if a package requires another as a dependency and its absence would make an installer fail, make sure to put the dependency first
