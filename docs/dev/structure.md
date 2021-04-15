@@ -132,10 +132,4 @@ Please make sure to create adequate documentation about the parameters, outputs 
 
 If you are introducing new functions or changing exisitng ones, please make sure to **thoroughly** test the functions, and confirm with the maintainers that they function properly.
 
-#### `utils`
-This file contains various functionality which is difficult to separate or justify an entire file for. It is **not** included in `globals.sh` by default.
-
-Functions can be moved out of this file and split into their own if it makes sense, but that's a really loose definition and is usually discussed at PR-level. Obviously, if that happens, corrective action needs to be done wherever the functions were used, and the scripts that use it should vaguely be re-tested.
-
-#### Other functions
-Please read the documentation and code itself in the other functions. In case you have any questions about whether something is already implemented, feel free to ask!
+Please read the further [function documentation here](functions.md) and also the comments and code itself in the other functions. In case you have any questions about whether something is already implemented, feel free to ask!
