@@ -20,7 +20,7 @@ Please make sure to read the [structure](structure.md) documentation in case you
 
 ### Available from `global.sh`
 
-Please check more on this out in the  [structure.md chapter on global.sh](structure.md#globals.sh)
+Please check more on this out in the  [structure.md chapter on global.sh](/dev/structure#globals.sh)
 
 #### `os` functions
 _documented in the file itself_
