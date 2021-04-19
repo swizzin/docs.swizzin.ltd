@@ -111,8 +111,8 @@ This method serves Plex on it's own domain. This can be a subdomain you've regis
 
 ```plaintext main
 set ``Remote Access - Disable``, 
-Network - Custom server access URLs = https://<your-domain>:443,http://<your-domain>:80
-Network - Secure connections = Preferred.
+Network -> Custom server access URLs = https://<your-domain>:443,http://<your-domain>:80
+Network -> Secure connections = Preferred.
 ```
 
 ```nginx 
@@ -217,4 +217,3 @@ If you need to link your Plex instance to another application, such as Sonarr or
 Host: 127.0.0.1
 Port: <your plex port>
 ```
-
