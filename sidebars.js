@@ -24,7 +24,7 @@ module.exports = {
                 items: [
                     "applications/autodl",
                     "applications/bazarr",
-                    "applications/couchpotato",
+                    // "applications/couchpotato",
                     "applications/headphones",
                     "applications/lidarr",
                     "applications/medusa",
