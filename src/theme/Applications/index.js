@@ -39,10 +39,6 @@ const data = [
     url: "applications/flood",
   },
   {
-    title: "Headphones",
-    url: "applications/headphones",
-  },
-  {
     title: "Jackett",
     url: "applications/jackett",
   },
