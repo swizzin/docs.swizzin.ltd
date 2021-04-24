@@ -76,7 +76,7 @@ module.exports = {
                     "applications/jellyfin",
                     "applications/mango",
                     "applications/plex",
-                    "applications/subsonic",
+                    // "applications/subsonic",
                     "applications/tautulli",
                 ],
             },
