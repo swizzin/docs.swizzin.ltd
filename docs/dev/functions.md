@@ -22,6 +22,28 @@ Please make sure to read the [structure](structure.md) documentation in case you
 
 Please check more on this out in the  [structure.md chapter on global.sh](/dev/structure#globals.sh)
 
+#### `swizdb` functions
+
+These functions provide a solution to storing arbitrary information organised by keys peristently on the system. This is achieved with simple files, and not any db software.
+
+The keys can contain slashes in order to define further structure to the database, in a smilar fashion Windows uses registry keys. Therefore, `abc/def` will create a directory called `abc` and store the key `def` in it. You can then retrieve that value under the key `abc/def`.
+
+Available functions are:
+- `swizdb set $key $value`
+    - Stores the content of `$value` under the `$key`
+- `swizdb get $key`
+    - Returns the content of `$key`
+    - Returns exit code `1` in case the key is not present
+- `swizdb path $key`
+    - Returns the full system path of the file which stores the content of `$key`
+    - Returns exit code `1` in case the key is not present
+- `swizdb clear $key`
+    - Removes the key and clears its stored value from the filesystem
+    - Returns exit code `1` in case the key is not present
+- `swizdb list [$key]`
+    - Returns a list of present and set full keys 
+    - Can filter results based on a key "directory".
+
 #### `os` functions
 _documented in the file itself_
 
