@@ -175,10 +175,6 @@ const data = [
       url: "applications/sonarrv3",
   },
   {
-    title: "Subsonic",
-    url: "applications/subsonic",
-  },
-  {
     title: "Swizzin Panel",
     url: "applications/panel",
   },
