@@ -11,7 +11,7 @@ None of the scripts and projects below are supported by swizzin. If you use thes
 Below is a list of cusomtisations, scripts and repos that you can use to get something a little more custom on your box.
 
 :::info
-Make sure to not update your swizzin from the git repo afterwards, as that could break your install. Please see the [section on updating](setup#updating-mechanism) in the dev documentation.
+Make sure to not update your swizzin from the git repo afterwards, as that could break your install. Please see the [section on updating](/guides/setup#updating-mechanism) in the dev documentation.
 :::
 
 :::success Check out our beta features too!
