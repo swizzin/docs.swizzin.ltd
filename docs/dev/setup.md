@@ -61,7 +61,7 @@ The updater will always reset `/etc/swizzin` to the latest commit in `master`, w
 
 We have made a couple ways to make sure that you can skip that, so that you can then manipulate the content of the directory on your own.
 
-*  Running `box update --no-git`
+*  Running `box update --local`
 *  Making `/etc/swizzin` a symlink to some other directory on your FS
    *  This should be done for you if you ran `setup.sh` when it was located outside of `/etc/swizzin` with `--local`
 *  Adding `.dev.lock` to `/etc/swizzin/`
