@@ -69,7 +69,7 @@ The most sane way to do this would be to do this from the POV of `root` on the n
 Check that the ssh connections works before running the command below.
 
 ```bash
-rsync -ahH --info=progress-2 -e'ssh -p $portNumber' root@oldserver:/home/<oldusername>/ /home/<newusername> --usermap=<oldusername>:<newusername>
+rsync -ahH --info=progress2 -e'ssh -p $portNumber' root@oldserver:/home/<oldusername>/ /home/<newusername> --usermap=<oldusername>:<newusername>
 ```
 
 Breakdown of the parameters:
