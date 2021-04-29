@@ -87,9 +87,9 @@ These scripts intend to make sure that the user's installation is up to spec wit
 
 Each update statement is required to have the following implemented:
 - Conditional checks whether execution is necessary (exceptions apply, but discussed at PR-time)
-  - In general, this would usually consist of
-         1. Top-level check for whether an application is installed
-         2. Per-segment check whether the conditions for the update are present
+  - In general, this would usually consist of:
+    1. Top-level check for whether an application is installed
+    2. Per-segment check whether the conditions for the update are present
 - A comment describing the condition for the update to trigger
   - Any further context should be provided 
 - Handled echos
