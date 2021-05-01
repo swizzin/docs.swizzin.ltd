@@ -26,6 +26,7 @@ module.exports = {
                     "applications/bazarr",
                     "applications/couchpotato",
                     "applications/headphones",
+                    "applications/komga",
                     "applications/lidarr",
                     "applications/medusa",
                     "applications/ombi",
