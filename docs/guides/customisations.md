@@ -28,3 +28,5 @@ Thanks!
     - Second Radarr/Sonarr Installation on Swizzin based systems
 - [computerByte/radarr4k](https://github.com/ComputerByte/radarr4k)
     - Second Radarr Installation
+- [computerByte/sonarr4k](https://github.com/ComputerByte/sonarr4k)
+    - Second Sonarr Installation
