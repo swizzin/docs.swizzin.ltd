@@ -15,10 +15,6 @@ const data = [
     url: "applications/bazarr",
   },
   {
-    title: "Couchpotato",
-    url: "applications/couchpotato",
-  },
-  {
     title: "Deluge",
     url: "applications/deluge",
   },
@@ -41,10 +37,6 @@ const data = [
   {
     title: "Flood",
     url: "applications/flood",
-  },
-  {
-    title: "Headphones",
-    url: "applications/headphones",
   },
   {
     title: "Jackett",
@@ -171,12 +163,8 @@ const data = [
     url: "applications/sonarr",
   },
   {
-      title: "Sonarr v3",
-      url: "applications/sonarrv3",
-  },
-  {
-    title: "Subsonic",
-    url: "applications/subsonic",
+    title: "Sonarr v3",
+    url: "applications/sonarrv3",
   },
   {
     title: "Swizzin Panel",
