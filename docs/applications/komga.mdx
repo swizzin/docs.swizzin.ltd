@@ -1,0 +1,37 @@
+---
+id: komga
+title: Komga
+sidebar_label: Komga
+---
+
+Free and open source comics/mangas media server.
+
+## Initial Setup
+
+Installing Komga is easy. Simply issue the following command from SSH:
+
+```bash main
+sudo box install komga
+```
+This command will configure and install Komga for your user.
+
+After installation, the config is stored in `/home/user/.komga/`.
+
+## How to Access
+
+After installation, you can access the web client at `https://<hostname.ltd>/komga/`.
+
+## Service Management
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="komga"/>
+
+## Configuration & Usage
+Please refer to the [Komga documentation](https://komga.org/guides/) for further help.
+
+## Troubleshooting
+
+import Troubleshooting from '../snippets/troubleshooting.md';
+
+<Troubleshooting />
