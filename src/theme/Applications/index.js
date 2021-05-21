@@ -47,10 +47,6 @@ const data = [
     url: "applications/jellyfin",
   },
   {
-    title: "Komga",
-    url: "applications/komga",
-   },
-  {
     title: "Let's Encrypt",
     url: "applications/letsencrypt",
   },

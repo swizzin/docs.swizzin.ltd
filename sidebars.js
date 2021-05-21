@@ -74,7 +74,6 @@ module.exports = {
                 items: [
                     "applications/emby",
                     "applications/jellyfin",
-                    "applications/komga",
                     "applications/mango",
                     "applications/plex",
                     // "applications/subsonic",
