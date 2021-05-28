@@ -33,11 +33,13 @@ As soon as you're on the branch you need to be on, you just keep using `box` jus
 
 ### Branches on the swizzin repo
 
-You can run the following commands
+You can run the following commands to get onto a branch of a PR.
 
 ```bash
 box branchswitch <name of PR branch>
 ```
+
+Switching back to `master` or develop **will not be prevented** so make sure that you know what you're doing!
 
 ### Branches from any fork
 
