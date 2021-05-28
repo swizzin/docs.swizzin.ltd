@@ -33,12 +33,10 @@ As soon as you're on the branch you need to be on, you just keep using `box` jus
 
 ### Branches on the swizzin repo
 
-You can run the following quick set of commands
+You can run the following commands
 
 ```bash
-cd /etc/swizzin
-sudo git fetch --all
-sudo git checkout <branch name>
+box branchswitch <name of PR branch>
 ```
 
 ### Branches from any fork
