@@ -4,6 +4,9 @@ title: Getting a developer setup
 sidebar_label: Setup
 ---
 
+## Repo layout
+We use the git flow, so please make sure you're working against the `develop` branch as well as targetting your PRs against it.
+
 ## VM
 We highly suggest you use a virtualized environment to test your swizzin set up. It is extremely convenient to have this isolated from the rest of your system, and be able to discard and initialize a system within minutes.
 

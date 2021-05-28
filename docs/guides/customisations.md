@@ -14,8 +14,8 @@ Below is a list of cusomtisations, scripts and repos that you can use to get som
 Make sure to not update your swizzin from the git repo afterwards, as that could break your install. Please see the [section on updating](/dev/setup#updating-mechanism) in the dev documentation.
 :::
 
-:::success Check out our beta features too!
-Our release cycle is a little slow due to a low amount of testers, so if you want to help out and provide feedback for us and get to use new apps and features before everyone else, please check out the [Beta testing docs](dev/beta-testing)
+:::success Check out our pre-release features too!
+We have a "fast" ring and a "slow" ring for our updates. Feel free to check out how to get the latest apps using our [Pre-release docs](dev/pre-release)
 :::
 
 <!--
