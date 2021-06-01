@@ -26,19 +26,15 @@ Please visit https://www.plex.tv/claim, login, copy your plex claim token to you
 
 Simply visit [the link](https://www.plex.tv/claim) to grab your claim code and paste it into the terminal. After Plex is installed, the script will use the claim code to grab a valid token for your user and apply it to your server.
 
+#### Post-install automatic claiming
+
 If for some reason you didn't claim during installation, you can still run the command manually from SSH.
 
-First we must source the Plex functions called during installation:
-
 ```bash
+claim="<your plex.tv/claim code>" #Change this value.
+. /etc/swizzin/sources/globals.sh
 . /etc/swizzin/sources/functions/plex
-```
-
-Then we can call the function directly:
-
-```bash
-claim=<your plex.tv/claim code>
-claimPlex ${claim}
+claimPlex "${claim}"
 ```
 
 The function will run and if all goes well, you'll receive a `success` message stating that your server as been claimed under your account.

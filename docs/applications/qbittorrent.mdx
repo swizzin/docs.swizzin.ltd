@@ -42,29 +42,27 @@ OR
 sudo systemctl disable --now wpa_supplicant ModemManager avahi-daemon
 ```
 
-### Install Options
-
-When installing qBittorrent, depending on your operating system, you'll have a couple choices available to you:
-
-#### qBittorrent Version
+### qBittorrent Version
 - **Repo**: performs an `apt-get install qbittorrent-nox` and pulls whatever is available from your operating system's repository. To check versions, you can use the [Debian Package Tracker](https://www.debian.org/distrib/packages) or the [Ubuntu Package Tracker](https://packages.ubuntu.com/).
-- **qBittorrent 4.1**: Downloads the latest 4.1.* release from qBittorrent's github repo and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
-- **Latest**: Downloads the latest qBittorrent release from qBittorrent's github repo and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
-  - The latest branch is not supported on installations using Debian Stretch due to outdated QT dependencies.
+- **qBittorrent 4.\***: Downloads the latest 4.* release from qBittorrent's github repo and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
+  - Version availability on Debian Stretch or Ubuntu Xenial is limited due to outdated QT/SSL dependencies.
 
-#### Libtorrent Version
-- **Repo**: performs an `apt-get install` of the `libtorrent-rasterbar*` and `python*-libtorrent` packages to supply both `libtorrent` and the python bindings required by Deluge.
-  - Repo is not an option if you are using `Deluge v2` on `Ubuntu 16.04` because Libtorrent 1.1+ is required to install `Deluge v2`. Thus, you must compile a version of Libtorrent to meet this requirement.
-- **RC_1_1**: pulls the current head of the Libtorrent 1.1 branch, compiles it and packages it with `fpm` as a .deb file.
-  - This branch is currently supported on all supported operating systems.
-- **RC_1_2**: pulls the current head of the Libtorrent 1.2 branch, compiles it and packages it with `fpm` as a .deb file.
-  - The branch is only an option if you are using `Deluge v2` or `qBittorrent latest` as it is completely incompatible with `Deluge 1.3.15` and versions of `qBittorrent < 4.2`.
+#### Unattended variables
+When installing qBittorrent, you may specify the variable `QBITTORRENT_VERSION` to bypass the version popup. Accepted values are:
+- `repo` -- Will install qBittorrent from your OS repository
+- `4.1.*(.*)` -- To compile any release from 4.1. For example: `4.1.9.1` will compile 4.1.9.1 directly
+- `4.2.*(.*)` -- To compile any release from 4.2. For example: `4.2.5` will compile 4.2.5 directly
+- `4.3.*(.*)` -- To compile any release from 4.3. For example: `4.3.3` will compile 4.3.3 directly
+- `latest` -- Compiles the most recent version of qBittorrent
 
 #### Libtorrent Patching
-If you would like to patch the settings pack of libtorrent (or any other aspect for that matter), the libtorrent compile will check if `/root/libtorrent.patch` exists. If it does, then the installer will automatically patch the libtorrent source with this patch before libtorrent is compiled. This may be of note since the ltconfig plugin does not exist for qBittorent, thus if you are interested in changing certain settings pack settings for qBittorrent settings which are not currently exposed through the WebUI, then this is the only way to change those settings without manually compiling libtorrent.
+If you would like to patch the settings pack of libtorrent (or any other aspect for that matter), the libtorrent compile will check if `/root/libtorrent-{RC_1_1,RC_1_2}.patch` exists. If it does, then the installer will automatically patch the libtorrent source with this patch before libtorrent is compiled. This may be of note since the ltconfig plugin does not exist for qBittorent, thus if you are interested in changing certain settings pack settings for qBittorrent settings which are not currently exposed through the WebUI, then this is the only way to change those settings without manually compiling libtorrent.
+
+`RC_1_1` is used when compiling libtorrent 1.1.* (e.g. Deluge 1.3.15 and qBittorrent 4.1.\*)
+
+`RC_1_2` is used when compiling libtorrent 1.2.* (e.g. Deluge 2.0 and qBittorrent >= 4.2)
 
 You must supply your own patch!
-
 
 ## Upgrading and Recompiling
 
@@ -152,6 +150,7 @@ API Handlers:
 AutoDL helpers:
 - [qbit-race](https://github.com/ckcr4lyf/qbit-race) (with reannounce support)
 - [qbittorrent-cli](https://github.com/ludviglundgren/qbittorrent-cli)
+- [qbit-tools](https://gitlab.com/AlexKM/qbit-tools)
 
 Torrent Handlers:
 - [autoremove-torrents](https://pypi.org/project/autoremove-torrents/) (Also works with Deluge and Transmission)

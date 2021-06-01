@@ -64,7 +64,7 @@ import SystemdTabs from '../snippets/systemdtabs.mdx';
 
 ## Configuration
 
-The configuration of rTorrent is a file that lives in your home folder called .rtorrent.rc. There are not many reasons you should need to edit this file (and please note that many of the options should not be reconfigured (such as: ip, bind, network.scgi.open_local), otherwise, you may find that your client has stopped working.
+The configuration of rTorrent is a file that lives in your home folder called .rtorrent.rc.There are not many reasons you should need to edit this file (and please note that many of the options should not be reconfigured (such as: ip, bind, network.scgi.open_local), otherwise, you may find that your client has stopped working.
 
 ### Default Download Location
 
@@ -73,6 +73,9 @@ Files downloaded by rTorrent will be placed in `~/torrents/rtorrent` by default.
 ### Web Download Location
 
 Similarly, any files in the default download directory (`~/torrents/rtorrent`) will be available for browsing via the web server at the location: `https://<yourhostname.ltd>/rtorrent.downloads`
+
+## Extensions
+You can install additional themes and plugins using the [`rtx` helper script](/scripts/rtx)
 
 ## Connect to other clients
 
@@ -143,6 +146,11 @@ box install <ABC>
 
 If it is not available, please google the message above and see what you need to install.
 
+### logs
+There aren't really any logs made by default. The systemd service is only reporting what the screen tells it, which is very much nothing seeing as rtorrent runs in ncurses-like UI.
+
+You need to enable loggin in your `rtorrent.rc` file manually. You can [read more about that here](https://github.com/rakshasa/rtorrent/wiki/LOG-Logging).
+
 ### rtorrent doesn't start up
 
 You might get a good look at what is causing the service to fail by simply running `rtorrent` while logged in as the user you're troubleshooting for. You can also check `systemctl status rtorrent@<user>`
@@ -205,3 +213,6 @@ Are you seeing this error?
 ![Rutorrent disk full error](https://i.imgur.com/NABrtlz.png)
 
 Please fix your [`quota` installation](quota.mdx).
+
+### The cloudlfare plugin does not work
+It's fine. That issue is basically cosmetic only, and you can just disable the plugin. That is done in the plugin tab in the bottom-half of the screen. Right-click on the cloudflare plugin, and disbale it.

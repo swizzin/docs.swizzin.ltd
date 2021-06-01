@@ -24,16 +24,17 @@ module.exports = {
                 items: [
                     "applications/autodl",
                     "applications/bazarr",
-                    "applications/couchpotato",
-                    "applications/headphones",
+                    // "applications/couchpotato",
+                    // "applications/headphones",
                     "applications/lidarr",
                     "applications/medusa",
                     "applications/ombi",
                     "applications/sickchill",
                     "applications/sickgear",
-                    "applications/sonarr",
                     "applications/sonarrv3",
+                    // "applications/sonarrv2-old",
                     "applications/radarr",
+                    "applications/prowlarr",
                 ],
             },
             { 
@@ -76,7 +77,7 @@ module.exports = {
                     "applications/jellyfin",
                     "applications/mango",
                     "applications/plex",
-                    "applications/subsonic",
+                    // "applications/subsonic",
                     "applications/tautulli",
                 ],
             },
@@ -135,7 +136,10 @@ module.exports = {
         collapsed: true,
         items: [
             "guides/dist-upgrade",
-            "guides/troubleshooting"
+            "guides/troubleshooting",
+            "guides/advanced-setup",
+            "guides/migrating",
+            "guides/customisations"
           ],
       },
       {
@@ -144,7 +148,19 @@ module.exports = {
         collapsed: true,
         items: [
             "scripts/setdisk",
+            "scripts/rtx",
           ],
-      },
+      },{
+        type: "category",
+        label: "Development",
+        collapsed: true,
+        items: [
+            "dev/intro",
+            "dev/setup",
+            "dev/structure",
+            "dev/functions",
+            "dev/beta-testing",
+            ]
+      }
     ],
   };

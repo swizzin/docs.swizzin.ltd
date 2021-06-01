@@ -18,32 +18,27 @@ This command will configure Deluge and the associated web interface "Deluge-Web"
 
 After installation, if there will be two 2 new packages installed: libtorrent, and deluge-common. Due to potential packaging conflicts with your distribution's repository, the package `deluge-common` has been held by apt and will not be marked for upgrade. You may see apt issue a warning regarding the held `deluge-common` package. This is completely normal and it means the apt mark is working as expected. The package name for `libtorrent` does not interfere with any apt packages and should not issue any upgrade warnings.
 
-### Install Options
-
-When installing Deluge, depending on your operating system, you'll have a couple choices available to you:
-
-#### Deluge Version
+### Deluge Version
 - **Repo**: performs an `apt-get install deluged deluge-console deluge-web` and pulls whatever is available from your operating system's repository. To check versions, you can use the [Debian Package Tracker](https://www.debian.org/distrib/packages) or the [Ubuntu Package Tracker](https://packages.ubuntu.com/).
 - **Deluge 1.3.15**: pulls the current head of the `1.3-stable` branch from Deluge and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
 - **Deluge 2**: pulls the current head of the `master` branch from Deluge and uses `fpm` to package it as a .deb for easy installation and removal with `dpkg`.
-  - Deluge 2 is not supported on installations using Debian Jessie due to severely outdated Python3 dependencies.
 
 :::note
 If you intend to use the thin client with your installation, your local version of Deluge must be reasonably similar to your remote version of Deluge. For instance, you're unable to use the thin client for Deluge v2 if your local version is 1.3.15.
 :::
 
-#### Libtorrent Version
-- **Repo**: performs an `apt-get install` of the `libtorrent-rasterbar*` and `python*-libtorrent` packages to supply both `libtorrent` and the python bindings required by Deluge.
-  - Repo is not an option if you are using `Deluge v2` on `Ubuntu 16.04` because Libtorrent 1.1+ is required to install `Deluge v2`. Thus, you must compile a version of Libtorrent to meet this requirement.
-- **RC_1_0**: pulls the current head of the Libtorrent 1.0 branch, compiles it and packages it with `fpm` as a .deb file.
-  - This branch is only an option if you're using `Deluge 1.3.15` and if your version of `libboost` is `1.65` or earlier. (i.e. Buster is not supported)
-- **RC_1_1**: pulls the current head of the Libtorrent 1.1 branch, compiles it and packages it with `fpm` as a .deb file.
-  - This branch is currently supported on all supported operating systems.
-- **RC_1_2**: pulls the current head of the Libtorrent 1.2 branch, compiles it and packages it with `fpm` as a .deb file.
-  - The branch is only an option if you are using `Deluge v2` as it is completely incompatible with `Deluge 1.3.15`.
+#### Unattended variables
+When installing Deluge, you may specify the variable `DELUGE_VERSION` to bypass the version popup. Accepted values are:
+- `repo` -- Will install Deluge from your OS repository
+- `stable-1.3` -- Will compile Deluge from the head of the stable-1.3 branch (1.3.15)
+- `master` -- Will compile Deluge from the head of the master branch (2.0)
 
 #### Libtorrent Patching
-If you would like to patch the settings pack of libtorrent (or any other aspect for that matter), the libtorrent compile will check if `/root/libtorrent.patch` exists. If it does, then the installer will automatically patch the libtorrent source with this patch before libtorrent is compiled. This may be of note since the ltconfig plugin does not exist for qBittorent, thus if you are interested in changing certain settings pack settings for qBittorrent settings which are not currently exposed through the WebUI, then this is the only way to change those settings without manually compiling libtorrent.
+If you would like to patch the settings pack of libtorrent (or any other aspect for that matter), the libtorrent compile will check if `/root/libtorrent-{RC_1_1,RC_1_2}.patch` exists. If it does, then the installer will automatically patch the libtorrent source with this patch before libtorrent is compiled. This may be of note since the ltconfig plugin does not exist for qBittorent, thus if you are interested in changing certain settings pack settings for qBittorrent settings which are not currently exposed through the WebUI, then this is the only way to change those settings without manually compiling libtorrent.
+
+`RC_1_1` is used when compiling libtorrent 1.1.* (e.g. Deluge 1.3.15 and qBittorrent 4.1.\*)
+
+`RC_1_2` is used when compiling libtorrent 1.2.* (e.g. Deluge 2.0 and qBittorrent >= 4.2)
 
 You must supply your own patch!
 
@@ -65,9 +60,177 @@ The GTK thin client uses a secure connection to your slot to display the remote 
 
 In order to use the Thin client, you must have a recent version of Deluge installed locally on your computer. Below are instructions for popular operating systems:
 
-import SystemdTabs from '../snippets/systemdtabs.mdx';
 
-<SystemdTabs service="deluged@<username>"/>
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="windows"
+  values={[
+    {label: 'Windows', value: 'windows'},
+    {label: 'macOS', value: 'macos'},
+    {label: 'Debian/Ubuntu', value: 'debuntu'},
+    {label: 'OpenSUSE', value: 'opensuse'},
+    {label: 'Fedora', value: 'fedora'},
+    {label: 'Arch Linux', value: 'arch'},
+  ]}>
+  <TabItem value="windows">
+ 
+ 
+
+  Grab the most recent version from [here](https://ftp.osuosl.org/pub/deluge/windows/?C=M;O=D) and save it to a common location (i.e. Downloads). 
+Run the installer and follow the prompts.
+ 
+ 
+
+  </TabItem>
+  <TabItem value="macos">
+  
+
+  You can grab a pre-2.0 version of deluge [here](https://ftp.osuosl.org/pub/deluge/mac_osx/?C=M;O=D), or install it via `brew` like so
+
+  ```bash
+  # For version 1.x
+  brew install --cask deluge 
+  # For python-based deluge
+  brew install pygobject3 gtk+3 adwaita-icon-theme
+  brew install libtorrent-rasterbar
+  brew link gettext --force
+  pip3 install deluge
+  ```
+  
+  
+  </TabItem>
+  <TabItem value="debuntu">
+
+
+Deluge is available from the distribution repositories. Simply open a terminal and issue the command:
+
+```bash
+sudo apt update
+sudo apt install deluge
+```
+
+
+</TabItem>
+<TabItem value="opensuse">
+
+
+Deluge is available from the distribution repositories. Simply open a terminal and issue the command:
+
+```bash
+sudo zypper install deluge
+```
+
+</TabItem>
+
+
+<TabItem value="fedora">
+
+
+Deluge is available from the distribution repositories. Simply open a terminal and issue the command:
+
+```bash
+sudo dnf install deluge
+```
+
+</TabItem>
+<TabItem value="arch">
+
+Deluge is available from the distribution repositories. Simply open a terminal and issue the command:
+
+```bash
+sudo pacman -S deluge
+```
+
+</TabItem>
+
+</Tabs>
+
+
+----
+Now that Deluge is installed on your machine, you need to configure it to connect to your slot.
+
+First, we must prevent Deluge from starting in "Classic" mode. To do this, open Deluge. In the menu, go to `Preferences > Interface` and un-tick the box which states "Classic Mode".
+
+Deluge will prompt you to restart. Click "Ok" and re-open Deluge.
+
+You'll notice when you re-open the application that a new connection dialog box will open. Hit the "Add" button and use the following details:
+
+```plaintext main
+Hostname: <the hostname of your server>
+Username: <your username>
+Password: <your password>
+Port: <the daemon port of your instance>
+```
+
+:::note
+During the configuration of Deluge on your slot, the setup output both your Daemon and Web ports. If you've forgotten your daemon port, you can find it with the following command:
+```bash
+cat ~/.config/deluge/core.conf | grep daemon_port
+```
+:::
+
+Once you click okay, you'll be taken back to the connection dialog. Your new connection will be listed and if everything is okay, you'll see a green check box next to it. When you click connect, you'll be taken to your client.
+
+### Web UI
+
+The web UI is significantly easier to access, which is why many prefer it. You can access deluge-web from `https://yourhost.ltd/deluge`.
+
+If you are not currently logged in, you will first receive a basic authentication dialog from the webserver. Once authenticated, you'll receive a dialog box from Deluge-Web. This password is the same as the one you just entered.
+
+
+:::note
+This second password authentication layer cannot be fully removed due to restrictions in Deluge. However, you can increase the length of time that the cookie is stored locally by your browser to one year (from one hour):
+```bash
+sudo systemctl stop deluge-web@<username>
+sed -i 's/"session_timeout": 3600,/"session_timeout": 31536000,/g' ~/.config/deluge/web.conf
+sudo systemctl start deluge-web@<username>
+```
+:::
+
+### deluge-console
+
+#### Getting Started
+You can access the command line version of the deluge console by using the command:
+
+```bash main
+deluge-console
+```
+
+#### Connecting to Your Daemon
+Once loaded, you'll need to specify your daemon port to connect to:
+
+```bash main
+connect 127.0.0.1:<daemon port>
+```
+
+#### Available Commands
+Once you have successfully connected to the daemon, you can get started with the following commands:
+
+```plaintext main
+>>> help
+add - Add a torrent
+cache - Show information about the disk cache
+config - Show and set configuration values
+connect - Connect to a new deluge server.
+debug - Enable and disable debugging
+del - Remove a torrent
+exit - Exit from the client.
+halt - Shutdown the deluge server.
+help - displays help on other commands
+info - Show information about the torrents
+pause - Pause a torrent
+plugin - Manage plugins with this command
+quit - Exit from the client.
+reannounce - Update tracker for torrent(s)
+recheck - Forces a recheck of the torrent data
+resume - Resume a torrent
+rm - Remove a torrent
+update-tracker - Update tracker for torrent(s)
+For help on a specific command, use "<command> --help"
+```
+
 
 ## Configuration
 
