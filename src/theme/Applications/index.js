@@ -103,6 +103,10 @@ const data = [
     url: "applications/plex",
   },
   {
+    title: "Prowlarr",
+    url: "applications/prowlarr",
+  },
+  {
     title: "pyLoad",
     url: "applications/pyload",
   },
