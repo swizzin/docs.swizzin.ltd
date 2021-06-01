@@ -20,24 +20,19 @@ After installation, the files are stored in `/opt/Ombi` and the configuration an
 
 ## Upgrading
 
-Ombi is installed and maintained by the unofficially provided repository. In order to keep ombi up-to-date, update your packages with:
+Ombi v4 is installed and updated from the official stable repository. In order to keep ombi up-to-date, update your packages with:
 
 ```
 sudo apt -y update
 sudo apt -y upgrade
 ```
 
-### Upgrading to v4
-:::warning
-At the time of writing, v4 is not stable. That is why v3 is the default install, although it is EOL.
-Once v4 becomes Stable, the default installation will no longer install v3.
-This method will persist for the convenience of upgrading from v3 to
-:::
-You can install the v4 through the _other_ unofficially provided repository by running the following command.
-```
+### Upgrading from v3 to v4
+If you previously had ombi v3 installed, you can upgrade to v4 using the following command.
+```bash
 box upgrade ombi
 ```
-The upgrading procedure on v4 is the same as above, i.e. through the use of `apt`
+When you've upgraded to v4, you can keep your application up to date with the steps mentioned in the [upgrading](#upgrading) chapter above.
 
 ## How to Access
 
@@ -170,12 +165,12 @@ import TabItem from '@theme/TabItem';
 
 ## Service Management
 
-The systemd service for Ombi is not enabled for use in a multi-user environment.
+The systemd service for Ombi is not enabled for use in a multi-user environment, and it comes directly from the package itself.
 
-The service file resides at:
+In order for ombi to play well in our environment, we supply a `systemd` override file located in the path below.
 
-```bash main
-/etc/systemd/system/ombi.service
+```
+/etc/systemd/system/ombi.service.d/override.conf
 ```
 
 import SystemdTabs from '../snippets/systemdtabs.mdx';
