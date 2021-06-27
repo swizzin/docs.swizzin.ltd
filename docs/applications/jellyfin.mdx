@@ -34,5 +34,20 @@ import Troubleshooting from '../snippets/troubleshooting.md';
 
 Jellyfin has a general [Troubleshooting guide](https://jellyfin.org/docs/general/administration/troubleshooting.html) which we highly suggest you follow first in case you have any issues.
 
+### Reinstallation Steps
+
+If you have previously had a Jellyfin installation and are having issues with getting the server setup, use the following guide to get everything up and running:
+
+1. Install Jellyfin on your server using the traditional steps above.
+2. *in your browser* Navigate to your panel (yourdomain.tld)
+3. Login
+4. Right Click and hit "Inspect Element"
+5. Go to "Storage"
+6. Click "Local Storage" in the sidebar
+7. Click the domain relating to your server
+8. Find the key ``_deviceId2`` and delete it
+9. Find the key ``jellyfin_credentials`` and delete it
+10. Refresh / Reload the page.
+
 ### Unable to connect using apps
 Some jellyfin clients will not work with self-signed certificates. For that reason we recommend that you follow the [LetsEncrypt](letsencrypt.mdx) guide and set up a valid signed certificate. You can grab a valid free domain from various places like `freenom`, or get a proper personalized one from places like `namecheap`.
