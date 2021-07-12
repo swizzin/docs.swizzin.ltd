@@ -110,7 +110,7 @@ Logs are all over the system. Below are just a couple ways to find some things t
     - `cat /var/logs/nginx/error.log`
     - `nginx -t`
 - Issues with apps
-    - `systemctl status <app>@<(user)>` _or_ `systemctl status <app>@<(user)>`
+    - `systemctl status <app>` _or_ `systemctl status <app>@<(user)>`
     - `journalctl -u <app>`
 - General issues
     - `journalctl -xe`
