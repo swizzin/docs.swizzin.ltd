@@ -23,6 +23,20 @@ sudo box install prowlarr
 
 This command will configure prowlarr for your user.
 
+### Optional parameters
+import InstallOptsWarning from '../snippets/installoptswarning.md';
+
+<InstallOptsWarning />
+
+The following is an example of how this would look
+
+```bash main
+export PROWLARR_OWNER='autodlbot'
+```
+
+- `PROWLARR_OWNER`
+  - Used to specify a non-master user which radarr will run as after the installation.
+
 ## How to Access
 
 After Prowlarr has been installed, it will be available for access at `https://<hostname.ltd>/prowlarr`.

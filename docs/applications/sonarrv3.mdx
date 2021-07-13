@@ -24,12 +24,12 @@ import InstallOptsWarning from '../snippets/installoptswarning.md';
 The following is an example of how this would look
 
 ```bash main
-export sonarrv3owner='autodlbot'
+export SONARR_OWNER='autodlbot'
 ```
 
 - `sonarrv2owner`
   - Used to specify a non-master user which sonarr v2 might have ran under before for the migration and user-group adding.
-- `sonarrv3owner`
+- `SONARR_OWNER`
   - Used to specify a non-master user which sonarr v3 will run as after the installation.
 
 ## How to Access
@@ -147,7 +147,7 @@ API: <copy and paste from NZBHydra UI>
 
 
 ### Sonarr and user homedir permissions
-Sonarr is running as the master user (unless changed in install options using parameters), so that user needs to be able to see the directories you'd like sonarr to see as well. You can achieve this by adding the desired user to the group of whoever runs the sonarr process. e.g. `usermod -a -G <user with data> <master/sonarrv3owner>`
+Sonarr is running as the master user (unless changed in install options using parameters), so that user needs to be able to see the directories you'd like sonarr to see as well. You can achieve this by adding the desired user to the group of whoever runs the sonarr process. e.g. `usermod -a -G <user with data> <master/SONARR_OWNER>`
 
 ### Other tasks
 

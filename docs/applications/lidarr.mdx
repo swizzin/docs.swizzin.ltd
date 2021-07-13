@@ -16,6 +16,20 @@ sudo box install lidarr
 
 This command will configure lidarr for your master user.
 
+### Optional parameters
+import InstallOptsWarning from '../snippets/installoptswarning.md';
+
+<InstallOptsWarning />
+
+The following is an example of how this would look
+
+```bash main
+export LIDARR_OWNER='autodlbot'
+```
+
+- `LIDARR_OWNER`
+  - Used to specify a non-master user which lidarr will run as after the installation.
+
 ## How to Access
 
 Once setup, lidarr will be available at the link `https://<hostname.ltd>/lidarr`
