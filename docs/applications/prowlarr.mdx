@@ -42,10 +42,15 @@ import SystemdTabs from '../snippets/systemdtabs.mdx';
 <SystemdTabs service="prowlarr"/>
 
 ## Configuration
+In order to get this thing working, you just need to connect your sources, and then connect your arr apps.
 
 - Add your indexers
-- Add your Applications to sync
-    - Go to `Settings` -> `Apps` -> Select an app to add -> Leave all as defaults, and paste in the API key from said app.
+    - Go to `Indexers` and add your sources
+- Add your arr Applications to push indexer definitions to
+    - In Prowlarr, go to `Settings` -> `Apps`
+    - Select the app to add
+    - **Append the baseurl to __arr server**. e.g. `http://localhost:8989/sonarr` for sonarr 
+    - Paste in the API key from said app (Open target app, browse to Settings -> General)
 
 
 If you need further help, you can refer to the [Prowlarr Wiki](https://wiki.servarr.com/Prowlarr) and [Prowlarr FAQ](https://wiki.servarr.com/Prowlarr_FAQ)/
