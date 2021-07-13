@@ -25,10 +25,10 @@ import InstallOptsWarning from '../snippets/installoptswarning.md';
 The following is an example of how this would look
 
 ```bash main
-export radarrOwner='autodlbot'
+export RADARR_OWNER='autodlbot'
 ```
 
-- `radarrOwner`
+- `RADARR_OWNER`
   - Used to specify a non-master user which radarr will run as after the installation.
 
 ## How to Access
@@ -100,4 +100,4 @@ Please follow the steps below to make sure you are using the Radarr v3 on the .N
     1. Run `sudo box update`, which should Print out "`Moving Radarr from mono to .Net`" When the migration to .net has begun
     1. Refresh your browser while emptying cache (CTRL+SHIFT+R on most browsers)
     
-If you are not running Radarr as your master user, you can set the environment variable `radarrOwner=<yourUser>`before the update, and the migration will respect the choice.
+If you are not running Radarr as your master user, you can set the environment variable `RADARR_OWNER=<yourUser>`before the update, and the migration will respect the choice.
