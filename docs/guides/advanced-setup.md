@@ -4,7 +4,7 @@ title: Setting up swizzin with advanced options
 sidebar_label: Advanced Setup
 ---
 
-Below are the many ways you can use the installer to get exactly toi where you need to be, fast.
+Below are the many ways you can use the installer to get exactly to where you need to be, fast.
 
 :::tip Note
 Not all the code such as package installers has been modified yet to be compatible with the unattended setup and environment variable importing.
