@@ -21,6 +21,11 @@ You can access jellyfin through `https://domain.tld/jellyfin` if you have nginx 
 ## User management
 Jellyfin manages its users in a separate database. **`box` does not add users to the database in any way**. You will need to manage the jellyfin users manually. Whether you choose to keep those in sync with box or not is up to you
 
+## Adding more users' media to Jellyfin
+import PermsSrv from '../snippets/permsmediasrv.mdx';
+
+<PermsSrv serviceName="Jellyfin" serviceUsr="jellyfin"/>
+
 ## Service management
 import SystemdTabs from '../snippets/systemdtabs.mdx';
 

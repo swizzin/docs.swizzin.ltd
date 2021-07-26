@@ -73,6 +73,7 @@ module.exports = {
                 label: "Media Servers",
                 collapsed: true,
                 items: [
+                    "applications/airsonic",
                     "applications/emby",
                     "applications/jellyfin",
                     "applications/mango",
