@@ -1,0 +1,30 @@
+---
+id: airsonic
+title: Airsonic
+sidebar_label: Airsonic
+---
+
+Airsonic is a web-based audio player.
+
+It is a maintained forked of Subsonic, with the paid components modified to be free.
+
+## Adding more users' media to Airsonic
+import PermsSrv from '../snippets/permsmediasrv.mdx';
+
+<PermsSrv serviceName="Airsonic" serviceUsr="airsonic"/>
+
+## Migrating from Subsonic
+The below command set are the adjusted instructions for the swizzin environment, originally adapted from [here](https://airsonic.github.io/docs/migrate/). **They have not been thoroughly tested, please report in the Discord if you've had any issues.**
+
+```bash
+sudo cp -a /srv/subsonic /var/airsonic
+sudo mv /var/airsonic/subsonic_sh.log /var/airsonic/airsonic_sh.log
+sudo mv /var/airsonic/subsonic.log /var/airsonic/airsonic.log
+sudo mv /var/airsonic/subsonic.properties /var/airsonic/airsonic.properties
+sudo mv /var/airsonic/db/subsonic.backup /var/airsonic/db/airsonic.backup
+sudo mv /var/airsonic/db/subsonic.data /var/airsonic/db/airsonic.data
+sudo mv /var/airsonic/db/subsonic.lck /var/airsonic/db/airsonic.lck
+sudo mv /var/airsonic/db/subsonic.log /var/airsonic/db/airsonic.log
+sudo mv /var/airsonic/db/subsonic.properties /var/airsonic/db/airsonic.properties
+sudo mv /var/airsonic/db/subsonic.script /var/airsonic/db/airsonic.script
+```

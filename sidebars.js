@@ -24,16 +24,17 @@ module.exports = {
                 items: [
                     "applications/autodl",
                     "applications/bazarr",
-                    "applications/couchpotato",
-                    "applications/headphones",
+                    // "applications/couchpotato",
+                    // "applications/headphones",
                     "applications/lidarr",
                     "applications/medusa",
                     "applications/ombi",
                     "applications/sickchill",
                     "applications/sickgear",
-                    "applications/sonarr",
                     "applications/sonarrv3",
+                    // "applications/sonarrv2-old",
                     "applications/radarr",
+                    "applications/prowlarr",
                 ],
             },
             { 
@@ -72,12 +73,13 @@ module.exports = {
                 label: "Media Servers",
                 collapsed: true,
                 items: [
+                    "applications/airsonic",
                     "applications/calibre-web",
                     "applications/emby",
                     "applications/jellyfin",
                     "applications/mango",
                     "applications/plex",
-                    "applications/subsonic",
+                    // "applications/subsonic",
                     "applications/tautulli",
                 ],
             },
@@ -137,7 +139,10 @@ module.exports = {
         collapsed: true,
         items: [
             "guides/dist-upgrade",
-            "guides/troubleshooting"
+            "guides/troubleshooting",
+            "guides/advanced-setup",
+            "guides/migrating",
+            "guides/customisations"
           ],
       },
       {

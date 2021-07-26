@@ -61,8 +61,8 @@ Now, click `Copy Torznab Feed`. The link you'll receive will look something like
 https://<yourhost>.ltd/jackett/api/v2.0/indexers/yourtracker/results/torznab/
 ```
 
-We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `9117`, your edited URL would look like this:
+We need to edit this link to **remove https** , **remove the reverse proxy**, and **add the port number**. Thus, if your port number was `9117`, your edited URL would look like this:
 
 ```plaintext
-http://<yourhost>.ltdltd:9117/jackett/api/v2.0/indexers/yourtracker/results/torznab/
+http://127.0.0.1:9117/jackett/api/v2.0/indexers/yourtracker/results/torznab/
 ```

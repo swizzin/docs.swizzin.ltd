@@ -146,6 +146,11 @@ box install <ABC>
 
 If it is not available, please google the message above and see what you need to install.
 
+### logs
+There aren't really any logs made by default. The systemd service is only reporting what the screen tells it, which is very much nothing seeing as rtorrent runs in ncurses-like UI.
+
+You need to enable loggin in your `rtorrent.rc` file manually. You can [read more about that here](https://github.com/rakshasa/rtorrent/wiki/LOG-Logging).
+
 ### rtorrent doesn't start up
 
 You might get a good look at what is causing the service to fail by simply running `rtorrent` while logged in as the user you're troubleshooting for. You can also check `systemctl status rtorrent@<user>`
@@ -208,3 +213,6 @@ Are you seeing this error?
 ![Rutorrent disk full error](https://i.imgur.com/NABrtlz.png)
 
 Please fix your [`quota` installation](quota.mdx).
+
+### The cloudlfare plugin does not work
+It's fine. That issue is basically cosmetic only, and you can just disable the plugin. That is done in the plugin tab in the bottom-half of the screen. Right-click on the cloudflare plugin, and disbale it.

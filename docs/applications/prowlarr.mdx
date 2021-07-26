@@ -1,0 +1,59 @@
+---
+id: prowlarr
+title: Prowlarr
+sidebar_label: Prowlarr
+---
+
+Prowlarr is a indexer manager/proxy built on the popular arr .net/reactjs base stack to integrate with your various PVR apps. Prowlarr supports both Torrent Trackers and Usenet Indexers. It integrates seamlessly with Sonarr, Radarr, Lidarr, and Readarr offering complete management of your indexers with no per app Indexer setup required (we do it all).
+
+:::danger
+Prowlarr is in the early stages of development and is considered alpha/beta.
+Please make sure to check in the [Prowlarr Discord](https://prowlarr.com/discord) about any issues you might face with the **application**.
+Anything else can go into the swizzin discord.
+Install and use with caution.
+:::
+
+## Initial Setup
+
+Installing Prowlarr is easy. Simply issue the following command:
+
+```bash main
+sudo box install prowlarr
+```
+
+This command will configure prowlarr for your user.
+
+## How to Access
+
+After Prowlarr has been installed, it will be available for access at `https://<hostname.ltd>/prowlarr`.
+
+If you don't use `nginx`, you can find it on port `9696`.
+
+## Service Management
+
+The Prowlarr service is managed by systemd and has been configured for single user usage. You can find the service file here:
+
+```
+/etc/systemd/system/prowlarr.service
+```
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="prowlarr"/>
+
+## Configuration
+In order to get this thing working, you just need to connect your sources, and then connect your arr apps.
+
+- Add your indexers
+    - Go to `Indexers` and add your sources
+- Add your arr Applications to push indexer definitions to
+    - In Prowlarr, go to `Settings` -> `Apps`
+    - Select the app to add
+    - **Append the baseurl to __arr server**. e.g. `http://localhost:8989/sonarr` for sonarr 
+    - Paste in the API key from said app (Open target app, browse to Settings -> General)
+
+
+If you need further help, you can refer to the [Prowlarr Wiki](https://wiki.servarr.com/Prowlarr) and [Prowlarr FAQ](https://wiki.servarr.com/Prowlarr_FAQ)/
+
+   
+If you are not running Prowlarr as your master user, you can set the environment variable `prowlarrOwner=<yourUser>`before the update, and the migration will respect the choice.

@@ -69,6 +69,8 @@ There are many other log files available under the `/var/log` directory which ar
 
 <a class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" tabindex="-1" name="sharing"></a>
 
+
+
 ## Sharing logs and output
 
 You can always share large logs using termbin straight from your terminal.
@@ -98,6 +100,22 @@ Nginx failing and you don't know why?
 ```bash
 sudo nginx -T | nc <fiche instance> 9999
 ``` 
+
+### Where to find logs
+Logs are all over the system. Below are just a couple ways to find some things that might be relevant. 
+
+- Issues with `box`
+    - `sudo tail -200 /root/logs/swizzin.log`
+- Issues with nginx
+    - `cat /var/logs/nginx/error.log`
+    - `nginx -t`
+- Issues with apps
+    - `systemctl status <app>` _or_ `systemctl status <app>@<(user)>`
+    - `journalctl -u <app>`
+- General issues
+    - `journalctl -xe`
+    - `dmesg`
+    - `cat /var/log/syslog`
 
 ## Connectivity
 
