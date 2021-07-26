@@ -55,4 +55,4 @@ All you need to do is run `box update`, and you will be back right on track!
 If you are unsure what is safe to do, please ask the author of the branch to provide you with instructions on how to get back.
 
 ### Preventing updates
-If you'd like to make sure that you do not go back to the master branch until you are ready, please read the [section on updating](setup#updating-mechanism).
+If you'd like to make sure that you do not go back to the master branch until you are ready, please read the [section on updating](../setup#updating-mechanism).
