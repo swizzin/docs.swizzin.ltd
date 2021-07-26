@@ -29,6 +29,7 @@
 :root {
   --ifm-background-color: #FBFBFB;
   --ifm-background-surface-color: #F0F0F0;
+  --ifm-background-color-contrast: #011627;
   --ifm-color-primary: #21c7a8;
   --ifm-color-primary-dark: #1eb397;
   --ifm-color-primary-darker: #1ca98f;
@@ -49,6 +50,7 @@
 html[data-theme='dark'] {
   --ifm-background-color: #011627;
   --ifm-background-surface-color: #010d18;
+  --ifm-background-color-contrast: #FBFBFB;
   --ifm-color-primary: #21c7a8;
   --ifm-color-primary-dark: #1eb397;
   --ifm-color-primary-darker: #1ca98f;
@@ -143,4 +145,18 @@ html[data-theme='dark'] {
 
 .code {
     font-size: var(--ifm-code-font-size);
+}
+
+.panel .admonition-heading {
+    display: none;
+}
+
+.panel .admonition.admonition-note.alert.alert--secondary {
+    background-color: var(--ifm-background-color-contrast);
+    color: var(--ifm-font-color-base-inverse);
+
+    html[data-theme='dark'] & {
+        background-color: var(--ifm-background-color-contrast);
+        color: var(--ifm-font-color-base-inverse);
+      }
 }

@@ -28,6 +28,8 @@ This means that in case you have nginx installed, you will first be asked for th
 
 ## Service Management
 
-import SystemdTabs from '../snippets/systemdtabs.mdx';
+Please note that Webmin **is not** managed by `systemd`, and therefore the standard commands do not work.
 
-<SystemdTabs service="webmin"/>
+Please see [this article](https://www.how2shout.com/how-to/restart-webmin-ubuntu-centos-linux.html) for a how-to.
+
+This means that that panel will incorrectly report the service's status, and the control items will have no effect on it. See [issue on dashboard repo here](https://github.com/liaralabs/swizzin_dashboard/issues/9) 

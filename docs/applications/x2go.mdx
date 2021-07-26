@@ -4,8 +4,25 @@ title: X2go
 sidebar_label: X2go
 ---
 
+## Installation
+
 X2Go is an open source remote desktop software for Linux that uses the NX technology protocol.
 
-import MissingDocs from '../snippets/missingdocs.md';
 
-<MissingDocs />
+```bash main
+sudo box install x2go
+```
+
+## Client Side
+
+Download the [x2go client](https://wiki.x2go.org/doku.php/doc:installation:x2goclient), get it installed, then use the information below.
+
+```plaintext
+Session Name: This is an identifier for the server.
+Host: Domain or IP Address
+Username: Your SSH/Swizzin Username
+Port: 22 (or your ssh port)
+Session Type: XFCE
+```
+
+After clicking OK, you should get a block on the right side of your screen with the details of the configuration. Click on this and you will be greeted with a login screen for you to type in your password.

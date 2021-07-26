@@ -20,25 +20,157 @@ After installation, the files are stored in `/opt/Ombi` and the configuration an
 
 ## Upgrading
 
-Ombi is installed and maintained by the unofficially provided repository. In order to keep ombi up-to-date, update your packages with:
+Ombi v4 is installed and updated from the official stable repository. In order to keep ombi up-to-date, update your packages with:
 
 ```
 sudo apt -y update
 sudo apt -y upgrade
 ```
 
+### Upgrading from v3 to v4
+If you previously had ombi v3 installed, you can upgrade to v4 using the following command.
+```bash
+box upgrade ombi
+```
+When you've upgraded to v4, you can keep your application up to date with the steps mentioned in the [upgrading](#upgrading) chapter above.
+
 ## How to Access
 
 After installation, Ombi will be available at the following web address: `https://<hostname.ltd>/ombi`
 
+## Connecting to other apps
+
+If you would like to connect ombi to other applications you installed with swizzin, please follow the guides below.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="plex"
+  values={[
+    {label: 'Plex', value: 'plex'},
+    {label: 'Emby/Jellyfin', value: 'embyfin'},
+    {label: 'Sonarr', value: 'sonarr'},
+    {label: 'Radarr', value: 'radarr'},
+    {label: 'Lidarr', value: 'lidarr'},
+    {label: 'SickRage', value: 'sickrage'},
+    {label: 'CouchPotato', value: 'couchpotato'},
+  ]}>
+  {/* FYI these need to have two newlines above and below for the text to render as markdown */}
+  <TabItem value="plex">
+
+
+  Go to **Settings** -> **Media Server** -> **Plex**
+  
+  1. Click on "Add Server"
+  2. Connect your server through either one of the two
+     - Plex tokens (easier)
+       1. Fill in your password ans username
+       1. Press "Load Servers"
+       1. Select your Plex server
+     - Manually
+       - Hostname: `localhost`
+       - Port: `32400`
+       - SSL: **`OFF`**
+       - Plex auth token: [Use guide here](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/)
+       - Machine identifier: [Use guide here](https://forums.plex.tv/t/extract-machine-id-from-database-due-missing-preferences-xml/520080/3)
+  3. Press "Test Connectivity"
+  3. Press "Submit"
+  4. Load your libraries and select which ones to track
+  3. Press "Submit"  
+
+
+  </TabItem>
+  <TabItem value="sonarr">
+  
+
+  1. Fill in the following fields:
+     - Sonarr Hostname/IP = `localhost`
+     - Port: `8989`
+     - API Key: Retrieve from Sonarr -> Settings -> General and copy the API Key value
+     - SSL: **`OFF`**
+     - Sonarr base URL: `/sonarr/`
+  2. Test the connection
+  3. Press "Submit"
+  4. Load and choose qualities
+  5. Load and choose folder
+  6. _(if on Sonarr v3)_ Load and choose languages
+
+
+  </TabItem>
+    <TabItem value="radarr">
+  
+
+  1. Fill in the following fields:
+     - Radarr Hostname/IP = `localhost`
+     - Port: `7878`
+     - API Key: Retrieve from Radarr -> Settings -> General and copy the API Key value
+     - SSL: **`OFF`**
+     - Radarr base URL: `/Radarr/`
+  2. Test the connection
+  3. Press "Submit"
+  4. Load and choose qualities
+  5. Load and choose folder
+
+
+  </TabItem>    
+  <TabItem value="lidarr">
+  
+
+  1. Fill in the following fields:
+     - Lidarr Hostname/IP = `localhost`
+     - Port: `8686`
+     - API Key: Retrieve from Lidarr -> Settings -> General and copy the API Key value
+     - SSL: **`OFF`**
+     - Lidarr base URL: `/lidarr/`
+  2. Test the connection
+  3. Press "Submit"
+  4. Load and choose qualities
+  5. Load and choose folder
+
+
+  </TabItem>
+  <TabItem value="sickrage">
+  
+
+  
+  **No instructions yet!** Please let us know if you set this up correctly so we can add the values, or PR these in. thanks!
+  
+
+
+  </TabItem>
+  <TabItem value="couchpotato">
+  
+
+  
+  **No instructions yet!** Please let us know if you set this up correctly so we can add the values, or PR these in. thanks!
+  
+
+
+  </TabItem>
+    <TabItem value="embyfin">
+
+  - Hostname/IP: `localhost`
+  - Port: `8096`
+  - SSL: `Off`
+  - API Key: _(Retrieve from Jellyfin -> Dashbaord -> Advanced -> API Keys)_
+  - Externally facing hostname: _(Your server domain/IP)_
+  - Server ID: _(Retrieve from Jellyfin -> Discover server information)_
+
+
+  </TabItem>
+
+</Tabs>
+
+
 ## Service Management
 
-The systemd service for Ombi is not enabled for use in a multi-user environment.
+The systemd service for Ombi is not enabled for use in a multi-user environment, and it comes directly from the package itself.
 
-The service file resides at:
+In order for ombi to play well in our environment, we supply a `systemd` override file located in the path below.
 
-```bash main
-/etc/systemd/system/ombi.service
+```
+/etc/systemd/system/ombi.service.d/override.conf
 ```
 
 import SystemdTabs from '../snippets/systemdtabs.mdx';

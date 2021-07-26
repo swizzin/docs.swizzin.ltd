@@ -11,12 +11,12 @@
     "serve": "docusaurus serve"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.66",
-    "@docusaurus/plugin-ideal-image": "^2.0.0-alpha.66",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.66",
-    "@docusaurus/theme-search-algolia": "^2.0.0-alpha.66",
+    "@docusaurus/core": "^2.0.0-alpha.73",
+    "@docusaurus/plugin-ideal-image": "^2.0.0-alpha.73",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.73",
+    "@docusaurus/theme-search-algolia": "^2.0.0-alpha.73",
     "clsx": "^1.1.1",
-    "docusaurus-plugin-sass": "^0.1.11",
+    "docusaurus-plugin-sass": "^0.1.12",
     "react": "^16.14.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.14.0",

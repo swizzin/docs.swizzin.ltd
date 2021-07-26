@@ -6,6 +6,46 @@ sidebar_label: Sabnzbd
 
 SABnzbd is a multi-platform binary newsgroup downloader. The program works in the background and simplifies the downloading verifying and extracting of files from Usenet. SABnzbd uses NZB files (similar to .torrent files, but for Usenet), instead of browsing Usenet directly.
 
-import MissingDocs from '../snippets/missingdocs.md';
+## Initial Setup
 
-<MissingDocs />
+Installing SABnzbd is easy. Simply issue the following command from SSH:
+
+```bash main
+sudo box install sabnzbd
+```
+
+This command will configure SABnzbd for your user.
+
+## How to Access
+
+After installation, you can access SABnzbd at the url: `https://<yourhostname.ltd>/sabnzbd`
+
+## Service Management
+
+SABnzbd is enabled for use with multiple users. Thus, you must call it with the username of the instance to start.
+
+The systemd service file resides at:
+
+```bash main
+/etc/systemd/system/sabnzbd@.service
+```
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="sabnzbd@<username>"/>
+
+## Configuration
+
+If you are unfamiliar with SABnzbd, please check out their [documentation](https://sabnzbd.org/wiki/) for assistance in getting your news groups setup or learning how to setup post-processing.
+
+## Connect to other clients
+
+The general settings for connecting SABnzbd to other clients are as follows:
+
+- Host: `127.0.0.1`
+- Control Port: `443`
+- URL Base: `sabnzbd`
+- SSL: `ON`
+- Username: `<your slot username>`
+- Password: `<your slot password>`
+

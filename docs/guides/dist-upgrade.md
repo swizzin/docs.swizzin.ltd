@@ -42,14 +42,13 @@ That's a large scary warning, yes. Please think twice about performing the follo
 
 The absolute best time to perform an upgrade is **before you install swizzin**; however, it's still possible to do a distribution upgrade after installation, but it may be more tricky. The reason it's easier is that nothing has been installed or configured yet. When everything gets installed for the first time, it'll be installed correctly for the OS and won't need to be (potentially tweaked).
 
-swizzin currently supports 5 distributions:
+swizzin currently supports these distributions:
 
 Debian:
 - Stretch (oldstable)
 - Buster (stable)
 
 Ubuntu:
-- Xenial (16.04 LTS)
 - Bionic (18.04 LTS)
 - Focal (20.04 LTS)
 

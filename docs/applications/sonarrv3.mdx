@@ -1,7 +1,7 @@
 ---
 id: sonarrv3
-title: Sonarr v3 aka "Phantom"
-sidebar_label: Sonarr v3
+title: Sonarr v3
+sidebar_label: Sonarr
 ---
 
 Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
@@ -59,11 +59,13 @@ You should generally follow the following steps at your own risk.
 
 ## Service Management
 
-Service status for sonarr is handled by systemd. Despite the service being enabled for multi-user usage, Sonarr itself has not been configured for usage on more than one user account with swizzin. Regardless, as a multi-user service, you must append the username of the service you need to modify follow the `@` sign. The systemd service file resides at
+Service status for sonarr is handled by systemd and is owned by the `sonarr` package. The systemd service file resides at
 
 ```bash main
-/etc/systemd/system/sonarr@.service
+/lib/systemd/system/sonarr.service
 ```
+
+It is not recommended to make alterations directly to this file. Rather, use `systemctl edit sonarr` if you would like to make adjustments.
 
 import SystemdTabs from '../snippets/systemdtabs.mdx';
 
@@ -84,6 +86,7 @@ Out of the box, Sonarr comes with very little pre-set configuration. Following a
 6. Click the green + to add the show.
 
 ### Connect download clients
+
 import Conn4Arrs from '../snippets/conn4arr.mdx';
 
 <Conn4Arrs />
@@ -115,6 +118,34 @@ API: <copy and paste from jackett UI>
 ```
 4. Click `Test`. If all is good, click `Save`.
 
+### Add an indexer with NZBHydra
+Sonarr only supports a few indexers out of the box, but the indexers can be expanded by using the application [NZBHydra](nzbhydra.mdx). To add an indexer with NZBHydra, use the following steps.
+
+:::note
+By default, when receiving the newznab feeds from NZBHydra, it will need to be modified to be connected with the application. The default link looks like:
+
+```plaintext
+https://<yourhostname.ltd>/nzbhydra/api
+```
+
+We need to edit this link to **remove https**, **change your host to localhost** and **add the port number**. Thus, if your port number was `5076`, your edited URL would look like this:
+
+```plaintext
+http://localhost:5076/nzbhydra/api
+```
+:::
+
+1. Go to `Settings > Indexers` and click `+` to add a new indexer.
+2. Under `Usenet` choose `Newznab`
+3. Use the settings:
+```plaintext main
+Name: NZBHydra2
+URL: <click copy Newznab feed in NZBHydra and modify as per above>
+API: <copy and paste from NZBHydra UI>
+```
+4. Click `Test`. If all is good, click `Save`.
+
+
 ### Sonarr and user homedir permissions
 Sonarr is running as the master user (unless changed in install options using parameters), so that user needs to be able to see the directories you'd like sonarr to see as well. You can achieve this by adding the desired user to the group of whoever runs the sonarr process. e.g. `usermod -a -G <user with data> <master/sonarrv3owner>`
 
@@ -143,9 +174,10 @@ Therefore, you could achieve a downgrade with the following (untested!) example 
 ```bash
 box remove sonarrv3
 box install sonarr
-systemctl stop sonarr
+systemctl stop sonarr@<master>
 cd /home/<master>/.config
 mv sonarr sonarrv3bak
 cp /root/swizzin/backups/sonarrv2.back./* NzbDrone/
-systemctl start sonarrv3
+chown -R <master>:<master> NzbDrone
+systemctl start sonarr@<master>
 ```

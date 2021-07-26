@@ -4,7 +4,8 @@ title: Radarr
 sidebar_label: Radarr
 ---
 
-Radarr is an independent fork of Sonarr reworked for automatically downloading movies via Usenet and BitTorrent.
+Radarr is a movie collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new movies and will interface with clients and indexers to grab, sort, and rename them. 
+It can also be configured to automatically upgrade the quality of existing files in the library when a better quality format becomes available.
 
 ## Initial Setup
 
@@ -15,6 +16,20 @@ sudo box install radarr
 ```
 
 This command will configure radarr for your user.
+
+### Optional parameters
+import InstallOptsWarning from '../snippets/installoptswarning.md';
+
+<InstallOptsWarning />
+
+The following is an example of how this would look
+
+```bash main
+export radarrOwner='autodlbot'
+```
+
+- `radarrOwner`
+  - Used to specify a non-master user which radarr will run as after the installation.
 
 ## How to Access
 
@@ -33,51 +48,56 @@ import SystemdTabs from '../snippets/systemdtabs.mdx';
 <SystemdTabs service="radarr"/>
 
 ## Configuration
+The Radarr Team built a detailed [Quick Start Guide](https://wiki.servarr.com/Radarr_Quick_Start_Guide).
+[Radarr's FAQ](https://wiki.servarr.com/Radarr_FAQ) may be of additional use as well.
 
-Out of the box, Radarr comes with very little configuration. Following are some basic tasks to help get your client up and running:
+Out of the box, Radarr comes with no configuration, so you'll need to set it up!
 
-### Add a new show (and your first root directory)
-
-1. At the top, click series.
-2. Click the button `+ Add Movie`
-3. Type the name of the show you want to add
-4. Under `Path`, choose `Add a new path`. Enter the path for the folder you wish to add your Sonarr shows to and click the green check mark to add the directory.
-  - e.g. `/home/<username>/media/Movies`
-5. Change the other settings to your own needs
-6. Click the green + to add the show.
-
-### Connect download clients
-import Conn4Arrs from '../snippets/conn4arr.mdx';
+Some important Swizzin specific information to note:
+### Connect download clients	
+import Conn4Arrs from '../snippets/conn4arr.mdx';	
 
 <Conn4Arrs />
 
-### Add an indexer with Jackett
-Radarr only supports a few trackers out of the box, but the indexers can be expanded by using the application [Jackett](jackett.mdx). To add an indexer with Jackett, use the following steps.
+### Add an indexer with Jackett	
+Radarr only supports a few trackers out of the box, but the indexers can be expanded by using the application [Jackett](jackett.mdx). To add an indexer with Jackett, use the following steps.	
 
-:::note
-By default, when receiving the torznab feed from Jackett, it will need to be modified to be connected with the application. The default link looks like:
+:::note	
+By default, when receiving the torznab feed from Jackett, it will need to be modified to be connected with the application. The default link looks like:	
 
-```plaintext
-https://<yourhostname.ltd>/jackett/api/v2.0/indexers/yourtracker/results/torznab/
-```
+```plaintext	
+https://<yourhostname.ltd>/jackett/api/v2.0/indexers/yourtracker/results/torznab/	
+```	
 
-We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `12345`, your edited URL would look like this:
+We need to edit this link to **remove https** and **add the port number**. Thus, if your port number was `12345`, your edited URL would look like this:	
 
-```plaintext
-http://<yourhostname.ltd>:12345/jackett/api/v2.0/indexers/yourtracker/results/torznab/
-```
-:::
+```plaintext	
+http://<yourhostname.ltd>:12345/jackett/api/v2.0/indexers/yourtracker/results/torznab/	
+```	
+:::	
 
-1. Go to `Settings > Indexers` and click `+` to add a new indexer.
-2. Under `Torrent` choose `Torznab`
-3. Use the settings:
-```plaintext main
-Name: <tracker name>
-URL: <click copy torznab feed in jackett and modify as per above>
-API: <copy and paste from jackett UI>
-```
+1. Go to `Settings > Indexers` and click `+` to add a new indexer.	
+2. Under `Torrent` choose `Torznab`	
+3. Use the settings:	
+```plaintext main	
+Name: <tracker name>	
+URL: <click copy torznab feed in jackett and modify as per above>	
+API: <copy and paste from jackett UI>	
+```	
 4. Click `Test`. If all is good, click `Save`.
 
-### Other tasks
+## Migrating to v3 on .Net Core 
 
-You may wish to further alter your setup by setting quality profiles or setting up post-processing so that media is automatically transferred to your Radarr library when your torrents are completed. If you need further help, you can refer to the [Radarr Wiki](https://github.com/Radarr/Radarr/wiki).
+Please follow the steps below to make sure you are using the Radarr v3 on the .Net binary
+- Upgrade mono-based v0.2 to mono-based v3
+    1. Trigger a backup manually by going to System -> Backup and press the "Backup" Button. Wait until the process has finished.
+    1. Change the Release branch by going to Settings -> General -> Updates (ensure Advanced settings are shown), set the Branch value to `develop` and then press the Save button.
+    1. Go to System -> Updates and install the latest update which should be version 3.x+
+    1. Refresh your browser while emptying cache (CTRL+SHIFT+R on most browsers)
+    1. Confirm you're running on version 3.x+ In System
+    1. Change your branch back to `master`
+- Migrate mono-based v3 to .Net-based v3
+    1. Run `sudo box update`, which should Print out "`Moving Radarr from mono to .Net`" When the migration to .net has begun
+    1. Refresh your browser while emptying cache (CTRL+SHIFT+R on most browsers)
+    
+If you are not running Radarr as your master user, you can set the environment variable `radarrOwner=<yourUser>`before the update, and the migration will respect the choice.
