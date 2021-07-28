@@ -31,7 +31,7 @@ module.exports = {
                     "applications/ombi",
                     "applications/sickchill",
                     "applications/sickgear",
-                    "applications/sonarrv3",
+                    "applications/sonarr",
                     // "applications/sonarrv2-old",
                     "applications/radarr",
                     "applications/prowlarr",
