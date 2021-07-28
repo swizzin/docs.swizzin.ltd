@@ -167,12 +167,8 @@ const data = [
     url: "applications/sickgear",
   },
   {
-    title: "Sonarr v2",
+    title: "Sonarr",
     url: "applications/sonarr",
-  },
-  {
-    title: "Sonarr v3",
-    url: "applications/sonarrv3",
   },
   {
     title: "Swizzin Panel",
