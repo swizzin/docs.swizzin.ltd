@@ -68,6 +68,8 @@ Functions can be moved out of this file and split into their own if it makes sen
 #### Python functions for `pyenv` and `venv`
 _Documented inline_
 
+These functions handle the installation of the required python versions and creating virtual environments for applications. Please refer to the existing use of these functions in source code.
+
 #### `tests`
 _Documented **thoroughly** inline_
 
