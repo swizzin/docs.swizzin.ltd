@@ -36,6 +36,22 @@ The script should generally do the following, if it applies.
 
 It is _heavily_ encouraged to compartmentalise your code into bash functions which are then executed in sequence at the bottom of the file. This provides a better visual segmentation of the code, as well as a better semantic separation which helps with maintenance.
 
+### Test
+This dir contains logic to run when `box test [app]*` is executed directly, or indirectly after some `box` commands while on "unstable" or "development" installs.
+
+**Unless a file for the specific application is present in this directory**, the default test is ran with the application's name passed to it.
+
+Generally, a testing scenario (be it via the default script or the ad-hoc script) should achieve the following:
+- Check if services are running
+- Check if the application has open ports on the local network (e.g. checking port `8080` is open and being listened to)
+- Check if the port is responding to HTTP requests (e.g. checking `localhost:56789`)
+- Check if the application is accessible via the reverse proxy (e.g. `localhost/deluge`)
+  - This should include an authentication to the proxy unless the authentication is outside of nginx's control
+- Any additional functional test to verify that the system is responding correctly
+  - e.g. if the system user is able to read/write into a user's directory
+
+There are cases when no tests really apply (e.g. `ffmpeg`), and so a "dummy" test file can be required in some instances.
+
 ### Remove
 `scripts/remove/`
 This directory contains the script that will be executed when `box remove <app>` is executed, which will directly invoke `scripts/remove/<app>.sh`
