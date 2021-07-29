@@ -45,21 +45,20 @@ Available functions are:
     - Can filter results based on a key "directory".
 
 #### `os` functions
-_documented in the file itself_
+_Documented in the file itself_
 
 #### `user` functions
-_documented in the file itself_
+_Documented in the file itself_
 
 
 #### Echo functions
-_documented in Contributors.md_
+_Documented in Contributors.md_
 
 
 #### Apt functions
-_documented in Contributors.md_
+_Documented in Contributors.md_
 
 ### Functions that need to be `source`d
-
 
 #### `utils`
 This file contains various functionality which is difficult to separate or justify an entire file for. It is **not** included in `globals.sh` by default.
@@ -67,3 +66,9 @@ This file contains various functionality which is difficult to separate or justi
 Functions can be moved out of this file and split into their own if it makes sense, but that's a really loose definition and is usually discussed at PR-level. Obviously, if that happens, corrective action needs to be done wherever the functions were used, and the scripts that use it should vaguely be re-tested.
 
 #### Python functions for `pyenv` and `venv`
+_Documented inline_
+
+#### `tests`
+_Documented **thoroughly** inline_
+
+This file contains small tests which will often attempt to guess at best testing values unless supplied (e.g. ports, or baseurls). Please read the inline documentation thoroughly.
