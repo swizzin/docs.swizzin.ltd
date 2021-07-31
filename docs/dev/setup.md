@@ -68,6 +68,11 @@ We have made a couple ways to make sure that you can skip that, so that you can 
    *  This should be done for you if you ran `setup.sh` when it was located in `/etc/swizzin` with `--local`
    *  You can do `touch /etc/swizzin/.dev.lock`
 
+
+## Testing mechanism
+If box determines that your local setup is not a standard square setup, `box test` will be performed whenever you install, remove, update, upgrade or add/remove users. This is _intended_. Please use this to check that your scripts work correctly, and report any abnormalities/bad test results.
+
+
 ## Working across forks
 If you need a branch from someplace else, please use the GitHub CLI tool `gh`
 
