@@ -20,6 +20,7 @@ In order to use the installer and management functions on your slot, you'll need
 - chpasswd
 - panel fix-disk
 - list
+- test
 
 :::tip Tip
 Since `box` is considered a complete box management script, its functions require root/sudo permissions to execute. The guide will assume that you're either a root user or prefixing the commands with `sudo`
@@ -111,4 +112,13 @@ This function lists the applications currently available for installation and a 
 Syntax:
 ```bash
 box list
+```
+
+## Test
+You can use this in order to perform a sanity check about the status of installed applications. Primarily intended for CI, but might as well let you know.
+
+Syntax:
+```bash
+box test # Tests all installed apps
+box test sonarr radarr # Tests only specified app(s)
 ```
