@@ -45,8 +45,9 @@ The absolute best time to perform an upgrade is **before you install swizzin**; 
 swizzin currently supports these distributions:
 
 Debian:
-- Stretch (oldstable)
-- Buster (stable)
+- Stretch (oldoldstable)
+- Buster (oldstable)
+- Bullseye (stable)
 
 Ubuntu:
 - Bionic (18.04 LTS)
@@ -65,7 +66,7 @@ Thus, we need to replace all mention of stretch with buster in the file `/etc/ap
 You can either `sudo nano /etc/apt/sources.list` and change all instances of `stretch` to `buster` or issue the following command:
 
 ```bash main
-sed -i 's/stretch/buster/g' /etc/apt/sources.list
+sed -i 's/buster/bullseye/g' /etc/apt/sources.list
 ```
 
 This simple `sed` command simply states: find the word stretch, replace it with buster in the file `/etc/apt/sources.list.
@@ -77,7 +78,9 @@ sudo apt -y update
 sudo apt upgrade
 ```
 
-This will take some time. Hundreds (if not 1000+) packages will be downloaded and updated. Please be patient: consider grabbing a coffee or a beer.
+If you receive an error regarding any repositories without release files, please double check your sources. Certain repos (like Debian's security updates) repository may not yet exist and will throw a hard error. This won't prevent you from using `apt` by command line, but the hard error will cause any apt-based installs while using `box` to fail.
+
+The update, once started, will take some time. Hundreds (if not 1000+) packages will be downloaded and updated. Please be patient: consider grabbing a coffee or a beer.
 
 Once this command finishes, we need to complete the upgrade with a `dist upgrade`:
 
@@ -132,6 +135,20 @@ Deluge shouldn't have any issues with the upgrade, but if Deluge fails to start,
 ```bash main
 sudo box upgrade deluge
 ```
+
+#### Python3 virtual environments
+
+Applications which require the use of virtual environments will likely be broken following a dist-upgrade as the python3 symlinks to the system binaries and any venv specific dependencies will no longer be pointing to the correct location. Python venvs will need to be redeployed.
+
+For example, to fix the panel after a dist-upgrade, the following steps should fix the python venv for the panel
+
+```bash
+python3 -m venv /opt/.venv/swizzin
+/opt/.venv/swizzin/bin/pip install -r /opt/swizzin/requirements.txt
+systemctl restart panel
+```
+
+Depending on the application and the amount of configuration you have done, it may be easier to simply back up your app configuration and reinstall the application entirely and restore your backup.
 
 #### Other packages
 
