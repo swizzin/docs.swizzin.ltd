@@ -74,7 +74,7 @@ module.exports = {
                 collapsed: true,
                 items: [
                     "applications/airsonic",
-                    "applications/calibre-web",
+                    "applications/calibreweb",
                     "applications/emby",
                     "applications/jellyfin",
                     "applications/mango",
