@@ -1,0 +1,107 @@
+---
+id: calibre-web
+title: Calibre-Web
+sidebar_label: Calibre-Web
+---
+
+Calibre-web is a graphical web frontend for a Calibre Library with many very useful features, such as user management, on-the-fly conversion, Send-to-Kindle and Kobo Sync API.
+
+## Initial Setup
+
+Installing Calibre-web is easy. Simply issue the following command from SSH:
+
+```bash main
+sudo box install calibre-web
+```
+
+This command will configure and install Calibre-web.
+
+You will then be able to access it through either `http://domain.tld/calibre` or `http://domain.tld:8083`, depending on whether or not you have nginx installed.
+
+### Options
+
+import InstallOptsWarning from '../snippets/installoptswarning.md';
+
+<InstallOptsWarning />
+
+- `CALIBRE_LIBRARY_USER`:
+  - Default: The name of the master user
+  - Adds the dedicated calibre-web user to the group of this user
+  - Used to infer possible calibre library path if not specified (see below)
+  - Calibre-web's admin password will be set to the value of this user's password
+
+- `CALIBRE_LIBRARY_PATH`:
+   - Default
+      - If exists, then: `/home/$CALIBRE_LIBRARY_USER/Calibre Library`
+      - Otherwise unset, which will skip the library setup and password change procedure
+   - Used to set up the calibre-web basic setup
+
+
+## Post-install
+1. _*_ Link to your instance of the Calibre Library folder
+   - _* Note: swizzin should do this for you during install in most cases. You should be told in the output if you need to do this_
+   - For example `/home/masteruser/Calibre Library`
+   - _Note:_ If you installed calibre through swizzin, this step will be done for you
+   - If you would like to add your existing library, you will need to give the `calibreweb` system user access to your library with these commands:
+      - ```bash
+      # Replace $theuser with the name of the user which has the library files
+      sudo usermod -a -G $theuser calibreweb
+      sudo chmod 750 -R /home/$theuser
+      sudo chmod 770 /home/$theuser/path/to/library
+      systemctl restart calibre-web
+      ```
+2. _*_ Change the password of the admin user 
+   - _* Note: swizzin should do this for you during install in most cases. You should be told in the output if you need to do this_
+   - Log in to calibre using `admin`:`admin123`
+   - Go to `http://<domain>/calibre/me` and change the password there.
+      - You might need to fill in an email address for this action to work
+4. Change the name of the admin user
+   - Log in to calibre using `admin`:`<your password>`
+   - Go to `http://<domain>/calibre/me` and change the details there
+      - You might need to fill in an email address for this action to work
+3. Link or install necessary binaries
+   - Go to `https://<domain>/calibre-web/admin/config` and open the "External binaries" section at the bottom
+   - Calibre e-book converter should be in **either** of these paths
+      - `/usr/bin/ebook-convert` (if installed via apt)
+      - `/opt/calibre/ebook-convert` (if installed through calibre installer)
+   - Kepubify is installed in `/usr/local/bin/kepubify`
+   - If you have `unrar` installed (`apt install unrar`), it will be in `/usr/local/bin/kepubify`
+3. Set up SMTP
+   - Get an SMTP gate and credentials
+   - External guide goes here
+4. **Optional:** configure the direct Google Drive support
+   - Please check [this article](https://github.com/janeczku/calibre-web/wiki/Configuration#using-google-drive-integration) for the appropriate steps
+   - You only need to do this when you want to keep your entire library in google drive, not if you're using rclone etc.
+
+## User management
+Calibre-web has its own internal user database **which swizzin does not manage in any way**. Please manage your users through the web interface.
+
+## Service management
+
+Calibre-web runs as its own single process with its own system user.
+
+The systemd service for calibre-web resides here:
+
+```bash
+/etc/systemd/system/calibre-web.service
+```
+
+You can use the following commands to manage the service.
+
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="calibre-web"/>
+
+
+## Troubleshooting
+
+import Troubleshooting from '../snippets/troubleshooting.md';
+
+<Troubleshooting />
+
+Please make sure to consult the [issues](https://github.com/janeczku/calibre-web/issues) of Calibre-web and the [expansive wiki of the project](https://github.com/janeczku/calibre-web/wiki). 
+
+### Verbose output
+Calibre-web stores its logs in `/opt/calibre-web/calibre-web.log` and optionally `/opt/calibre-web/access.log`.
+
+You can increase the verbosity of the log level by going to `http://domain.tld/calibre/admin/config`, opening the "Logfile Configuration" section and changing the level there.

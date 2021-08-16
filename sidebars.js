@@ -74,6 +74,7 @@ module.exports = {
                 collapsed: true,
                 items: [
                     "applications/airsonic",
+                    "applications/calibre-web",
                     "applications/emby",
                     "applications/jellyfin",
                     "applications/mango",
@@ -110,6 +111,7 @@ module.exports = {
                 label: "Utilities",
                 collapsed: true,
                 items: [
+                    // "applications/calibre",
                     "applications/duckdns",
                     "applications/ffmpeg",
                     "applications/filebrowser",
