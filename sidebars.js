@@ -22,6 +22,7 @@ module.exports = {
                 label: "Automation",
                 collapsed: true,
                 items: [
+                    "applications/autobrr",
                     "applications/autodl",
                     "applications/bazarr",
                     // "applications/couchpotato",
