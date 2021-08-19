@@ -11,7 +11,9 @@ swizzin was designed to be an easy to use, modular seedbox solution.
 
 ### Supported Operating Systems
 
-- Debian 9 and 10
+We only support Debian and Ubuntu LTS (Long term support) systems. Explicitly, that means the following:
+
+- Debian 9, 10 and 11
 - Ubuntu 18.04 and 20.04
 
 ### Recommended Hardware
@@ -19,9 +21,11 @@ swizzin was designed to be an easy to use, modular seedbox solution.
 - A KVM VPS or bare metal server is recommended
 - 2+ CPU cores KVM or Intel Atom c2750
 - 4 GB of RAM
-- An x86_64 (64-bit) processor is required
+- A processor compliant with one of the following architectures is required:
+    - `x86_64`/`amd64` e.g. any modern computer/server)
+    - `aarch64`/`arm64` e.g. Apple Silicon, Raspberry Pi 2 v1.2 or newer (ARMv8)
 
-With the exception of a 64-bit processor, these are not hard and fast requirements -- you may find that you're able to get away with running on a weaker CPU or less RAM; however, best performance will be had if the applications you're using have ample resource overhead.
+With the exception of the processor architecture, these are not hard and fast requirements -- you may find that you're able to get away with running on a weaker CPU or less RAM; however, best performance will be had if the applications you're using have ample resource overhead.
 
 ## Installation
 
