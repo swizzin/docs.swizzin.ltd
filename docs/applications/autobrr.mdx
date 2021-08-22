@@ -4,7 +4,16 @@ title: Autobrr
 sidebar_label: Autobrr
 ---
 
-A powerful modern autodl alternative, which monitors IRC announce channels to get releases as soon as they are available and send to your favorite client.
+A powerful modern autodl alternative, which monitors IRC announce channels to get releases as soon as they are available and send to your favorite client or to arr's and let them decide to download or not.
+
+Supported actions/clients:
+* qBittorrent
+* Deluge
+* Radarr
+* Sonarr
+* Lidarr
+* Save to watch folder
+* Run custom commands
 
 :::danger
 Autobrr is in the early stages of development and is considered alpha/beta.
@@ -33,7 +42,7 @@ sudo box upgrade autobrr
 
 After autobrr has been installed, it will be available for access at `https://<hostname.ltd>/autobrr`.
 
-If you don't use `nginx`, you can find it on port `8989`.
+The port is randomized at setup, so if you don't use `nginx`, or just need to find the port, check in `/home/user/.config/autobrr/config.toml`.
 
 ## Service Management
 
