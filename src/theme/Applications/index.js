@@ -11,6 +11,10 @@ const data = [
     url: "applications/airsonic",
   },
   {
+    title: "Autobrr",
+    url: "applications/autobrr",
+  },
+  {
     title: "AutoDL-irssi",
     url: "applications/autodl",
   },

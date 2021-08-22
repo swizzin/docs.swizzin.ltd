@@ -1,0 +1,70 @@
+---
+id: autobrr
+title: Autobrr
+sidebar_label: Autobrr
+---
+
+A powerful modern autodl alternative, which monitors IRC announce channels to get releases as soon as they are available and send to your favorite client or to arr's and let them decide to download or not.
+
+Supported actions/clients:
+* qBittorrent
+* Deluge
+* Radarr
+* Sonarr
+* Lidarr
+* Save to watch folder
+* Run custom commands
+
+:::danger
+Autobrr is in the early stages of development and is considered alpha/beta.
+Install and use with caution.
+:::
+
+## Initial Setup
+
+Installing autobrr is easy. Simply issue the following command:
+
+```bash main
+sudo box install autobrr
+```
+
+This command will configure autobrr for your user.
+
+## Upgrade
+
+Upgrading autobrr is as easy. Simply issue the following command:
+
+```bash main
+sudo box upgrade autobrr
+```
+
+## How to Access
+
+After autobrr has been installed, it will be available for access at `https://<hostname.ltd>/autobrr`.
+
+The port is randomized at setup, so if you don't use `nginx`, or just need to find the port, check in `/home/user/.config/autobrr/config.toml`.
+
+## Service Management
+
+Multi-user is enabled, so in order to manipulate the service, you'll also need to specify a username.
+
+```
+/etc/systemd/system/autobrr@.service
+```
+
+import SystemdTabs from "../snippets/systemdtabs.mdx";
+
+<SystemdTabs service="autobrr@<username>" />
+
+## Configuration
+
+In order to get autobrr working, you need to do the following steps:
+
+- Setup indexers
+  - Go to `Settings/Indexers` and add indexers
+- Setup irc
+  - Go to `Settings/Irc` and add networks and channels.
+- Setup download clients
+  - Go to `Settings/Clients` and add your download clients.
+- Add filters
+  - They work similar to autodl-irssi filters.
