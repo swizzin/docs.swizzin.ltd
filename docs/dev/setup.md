@@ -70,7 +70,9 @@ We have made a couple ways to make sure that you can skip that, so that you can 
 
 
 ## Testing mechanism
-If box determines that your local setup is not a standard square setup, `box test` will be performed whenever you install, remove, update, upgrade or add/remove users. This is _intended_. Please use this to check that your scripts work correctly, and report any abnormalities/bad test results.
+You can run `box test` to test whether all packages are performing as intended. You can supply a specific set of packages (e.g. `box test app1 app2`) to test specifically those.
+
+If you create  `.test.lock` in `/etc/swizzin`, the test will be performed on every applicable `box` command executed (package and user management ones)
 
 
 ## Working across forks
