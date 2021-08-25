@@ -41,12 +41,13 @@ function QuickStart() {
           </div>
 
           <div className="col col--5">
-              <InstallCmd />
-              <div className={styles.platforms}>
+            <InstallCmd />
+            <div className={styles.platforms}>
               <h3>Supported Platforms</h3>
               <div>
                 <DiDebian size={size} />
                 <DiUbuntu size={size} />
+                <p>(Supports amd64 and arm64)</p>
               </div>
             </div>
           </div>

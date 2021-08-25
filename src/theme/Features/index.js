@@ -13,7 +13,7 @@ const data = [
   },
   {
     title: <>All the apps you need</>,
-    description: ( 
+    description: (
       <>From autodl to ZNC and everything in between, you won't need to look elsewhere</>
     ),
   },
@@ -56,23 +56,29 @@ const data = [
   {
     title: <>Stability first</>,
     description: (
-      <>Built to make those uptimes grow, but not to keep you on last decade's releases</>
+      <>Built to make those uptimes grow, but not to keep you on last decade's releases. Want features earlier? Switch to the develop branch.</>
+    ),
+  },
+  {
+    title: <>Runs even on Raspberry Pis</>,
+    description: (
+      <>If your machine can run 64-bit, it can run our scripts</>
     ),
   },
 
 ];
 
 function shuffleArray(array) {
-    let i = array.length - 1;
-    for (; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    const shuffled = array.splice(6, 3);
-    return array;
+  let i = array.length - 1;
+  for (; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
   }
+  const shuffled = array.splice(6, 3);
+  return array;
+}
 
 function Feature({ title, description }) {
   return (

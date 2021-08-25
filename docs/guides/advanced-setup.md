@@ -46,8 +46,8 @@ Please note that none of the values that you set here are checked for validity o
     * The only exception to this are the packages specified on the CLI. If they are specified after the `--env`, they will get added to the list.
 ### `--post-command`
   * Takes a string variable with commands to execute at the end of the installation script
-### `--run-checks`
-  * When set, checks defined in installers will be ran to confirm a succesful install. The output will be printed into stdout.
+### `--tests`
+  * When set, all packages will be tested using `box test` after the installation.
 ### `[package(s)]`
   * Any other arguments are treated as a name of a swizzin package to install.
   * **The order of packages matters**, if a package requires another as a dependency and its absence would make an installer fail, make sure to put the dependency first
@@ -88,6 +88,8 @@ local=true
 ## packages to install separated by colons.
 ## **The order of packages matters**, if a package requires another as a dependency and its absence would make an installer fail, make sure to put the dependency first
 packages=nginx:panel:transmission:letsencrypt
+## run `box test` for all installed testable packages
+test=true
 # PACKAGE SPECIFIC OPTIONS
 ## LetsEncrypt options ((https://docs.swizzin.ltd/applications/letsencrypt#install-options))
 LE_hostname="domain.tld"
