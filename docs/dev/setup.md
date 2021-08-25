@@ -68,6 +68,13 @@ We have made a couple ways to make sure that you can skip that, so that you can 
    *  This should be done for you if you ran `setup.sh` when it was located in `/etc/swizzin` with `--local`
    *  You can do `touch /etc/swizzin/.dev.lock`
 
+
+## Testing mechanism
+You can run `box test` to test whether all packages are performing as intended. You can supply a specific set of packages (e.g. `box test app1 app2`) to test specifically those.
+
+If you create  `.test.lock` in `/etc/swizzin`, the test will be performed on every applicable `box` command executed (package and user management ones)
+
+
 ## Working across forks
 If you need a branch from someplace else, please use the GitHub CLI tool `gh`
 
