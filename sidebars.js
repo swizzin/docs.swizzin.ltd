@@ -29,6 +29,7 @@ module.exports = {
                     // "applications/headphones",
                     "applications/lidarr",
                     "applications/medusa",
+                    "applications/mylar",
                     "applications/ombi",
                     "applications/sickchill",
                     "applications/sickgear",

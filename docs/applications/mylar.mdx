@@ -1,0 +1,47 @@
+---
+id: mylar
+title: Mylar3
+sidebar_label: Mylar
+---
+
+Mylar is an automated Comic Book (cbr/cbz) downloader program for use with NZB and torrents.
+
+Mylar allows you to create a watchlist of series that it monitors for various things (new issues, updated information, etc). It will grab, sort, and rename downloaded issues. It will also allow you to monitor weekly pull-lists for items belonging to said watchlisted series to download, as well as being able to monitor and maintain story-arcs.
+
+## Initial Setup
+
+Installing Mylar is easy. Simply issue the following command from SSH:
+
+```plaintext main
+sudo box install mylar
+```
+
+This command will install and configure mylar for your user.
+
+## How to Access
+
+After installation, you can access Medusa at the url: `https://<yourhostname.ltd>/mylar`
+
+## Service Management
+
+Multi-user for mylar is not enabled by default.
+
+The systemd service file resides at:
+
+```bash main
+/etc/systemd/system/mylar.service
+```
+
+import SystemdTabs from "../snippets/systemdtabs.mdx";
+
+<SystemdTabs service="mylar" />
+
+## Download Clients
+
+import C4Arr from "../snippets/conn4arr.mdx";
+
+<C4Arr />
+
+import TroubleShooting from "../snippets/troubleshooting.md";
+
+<TroubleShooting />
