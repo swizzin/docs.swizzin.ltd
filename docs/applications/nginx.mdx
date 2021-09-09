@@ -4,8 +4,50 @@ title: Nginx
 sidebar_label: Nginx
 ---
 
-nginx is a high performance web server
+nginx is a high performance web and proxy server
 
-import MissingDocs from '../snippets/missingdocs.md';
+## Initial Setup
 
-<MissingDocs />
+Installing nginx is easy. Simply issue the following command from SSH:
+
+```plaintext main
+sudo box install nginx
+```
+
+This command will install and configure nginx for your user. Generally we recommend installing this first, which is why it is at the top of the list of install choices during setup.
+
+## swizzin-specific nginx info
+
+The default swizzin virtualhost resides at: `/etc/nginx/sites-enabled/default`
+
+The swizzin virtualhost by default will import and store application proxy/location information in the directory `/etc/nginx/apps`. You can place your custom configurations here if you want to add additional location blocks unmanged by swizzin. You can also place your configs in subdirectories of this directory. Try to avoid using names already in use by swizzin for your own apps.
+
+swizzin also makes use of "upstream" configurations to handle proxying certain multi-user applications (i.e. Deluge, qBittorrent, etc). These upstreams may be found in `/etc/nginx/conf.d`
+
+Finally, if you ever make any mistakes or changes to nginx and it stops working, the command `box upgrade nginx` will wipe out your current configs and re-run all the nginx-related scripts for the applications you have currently installed. In essence, this will "fix" your broken nginx by resetting it to the state that swizzin expects it to be in. If you have made any modifications you wish to save, please back them up before running this command as it's considered destructive.
+
+## Troubleshooting
+
+### nginx won't start
+
+The holy grail command for troubleshooting nginx failures is
+
+```
+sudo nginx -t
+```
+
+This command will scan your current configuration and run syntax and sanity checks against it. If for any reason it finds an error in your configs, `nginx -t` will tell you exactly where the issue is so you can rectify the error (perhaps it's a duplicate line or some other config issue you should google for).
+
+### nginx logs
+
+nginx stores its logs in the `/var/log/nginx` directory. In this directory you'll find both `error.log` and `access.log`. If you are troubleshooting gateway/proxy issues, then `error.log` will be your best bet. If for some reason you are trying to debug access controls then `access.log` stores a log of every hit to the nginx server.
+
+### Common error codes
+
+#### 502 Gateway error
+
+The application you are trying to reach is likely down (not running). Please ensure the application is in fact running. If it is running and the error persists, you likely have a port mismatch between where the application is bound to (application config) and where nginx expects this application to be at (application proxy config). If you rectify the port mismatch, and reload nginx/the application, the connection should be fixed.
+
+### 403 Forbidden
+
+If you have received this after installing swizzin and are attempting to access the panel, then you have not installed the panel. Install the panel with `box install panel`. If you are receiving this on another endpoint other than the top level of your domain, then your username/password is incorrect.
