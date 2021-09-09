@@ -48,6 +48,6 @@ nginx stores its logs in the `/var/log/nginx` directory. In this directory you'l
 
 The application you are trying to reach is likely down (not running). Please ensure the application is in fact running. If it is running and the error persists, you likely have a port mismatch between where the application is bound to (application config) and where nginx expects this application to be at (application proxy config). If you rectify the port mismatch, and reload nginx/the application, the connection should be fixed.
 
-### 403 Forbidden
+#### 403 Forbidden
 
 If you have received this after installing swizzin and are attempting to access the panel, then you have not installed the panel. Install the panel with `box install panel`. If you are receiving this on another endpoint other than the top level of your domain, then your username/password is incorrect.
