@@ -22,10 +22,6 @@ If nginx is currently installed, the dashboard is available at the web root for 
 
 `https://<hostname.ltd>`
 
-If nginx is not installed, you can find the panel at
-
-`http://<hostname.ltd>:8333`
-
 ## Configuration options
 
 There should not be much need to alter config options, but a few currently exist. These options should be defined directly in `/opt/swizzin/swizzin.cfg`. Please note, all config variables are uppercase:
@@ -176,6 +172,9 @@ import Troubleshooting from '../snippets/troubleshooting.md';
 
 ### I cannot log in
 You're probably running some browser plugins which are causing interference with the swizzin panel due to the way basic http auth is being handled. Please try to disable the plugin, use a different browser or use a private session without plugins to confirm your login still works, and try isolate the issue before reaching out for help.
+
+### 403 forbidden on a fresh install
+You have not installed the panel -- this behavior is working as intended. Install the panel and this error will be replaced by a login prompt
 
 ### Logs
 You can retrieve the logs of panel by running `sudo journalctl -u panel`. The logs contain the output of the python application.
