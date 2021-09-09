@@ -22,14 +22,12 @@ After installation, you can access SickGear at the url: `https://<yourhostname.l
 
 ## Service Management
 
-Despite using a multi-user service name, multi-user for SickGear is not enabled by default.
-
 The systemd service file resides at:
 
 ```bash main
-/etc/systemd/system/sickgear@.service
+/etc/systemd/system/sickgear.service
 ```
 
 import SystemdTabs from '../snippets/systemdtabs.mdx';
 
-<SystemdTabs service="sickgear@<username>"/>
+<SystemdTabs service="sickgear"/>
