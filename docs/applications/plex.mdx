@@ -103,6 +103,17 @@ import SystemdTabs from '../snippets/systemdtabs.mdx';
 
 <SystemdTabs service="plexmediaserver"/>
 
+## Upgrading
+You will notice that Plex releases new server installers quite regularly and often. You can handle these _either_ on your own via `apt`, or you can run `box upgrade plex` which will install an automatic update job, and even allow you to use the beta Plex Pass releases if you desire. Feel free to re-run it any time you want it to upgrade again.
+
+## Connect to other clients
+
+If you need to link your Plex instance to another application, such as Sonarr or Tautulli, you can use the following details:
+
+```plaintext main
+Host: 127.0.0.1
+Port: <your plex port>
+```
 ## Plex Nginx Configuration (optional)
 
 ### Subdomain
@@ -176,7 +187,8 @@ server {
 ### App Location
 
 One option of getting Plex to serve on your domain correctly is to ``nano /etc/nginx/apps/plex.conf`` and paste the following. This is far from an ideal solution, but is one surefire way of getting the mediaserver to serve on the correct port and location. For this method, please apply the following settings to plex. After making changes, ``sudo nginx -t`` to test your config, then ``sudo nginx -s reload`` to apply it.
-    <details><summary>Location Configuration (Nginx)</summary>
+
+<details><sum~mary>Location Configuration (Nginx)</summary>
 
 ```plaintext main
 set ``Remote Access - Disable``, 
@@ -203,20 +215,10 @@ location /web {
     proxy_buffering off;
 }
 ```
-      </details>
-      
+</details>
 ## Tunnelling Plex to VPS
 
 [See this Gist](https://gist.github.com/MarMed/94b5537a9fb61cf7212808692bbef14d)
 
-## Upgrading
-You will notice that Plex releases new server installers quite regularly and often. You can handle these _either_ on your own via `apt`, or you can run `box upgrade plex` which will install an automatic update job, and even allow you to use the beta Plex Pass releases if you desire. Feel free to re-run it any time you want it to upgrade again.
 
-## Connect to other clients
-
-If you need to link your Plex instance to another application, such as Sonarr or Tautulli, you can use the following details:
-
-```plaintext main
-Host: 127.0.0.1
-Port: <your plex port>
-```
+      
