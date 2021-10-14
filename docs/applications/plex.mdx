@@ -118,7 +118,12 @@ Port: <your plex port>
 
 ### Subdomain
 
-This method serves Plex on it's own domain. This can be a subdomain you've registered through [LetsEncrypt](https://swizzin.ltd/applications/letsencrypt), answering "no" to applying the config to the swizzin default. After this, you can use the nginx configuration below with some minor modifications in order to get Plex up and serving on your own (sub)domain. The following can either be appended to ``/etc/nginx/sites-enabled/default`` or can (better method) be put into it's own file at ``/etc/nginx/sites-enabled/plex.conf``. Prior to installing this configuration, navagate to [app.plex.tv](https://app.plex.tv) and use the settings listed in the box below. After making changes, ``sudo nginx -t`` to test your config, then ``sudo nginx -s reload`` to apply it. You can also apply ``allowLocalhostOnly="1"`` to your Plex ``Preferences.xml`` file to force it to stop serving on the port.
+This method serves Plex on it's own domain. This can be a subdomain you've registered through [LetsEncrypt](https://swizzin.ltd/applications/letsencrypt), answering "no" to applying the config to the swizzin default.
+After this, you can use the nginx configuration below with some minor modifications in order to get Plex up and serving on your own (sub)domain. 
+The following can either be appended to ``/etc/nginx/sites-enabled/default`` or can (better method) be put into it's own file at ``/etc/nginx/sites-enabled/plex.conf``. 
+Prior to installing this configuration, navagate to [app.plex.tv](https://app.plex.tv) and use the settings listed in the box below. 
+After making changes, ``sudo nginx -t`` to test your config, then ``sudo nginx -s reload`` to apply it. 
+You can also apply ``allowLocalhostOnly="1"`` to your Plex ``Preferences.xml`` file to force it to stop serving on the port.
 
 <details><summary>Subdomain Configuration (Nginx)</summary>
 ```plaintext main
@@ -186,7 +191,9 @@ server {
     
 ### App Location
 
-One option of getting Plex to serve on your domain correctly is to ``nano /etc/nginx/apps/plex.conf`` and paste the following. This is far from an ideal solution, but is one surefire way of getting the mediaserver to serve on the correct port and location. For this method, please apply the following settings to plex. After making changes, ``sudo nginx -t`` to test your config, then ``sudo nginx -s reload`` to apply it.
+One option of getting Plex to serve on your domain correctly is to ``nano /etc/nginx/apps/plex.conf`` and paste the following. 
+This is far from an ideal solution, but is one surefire way of getting the mediaserver to serve on the correct port and location. 
+For this method, please apply the following settings to plex. After making changes, ``sudo nginx -t`` to test your config, then ``sudo nginx -s reload`` to apply it.
 
 <details><sum~mary>Location Configuration (Nginx)</summary>
 
