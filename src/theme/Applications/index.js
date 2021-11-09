@@ -79,6 +79,10 @@ const data = [
     url: "applications/medusa",
   },
   {
+    title: "Navidrome",
+    url: "applications/navidrome"
+  }
+  {
     title: "Netdata",
     url: "applications/netdata",
   },

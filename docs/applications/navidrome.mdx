@@ -1,0 +1,52 @@
+---
+id: navidrome
+title: Navidrome
+sidebar_label: Navidrome
+---
+
+Navidrome is an open source web-based music collection server and streamer. It gives you freedom to listen to your music collection from any browser or mobile device. It's like your personal Spotify!
+
+## Initial Setup
+
+Installing navidrome is easy. Simply issue the following command:
+
+```bash main
+sudo box install navidrome
+```
+
+This command will configure navidrome for your user.
+
+## Upgrade
+
+Upgrading navidrome is as easy. Simply issue the following command:
+
+```bash main
+sudo box upgrade navidrome
+```
+
+## How to Access
+
+After navidrome has been installed, it will be available for access at `https://<hostname.ltd>/navidrome`.
+
+The port is 4533.
+
+## Service Management
+
+
+import SystemdTabs from "../snippets/systemdtabs.mdx";
+
+<SystemdTabs service="navidrome" />
+
+## Configuration
+
+In order to get navidrome working, you need to do the following steps:
+
+After installing Navidrome in your platform, you need to create your first user. This will be your admin user, a super user that can manage all aspects of Navidrome, including the ability to manage other users. Just browse to Navidrome’s homepage.
+
+Just fill out the username and password you want to use, confirm the password and click on the “Create Admin” button.
+
+That’s it! You should now be able to browse and listen to all your music.
+
+You can find your music folder at "/home/<username>/music"
+
+Note: It usually take a couple of minutes for your music to start appearing in Navidrome’s UI. You can check the logs to see what is the scan progress.
