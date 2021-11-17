@@ -81,7 +81,7 @@ const data = [
   {
     title: "Navidrome",
     url: "applications/navidrome",
-  }
+  },
   {
     title: "Netdata",
     url: "applications/netdata",
