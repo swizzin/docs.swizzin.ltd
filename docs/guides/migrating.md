@@ -91,6 +91,9 @@ Notable examples are:
     2. Copy over all `<user>.transmission.conf` files from `/etc/nginx/conf.d/` after all users are created and transmission is installed.
 - Deluge
   - Generally same as transmission
+- qbittorrent
+  - After all data is transferred, run `box upgrade nginx` and login normally.
+  - If migrating between two servers on which different versions of qbittorrent are installed, check that the two instances are using the same data directory. Some versions may use `~/.local/share/data/qBittorrent` while others may use `~/.local/share/qBittorrent`. Make sure that the data is transferred into the correct data directory. 
 - R**u**Torrent
   - Reinstall rutorrent after all data is moved
   - Nothing specific should be necessary to do for rtorrent itself.
