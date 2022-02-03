@@ -195,7 +195,8 @@ One option of getting Plex to serve on your domain correctly is to ``nano /etc/n
 This is far from an ideal solution, but is one surefire way of getting the mediaserver to serve on the correct port and location. 
 For this method, please apply the following settings to plex. After making changes, ``sudo nginx -t`` to test your config, then ``sudo nginx -s reload`` to apply it.
 
-<details><sum~mary>Location Configuration (Nginx)</summary>
+<details>
+  <summary>Location Configuration (Nginx)</summary>
 
 ```plaintext main
 set ``Remote Access - Disable``, 
@@ -223,6 +224,8 @@ location /web {
 }
 ```
 </details>
+  
+  
 ## Tunnelling Plex to VPS
 
 [See this Gist](https://gist.github.com/MarMed/94b5537a9fb61cf7212808692bbef14d)
