@@ -171,6 +171,14 @@ cat ~/.config/deluge/core.conf | grep daemon_port
 ```
 :::
 
+#### SSH Tunneling for Thin Client
+For those that do not have a domain name or wish to keep ports closed, an alternative secure method for connecting Thin Client to remote client would be to create an SSH Tunnel. Run the following command on the local client:
+```bash
+ssh -fNL 127.0.0.2:<port on local client>:localhost:<the daemon port of your instance> <your username>@<the ip of your server>
+```
+In the Thin Client, use `127.0.0.2` as the hostname and `<port on client>` as the port instead.
+
+---
 Once you click okay, you'll be taken back to the connection dialog. Your new connection will be listed and if everything is okay, you'll see a green check box next to it. When you click connect, you'll be taken to your client.
 
 ### Web UI
