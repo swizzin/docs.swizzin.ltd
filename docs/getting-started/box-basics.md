@@ -18,16 +18,15 @@ In order to use the installer and management functions on your slot, you'll need
 - adduser
 - deluser
 - chpasswd
-- panel fix-disk
 - list
 - test
 
-:::tip Tip
+:::error Warning
 Since `box` is considered a complete box management script, its functions require root/sudo permissions to execute. The guide will assume that you're either a root user or prefixing the commands with `sudo`
 :::
 
 ## box
-When run alone, box will start a graphical user interface with install and remove functions similar to the initial setup.
+When run alone, box will start a graphical user interface with install and remove functions similar to the initial setup. This is a good option if you are new to swizzin and/or linux, but once you get familiar with the system, `install` and `remove` are more powerful options.
 
 Syntax:
 ```bash
@@ -96,14 +95,6 @@ Use this command when you'd like to change your password. `chpasswd` will change
 Syntax:
 ```bash
 box chpasswd forgetfulfriend
-```
-
-## panel fix-disk
-Use this function to change your quota directory from root to home. This fixes a potentially incorrect disk reporting in the panel. The command accepts two options: `home` and `root`.
-
-Syntax:
-```bash
-box panel fix-disk home
 ```
 
 ## list

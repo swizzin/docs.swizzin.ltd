@@ -29,6 +29,13 @@ With the exception of the processor architecture, these are not hard and fast re
 
 ## Installation
 
+### Make sure you are root
+
+Either login directly as root or elevate to root with proper login settings with either `su -` or `sudo -i`.
+
+Don't use `su` or something like `sudo -s` (which is worth noting is default under Ubuntu). You won't be fully logged in as root and certain environment variables not having the full perspective of root will cause failures.
+
+
 ### Quick Start
 
 Make sure you have either `curl` or `wget` installed. Pick the command of your choice to get started:
@@ -68,7 +75,12 @@ A few items to be aware of as known issues. Most of these have had attempts at w
 
 - Installer appears frozen before any user input (usually on `Installing dependencies` or `Checking repos`): `control-c` out and `apt update && apt upgrade` before running the installer.
 - Capital letters in usernames: capital letters should never be used for usernames
-- Usernames which may conflict with a group that already exists: for example, certain images like AWS may have an `admin` group out of the box. If you try to name your user `admin` the install will fail in this case.
+- Usernames wh
+
+## Next Steps
+
+Check out [box basics](/getting-started/box-basics) if it's your first time, this will help prep you for using swizzin to get stuff done.
+
 
 ## Additional Help
 
