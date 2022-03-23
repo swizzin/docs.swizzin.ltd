@@ -7,6 +7,7 @@ module.exports = {
   favicon: "img/favicon.ico",
   organizationName: "liaralabs", // Usually your GitHub org/user name.
   projectName: "docs.swizzin.ltd", // Usually your repo name.
+  trailingSlash: false,
   themeConfig: {
     colorMode: {
       defaultMode: "dark",
