@@ -12,6 +12,7 @@ To add a download client, go to `Settings > Download Client`. Make sure `Advance
     {label: 'Transmission', value: 'transmission'},
     {label: 'Deluge', value: 'deluge'},
     {label: 'nzbGet', value: 'nzbget'},
+    {label: 'SABnzbd', value: 'sabnzbd'},
     {label: 'qBittorrent', value: 'qbittorrent'},
   ]}>
   <TabItem value="rutorrent"><CodeBlock children="Name: rTorrent
@@ -48,6 +49,12 @@ nzbget username: <your username>
 nzbget Password: <your password>
 Add label to torrent: Series (or anything else you desire)
 * label must exist under Categories in nzbGet" lang="plaintext"></CodeBlock></TabItem>
+   <TabItem value="rutorrent"><CodeBlock children="Name: rTorrent
+Host: 127.0.0.1
+Port: sabnzbd port
+URL Path: BLANK
+Use SSL: OFF
+API: API Key from SAB" lang="plaintext"></CodeBlock></TabItem>
   <TabItem value="qbittorrent"><CodeBlock children="Name: qBittorrent
 Host: 127.0.0.1
 Post: <qbittorrent web port>
