@@ -53,6 +53,12 @@ Ubuntu:
 - Bionic (18.04 LTS)
 - Focal (20.04 LTS)
 
+Before updating anything, please ensure you're on the latest commit. If you are not, things could not work as intended after you're done the distribution upgrade. 
+
+```bash
+sudo box update
+```
+
 If you don't know the OS or version you're running, you can determine it here with the command `lsb_release -a`. Your `codename` will hopefully correspond to a value above. The codename is the release that's in your current apt sources list (`/etc/apt/sources.list`). We will be changing this to the version you'd like to upgrade to.
 
 Let's take the scenario where your server was delivered with Debian 9 (stretch), but you'd like to upgrade to Debian 10 (buster). In this scenario, our upgrade path looks like this:
