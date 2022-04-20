@@ -107,7 +107,7 @@ Logs are all over the system. Below are just a couple ways to find some things t
 - Issues with `box`
     - `sudo tail -200 /root/logs/swizzin.log`
 - Issues with nginx
-    - `cat /var/logs/nginx/error.log`
+    - `cat /var/log/nginx/error.log`
     - `nginx -t`
 - Issues with apps
     - `systemctl status <app>` _or_ `systemctl status <app>@<(user)>`

@@ -7,21 +7,12 @@ module.exports = {
   favicon: "img/favicon.ico",
   organizationName: "liaralabs", // Usually your GitHub org/user name.
   projectName: "docs.swizzin.ltd", // Usually your repo name.
+  trailingSlash: false,
   themeConfig: {
     colorMode: {
       defaultMode: "dark",
       disableSwitch: false,
       respectPrefersColorScheme: true,
-      switchConfig: {
-        darkIcon: "🌙",
-        darkIconStyle: {
-          marginLeft: "2px",
-        },
-        lightIcon: "☀️",
-        lightIconStyle: {
-          marginLeft: "1px",
-        },
-      },
     },
     prism: {
       theme: require("prism-react-renderer/themes/nightOwl"),
@@ -108,13 +99,6 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} swizzin. All rights reserved.`,
-    },
-    googleAnalytics: {
-      trackingID: "UA-104631777-1"
-    },
-    algolia: {
-      apiKey: "zz",
-      indexName: "swizzin",
     },
   },
   plugins: ["docusaurus-plugin-sass", "@docusaurus/plugin-ideal-image"],

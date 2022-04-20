@@ -80,6 +80,7 @@ module.exports = {
                     "applications/emby",
                     "applications/jellyfin",
                     "applications/mango",
+                    "applications/navidrome",
                     "applications/plex",
                     // "applications/subsonic",
                     "applications/tautulli",

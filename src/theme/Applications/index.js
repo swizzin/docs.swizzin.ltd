@@ -83,6 +83,10 @@ const data = [
     url: "applications/mylar",
   },
   {
+    title: "Navidrome",
+    url: "applications/navidrome",
+  },
+  {
     title: "Netdata",
     url: "applications/netdata",
   },
