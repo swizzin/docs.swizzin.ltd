@@ -68,3 +68,20 @@ In order to get autobrr working, you need to do the following steps:
   - Go to `Settings/Clients` and add your download clients.
 - Add filters
   - They work similar to autodl-irssi filters.
+
+## Advanced Configuration
+
+### Connecting to a Remote qBittorrent (Swizzin) Instance
+
+Go to `Settings/Clients` and add your download client, then enter the following:
+
+```plaintext
+host: https://xxx.domain.ltd/qbittorrent
+port: 0 (field will disappear)
+tls: true
+username: user
+password: pass
+Basic auth: true
+user: basic user (same as user)
+pass: basic pass (same as pass)
+```
