@@ -21,7 +21,7 @@ const data = [
     title: <>Is swizzin actively maintained?</>,
     description: (
       <>
-        Yes! swizzin currently supports Debian Stretch, Buster, and Bullseye as well as Ubuntu Bionic. Focal and Jammy.
+        Yes! swizzin currently supports Debian Buster, and Bullseye as well as Ubuntu Focal and Jammy.
         Packages are kept in working order and reported, reproducible issues are promptly patched.
         Support for operating systems is subject to change based on availability of upstream support;
         however, new long-term support versions of Debian & Ubuntu will be added accordingly.
