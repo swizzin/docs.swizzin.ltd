@@ -76,7 +76,7 @@ function shuffleArray(array) {
     array[i] = array[j];
     array[j] = temp;
   }
-  const shuffled = array.splice(6, 3);
+  const shuffled = array.splice(6, 4);
   return array;
 }
 
