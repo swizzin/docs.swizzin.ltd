@@ -35,6 +35,7 @@ There should not be much need to alter config options, but a few currently exist
 - `URLBASE` - "Sub-path" to server the panel (Default: `/`). Make sure to adjust your nginx config.
 - `RATELIMIT_ENABLED` - Define whether or not rate limiting is active for non-logged-in users. (Default: `True`)
 - `RATELIMIT_DEFAULT` - Customize the default rate limiting period. (Default: `"5 per minute"`)
+- `NETWORK_TOTALS` - Display a additional column in the network widget with up/down transfers added together
 - `DEBUG` - Turn off production mode and turn on the debugger. Prints response times and displays Python errors in the browser instead of causing internal server errors (Default: `False`)
 - `SHAREDSERVER` - Defines if this server is a swizzin enterprise server, you will probably never need to set this (Default: `False`)
 
