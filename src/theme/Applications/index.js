@@ -249,20 +249,6 @@ function Applications() {
                 <Application key={idx} {...props} />
               ))}
             </div>
-
-            <div className="row">
-              <div className="col col--5 col--offset-1">
-                <Link
-                  className={clsx(
-                    "button button--primary button--lg",
-                    styles.button
-                  )}
-                  href="https://feathub.com/liaralabs/swizzin"
-                >
-                  <FiFlag size={24} /> App and feature requests
-                </Link>
-              </div>
-            </div>
           </div>
         </section>
       )}
