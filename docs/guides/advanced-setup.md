@@ -103,7 +103,7 @@ LE_cf_zone="some.zone.asdasdasdasd" # or LE_cf_zoneexists=yes if you don't need 
 ## Examples
 A fully automated install with everything in an env file, and user and password which override the env file
 ```bash
-bash <(wget -qO - git.io/swizzin) \
+bash <(wget -qO - s5n.sh) \
 --env /path/to/file.env --user tester --pass tester123
 ```
 
@@ -116,13 +116,13 @@ bash /path/to/swizzin/setup.sh --user tester --pass tester123 --local --unattend
 Get a quick transmission installation
 ```bash
 arg_transmissionsource="Repo" \
-bash <(wget -qO - git.io/swizzin) \
+bash <(wget -qO - s5n.sh) \
 --user tester --pass tester123 transmission
 ```
 
 Get the Dan Martini(TM) (A username, password, domain, nginx and letsencrypt only. Shaken, not interrupted)
 ```bash
-bash <(wget -qO - git.io/swizzin) \
+bash <(wget -qO - s5n.sh) \
 --unattend --user tester --pass tester123 --domain testing.com nginx letsencrypt
 ```
 

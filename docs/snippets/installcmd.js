@@ -6,11 +6,11 @@ import CodeBlock from '@theme/CodeBlock';
 const installmethod = [
     {
         label: "curl",
-        cmd: "bash <(curl -sL git.io/swizzin) && . ~/.bashrc",
+        cmd: "bash <(curl -sL s5n.sh) && . ~/.bashrc",
     },
     {
         label: "wget",
-        cmd: "bash <(wget -qO - git.io/swizzin) && . ~/.bashrc",
+        cmd: "bash <(wget -qO - s5n.sh) && . ~/.bashrc",
     }
 ]
 function InstallCmd() {
