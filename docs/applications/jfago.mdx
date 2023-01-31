@@ -1,0 +1,41 @@
+---
+id: jfago
+title: jfa-go
+sidebar_label: jfa-go
+---
+
+jfa-go is a user management app for Jellyfin (and now Emby) that provides invite-based account creation as well as other features that make one's instance much easier to manage.
+
+## Installation
+You can install jfa-go using the following command.
+
+```bash
+sudo box install jfago
+```
+
+After installation, you will need to create an Admin user for jfa-go to use within Jellyfin.
+
+:::caution Required Setup
+Please make sure to edit the config file located at `/root/.config/jfa-go/config.ini` after installation.
+:::
+
+You will need to set the `username` and `password` variables to your newly created Jellyfin user.
+
+`server` and `public_server` should be set to the URL of your Jellyfin server, for example `https://domain.tld/jellyfin`.
+
+`first_run` should be set to `false`
+
+`url_base` must be `/jfa-go` if you are using nginx, or `/` if you are not.
+
+## Service Management
+
+The systemd script for jfa-go can be found at
+```bash main
+/etc/systemd/system/jfago.service
+```
+import SystemdTabs from '../snippets/systemdtabs.mdx';
+
+<SystemdTabs service="jfago"/>
+
+## Access
+You can access jfa-go through `https://domain.tld/jfa-go` if you have nginx installed, or through `https://domain.tld:8056` if you do not.

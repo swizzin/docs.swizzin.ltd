@@ -17,7 +17,7 @@ module.exports = {
         collapsed: true,
         items: [
             "applications/index",
-            { 
+            {
                 type: "category",
                 label: "Automation",
                 collapsed: true,
@@ -39,7 +39,7 @@ module.exports = {
                     "applications/prowlarr",
                 ],
             },
-            { 
+            {
                 type: "category",
                 label: "Backup & Sync",
                 collapsed: true,
@@ -51,7 +51,7 @@ module.exports = {
                     "applications/vsftpd",
                 ],
             },
-            { 
+            {
                 type: "category",
                 label: "Indexers",
                 collapsed: true,
@@ -60,7 +60,7 @@ module.exports = {
                     "applications/nzbhydra",
                 ],
             },
-            { 
+            {
                 type: "category",
                 label: "IRC",
                 collapsed: true,
@@ -70,7 +70,7 @@ module.exports = {
                     "applications/znc",
                 ],
             },
-            { 
+            {
                 type: "category",
                 label: "Media Servers",
                 collapsed: true,
@@ -86,7 +86,7 @@ module.exports = {
                     "applications/tautulli",
                 ],
             },
-            { 
+            {
                 type: "category",
                 label: "Torrent Clients & GUIs",
                 collapsed: true,
@@ -99,7 +99,7 @@ module.exports = {
                     "applications/transmission",
                 ],
             },
-            { 
+            {
                 type: "category",
                 label: "Usenet Clients",
                 collapsed: true,
@@ -109,7 +109,7 @@ module.exports = {
                     "applications/nzbhydra",
                 ],
             },
-            { 
+            {
                 type: "category",
                 label: "Utilities",
                 collapsed: true,
@@ -118,6 +118,7 @@ module.exports = {
                     "applications/duckdns",
                     "applications/ffmpeg",
                     "applications/filebrowser",
+                    "applications/jfago",
                     "applications/librespeed",
                     "applications/letsencrypt",
                     "applications/netdata",
