@@ -1,7 +1,7 @@
 module.exports = {
   title: "swizzin community edition",
   tagline: "An all-in-one modular seedbox solution",
-  url: "https://liaralabs.github.io",
+  url: "https://swizzin.ltd",
   baseUrl: "/",
   onBrokenLinks: "throw",
   favicon: "img/favicon.ico",
