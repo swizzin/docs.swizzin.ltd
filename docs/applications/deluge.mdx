@@ -270,6 +270,7 @@ The following variables can be used as a general guide to help you find informat
 Use these settings when connecting your transdroid client to your Deluge instance:
 
 ```bash
+Server type: Deluge 1.2+
 IP or Hostname: <yourhostname.ltd>
 User name: <your username>
 Password: <your password>
@@ -297,9 +298,9 @@ By default, the web interface of Deluge is bound to `127.0.0.1`. In other words,
 [SSH](../getting-started/how-do-i-connect.md) into your slot and issue the following commands:
 
 ```bash main
-box stop deluge-web
+sudo systemctl stop deluge-web@<user>
 sed -i 's/127.0.0.1/0.0.0.0/g' ~/.config/deluge/web.conf
-box start deluge-web
+sudo systemctl start deluge-web@<user>
 ```
 
 You can now connect to your Deluge-web instance through `http://hostname.ltd:<delugeport>`
