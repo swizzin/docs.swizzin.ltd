@@ -26,7 +26,7 @@ Since `box` is considered a complete box management script, its functions requir
 :::
 
 ## box
-When run alone, box will start a graphical user interface with install and remove functions similar to the initial setup. This is a good option if you are new to swizzin and/or linux, but once you get familiar with the system, `install` and `remove` are more powerful options.
+When run alone, `box` will start a guided tutorial with install and remove options for availible applications. This option is intended for unfamiliar Swizzin or Linux users. Most users will find `install`, `remove` and `upgrade` to be more viable options, after the initial setup procress.
 
 Syntax:
 ```bash
@@ -34,7 +34,7 @@ box
 ```
 
 ## help
-The function of help is basic: provide you usage details on how to use box and the commands available to you.
+This function provides basic information and usage examples for all availible box commands.
 
 Syntax:
 ```bash
@@ -42,7 +42,7 @@ box help
 ```
 
 ## install
-The function used to install applications from the server. If you need help with specific commands, they are available on the application sub-pages here. You can specify as many applications is you like here.
+This function installs applications on the server. If you need help with specific commands, please see the `Applications` section on the left side of the website. You can specify multiple applications to install at the same time.
 
 Syntax:
 ```bash
@@ -50,7 +50,7 @@ box install rtorrent deluge
 ```
 
 ## remove
-The function used to remove applications from the server. If you need help with specific commands, they are available on the application sub-pages here. You can specify as many applications is you like here.
+This function removes applications from the server. If you need help with specific commands, please see the `Applications` section on the left side of the website. You can specify multiple applications to remove at once.
 
 Syntax:
 ```bash
@@ -58,7 +58,9 @@ box remove rtorrent deluge
 ```
 
 ## update
-This function can be used to update your swizzin repository. There are a number of update scripts that trigger each time this command is called -- these will typically help fix issues or upgrade your current installation to a new method of handling the application in question.
+This function updates to the latest swizzin release, and applies configuration fixes to already installed applications. This typically fixes issues with the install procress. It is often a requirement for upgrading applications or fixing broken aspects of the seedbox solution.
+
+Note: It does _not_ upgrade versions of applications, please see `upgrade` below.
 
 Syntax:
 ```bash
@@ -66,7 +68,7 @@ box update
 ```
 
 ## upgrade
-This function can be used to upgrade a specific application to a newer version or recompile an application which was compiled during install. Only selected applications have upgrade scripts. You can check which scripts have `upgrade` components by looking in the `/etc/swizzin/scripts/upgrade` directory. Call them directly by name.
+This function upgrades a specific application to a newer version. It can also recompile applications without versions to install the latest fixes. Only some applications have upgrade scripts and their name is required to upgrade them. You can view the specialized list on GitHub. https://github.com/swizzin/swizzin/tree/master/scripts/upgrade
 
 Syntax:
 ```bash
@@ -74,7 +76,7 @@ box upgrade nginx
 ```
 
 ## adduser
-The function used to add a secondary user to your server. Please note, only the master user has access to a significant portion of the included applications
+This function adds additional users to your server. Please note, only the primary user has access to a significant portion of applications.
 
 Syntax:
 ```bash
@@ -82,7 +84,7 @@ box adduser faithfulfriend
 ```
 
 ## deluser
-The function used to remove a user from your server. All of the user's data will be destroyed, please use with caution.
+This function removes a user from your server. Please proceed with caution because all of the user data will be destroyed.
 
 Syntax:
 ```bash
@@ -90,7 +92,7 @@ box deluser exgirlfriend
 ```
 
 ## chpasswd
-Use this command when you'd like to change your password. `chpasswd` will change the password for SSH, FTP, HTTP and Deluge. You must specify a username as well.
+This function changes a user password. `chpasswd` will change the password for SSH, FTP, HTTP, Deluge, and most if-not-all applications. Please specify `chpasswd` followed by the username you wish to change the password.
 
 Syntax:
 ```bash
@@ -98,15 +100,15 @@ box chpasswd forgetfulfriend
 ```
 
 ## list
-This function lists the applications currently available for installation and a quick description of the application.
+This function lists and describes all applications currently available for installation.
 
 Syntax:
 ```bash
 box list
 ```
 
-## Test
-You can use this in order to perform a sanity check about the status of installed applications. Primarily intended for CI, but might as well let you know.
+## test
+This function is intended for swizzin developers. It will perform sanity checks about the status of installed applications.
 
 Syntax:
 ```bash
