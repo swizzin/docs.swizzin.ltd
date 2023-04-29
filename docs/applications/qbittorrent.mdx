@@ -64,6 +64,9 @@ If you would like to patch the settings pack of libtorrent (or any other aspect 
 
 You must supply your own patch!
 
+#### Specifying Libtorrent Version
+If you would like to swap the version of libtorrent that the client is compiled with, you can export a variable to control the branch or tag being used. ``export libtorrent_github_tag=RC_1_2`` if you want to checkout the development branch instead of the most recent tagged release.
+
 ## Upgrading and Recompiling
 
 If you decide you'd like to change the version of qBittorrent/libtorrent you've installed, or you would like to rebuild your current versions against the most recent source, you can recompile and upgrade qBittorrent at any time with the command:

@@ -31,7 +31,8 @@ If you intend to use the thin client with your installation, your local version 
 When installing Deluge, you may specify the variable `DELUGE_VERSION` to bypass the version popup. Accepted values are:
 - `repo` -- Will install Deluge from your OS repository
 - `1.3-stable` -- Will compile Deluge from the head of the 1.3-stable branch (1.3.15)
-- `master` -- Will compile Deluge from the head of the master branch (2.0)
+- `2.0.x` -- Will compile Deluge from the 2.0.x branch.
+- `master` -- Will compile Deluge from the head of the master branch (2.1)
 
 #### Libtorrent Patching
 If you would like to patch the settings pack of libtorrent (or any other aspect for that matter), the libtorrent compile will check if `/root/libtorrent-{RC_1_1,RC_1_2}.patch` exists. If it does, then the installer will automatically patch the libtorrent source with this patch before libtorrent is compiled. This may be of note since the ltconfig plugin does not exist for qBittorent, thus if you are interested in changing certain settings pack settings for qBittorrent settings which are not currently exposed through the WebUI, then this is the only way to change those settings without manually compiling libtorrent.
@@ -41,6 +42,9 @@ If you would like to patch the settings pack of libtorrent (or any other aspect 
 `RC_1_2` is used when compiling libtorrent 1.2.* (e.g. Deluge 2.0 and qBittorrent >= 4.2)
 
 You must supply your own patch!
+
+#### Specifying Libtorrent Version
+If you would like to swap the version of libtorrent that the client is compiled with, you can export a variable to control the branch or tag being used. ``export libtorrent_github_tag=RC_1_2`` if you want to checkout the development branch instead of the most recent tagged release.
 
 ## Upgrading and Recompiling
 
