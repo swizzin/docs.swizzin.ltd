@@ -12,3 +12,17 @@ Most of the documentation for this is included in the [`rtorrent` documentation]
 
 ## Extensions
 You can install additional themes and plugins using the [`rtx` helper script](/scripts/rtx)
+
+## SSL Certificate
+ruTorrent requires a SSL Cerficate for the web browser to cache certain scripts. A self-signed certificate will impact page loading speeds. A free SSL certificate can be installed using letsencrypt. More details can be found here: https://swizzin.ltd/applications/letsencrypt
+
+## Plugin Caching Feature
+Users can enable Plugin Caching in the ruTorrent configuration file. When combined with a SSL Cerificate, the expected page loading speeds are 500ms. Even with thousands of torrents, the page should only take 1 second to load. The **first** page load will take longer.
+
+However, this feature is experimental. It may experience web browser caching issues, when upgrading your ruTorrent version. It will be **required** to clear your web browser cache after every version upgrade. Please do **NOT** file bug reports about random error messages.
+
+To enable this feature, edit `/srv/rutorrent/conf/config.php` with your favourite text editor. This guide will use `nano` as an example.
+- **Step 1:** Type `nano /srv/rutorrent/conf/config.php`
+- **Step 2:** Set `$cachedPluginLoading = true;`
+- **Step 3:** Set the cache expire to 30 days: `$pluginJSCacheExpire = 30*60*24;`
+- **Step 4:** Save your changes with `ctrl + x` to exit then type `y` and press `enter`.
