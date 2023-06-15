@@ -5,7 +5,7 @@ module.exports = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   favicon: "img/favicon.ico",
-  organizationName: "liaralabs", // Usually your GitHub org/user name.
+  organizationName: "swizzin", // Usually your GitHub org/user name.
   projectName: "docs.swizzin.ltd", // Usually your repo name.
   trailingSlash: false,
   themeConfig: {
@@ -48,7 +48,7 @@ module.exports = {
             position: "left",
         },
         {
-          href: "https://github.com/liaralabs/swizzin",
+          href: "https://github.com/swizzin/swizzin",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub Repository",
@@ -89,7 +89,7 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/liaralabs/swizzin",
+              href: "https://github.com/swizzin/swizzin",
             },
             {
               label: "Discord",
@@ -109,12 +109,12 @@ module.exports = {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/liaralabs/docs.swizzin.ltd/edit/master/",
+          editUrl: "https://github.com/swizzin/docs.swizzin.ltd/edit/master/",
           routeBasePath: "/",
         },
         blog: {
           showReadingTime: true,
-          editUrl: "https://github.com/liaralabs/docs.swizzin.ltd/edit/master/",
+          editUrl: "https://github.com/swizzin/docs.swizzin.ltd/edit/master/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.scss"),
