@@ -61,21 +61,21 @@ sudo box update
 
 If you don't know the OS or version you're running, you can determine it here with the command `lsb_release -a`. Your `codename` will hopefully correspond to a value above. The codename is the release that's in your current apt sources list (`/etc/apt/sources.list`). We will be changing this to the version you'd like to upgrade to.
 
-Let's take the scenario where your server was delivered with Debian 9 (stretch), but you'd like to upgrade to Debian 10 (buster). In this scenario, our upgrade path looks like this:
+Let's take the scenario where your server was delivered with Debian 10 (buster), but you'd like to upgrade to Debian 11 (bullseye). In this scenario, our upgrade path looks like this:
 
 ```bash main
-stretch > buster
+buster > bullseye
 ```
 
-Thus, we need to replace all mention of stretch with buster in the file `/etc/apt/sources.list`.
+Thus, we need to replace all mention of buster with bullseye in the file `/etc/apt/sources.list`.
 
-You can either `sudo nano /etc/apt/sources.list` and change all instances of `stretch` to `buster` or issue the following command:
+You can either `sudo nano /etc/apt/sources.list` and change all instances of `buster` to `bullseye` or issue the following command:
 
 ```bash main
 sed -i 's/buster/bullseye/g' /etc/apt/sources.list
 ```
 
-This simple `sed` command simply states: find the word stretch, replace it with buster in the file `/etc/apt/sources.list.
+This simple `sed` command simply states: find the word buster, replace it with bullseye in the file `/etc/apt/sources.list`.
 
 Once our sources have been updated, it's time to grab new manifests and update:
 
@@ -158,6 +158,6 @@ Depending on the application and the amount of configuration you have done, it m
 
 #### Other packages
 
-Distribution upgrades haven't been tested rigorously. It's entirely possible other packages may have broken during the upgrade. You'll need to start doing your own troubleshooting here if anything else is broken. You can consult [the Troubleshooting guide](/guides/troubleshooting) for a quick start. You can find out if any of your systemd services are failing to start with `systemctl list-units --failed`. If there are failed units there, you can start debugging with `systemctl status <failed unit>`. However, you're on your own form here.
+Distribution upgrades haven't been tested rigorously. It's entirely possible other packages may have broken during the upgrade. You'll need to start doing your own troubleshooting here if anything else is broken. You can consult [the Troubleshooting guide](/guides/troubleshooting) for a quick start. You can find out if any of your systemd services are failing to start with `systemctl list-units --failed`. If there are failed units there, you can start debugging with `systemctl status <failed unit>`. However, you're on your own from here.
 
 
