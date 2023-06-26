@@ -45,13 +45,13 @@ The absolute best time to perform an upgrade is **before you install swizzin**; 
 swizzin currently supports these distributions:
 
 Debian:
-- Stretch (oldoldstable)
-- Buster (oldstable)
-- Bullseye (stable)
+- Buster (oldoldstable)
+- Bullseye (oldstable)
+- Bookworm
 
 Ubuntu:
-- Bionic (18.04 LTS)
 - Focal (20.04 LTS)
+- Jammy (22.04 LTS)
 
 Before updating anything, please ensure you're on the latest commit. If you are not, things could not work as intended after you're done the distribution upgrade. 
 
@@ -61,10 +61,10 @@ sudo box update
 
 If you don't know the OS or version you're running, you can determine it here with the command `lsb_release -a`. Your `codename` will hopefully correspond to a value above. The codename is the release that's in your current apt sources list (`/etc/apt/sources.list`). We will be changing this to the version you'd like to upgrade to.
 
-Let's take the scenario where your server was delivered with Debian 9 (stretch), but you'd like to upgrade to Debian 10 (buster). In this scenario, our upgrade path looks like this:
+Let's take the scenario where your server was delivered with Debian 11 (bullseye), but you'd like to upgrade to Debian 12 (bookworm). In this scenario, our upgrade path looks like this:
 
 ```bash main
-stretch > buster
+bullseye > bookworm
 ```
 
 Thus, we need to replace all mention of stretch with buster in the file `/etc/apt/sources.list`.
@@ -72,7 +72,7 @@ Thus, we need to replace all mention of stretch with buster in the file `/etc/ap
 You can either `sudo nano /etc/apt/sources.list` and change all instances of `stretch` to `buster` or issue the following command:
 
 ```bash main
-sed -i 's/buster/bullseye/g' /etc/apt/sources.list
+sed -i 's/bullseye/bookworm/g' /etc/apt/sources.list
 ```
 
 This simple `sed` command simply states: find the word stretch, replace it with buster in the file `/etc/apt/sources.list.
@@ -105,6 +105,7 @@ sudo reboot
 Pray to your lucky stars that nothing goes wrong and your server comes back up without any issues.
 
 If you haven't installed swizzin yet, feel free to start the installer now. If you have already installed packages, we have a bit more updating to do.
+
 
 ### Updating packages after an upgrade
 
