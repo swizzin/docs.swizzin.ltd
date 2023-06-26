@@ -59,6 +59,20 @@ Before updating anything, please ensure you're on the latest commit. If you are 
 sudo box update
 ```
 
+:::note
+If you forgot to update swizzin beforehand and you're getting an error such as as
+
+```
+WARN      <New Distro> is not supported by swizzin at this stage.
+```
+
+Then, assuming swizzin has released support for your upgrade path, you'll need to manually pull down the latest version of the swizzin master branch:
+```
+cd /etc/swizzin
+git pull
+```
+:::
+
 If you don't know the OS or version you're running, you can determine it here with the command `lsb_release -a`. Your `codename` will hopefully correspond to a value above. The codename is the release that's in your current apt sources list (`/etc/apt/sources.list`). We will be changing this to the version you'd like to upgrade to.
 
 Let's take the scenario where your server was delivered with Debian 11 (bullseye), but you'd like to upgrade to Debian 12 (bookworm). In this scenario, our upgrade path looks like this:
