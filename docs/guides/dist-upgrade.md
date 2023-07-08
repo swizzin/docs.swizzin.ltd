@@ -42,11 +42,36 @@ That's a large scary warning, yes. Please think twice about performing the follo
 
 The absolute best time to perform an upgrade is **before you install swizzin**; however, it's still possible to do a distribution upgrade after installation, but it may be more tricky. The reason it's easier is that nothing has been installed or configured yet. When everything gets installed for the first time, it'll be installed correctly for the OS and won't need to be (potentially tweaked).
 
+swizzin currently supports these distributions:
+
+Debian:
+- Buster (oldoldstable)
+- Bullseye (oldstable)
+- Bookworm
+
+Ubuntu:
+- Focal (20.04 LTS)
+- Jammy (22.04 LTS)
+
 Before updating anything, please ensure you're on the latest commit. If you are not, things could not work as intended after you're done the distribution upgrade. 
 
 ```bash
 sudo box update
 ```
+
+:::note
+If you forgot to update swizzin beforehand and you're getting an error such as as
+
+```
+WARN      <New Distro> is not supported by swizzin at this stage.
+```
+
+Then, assuming swizzin has released support for your upgrade path, you'll need to manually pull down the latest version of the swizzin master branch:
+```
+cd /etc/swizzin
+git pull
+```
+:::
 
 If you don't know the OS or version you're running, you can determine it here with the command `lsb_release -a`. Your `codename` will hopefully correspond to a value above. The codename is the release that's in your current apt sources list (`/etc/apt/sources.list`). We will be changing this to the version you'd like to upgrade to.
 
@@ -94,6 +119,7 @@ sudo reboot
 Pray to your lucky stars that nothing goes wrong and your server comes back up without any issues.
 
 If you haven't installed swizzin yet, feel free to start the installer now. If you have already installed packages, we have a bit more updating to do.
+
 
 ### Updating packages after an upgrade
 
