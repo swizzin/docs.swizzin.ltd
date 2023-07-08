@@ -42,17 +42,6 @@ That's a large scary warning, yes. Please think twice about performing the follo
 
 The absolute best time to perform an upgrade is **before you install swizzin**; however, it's still possible to do a distribution upgrade after installation, but it may be more tricky. The reason it's easier is that nothing has been installed or configured yet. When everything gets installed for the first time, it'll be installed correctly for the OS and won't need to be (potentially tweaked).
 
-swizzin currently supports these distributions:
-
-Debian:
-- Stretch (oldoldstable)
-- Buster (oldstable)
-- Bullseye (stable)
-
-Ubuntu:
-- Bionic (18.04 LTS)
-- Focal (20.04 LTS)
-
 Before updating anything, please ensure you're on the latest commit. If you are not, things could not work as intended after you're done the distribution upgrade. 
 
 ```bash
@@ -61,21 +50,21 @@ sudo box update
 
 If you don't know the OS or version you're running, you can determine it here with the command `lsb_release -a`. Your `codename` will hopefully correspond to a value above. The codename is the release that's in your current apt sources list (`/etc/apt/sources.list`). We will be changing this to the version you'd like to upgrade to.
 
-Let's take the scenario where your server was delivered with Debian 10 (buster), but you'd like to upgrade to Debian 11 (bullseye). In this scenario, our upgrade path looks like this:
+Let's take the scenario where your server was delivered with Debian 11 (bullseye), but you'd like to upgrade to Debian 12 (bookworm). In this scenario, our upgrade path looks like this:
 
 ```bash main
-buster > bullseye
+bullseye > bookworm
 ```
 
-Thus, we need to replace all mention of buster with bullseye in the file `/etc/apt/sources.list`.
+Thus, we need to replace all mention of bullseye with bookworm in the file `/etc/apt/sources.list`.
 
-You can either `sudo nano /etc/apt/sources.list` and change all instances of `buster` to `bullseye` or issue the following command:
+You can either `sudo nano /etc/apt/sources.list` and change all instances of `bullseye` to `bookworm` or issue the following command:
 
 ```bash main
-sed -i 's/buster/bullseye/g' /etc/apt/sources.list
+sed -i 's/bullseye/bookworm/g' /etc/apt/sources.list
 ```
 
-This simple `sed` command simply states: find the word buster, replace it with bullseye in the file `/etc/apt/sources.list`.
+This simple `sed` command simply states: find the word bullseye, replace it with bookworm in the file `/etc/apt/sources.list`.
 
 Once our sources have been updated, it's time to grab new manifests and update:
 
