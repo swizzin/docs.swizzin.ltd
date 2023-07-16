@@ -16,10 +16,10 @@ We highly suggest you use a virtualized environment to test your swizzin set up.
 1. Enable virtualization OS and BIOS side
 1. [Install multipass](https://multipass.run)
 1. Run `multipass shell` to start a default primary VM and join the shell.
-2. Get swizzin repo on your VM
+1. Get swizzin repo on your VM
    1. You can mount it wherever you want (your user directory should be auto-mounted into `/home/ubuntu` if you're using the `primary` instance)
    2. You can clone it wherever you want
-3. Install swizzin with `bash /path/to/setup.sh --local`
+1. Install swizzin with `bash /path/to/setup.sh --local`
 
 ### LXD
 

@@ -23,10 +23,8 @@ Connecting to your slot via Linux or OSX is trivial:
     eg: `ssh liara@server.swizzin.ltd`
 3. If this is your first time connecting, you will be asked to accept the host's public key. Type "yes" to verify.
 4. Enter your password
-
-- (Recommended) Setup [public/private keypair](https://www.cyberciti.biz/faq/how-to-set-up-ssh-keys-on-linux-unix/) authentication
-- (Bonus) Encrypt your key with a password during creation
-
+    - (Recommended) Setup [public/private keypair](https://www.cyberciti.biz/faq/how-to-set-up-ssh-keys-on-linux-unix/) authentication
+    - (Bonus) Encrypt your key with a password during creation
 5. Done!
 
 ## Step-by-step guide (PuTTY)
