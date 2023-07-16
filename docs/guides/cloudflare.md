@@ -40,6 +40,7 @@ mkdir -p /etc/nginx/ssl/${hostname}
 /root/.acme.sh/acme.sh --issue --dns dns_cf -d ${hostname}
 /root/.acme.sh/acme.sh --install-cert -d ${hostname} --key-file /etc/nginx/ssl/${hostname}/key.pem --fullchain-file /etc/nginx/ssl/${hostname}/fullchain.pem --ca-file /etc/nginx/ssl/${hostname}/chain.pem --reloadcmd "service nginx force-reload"
 ```
+
 We now have everything we need to configure our Plex Reverse Proxy:
 
 3. Configure nginx
@@ -54,6 +55,7 @@ Now we must alter the file to include our failover IP, ssl certificates and dhpa
 ```
 nano plex.conf
 ```
+
 Find:
 
 ```
@@ -68,6 +70,7 @@ Then find:
 ssl_certificate
 ssl_certificate_key
 ```
+
 Insert your letsencrypt certificates here:
 
 ```
@@ -99,7 +102,7 @@ If all goes well, reload your server configuration
 systemctl reload nginx
 ```
 
-Now your Plex should be accessible via https://plex.yourdomain.com
+Now your Plex should be accessible via <https://plex.yourdomain.com>
 
 4. Alter your Plex Server settings
 

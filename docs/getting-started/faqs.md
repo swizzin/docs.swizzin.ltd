@@ -4,7 +4,7 @@ title: Frequently Asked Questions
 sidebar_label: Frequently Asked Questions
 ---
 
-## I literally just installed my machine and the dashboard says swizzin is using XXXGB. WHY?! That's simply absurd.
+## I literally just installed my machine and the dashboard says swizzin is using XXXGB. WHY?! That's simply absurd
 
 swizzin hasn't used the space, don't worry. By default, when using the ext4 partition format, the disk reserves 5% of the space in the partition for the potential scenario whereby the disk runs out of space. If this happens, and your whole server is formatted under a root partition scheme (i.e. no separate /home directory), your server will still have some space reserved to perform essential tasks such as (but not limited to): system updates, logging and various other things, such as bash auto(tab)-completion (crazy, right?).
 
@@ -37,6 +37,7 @@ If you just installed every package just because and you don't actually need quo
 Please see the chapter above.
 
 ## Application XYZ is not running! Everything is broken! What do I do?
+
 Please consult the [Troubleshooting](/guides/troubleshooting) guide for more information.
 
 ## ... Docker?
@@ -45,6 +46,6 @@ No.
 
 You cannot run Swizzin in a docker. The way docker works does not mix well with the amount of different resources swizzin relies on that are present in a standard Debian/Ubuntu Installation.
 
-Swizzin installs all applications in their non-containerized, bare-metal form. This for performance and maintainability reasons. 
+Swizzin installs all applications in their non-containerized, bare-metal form. This for performance and maintainability reasons.
 
  However you could away with a proper LXC container, using something like Proxmox or with systemd if you know your stuff. Many folks have reported success with those methods.

@@ -8,6 +8,6 @@ None of the options are sanity-checked on install so setting something wrong cou
 Again, you do not need to set these if you don't know what you're doing.
 :::
 
-There are a couple options you can set **before** installing transmission through export. 
+There are a couple options you can set **before** installing transmission through export.
 
 If you'd like to use one of these, run `export option=value` **before** running the install command.

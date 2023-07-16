@@ -29,17 +29,20 @@ The setup of an IP may vary from host to host; however for a dedicated machine r
 ```
 sudo nano /etc/network/interfaces
 ```
+
 Insert at the bottom of interface eth0 (before ipv6 if your server supports it). Replace IP.OF.FAIL.OVER with the IP you were given by your provider and replace eth0 with the name of your adapter if necessary (e.g. enp2s0):
 
 ```
 up ip addr add IP.OF.FAIL.OVER/32 dev eth0
 down ip addr del IP.OF.FAIL.OVER/32 dev eth0
 ```
+
 Save and exit. Bring the new interface online with the command
 
 ```
 ip addr add IP.OF.FAIL.OVER/32 dev eth0
 ```
+
 You should now be able to ping your new IP. Confirm with a local test:ping IP.OF.FAIL.OVER If your new IP fails to respond to ping, consider consulting your host’s documentation for help.
 
 3. Bind Apache to the main IP of your server
@@ -104,7 +107,7 @@ Save, exit and load up the next file:
 sudo nano /etc/apache2/sites-enabled/default-ssl.conf
 ```
 
-Find the sections where it says<VirtualHost *:80> and<VirtualHost *:443>. Replace the asterisks with the ORIG.IP.OF.SRV:
+Find the sections where it says<VirtualHost *:80> and<VirtualHost*:443>. Replace the asterisks with the ORIG.IP.OF.SRV:
 
 ```
 ...
@@ -187,9 +190,11 @@ sudo openssl x509 -noout -text -in fullchain.pem | grep Issuer:
 ```
 
 You’ll see something like:
+
 ```
 Issuer: C=US, O=Let's Encrypt, CN=Let's Encrypt Authority X3
 ```
+
 Download the corresponding pem:
 
 ```
@@ -225,6 +230,7 @@ Find and insert your failover IP into the two listen parameters
 listen 80;
 listen 443 ssl http2;
 ```
+
 becomes
 
 ```
@@ -238,6 +244,7 @@ Next find:
 ssl_certificate
 ssl_certificate_key
 ```
+
 Insert your letsencrypt certificates here:
 
 ```
