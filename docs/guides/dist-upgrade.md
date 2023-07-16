@@ -45,15 +45,17 @@ The absolute best time to perform an upgrade is **before you install swizzin**; 
 swizzin currently supports these distributions:
 
 Debian:
+
 - Buster (oldoldstable)
 - Bullseye (oldstable)
 - Bookworm
 
 Ubuntu:
+
 - Focal (20.04 LTS)
 - Jammy (22.04 LTS)
 
-Before updating anything, please ensure you're on the latest commit. If you are not, things could not work as intended after you're done the distribution upgrade. 
+Before updating anything, please ensure you're on the latest commit. If you are not, things could not work as intended after you're done the distribution upgrade.
 
 ```bash
 sudo box update
@@ -67,10 +69,12 @@ WARN      <New Distro> is not supported by swizzin at this stage.
 ```
 
 Then, assuming swizzin has released support for your upgrade path, you'll need to manually pull down the latest version of the swizzin master branch:
+
 ```
 cd /etc/swizzin
 git pull
 ```
+
 :::
 
 If you don't know the OS or version you're running, you can determine it here with the command `lsb_release -a`. Your `codename` will hopefully correspond to a value above. The codename is the release that's in your current apt sources list (`/etc/apt/sources.list`). We will be changing this to the version you'd like to upgrade to.
@@ -119,7 +123,6 @@ sudo reboot
 Pray to your lucky stars that nothing goes wrong and your server comes back up without any issues.
 
 If you haven't installed swizzin yet, feel free to start the installer now. If you have already installed packages, we have a bit more updating to do.
-
 
 ### Updating packages after an upgrade
 
@@ -174,5 +177,3 @@ Depending on the application and the amount of configuration you have done, it m
 #### Other packages
 
 Distribution upgrades haven't been tested rigorously. It's entirely possible other packages may have broken during the upgrade. You'll need to start doing your own troubleshooting here if anything else is broken. You can consult [the Troubleshooting guide](/guides/troubleshooting) for a quick start. You can find out if any of your systemd services are failing to start with `systemctl list-units --failed`. If there are failed units there, you can start debugging with `systemctl status <failed unit>`. However, you're on your own from here.
-
-
