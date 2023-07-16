@@ -81,15 +81,15 @@ Let's take the scenario where your server was delivered with Debian 11 (bullseye
 bullseye > bookworm
 ```
 
-Thus, we need to replace all mention of stretch with buster in the file `/etc/apt/sources.list`.
+Thus, we need to replace all mention of bullseye with bookworm in the file `/etc/apt/sources.list`.
 
-You can either `sudo nano /etc/apt/sources.list` and change all instances of `stretch` to `buster` or issue the following command:
+You can either `sudo nano /etc/apt/sources.list` and change all instances of `bullseye` to `bookworm` or issue the following command:
 
 ```bash main
 sed -i 's/bullseye/bookworm/g' /etc/apt/sources.list
 ```
 
-This simple `sed` command simply states: find the word stretch, replace it with buster in the file `/etc/apt/sources.list.
+This simple `sed` command simply states: find the word bullseye, replace it with bookworm in the file `/etc/apt/sources.list`.
 
 Once our sources have been updated, it's time to grab new manifests and update:
 
@@ -173,6 +173,6 @@ Depending on the application and the amount of configuration you have done, it m
 
 #### Other packages
 
-Distribution upgrades haven't been tested rigorously. It's entirely possible other packages may have broken during the upgrade. You'll need to start doing your own troubleshooting here if anything else is broken. You can consult [the Troubleshooting guide](/guides/troubleshooting) for a quick start. You can find out if any of your systemd services are failing to start with `systemctl list-units --failed`. If there are failed units there, you can start debugging with `systemctl status <failed unit>`. However, you're on your own form here.
+Distribution upgrades haven't been tested rigorously. It's entirely possible other packages may have broken during the upgrade. You'll need to start doing your own troubleshooting here if anything else is broken. You can consult [the Troubleshooting guide](/guides/troubleshooting) for a quick start. You can find out if any of your systemd services are failing to start with `systemctl list-units --failed`. If there are failed units there, you can start debugging with `systemctl status <failed unit>`. However, you're on your own from here.
 
 
