@@ -120,7 +120,6 @@ module.exports = {
                     "applications/netdata",
                     "applications/pyload",
                     "applications/quota",
-                    "applications/rapidleech",
                     "applications/wireguard",
                     "applications/x2go",
                     "applications/xmrig",

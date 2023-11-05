@@ -143,10 +143,6 @@ const data = [
     url: "applications/radarr",
   },
   {
-    title: "Rapidleech",
-    url: "applications/rapidleech",
-  },
-  {
     title: "Rclone",
     url: "applications/rclone",
   },
