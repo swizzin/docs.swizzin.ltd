@@ -17,13 +17,14 @@ We'll use all of these pieces of information to connect to your server
 ## Step-by-step guide (Linux/OS X/Windows 10+)
 
 Connecting to your slot via Linux or OSX is trivial:
+
 1. Open a terminal or command prompt/powershell
 2. Type: `ssh <username>@<hostname>`
     eg: `ssh liara@server.swizzin.ltd`
 3. If this is your first time connecting, you will be asked to accept the host's public key. Type "yes" to verify.
 4. Enter your password
-- (Recommended) Setup [public/private keypair](https://www.cyberciti.biz/faq/how-to-set-up-ssh-keys-on-linux-unix/) authentication
-- (Bonus) Encrypt your key with a password during creation
+    - (Recommended) Setup [public/private keypair](https://www.cyberciti.biz/faq/how-to-set-up-ssh-keys-on-linux-unix/) authentication
+    - (Bonus) Encrypt your key with a password during creation
 5. Done!
 
 ## Step-by-step guide (PuTTY)
