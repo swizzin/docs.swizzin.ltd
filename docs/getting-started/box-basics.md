@@ -75,6 +75,12 @@ Syntax:
 box upgrade nginx
 ```
 
+Want to just do it for all packages possible? This command will do the trick. _Note:_ this will **not** upgrade torrent clients or nginx, please upgrade those manually.
+
+```bash
+box upgrade --all
+```
+
 ## adduser
 This function adds additional users to your server. Please note, only the primary user has access to a significant portion of applications.
 

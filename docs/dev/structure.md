@@ -94,6 +94,8 @@ The aim of the scripts in here is to ensure that applications get upgraded acros
 
 Before any of the upgrade scripts are ran, the `box update` procedure is done.
 
+When `box upgrade --all` is ran, all packages that have install locks will be upgraded **except** a hard-coded list of torrent clients, panel, and nginx.
+
 ### Update
 `scripts/update/`
 
