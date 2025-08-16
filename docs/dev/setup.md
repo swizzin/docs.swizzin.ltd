@@ -10,13 +10,27 @@ We highly suggest you use a virtualized environment to test your swizzin set up.
 ### Multipass
 :::tip Sausage's preferred development setup
 :::
+
+This is an easy way to get developing on Windows, macOS or Linux.
+
 1. Enable virtualization OS and BIOS side
 1. [Install multipass](https://multipass.run)
-1. Run `multipass shell` to start a default primary VM and join the shell. 
-2. Get swizzin repo on your VM
+1. Set up your VM with OS of choice
+   - Ubuntu
+      1. Run `multipass shell` to launch a VM called `primary` and join the shell.
+   - Debian
+      1. Download a `genericcloud` qcow2 image from [the Debian website](https://cloud.debian.org/images/cloud/) (e.g. [this file for amd64](https://cloud.debian.org/images/cloud/trixie/latest/debian-13-genericcloud-amd64.qcow2) or [this file for arm64](https://cloud.debian.org/images/cloud/trixie/latest/debian-13-genericcloud-arm64.qcow2) for trixie)
+      2. Run `multipass launch -n yourvmname file:///full/path/to/your/file.qcow2`
+      3. Run `multipass shell yourvmname`
+1. Get swizzin repo on your VM
    1. You can mount it wherever you want (your user directory should be auto-mounted into `/home/ubuntu` if you're using the `primary` instance)
+      - For Debian images, first install snap support for multipass mounts `sudo apt install snapd` and restart with `sudo reboot`
    2. You can clone it wherever you want
-3. Install swizzin with `bash /path/to/setup.sh --local`
+1. (optional) Make a snapshot of your VM so you can get back to this point a bit faster
+   1. `multipass stop yourvmname` (primary if ubuntu)
+   1. `multipass snapshot yourvmname -n my-fresh-install`
+   1. To restore, `multipass restore fresh`
+1. Install swizzin with `bash /path/to/setup.sh --local`
 
 ### LXD
 
