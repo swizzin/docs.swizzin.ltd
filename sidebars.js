@@ -31,6 +31,7 @@ module.exports = {
                     "applications/medusa",
                     "applications/mylar",
                     "applications/ombi",
+                    "applications/shinkro",
                     "applications/sickchill",
                     "applications/sickgear",
                     "applications/sonarr",
