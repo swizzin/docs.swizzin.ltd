@@ -1,0 +1,138 @@
+---
+id: shinkro
+title: shinkro
+sidebar_label: shinkro
+---
+
+shinkro is an application that syncs your Plex watch status and ratings for anime to MyAnimeList.net. If you use both Plex and MyAnimeList to watch and track your anime, shinkro eliminates the need to manually update your MyAnimeList after watching anime on your Plex server.
+
+## Features
+
+- Support for multiple metadata agents, including default Plex agent, HAMA, and MyAnimeList.bundle
+- Live updates to MyAnimeList as soon as you watch or rate in Plex
+- Powerful anime-id mapping support with custom maps or community mapping
+- Discord & Gotify notifications
+- Webhook support via Plex (requires Plex Pass) or Tautulli
+
+## Initial Setup
+
+Installing shinkro is easy. Simply issue the following command:
+
+```bash main
+sudo box install shinkro
+```
+
+This command will configure shinkro for your user and set up the necessary configuration files.
+
+## Upgrade
+
+Upgrading shinkro is straightforward. Simply issue the following command:
+
+```bash main
+sudo box upgrade shinkro
+```
+
+## How to Access
+
+After shinkro has been installed, it will be available for access at `https://<hostname.ltd>/shinkro`.
+
+The port is randomized at setup (between 10000-12000), so if you don't use `nginx`, or just need to find the port, check in `/home/user/.config/shinkro/config.toml`.
+
+## Service Management
+
+Multi-user is enabled, so in order to manipulate the service, you'll also need to specify a username.
+
+```
+/etc/systemd/system/shinkro@.service
+```
+
+import SystemdTabs from "../snippets/systemdtabs.mdx";
+
+<SystemdTabs service="shinkro@<username>" />
+
+## Configuration
+
+### Initial Setup
+
+1. Access shinkro at `https://<hostname.ltd>/shinkro`
+2. Log in with your username and password (same as your swizzin user credentials)
+3. Configure your MyAnimeList authentication:
+   - Go to Settings → MyAnimeList Auth
+   - Follow the instructions to authenticate with MyAnimeList
+4. Configure Plex connection:
+   - Go to Settings → Plex
+   - Enter your Plex server details (host, port)
+   - Authenticate with Plex
+   - Select your anime libraries
+5. Set up webhooks:
+   - **Plex Webhook (Recommended)**: Requires Plex Pass
+     - Go to Plex Settings → Network → Webhooks
+     - Add webhook URL: `https://<hostname.ltd>/shinkro/api/plex?apiKey=<created-api-key>`
+   - **Tautulli**: Alternative if you don't have Plex Pass
+     - Configure Tautulli to send webhooks to shinkro
+
+### Configuration File
+
+The main configuration file is located at `/home/user/.config/shinkro/config.toml`. Key settings include:
+
+- `Host`: Listening address (set to `127.0.0.1` when behind nginx)
+- `Port`: Application port (randomized during installation)
+- `BaseUrl`: Base URL path (`/shinkro/`)
+- `LogLevel`: Logging level (INFO, DEBUG, etc.)
+- `LogPath`: Path to log file
+
+## Changing Password
+
+To change your shinkro password, use the following command:
+
+```bash main
+sudo shinkro --config=/home/$USER/.config/shinkro change-password $USER --password <new_password>
+```
+
+Or use the swizzin box command to change your user password, which will automatically update shinkro:
+
+```bash main
+sudo box chpasswd user
+```
+
+## Custom Mapping
+
+While shinkro maps most MAL IDs to TVDB IDs in its database, it works best for season 1 of anime. Multi-season anime mapping may require manual configuration.
+
+By default, shinkro uses the community mapping hosted in the [shinkro-mapping](https://github.com/varoOP/shinkro-mapping) repository. If you need a mapping that doesn't exist, consider contributing to the community mapping.
+
+You can also specify your own custom maps by placing `tvdb-mal.yaml` for MAL-TVDB mappings or `tmdb-mal.yaml` for MAL-TMDB mappings in shinkro's configuration directory (`/home/user/.config/shinkro/`). shinkro will automatically detect the change and start using your custom mapping(s).
+
+## Troubleshooting
+
+### Service Not Starting
+
+Check the service status:
+```bash main
+sudo systemctl status shinkro@user
+```
+
+Check the logs:
+```bash main
+tail -f /home/user/.config/shinkro/logs/shinkro.log
+```
+
+### Webhook Not Working
+
+- Verify your Plex webhook URL is correct: `https://<hostname.ltd>/shinkro/api/plex?apiKey=<created-api-key>`
+- Ensure nginx is properly configured and the panel is accessible
+- Check that your Plex server can reach the shinkro instance
+- If using Tautulli, verify the webhook configuration in Tautulli settings
+
+### Authentication Issues
+
+If you're having trouble logging in:
+- Verify you're using the correct username and password (same as your swizzin user)
+- Try clearing cookies 
+
+## Additional Resources
+
+- [Official shinkro Documentation](https://docs.shinkro.com)
+- [shinkro GitHub Repository](https://github.com/varoOP/shinkro)
+- [shinkro Community Mapping](https://github.com/varoOP/shinkro-mapping)
+- [Discord Community](https://discord.gg/ZkYdfNgbAT)
